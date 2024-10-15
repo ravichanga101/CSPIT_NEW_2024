@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Feedback Showcase</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f7f7f7;
+      }
+
+      /* Section Title */
+      .main-heading {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #2c3e50;
+        text-transform: uppercase;
+      }
+
+      /* Navigation Tabs */
+      .tab-list {
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      .tab-list .tab-link {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #007bff;
+        border-radius: 30px;
+        background: #f2f2f2;
+        padding: 12px 30px;
+        margin: 0 10px;
+        transition: 0.3s;
+      }
+
+      .tab-list .tab-link:hover,
+      .tab-list .tab-link.active {
+        background-color: #007bff;
+        color: white;
+        box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2);
+      }
+
+      /* Feedback Cards */
+      .review-card {
+        position: relative;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        transition: 0.3s ease-in-out;
+        text-align: center;
+      }
+
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+      }
+
+      .review-card img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .review-card h5 {
+        font-size: 1.3rem;
+        margin-top: 15px;
+        color: #007bff;
+      }
+
+      .review-card p {
+        font-style: italic;
+        color: #6c757d;
+      }
+
+      /* Call to Action */
+      .action-button {
+        text-align: center;
+        margin-top: 30px;
+        color: #007bff;
+      }
+
+      .action-button a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Gradient Backgrounds for Sections */
+      .content-wrapper {
+        background: linear-gradient(135deg, #007bff, #73c2fb);
+        color: white;
+        padding: 50px 20px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h2 class="main-heading" data-aos="fade-up">Client Feedback</h2>
+
+      <!-- Navigation Tabs -->
+      <ul class="nav nav-tabs tab-list" id="feedbackTabs" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active tab-link"
+            id="parent-feedback-tab"
+            data-bs-toggle="tab"
+            href="#parent-feedback"
+            role="tab"
+            >Parents</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-link"
+            id="employer-feedback-tab"
+            data-bs-toggle="tab"
+            href="#employer-feedback"
+            role="tab"
+            >Employers</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-link"
+            id="student-feedback-tab"
+            data-bs-toggle="tab"
+            href="#student-feedback"
+            role="tab"
+            >Students</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-link"
+            id="alumni-feedback-tab"
+            data-bs-toggle="tab"
+            href="#alumni-feedback"
+            role="tab"
+            >Alumni</a
+          >
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content content-wrapper" id="feedbackContent">
+        <div class="tab-pane fade show active" id="parent-feedback" role="tabpanel">
+          <div class="row" id="parentReviews"></div>
+        </div>
+        <div class="tab-pane fade" id="employer-feedback" role="tabpanel">
+          <div class="row" id="employerReviews"></div>
+        </div>
+        <div class="tab-pane fade" id="student-feedback" role="tabpanel">
+          <div class="row" id="studentReviews"></div>
+        </div>
+        <div class="tab-pane fade" id="alumni-feedback" role="tabpanel">
+          <div class="row" id="alumniReviews"></div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="action-button">
+        <a href="#more" class="btn btn-outline-primary">More Feedback</a>
+      </div>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("testimonials.xlsx")
+          .then((response) => response.arrayBuffer())
+          .then((data) => {
+            const workbook = XLSX.read(data, { type: "array" });
+            const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+            const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+            console.log(jsonData); // Check the output here
+            renderReviews(jsonData);
+          })
+          .catch((error) =>
+            console.error("Error loading the Excel file:", error)
+          );
+
+        function renderReviews(reviews) {
+          console.log(reviews); // Check the structure of reviews
+          const parentReviewContainer = document.getElementById("parentReviews");
+          const employerReviewContainer = document.getElementById("employerReviews");
+          const studentReviewContainer = document.getElementById("studentReviews");
+          const alumniReviewContainer = document.getElementById("alumniReviews");
+
+          reviews.forEach((review, index) => {
+            console.log(`Processing review #${index}:`, review); // Debugging log
+            const card = `
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="${index * 100}">
+                        <div class="review-card">
+                            <img src="${review.Image || "https://via.placeholder.com/80"}" alt="${review.Type}" />
+                            <h5>${review.Name}</h5>
+                            <p>${review.Testimonial}</p>
+                        </div>
+                    </div>
+                `;
+
+            if (review.Type.toLowerCase() === "parent") {
+              parentReviewContainer.innerHTML += card;
+            } else if (review.Type.toLowerCase() === "employer") {
+              employerReviewContainer.innerHTML += card;
+            } else if (review.Type.toLowerCase() === "student") {
+              studentReviewContainer.innerHTML += card;
+            } else if (review.Type.toLowerCase() === "alumni") {
+              alumniReviewContainer.innerHTML += card;
+            }
+          });
+        }
+
+        AOS.init();
+      });
+    </script>
+  </body>
+</html>
