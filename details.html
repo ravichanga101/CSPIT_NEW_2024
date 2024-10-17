@@ -91,9 +91,6 @@
   </head>
   <body>
     <div class="container mt-5">
-      <div>
-        <h3 class="section-head" style="line-height: 1.45">Profile</h3>
-      </div>
       <div class="row">
         <!-- Left Section: Profile Image and Info -->
         <div class="col-md-3 profile">
@@ -115,6 +112,8 @@
               <a href="#" id="faculty-linkedin" target="_blank"
                 ><i class="fab fa-linkedin"></i
               ></a>
+              <a href="#" id="faculty-website" target="_blank"
+                ><i class="fas fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -135,7 +134,7 @@
                   aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Profile
+                  Academics
                 </button>
               </h2>
               <div
@@ -160,7 +159,7 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Research
+                  Research & Publications
                 </button>
               </h2>
               <div
@@ -175,7 +174,7 @@
               </div>
             </div>
 
-            <div class="accordion-item">
+            <!-- <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
                 <button
                   class="accordion-button collapsed"
@@ -198,7 +197,7 @@
                   Publications list goes here.
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingFour">
@@ -210,7 +209,7 @@
                   aria-expanded="false"
                   aria-controls="collapseFour"
                 >
-                  Teaching
+                  Projects
                 </button>
               </h2>
               <div
@@ -220,12 +219,12 @@
                 data-bs-parent="#facultyAccordion"
               >
                 <div class="accordion-body" id="faculty-teaching">
-                  Teaching details go here.
+                  Project details go here.
                 </div>
               </div>
             </div>
 
-            <div class="accordion-item">
+            <!-- <div class="accordion-item">
               <h2 class="accordion-header" id="headingFive">
                 <button
                   class="accordion-button collapsed"
@@ -273,7 +272,7 @@
                   Fellowship details go here.
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -314,12 +313,13 @@
                 imageSrc,
                 profile,
                 research,
-                publications,
+                // publications,
                 teaching,
-                conference,
-                fellowships,
+                // conference,
+                // fellowships,
                 email,
                 linkedin,
+                website,
               ] = row;
 
               if (name === facultyName) {
@@ -337,19 +337,19 @@
                 document.getElementById("faculty-research").textContent =
                   research;
 
-                document.getElementById("faculty-publications").textContent =
-                  publications;
+                // document.getElementById("faculty-publications").textContent =
+                //   publications;
                 document.getElementById("faculty-teaching").textContent =
                   teaching;
-                document.getElementById("faculty-conference").textContent =
-                  conference;
-                document.getElementById("faculty-fellowships").textContent =
-                  fellowships;
+                // document.getElementById("faculty-conference").textContent =
+                //   conference;
+                // document.getElementById("faculty-fellowships").textContent =
+                //   fellowships;
                 document.getElementById(
                   "faculty-email"
                 ).href = `mailto:${email}`;
                 document.getElementById("faculty-linkedin").href = linkedin;
-
+                document.getElementById("faculty-website").href = website;
                 break; // Exit the loop once the faculty is found
               }
             }
