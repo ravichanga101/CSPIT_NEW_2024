@@ -158,7 +158,6 @@ input[type="submit"] {
   left: 50%; /* Centering */
   transform: translateX(-50%); /* Centering */
   background-color: #033c67;
-
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-size: couver;
   background-repeat: no-repeat;
@@ -178,7 +177,7 @@ input[type="submit"] {
 
 /* Styling for icons */
 .stat-number {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: bold;
   opacity: 0; /* Hidden initially */
   transform: translateY(20px); /* Slide in effect */
@@ -359,7 +358,7 @@ img {
   text-align: center;
   font-family: "Playfair Display", serif;
 }
-.collaborations-section h2::after,
+/* .collaborations-section h2::after,
 .scalar-section h2::after,
 .event-news-wrap h2::after,
 .programs h2::after,
@@ -373,7 +372,7 @@ img {
   background-color: #ffc107;
 
   margin: 10px auto 0;
-}
+} */
 .collaborations-section p {
   font-size: 1.1rem;
   margin-bottom: 40px;
