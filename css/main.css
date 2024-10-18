@@ -2795,9 +2795,6 @@ golden a {
   }
 }
 
-@media (max-width: 768px) {
-}
-
 @media (max-width: 575.98px) {
   .school-list ul li {
     border-right: 0px;

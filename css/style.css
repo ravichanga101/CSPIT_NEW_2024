@@ -128,6 +128,7 @@ form button[type="Submit"].d-block {
     line-height: 1.5;
     background-color: #fff;
 }
+
 .bootstrap-select .dropdown-menu {
     max-height: inherit !important;
     overflow: hidden !important;
@@ -286,22 +287,26 @@ form button[type="Submit"].d-block {
 #news-home .owl-carousel .owl-stage {
     display: flex;
 }
+/* NAVBAR---------------------------------------------- */
 .nav-wrap {
-    top: 30px;
+    top: 20px;
 }
 .fixed-top.navbar {
-    background: none;
+    background: white;
+
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transition for smooth effect */
 }
 .navbar .nav-bg {
-    background: #fff;
+    background: transparent ;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; /* Transition for smooth effect */
 }
 #navbarCollapse .nav-row-up .nav-link {
     text-transform: none;
 }
 .fixed-top.navbar .container-fluid {
-    width: 90%;
-    padding-right: 15px !important;
-    padding-left: 15px !important;
+    width: 100%;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
 }
 .navbar .navbar-brand img {
     width: 80%;
@@ -554,63 +559,6 @@ map area {
 #featured-slider .slider-items img.w-auto {
     width: auto;
 }
-/*.whats-new .grid-item {
-    overflow: hidden;
-}
-.whats-new .grid-layout .grid-item  {
-    position: relative;
-    overflow: hidden;
-    margin: 0px 1% 10px 0;
-    display: flex;
-    background-color: #801415;
-    height: 100%;
-    display: table;
-    text-align: left;
-    cursor: pointer;
-}
-.whats-new .grid-layout .overlay2 {
-    position: absolute;
-    bottom: 0;
-    top: auto;
-    background: linear-gradient(to top, #801415 30%, transparent 100%);
-    height: 250px;
-    width: 100%;
-    opacity: 1;
-    left: 0;
-}
-.whats-new .grid-item:hover div.description::before {
-    opacity: 1;
-    background-color: rgb(128 20 21 / 80%);
-}
-.whats-new .grid-item div.description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.whats-new .grid-item:before {
-    background-color: transparent;
-}
-.whats-new .grid-item div.description::before {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    box-shadow: 0 0 0 30px rgb(255 255 255 / 20%);
-    content: '';
-    opacity: 0;
-    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-    transition: opacity 0.3s, transform 0.3s;
-}
-.whats-new .grid-item .description-content {
-    margin: 0 0 10px 0;
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    right: 20px;
-}*/
 
 .library-corner .item {
     height: auto;

@@ -2,12 +2,13 @@
   width: auto;
 }
 
-.navbar {
+/* .navbar {
   background-color: white;
+  opacity: 90%;
 }
 .fixed-top.navbar {
   background-color: white;
-}
+} */
 .nav-row-down .nav-item {
   /* border-right: 0.5px solid var(--secondary-color-border); */
   /* border-right: 0; */
