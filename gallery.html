@@ -29,6 +29,9 @@
         margin: 0 5px;
         transition: all 0.3s ease;
       }
+      .nav-pills .nav-link:hover {
+        background-color: #0057b334;
+      }
       .nav-pills .nav-link.active {
         background-color: #0056b3;
         color: #ffffff;
@@ -43,7 +46,7 @@
         transition: all 0.3s ease;
       }
       .gallery-item:hover {
-        transform: translateY(-5px);
+        transform: scale(1.05);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
       .gallery-item img {
@@ -57,17 +60,20 @@
       }
       .gallery-caption {
         position: absolute;
-        bottom: 0;
+        bottom: -50%;
         left: 0;
         right: 0;
         background-color: rgba(0, 86, 179, 0.8);
         color: #ffffff;
         padding: 15px;
-        transform: translateY(100%);
+        /* transform: translateY(100%); */
         transition: all 0.3s ease;
       }
       .gallery-item:hover .gallery-caption {
-        transform: translateY(0);
+        /* transform: translateY(0%); */
+        bottom: 0;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
       }
       .gallery-caption h5 {
         margin-bottom: 5px;
