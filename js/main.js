@@ -1,16 +1,14 @@
-(function ($) {
-    "use strict";
+// (function ($) {
+//     "use strict";
 
-    // Initiate the wowjs
-    new WOW().init();
+//     new WOW().init();
 
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
-        }
-    });
-})(jQuery);
+//     $(window).scroll(function () {
+//         if ($(this).scrollTop() > 45) {
+//             $('.navbar').addClass('sticky-top shadow-sm');
+//         } else {
+//             $('.navbar').removeClass('sticky-top shadow-sm');
+//         }
+//     });
+// })(jQuery);
 

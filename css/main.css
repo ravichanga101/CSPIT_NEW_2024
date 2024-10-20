@@ -999,7 +999,7 @@ ul li {
 }
 
 .navbar {
-  background: #ffffff7a;
+  /* background: #ffffff7a; */
   /*border: 0.5px solid #5651612b;*/
   padding: 0px;
 }
@@ -1044,8 +1044,9 @@ ul li {
 }
 
 .nav-row-down .nav-item {
-  border-bottom: 0.5px solid var(--secondary-color-border);
-  border-right: 0.5px solid var(--secondary-color-border);
+  &:not(:last-child){
+    border-right: 0.5px solid var(--secondary-color-border);
+  }
 }
 
 .nav-row-down .nav-link:hover,
