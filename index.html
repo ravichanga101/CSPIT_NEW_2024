@@ -1011,47 +1011,48 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div class="stats-icon"><i class="fas fa-users"></i></div>
-            <div class="stat-number" data-target="411">0</div>
+            <div class="stat-number" data-target="36">0</div>
             <div class="stat-title">PHD</div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div class="stats-icon"><i class="fas fa-flask"></i></div>
-            <div class="stat-number" data-target="101">0</div>
+            <div class="stat-number" data-target="16">0</div>
             <div class="stat-title">Research Projects</div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div class="stats-icon"><i class="fas fa-trophy"></i></div>
-            <div class="stat-number" data-target="42">0</div>
+            <div class="stat-number" data-target="45">0</div>
             <div class="stat-title">Ongoing Projects</div>
           </div>
+
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div class="stat-number" data-target="42">0</div>
-            <div class="stat-title">H Index</div>
+            <div class="stats-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="stat-number" data-target="115">0</div>
+            <div class="stat-title">Entrepreneurs</div>
           </div>
         </div>
         <div class="row" style="margin-top: 70px;">
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-briefcase"></i></div>
-            <div class="stat-number" data-target="250">0</div>
-            <div class="stat-title">Entrepreneurs</div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div class="stats-icon">
               <i class="fas fa-chalkboard-teacher"></i>
             </div>
-            <div class="stat-number" data-target="159">0</div>
+            <div class="stat-number" data-target="118">0</div>
             <div class="stat-title">Faculty Members</div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div class="stats-icon"><i class="fas fa-newspaper"></i></div>
-            <div class="stat-number" data-target="6131">0</div>
+            <div class="stat-number" data-target="2313">0</div>
             <div class="stat-title">Publications</div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-dollar-sign"></i></div>
-            <div class="stat-number" data-target="130">0</div>
+            <div class="stats-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <div class="stat-number" data-target="61">0</div>
             <div class="stat-title">Number of Grants</div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="stats-icon"><i class="fas fa-hand-holding-usd"></i></div>
+            <div class="stat-number" data-target="55751855">751855</div>
+            <div class="stat-title">Amount of Grants</div>
           </div>
         </div>
       </div>
@@ -2524,7 +2525,7 @@
     </script>
 
 
-
+<!-- COUNTER FOR SCALAR -->
 <script>
   function runCounterAnimation(element, targetValue) {
     let currentValue = 0;
@@ -2535,13 +2536,26 @@
     element.style.opacity = '1';
     element.style.transform = 'translateY(0)'; // Reset the position
 
+    // Function to format the number to K, M, or B
+    function formatNumber(num) {
+      if (num >= 1e9) {
+        return (num / 1e9).toFixed(1) + 'B';
+      } else if (num >= 1e6) {
+        return (num / 1e6).toFixed(1) + 'M';
+      // } else if (num >= 1e3) {
+      //   return (num / 1e3).toFixed(1) + 'K';
+      } else {
+        return num.toString();
+      }
+    }
+
     const updateValue = () => {
       currentValue += incrementValue;
       if (currentValue < targetValue) {
-        element.innerText = Math.ceil(currentValue);
+        element.innerText = formatNumber(Math.ceil(currentValue));
         requestAnimationFrame(updateValue);
       } else {
-        element.innerText = targetValue;
+        element.innerText = formatNumber(targetValue);
       }
     };
 
@@ -2578,7 +2592,8 @@
 
   const statsSection = document.getElementById('scalars');
   scrollObserver.observe(statsSection);
-  </script>
+</script>
+
 
 
 
