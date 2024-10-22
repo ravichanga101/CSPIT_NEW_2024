@@ -281,44 +281,20 @@ img {
 .student-work .card-text {
   font-weight: bold;
 }
+/* PROGRAMS----------------------- */
 #programs {
   font-family: "Roboto", sans-serif;
   background-color: #e1e1e1;
 }
-.btn-custom {
-  color: #fff;
-  background: linear-gradient(
-    45deg,
-    #0066b3,
-    #003f73
-  ); /* Updated to blue gradient */
-  border: none;
-  transition: background 0.3s ease-in-out;
-  border-radius: 25px;
-  padding: 0.5rem 1.5rem;
-  text-align: cente;
-  display: inline-block;
+
+.card-link:hover .card-title {
+  color: #2978ff; /* Change color on hover */
+  font-weight: bold; /* Make the title bold */
+}
+.card-title {
+  transition: color 0.3s, font-weight 0.5s;
 }
 
-.btn-custom:hover {
-  background: linear-gradient(
-    45deg,
-    #004c91,
-    #347fff
-  ); /* Darker blue on hover */
-}
-
-/* Learn More Button (Outline) */
-.btn-outline-primary {
-  border-color: #347fff; /* Updated to blue */
-  color: #347fff; /* Updated to blue */
-  border-radius: 25px;
-}
-
-.btn-outline-primary:hover {
-  background-color: #1e89db; /* Blue background on hover */
-  color: #fff; /* White text on hover */
-}
 .card-footer {
   background-color: #f8f9fa;
   border-top: none;
