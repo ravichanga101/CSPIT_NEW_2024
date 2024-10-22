@@ -362,8 +362,8 @@ img {
   background-color: #ffffff;
   width: 180px;
   height: 110px;
-  padding: 0px;
-  border-radius: 0px;
+  padding: 10px;
+  border-radius: px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
