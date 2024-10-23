@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
     <style>
-      .section-title {
+      .gallery-section-title {
         position: relative;
         font-size: 2.5rem;
         font-weight: 700;
@@ -21,23 +21,24 @@
         margin-bottom: 2rem;
       }
 
-      .nav-pills .nav-link {
+      .gallery-nav-pills .gallery-nav-link {
         color: #0056b3;
         font-weight: 600;
         border-radius: 30px;
         padding: 10px 20px;
         margin: 0 5px;
         transition: all 0.3s ease;
+        border: none;
       }
-      .nav-pills .nav-link:hover {
+      .gallery-nav-pills .gallery-nav-link:hover {
         background-color: #0057b334;
       }
-      .nav-pills .nav-link.active {
+      .gallery-nav-pills .gallery-nav-link.active {
         background-color: #0056b3;
         color: #ffffff;
         box-shadow: 0 4px 6px rgba(0, 86, 179, 0.2);
       }
-      .gallery-item {
+      .gallery-card {
         position: relative;
         overflow: hidden;
         border-radius: 10px;
@@ -45,61 +46,59 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
       }
-      .gallery-item:hover {
+      .gallery-card:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
-      .gallery-item img {
+      .gallery-card img {
         width: 100%;
         aspect-ratio: 1/1;
         /* height: 400px; */
         object-fit: cover;
         transition: all 0.3s ease;
       }
-      .gallery-item:hover img {
+      .gallery-card:hover img {
         transform: scale(1.1);
       }
-      .gallery-caption {
+      .gallery-card-caption {
         position: absolute;
         bottom: -50%;
         left: 0;
         right: 0;
         background-color: rgba(0, 87, 179, 0.611);
         color: #ffffff;
-        padding: 20px 15px;
-        /* transform: translateY(100%); */
+        padding: 15px;
         transition: all 0.3s ease;
       }
-      .gallery-item:hover .gallery-caption {
-        /* transform: translateY(0%); */
+      .gallery-card:hover .gallery-card-caption {
         bottom: 0;
         -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px);
       }
-      .gallery-caption h5 {
+      .gallery-card-caption h5 {
         margin-bottom: 5px;
         font-size: 1.6rem;
         font-weight: 600;
       }
-      .gallery-caption p {
+      .gallery-card-caption p {
         margin-bottom: 0;
         font-size: 0.9rem;
       }
     </style>
   </head>
   <body>
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light gallery-section">
       <div class="container">
-        <h2 class="text-center section-title mb-5">Our Gallery</h2>
+        <h2 class="text-center gallery-section-title mb-5">Our Gallery</h2>
 
         <ul
-          class="nav nav-pills justify-content-center mb-5"
+          class="nav nav-pills justify-content-center mb-5 gallery-nav-pills"
           id="galleryTabs"
           role="tablist"
         >
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link active"
+              class="gallery-nav-link active"
               id="all-tab"
               data-bs-toggle="pill"
               data-bs-target="#all"
@@ -113,7 +112,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link"
+              class="gallery-nav-link"
               id="cultural-tab"
               data-bs-toggle="pill"
               data-bs-target="#cultural"
@@ -127,7 +126,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link"
+              class="gallery-nav-link"
               id="technical-tab"
               data-bs-toggle="pill"
               data-bs-target="#technical"
@@ -141,7 +140,7 @@
           </li>
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link"
+              class="gallery-nav-link"
               id="sports-tab"
               data-bs-toggle="pill"
               data-bs-target="#sports"
@@ -164,27 +163,27 @@
           >
             <div class="row">
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_1.png" alt="Cultural Event" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Cultural Fest</h5>
                     <p>Annual cultural celebration at CSPIT</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_2.png" alt="Technical Event" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Tech Symposium</h5>
                     <p>Showcasing innovative projects</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_3.png" alt="Sports Event" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Annual Sports Meet</h5>
                     <p>Celebrating sportsmanship and athleticism</p>
                   </div>
@@ -200,18 +199,18 @@
           >
             <div class="row">
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_2.png" alt="Cultural Event" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Cultural Fest</h5>
                     <p>Annual cultural celebration at CSPIT</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_3.png" alt="Dance Performance" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Dance Competition</h5>
                     <p>Showcasing talent and creativity</p>
                   </div>
@@ -227,27 +226,27 @@
           >
             <div class="row">
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_1.png" alt="Technical Event" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Tech Symposium</h5>
                     <p>Showcasing innovative projects</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_2.png" alt="Workshop" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>AI Workshop</h5>
                     <p>Hands-on learning experience in AI</p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_4.jpeg" alt="Hackathon" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>24-Hour Hackathon</h5>
                     <p>Coding marathon for innovative solutions</p>
                   </div>
@@ -263,9 +262,9 @@
           >
             <div class="row">
               <div class="col-md-4 col-sm-6">
-                <div class="gallery-item">
+                <div class="gallery-card">
                   <img src="images1/events_1.png" alt="Sports Event" />
-                  <div class="gallery-caption">
+                  <div class="gallery-card-caption">
                     <h5>Annual Sports Meet</h5>
                     <p>Celebrating sportsmanship and athleticism</p>
                   </div>
