@@ -153,12 +153,8 @@
         background-color: inherit;
         margin: 0;
       }
-      .navbar a:hover,
-      .subnav:hover .subnavbtn {
-        /*background-color: var(--site-color);
-                color: white;*/
-      }
-      /*
+     
+/*       
             .nav-row-down li::before{
                 content: '';
                 display: block;
@@ -212,10 +208,7 @@
       .subnav-content a:hover:after {
         background: white;
       }
-      .subnav-content a:hover {
-        /*background-color: #fff;
-                color: var(--site-color);*/
-      }
+      
       .subnav:hover > .subnav-content,
       .subnav-content
         > .dropdown-submenu.second-sub1:hover
@@ -270,6 +263,10 @@
       .subnav-unit-wrap.sub {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+      }
+
+      .quick-links a{
+        font-weight: 500;
       }
     </style>
     <meta
@@ -500,40 +497,33 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse flex-column align-items-start ml-0" id="navbarCollapse">
-                        <ul class="navbar-nav nav-sub justify-content-end mx-auto nav-row-up">
+                        <ul class="quick-links navbar-nav nav-sub justify-content-end mx-auto nav-row-up">
                             <li class="">
-                                <a class="nav-link py-0 px-3" href="#">
+                                <a class="nav-link py-0 px-4" href="#">
                                     Placement
                                 </a>
                             </li>
                             <li class="">
-                                <a class="nav-link py-0 px-3" href="#">
+                                <a class="nav-link py-0 px-4" href="#">
                                     Gallery
                                 </a>
                             </li>
                             <li class="">
-                                <a class="nav-link py-0 px-3" href="#">
+                                <a class="nav-link py-0 px-4" href="#">
                                     Scholarships
                                 </a>
                             </li>
                             <li class="">
-                                <a class="nav-link py-0 px-3" href="#">
+                                <a class="nav-link py-0 px-4" href="#">
                                     Faculty & Staff
                                 </a>
                             </li>
                             <li class="">
-                                <a class="nav-link py-0 px-3" href="#">
+                                <a class="nav-link py-0 px-4" href="#">
                                     Alumni
                                 </a>
                             </li>
-                            <li class="nav-item search-form-li">
-                                <a class="nav-link py-0 px-4" href="#">
-                                    <form id="searchForm" action="/search/">
-                                        <input name="q" type="text" id="btn-search" class="material-icons"
-                                            value="" /><i class="fa fa-search" aria-hidden="true"></i>
-                                    </form>
-                                </a>
-                            </li>
+                            
                         </ul>
                         <ul class="navbar-nav flex-row mx-auto nav-row-down nav-main">
                             <li class="nav-item subnav">
@@ -549,18 +539,18 @@
                                                 href="#"><span>Vision</span></a>                                   
                                         </li>
                                         <li class="subnav-unit">
-                                            <a class="text-uppercase" href="#">
-                                                Leadership
+                                            <a class="subnav-link text-uppercase" href="#">
+                                              <span>Leadership</span>
                                             </a>
                                         </li>
                                         <li class="subnav-unit">
-                                            <a class="text-uppercase" href="#">
-                                                MoU
+                                            <a class="subnav-link text-uppercase" href="#">
+                                              <span>MoU</span>
                                             </a>
                                         </li>
                                         <li class="subnav-unit">
-                                            <a class="text-uppercase" href="#">
-                                                Accreditation - NBA, NIRF, NAAC
+                                            <a class="subnav-link text-uppercase" href="#">
+                                              <span>Accreditation - NBA, NIRF, NAAC</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -571,26 +561,26 @@
                                 <div class="subnav-content">
                                     <ul class="list-unstyled subnav-unit-wrap">
                                         <li class="subnav-unit">
-                                            <a class="text-uppercase" href="#">
-                                                Undergraduate Programs
+                                            <a class="subnav-link text-uppercase" href="#">
+                                              <span>Undergraduate Programs</span>
                                             </a>
                                         </li>
                                         <li class="subnav-unit dropdown-submenu second-sub2">
-                                            <a class="subnav-link text-uppercase"
+                                            <a class="subnav-link subnav-link text-uppercase"
                                                 href="#"><span>Postgraduate
                                                     Programs</span></a>
                                         </li>
                                         <li class="subnav-unit dropdown-submenu">
-                                          <a class="text-uppercase"
-                                              href="#">PhD</a>
+                                          <a class="subnav-link text-uppercase"
+                                              href="#"><span>PhD</span></a>
                                         </li>
                                         <li class="subnav-unit dropdown-submenu">
-                                          <a class="text-uppercase"
-                                              href="#">Academic Calendar</a>
+                                          <a class="subnav-link text-uppercase"
+                                              href="#"><span>Academic Calendar</span></a>
                                         </li>
                                         <li class="subnav-unit">
-                                            <a class="text-uppercase" href="#">
-                                              Academic Regulations
+                                            <a class="subnav-link text-uppercase" href="#">
+                                              <span>Academic Regulations</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -640,7 +630,7 @@
                                     </li>
                                     <li class="subnav-unit dropdown-submenu second-sub2">
                                         <a class="subnav-link text-uppercase"
-                                            href="#">Artificial Intelligence and Machine Learning</a>
+                                            href="#">AIML</a>
                                     </li>
                                     <li class="subnav-unit dropdown-submenu">
                                       <a class="subnav-link text-uppercase"
@@ -768,7 +758,7 @@
         </nav>
     </div>
     <!-- Searchh -->
-    <div class="container-fluid nav-wrap-sm d-block d-lg-none">
+    <!-- <div class="container-fluid nav-wrap-sm d-block d-lg-none">
         <div class="row">
             <div class="col-9">
                 <div class="navbar-brand m-0 p-0">
@@ -803,7 +793,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- SIDEBAR -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark d-block d-lg-none">
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
@@ -919,6 +909,7 @@
           "
         ><div class="overlay"></div>
         </div>
+        
         <div
           class="item"
           style="
@@ -1034,11 +1025,6 @@
                 <div class="overlay2"></div>
                 <div class="description">
                   <div class="description-content">
-                    <!-- <img src="/site/templates/images/new-th.png" class="new-thumb-img"> -->
-                    <!-- <img
-                      src="images/new-programmee-th.png"
-                      class="new-thumb-img"
-                    /> -->
                     <h3>INFRASTRUCTURE</h3>
                     <p></p>
                     <p>
