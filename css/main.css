@@ -2442,35 +2442,7 @@ ul.social-network li {
 }
 
 .social-network a:hover {
-  background-color: var(--site-color);
-}
-.social-network a.icoFacebook:hover {
-  background-color: var(--site-color);
-}
-.social-network a.icoTwitter:hover {
-  background-color: var(--site-color);
-}
-.social-network a.icoInsta:hover {
-  background-color: var(--site-color);
-}
-.social-network a.icoVimeo:hover {
-  background-color: var(--site-color);
-}
-.social-network a.icoLinkedin:hover {
-  background-color: var(--site-color);
-}
-.social-network a.icoRss:hover i,
-.social-network a.icoFacebook:hover i,
-.social-network a.icoTwitter:hover i,
-.social-network a.icoGoogle:hover i,
-.social-network a.icoVimeo:hover i,
-.social-network a.icoLinkedin:hover i,
-.social-network a.icoInsta:hover i {
-  color: #010101;
-}
-a.socialIcon:hover,
-.socialHoverClass {
-  color: #000000;
+  background-color: #fff;
 }
 
 .social-circle li a {
@@ -2498,11 +2470,11 @@ a.socialIcon:hover,
   -webkit-transform: rotate(360deg);
   -ms--transform: rotate(360deg);
   transform: rotate(360deg);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .social-circle i {
   color: #191919;
