@@ -398,7 +398,7 @@ map area {
     background: #C8A57D !important;
     border: none !important;
     border-bottom: 2px solid #fff !important;
-    font-family: 'Playfair-Bold' !important;
+    /* font-family: 'Playfair-Bold' !important; */
     font-size: 20px;
     padding: 1rem 1.25rem !important;
 }
@@ -472,7 +472,7 @@ map area {
     position: relative;
 }
 .grid-item .description h3 {
-    font-family: 'Roboto-Medium';
+    /* font-family: 'Roboto-Medium'; */
     color: #fff;
 }
 .grid-item .description p {
