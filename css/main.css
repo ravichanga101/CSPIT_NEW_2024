@@ -473,6 +473,66 @@ img {
     max-height: 90%;
   }
 }
+/* Student Club --------------------------- */
+.club-section{
+  background-color: #011829;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.logo-card-club {
+  background-color: #ffffff;
+  width: 180px;
+  height: 150px;
+  padding: 5px;
+  border-radius: px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-card-club img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-wrapper {
+  padding: 15px;
+}
+@media (max-width: 768px) {
+  .logo-card-club {
+    width: 120px; /* Adjust width for mobile */
+    height: 80px; /* Adjust height for mobile */
+  }
+
+  .logo-card-club img {
+    max-width: 90%; /* Ensure the image size reduces on mobile */
+    max-height: 90%;
+  }
+}
+@media (max-width: 992px) {
+  .logo-card-club {
+    width: 100px; /* Adjust width for tablet */
+    height: 70px; /* Adjust height for tablet */
+  }
+
+  .logo-card-club img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+@media (max-width: 1024px) {
+  .logo-card-club {
+    width: 100px; /* Adjust width for tablet */
+    height: 70px; /* Adjust height for tablet */
+  }
+
+  .logo-card-club img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
 
 /*----------------------- THRUST AREA-------------------- */
 .circle-item {
