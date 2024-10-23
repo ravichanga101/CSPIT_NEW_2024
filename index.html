@@ -1594,7 +1594,7 @@
     </section>
 
     <section id="calender-section" class="calender-section">
-      <div class="container-fluid text-center py-4" style="background-color: #033c67;">
+      <div class="container-fluid text-center py-4" style="background-color: var(--site-color);">
         <h2 style="color: #fff;">EVENT CALENDAR</h2>
         <div class="d-flex justify-content-center">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0">
@@ -1787,7 +1787,7 @@
     </section>
 
     <section id="students-work" class="student-work">
-      <div class="container-fluid text-center py-4" style="background-color: #033c67;">
+      <div class="container-fluid text-center py-4" style="background-color: var(--site-color);">
         <h2 style="color: #fff;">STUDENTS CLUB</h2>
         <div class="d-flex justify-content-center">
             <div class="row g-4 align-items-center" style="width: 80%;">
@@ -1956,107 +1956,101 @@
     <section id="testimonials">
       <div class="feedback-section">
         <h2 class="text-center" style="font-weight: bold;">TESTIMONIALS</h2>
-
-        <!-- Parent Feedback -->
-        <div class="row">
-          <div class="col-md-4">
+    
+        <div class="testimonial-slider">
+          <div class="testimonial-track">
+            <!-- Slide 1 -->
             <div class="testimonial-card">
               <img src="faculty_image/AbhishekPatel.webp" alt="Parent">
               <h5>John Doe</h5>
               <h6 style="font-style: italic;">Student</h6>
               <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
             </div>
-          </div>
-          <div class="col-md-4">
+    
+            <!-- Slide 2 -->
             <div class="testimonial-card">
               <img src="faculty_image/Akshitakadam.webp" alt="Parent">
               <h5>Jane Smith</h5>
               <h6 style="font-style: italic;">Parents</h6>
               <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
             </div>
-          </div>
-          <div class="col-md-4">
+    
+            <!-- Slide 3 -->
             <div class="testimonial-card">
-              <img src="faculty_image/Akshitakadam.webp" alt="Parent">
+              <img src="faculty_image/AvaniKhokhariya.webp" alt="Parent">
               <h5>Jane Smith</h5>
               <h6 style="font-style: italic;">Alumni</h6>
               <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
             </div>
-          </div>
-        </div>
 
-        <!-- Employer Feedback -->
-
-
-        <!-- Alumni Feedback -->
-        <div class="row">
-          <div class="col-md-4">
             <div class="testimonial-card">
-              <img src="faculty_image/Akshitakadam.webp" alt="Parent">
-              <h5>Jane Smith</h5>
-              <h6 style="font-style: italic;">Faculty</h6>
-              <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="testimonial-card">
-              <img src="faculty_image/AvaniKhokhariya.webp" alt="Alumni">
-              <h5>Michael Lee</h5>
+              <img src="faculty_image/AneriPandya.webp" alt="Parent">
+              <h5>John Doe</h5>
               <h6 style="font-style: italic;">Student</h6>
-              <p>"I cherish the friendships and professional networks I built during my time at the college."</p>
+              <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
             </div>
-          </div>
-          <div class="col-md-4">
             <div class="testimonial-card">
-              <img src="faculty_image/Akshitakadam.webp" alt="Parent">
-
-              <h5>Jane Smith</h5>
-              <h6 style="font-style: italic;">Expert  </h6>
-              <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
+              <img src="faculty_image/PavitraModi.webp" alt="Parent">
+              <h5>John Doe</h5>
+              <h6 style="font-style: italic;">Student</h6>
+              <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
             </div>
+            <!-- Add more slides if needed -->
           </div>
         </div>
+    
+        <!-- Slider controls -->
+        
       </div>
     </section>
 
-
-      <!-- <script>
-        document.querySelectorAll('.feedback-navbar a').forEach(link => {
-          link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = this.getAttribute('data-target');
-
-            // Remove active class from all links
-            document.querySelectorAll('.feedback-navbar a').forEach(nav => nav.classList.remove('active'));
-
-            // Add active class to clicked link
-            this.classList.add('active');
-
-            // Fade out current content
-            const currentContent = document.querySelector('.feedback-content.active');
-
-            // Start fade out animation
-            currentContent.classList.add('fade-out');
-
-            // Wait for fade-out animation to complete
-            currentContent.addEventListener('animationend', function () {
-              // Remove active class from current content
-              currentContent.classList.remove('active');
-              currentContent.classList.remove('fade-out');
-
-              // Fade in new content
-              const newContent = document.getElementById(target);
-              newContent.classList.add('fade-in');
-              newContent.classList.add('active');
-
-              // Start fade-in animation
-              newContent.addEventListener('animationend', function () {
-                newContent.classList.remove('fade-in');
-              }, { once: true }); // Ensure this runs only once
-            }, { once: true }); // Ensure this runs only once
-          });
+    <script>
+      const track = document.querySelector('.testimonial-track');
+      const slides = Array.from(document.querySelectorAll('.testimonial-card'));
+      const slideWidth = slides[0].offsetWidth+20; // Slide width including margin
+      let index = 1; // Start at the first slide (after the cloned last)
+      let isTransitioning = false;
+    
+      // Clone first and last slide
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[slides.length - 1].cloneNode(true);
+    
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, slides[0]);
+    
+      track.style.transform = `translateX(-${slideWidth}px)`;
+    
+      // Auto-slide function
+      const moveSlider = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+    
+        index++;
+        track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    
+        // Reset index for circular loop
+        track.addEventListener('transitionend', () => {
+          if (index === slides.length- 1) {
+            // If it's the cloned first slide, jump back to the real first slide
+            track.style.transition = 'none';
+            index = 1;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+          } else if (index === 0) {
+            // If it's the cloned last slide, jump to the real last slide
+            track.style.transition = 'none';
+            index = slides.length;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+          }
+          isTransitioning = false;
         });
-    </script> -->
+      };
+    
+      // Set auto-slide interval to 3 seconds
+      let slideInterval = setInterval(moveSlider, 2000);
+    </script>
+    
+    
 
     <section id="message">
       <!-- Dean and Principal Messages Section -->
