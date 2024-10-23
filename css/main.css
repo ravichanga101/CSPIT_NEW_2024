@@ -388,7 +388,7 @@ img {
 .thrust-areas h2,
 .feedback-section h2,
 .calender-section h2,
-.gallery-section h2 {
+.gallery-section h2, .club-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 35px;
@@ -472,19 +472,6 @@ img {
     max-width: 90%;
     max-height: 90%;
   }
-}
-.btn-primary-custom {
-  margin-top: 30px;
-  background-color: #4e5a6a;
-  border: none;
-  padding: 10px 30px;
-  font-size: 1rem;
-  border-radius: 25px;
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-.btn-primary-custom:hover {
-  background-color: #007bff;
 }
 
 /*----------------------- THRUST AREA-------------------- */
