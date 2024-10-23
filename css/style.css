@@ -1,6 +1,12 @@
+@font-face {
+    font-family: "Mona-sans";
+    src: url("/fonts/Mona-Sans.woff2") format("opentype");
+}
+
 html, body {
     overflow: visible;
     background-color: #e1e1e1;
+    font-family: 'Mona-sans', sans-serif !important;
 }
 .related-link-box ul li:not(:last-child).modal-footer {
     justify-content: center;
