@@ -1,6 +1,12 @@
+@font-face {
+    font-family: "Mona-sans";
+    src: url("/fonts/Mona-Sans.woff2") format("opentype");
+}
+
 html, body {
     overflow: visible;
     background-color: #e1e1e1;
+    font-family: 'Mona-sans', sans-serif !important;
 }
 .related-link-box ul li:not(:last-child).modal-footer {
     justify-content: center;
@@ -392,7 +398,7 @@ map area {
     background: #C8A57D !important;
     border: none !important;
     border-bottom: 2px solid #fff !important;
-    font-family: 'Playfair-Bold' !important;
+    /* font-family: 'Playfair-Bold' !important; */
     font-size: 20px;
     padding: 1rem 1.25rem !important;
 }
@@ -466,7 +472,7 @@ map area {
     position: relative;
 }
 .grid-item .description h3 {
-    font-family: 'Roboto-Medium';
+    /* font-family: 'Roboto-Medium'; */
     color: #fff;
 }
 .grid-item .description p {
