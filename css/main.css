@@ -79,7 +79,7 @@
   /* --site-color: rgb(128,18,20); */
 
   /* --site-color: #033c67; site colorrrrr*/
-  --site-color: #033c67;
+  --site-color: #4287fe;
   /* --site-color-transparent: #90241ee6; */
   /* --site-color-transparent: rgba(144, 36, 30, 0.7); */
 
@@ -105,7 +105,7 @@ hr {
 
 body {
   /* font-family: "Roboto-Light"; */
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 a {
