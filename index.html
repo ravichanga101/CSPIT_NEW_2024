@@ -2401,7 +2401,7 @@
     </script>
     <script src="js/css-polyfills.min.js"></script>
     
-<!-- NAVBAR SCROLL -->
+    <!-- NAVBAR SCROLL -->
     <script type="text/javascript">
       $(document).ready(function () {
         if ($(window).width() > 992) {
@@ -2446,76 +2446,74 @@
     </script>
 
 
-<!-- COUNTER FOR SCALAR -->
-<script>
-  function runCounterAnimation(element, targetValue) {
-    let currentValue = 0;
-    const animationDuration = 2000;
-    const incrementValue = targetValue / (animationDuration / 16);
+    <!-- COUNTER FOR SCALAR -->
+    <script>
+      function runCounterAnimation(element, targetValue) {
+        let currentValue = 0;
+        const animationDuration = 2000;
+        const incrementValue = targetValue / (animationDuration / 16);
 
-    // Reveal the element with a smooth transition
-    element.style.opacity = '1';
-    element.style.transform = 'translateY(0)'; // Reset the position
+        // Reveal the element with a smooth transition
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)'; // Reset the position
 
-    // Function to format the number to K, M, or B
-    function formatNumber(num) {
-      if (num >= 1e9) {
-        return (num / 1e9).toFixed(1) + 'B';
-      } else if (num >= 1e6) {
-        return (num / 1e6).toFixed(1) + 'M';
-      // } else if (num >= 1e3) {
-      //   return (num / 1e3).toFixed(1) + 'K';
-      } else {
-        return num.toString();
+        // Function to format the number to K, M, or B
+        function formatNumber(num) {
+          if (num >= 1e9) {
+            return (num / 1e9).toFixed(1) + 'B';
+          } else if (num >= 1e6) {
+            return (num / 1e6).toFixed(1) + 'M';
+          // } else if (num >= 1e3) {
+          //   return (num / 1e3).toFixed(1) + 'K';
+          } else {
+            return num.toString();
+          }
+        }
+
+        const updateValue = () => {
+          currentValue += incrementValue;
+          if (currentValue < targetValue) {
+            element.innerText = formatNumber(Math.ceil(currentValue));
+            requestAnimationFrame(updateValue);
+          } else {
+            element.innerText = formatNumber(targetValue);
+          }
+        };
+
+        updateValue();
       }
-    }
 
-    const updateValue = () => {
-      currentValue += incrementValue;
-      if (currentValue < targetValue) {
-        element.innerText = formatNumber(Math.ceil(currentValue));
-        requestAnimationFrame(updateValue);
-      } else {
-        element.innerText = formatNumber(targetValue);
-      }
-    };
+      function handleScrollTrigger(entries, scrollObserver) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const numberElements = document.querySelectorAll('.stat-number');
+            const iconElements = document.querySelectorAll('.stats-icon');
 
-    updateValue();
-  }
+            // Animate number stats
+            numberElements.forEach(numberEl => {
+              const targetValue = +numberEl.getAttribute('data-target');
+              runCounterAnimation(numberEl, targetValue);
+            });
 
-  function handleScrollTrigger(entries, scrollObserver) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const numberElements = document.querySelectorAll('.stat-number');
-        const iconElements = document.querySelectorAll('.stats-icon');
+            // Fade in icons with smooth transition
+            iconElements.forEach(iconEl => {
+              iconEl.style.opacity = '1';
+              iconEl.style.transform = 'translateY(0)'; // Reset the position
+            });
 
-        // Animate number stats
-        numberElements.forEach(numberEl => {
-          const targetValue = +numberEl.getAttribute('data-target');
-          runCounterAnimation(numberEl, targetValue);
+            scrollObserver.unobserve(entry.target); // Stop observing once animated
+          }
         });
-
-        // Fade in icons with smooth transition
-        iconElements.forEach(iconEl => {
-          iconEl.style.opacity = '1';
-          iconEl.style.transform = 'translateY(0)'; // Reset the position
-        });
-
-        scrollObserver.unobserve(entry.target); // Stop observing once animated
       }
-    });
-  }
 
-  // Scroll observer for the stats section
-  const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
-    threshold: 0.5
-  });
+      // Scroll observer for the stats section
+      const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
+        threshold: 0.5
+      });
 
-  const statsSection = document.getElementById('scalars');
-  scrollObserver.observe(statsSection);
-</script>
-
-
+      const statsSection = document.getElementById('scalars');
+      scrollObserver.observe(statsSection);
+    </script>
 
 
     <script type="text/javascript" src="js/slick.min.js"></script>
@@ -2531,6 +2529,8 @@
     <script type="text/javascript" src="js/validate.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/additional-methods.js"></script>
+
+    <!-- Go to top -->
     <script>
       var goTopBtn = $("#go_top");
       $(document.body).on("touchmove", onScroll); // for mobile
@@ -2606,6 +2606,7 @@
       // if ($(window).width() < 768) {
       //}
     </script>
+    <!-- SEARCH  -->
     <script>
       var site_url = "/site/templates/";
       var btnSearch = document.getElementById("btn-search");
@@ -2682,6 +2683,7 @@
      }
      });*/
     </script>
+
     <script>
       $(document).ready(function () {
         $(".owl-carousel").owlCarousel({
@@ -2759,20 +2761,9 @@
       });
     </script>
     <script type="text/javascript" src="js/scrollreveal.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#footer-partner-school-slider").slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          fade: false,
-          arrows: false,
-          autoplay: true,
-        });
-      });
-    </script>
     
+    <!-- hover panel width  -->
     <script>
-      /* hover panel width */
       $(document).ready(function () {
         var screen = $(window);
         if (screen.width() > 768) {
@@ -2808,6 +2799,7 @@
           });
         });
     </script>
+
     <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -2885,619 +2877,16 @@
         });
       }
     </script>
-    <script>
-      /* event slider */
-      function slickCarousel() {
-        $("#upcoming-events-slider").slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          fade: false,
-          arrows: false,
-          asNavFor: ".upcoming-events-slider-nav",
-        });
-        $(".upcoming-events-slider-nav").slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          asNavFor: "#upcoming-events-slider",
-          fade: true,
-          focusOnSelect: true,
-        });
-      }
-      if ($("#upcoming-events-slider").length != 0) {
-        slickCarousel();
-      }
-      $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-        slickCarousel();
-      });
-    </script>
-    <!-- Modal -->
-    <style type="text/css">
-      #username {
-        position: absolute;
-        left: -9000;
-        border: none;
-      }
-    </style>
-    <div
-      class="modal fade"
-      id="newModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <form
-            name="connect_with_us"
-            id="connect_with_us"
-            method="post"
-            class="admission-form"
-          >
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">
-                CONNECT WITH US
-              </h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <input
-                    id="fname"
-                    name="fname"
-                    type="text"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="First Name"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="lname"
-                    name="lname"
-                    type="text"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Last Name"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="phone"
-                    type="text"
-                    name="phone"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Mobile"
-                    maxlength="10"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="email_id"
-                    type="text"
-                    name="email_id"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <select
-                    class="col programme-select selectpickerHome custom-select py-2 mb-3"
-                    name="state"
-                    id="state"
-                  >
-                    <option value="">Country / State</option>
-                    <optgroup label="India">
-                      <option value="Andhra Pradesh">Andhra Pradesh</option>
-                      <option value="Arunachal Pradesh">
-                        Arunachal Pradesh
-                      </option>
-                      <option value="Assam">Assam</option>
-                      <option value="Bihar">Bihar</option>
-                      <option value="Chhattisgarh">Chhattisgarh</option>
-                      <option value="Goa">Goa</option>
-                      <option value="Gujarat">Gujarat</option>
-                      <option value="Haryana">Haryana</option>
-                      <option value="Himachal Pradesh">Himachal Pradesh</option>
-                      <option value="Jammu and Kashmir">
-                        Jammu and Kashmir
-                      </option>
-                      <option value="Jharkhand">Jharkhand</option>
-                      <option value="Karnataka">Karnataka</option>
-                      <option value="Kerala">Kerala</option>
-                      <option value="Madhya Pradesh">Madhya Pradesh</option>
-                      <option value="Maharashtra">Maharashtra</option>
-                      <option value="Manipur">Manipur</option>
-                      <option value="Meghalaya">Meghalaya</option>
-                      <option value="Mizoram">Mizoram</option>
-                      <option value="Nagaland">Nagaland</option>
-                      <option value="Odisha">Odisha</option>
-                      <option value="Punjab">Punjab</option>
-                      <option value="Rajasthan">Rajasthan</option>
-                      <option value="Sikkim">Sikkim</option>
-                      <option value="Tamil Nadu">Tamil Nadu</option>
-                      <option value="Telangana">Telangana</option>
-                      <option value="Tripura">Tripura</option>
-                      <option value="Uttar Pradesh">Uttar Pradesh</option>
-                      <option value="Uttarakhand">Uttarakhand</option>
-                      <option value="West Bengal">West Bengal</option>
-                      <option value="Andaman and Nicobar Islands">
-                        Andaman and Nicobar Islands
-                      </option>
-                      <option value="Chandigarh">Chandigarh</option>
-                      <option value="Dadra and Nagar Haveli">
-                        Dadra and Nagar Haveli
-                      </option>
-                      <option value="Daman and Diu">Daman and Diu</option>
-                      <option value="Delhi">Delhi</option>
-                      <option value="Jammu and Kashmir">
-                        Jammu and Kashmir
-                      </option>
-                      <option value="Lakshadweep">Lakshadweep</option>
-                      <option value="Leh-Ladakh">Leh-Ladakh</option>
-                      <option value="Pondicherry">Pondicherry</option>
-                    </optgroup>
-                    <optgroup label="Other Countries">
-                      <option value="Nepal">Nepal</option>
-                      <option value="Rest of Asia">Rest of Asia</option>
-                      <option value="Africa">Africa</option>
-                      <option value="Australia">Australia</option>
-                      <option value="Europe">Europe</option>
-                      <option value="North America">North America</option>
-                      <option value="South America">South America</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <input
-                  type="hidden"
-                  name="form"
-                  id="form"
-                  value="admissions-2019"
-                />
-                <div class="col-md-6">
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="City"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        name="agree"
-                        id="agree"
-                        value="1"
-                      />I agree to receive email and text messages from CHARUSAT
-                      University.
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer text-left">
-              <button
-                type="submit"
-                class="bg-site-color white-back-btn text-white"
-              >
-                SUBMIT
-              </button>
-              <button
-                type="button"
-                class="submit-btn white-back-btn"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              value=""
-              style="opacity: 0"
-            />
-          </form>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="newModal1"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <form
-            name="download_brochure_form"
-            id="download_brochure_form"
-            method="post"
-            class="admission-form"
-          >
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">
-                Download Brochure
-              </h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-12">
-                  <p>
-                    Please enter information in the form below. The download
-                    will start automatically on submission of the form.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="fname_d"
-                    name="fname_d"
-                    type="text"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="First Name"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="lname_d"
-                    name="lname_d"
-                    type="text"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Last Name"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="email_id_d"
-                    type="text"
-                    name="email_id_d"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="phone_d"
-                    type="text"
-                    name="phone_d"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Mobile"
-                    maxlength="10"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="city_d"
-                    type="text"
-                    name="city_d"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="City"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="state_d"
-                    type="text"
-                    name="state_d"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="State"
-                  />
-                </div>
-                <input
-                  type="hidden"
-                  name="form"
-                  id="form"
-                  value="download-brochure-form"
-                />
-                <input
-                  type="hidden"
-                  name="course_name"
-                  id="course_name"
-                  value=""
-                />
-                <input type="hidden" name="file_name" id="file_name" value="" />
-                <input type="hidden" name="file_url" id="file_url" value="" />
-                <input type="hidden" name="page_url" id="page_url" value="" />
-                <input
-                  type="hidden"
-                  name="download_page_url"
-                  id="download_page_url"
-                  value=""
-                />
-                <input
-                  type="hidden"
-                  name="add_to_lead"
-                  id="add_to_lead"
-                  value="0"
-                />
-                <div class="col-md-12">
-                  <input
-                    type="text"
-                    id="college_name"
-                    name="college_name"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="College/University"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer text-left">
-              <button
-                id="download-brochure-btn"
-                type="submit"
-                class="bg-site-color white-back-btn text-white"
-              >
-                SUBMIT
-              </button>
-              <button
-                type="button"
-                class="submit-btn white-back-btn"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-            <input
-              type="text"
-              name="username1"
-              id="username1"
-              value=""
-              style="opacity: 0"
-            />
-          </form>
-        </div>
-      </div>
-    </div>
-    <div
-      class="modal fade"
-      id="newModal2"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <form
-            name="download_ee_form"
-            id="download_ee_form"
-            method="post"
-            class="admission-form"
-          >
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">
-                Download Brochure
-              </h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-12">
-                  <p>
-                    Please enter information in the form below. The download
-                    will start automatically on submission of the form.
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="full_name_ee"
-                    name="full_name_ee"
-                    type="text"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Name"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="email_id_ee"
-                    type="text"
-                    name="email_id_ee"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="phone_ee"
-                    type="text"
-                    name="phone_ee"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Mobile"
-                    maxlength="10"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="company_ee"
-                    type="text"
-                    name="company_ee"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="Company Name"
-                    maxlength="100"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <input
-                    id="city_ee"
-                    type="text"
-                    name="city_ee"
-                    class="col input-text py-2 py-sm-3 mb-3 mb-sm-4 form-control required"
-                    placeholder="City"
-                  />
-                </div>
-                <input
-                  type="hidden"
-                  name="form"
-                  id="form"
-                  value="download-ee-form"
-                />
-                <input
-                  type="hidden"
-                  name="file_name_ee"
-                  id="file_name_ee"
-                  value=""
-                />
-                <input
-                  type="hidden"
-                  name="file_url_ee"
-                  id="file_url_ee"
-                  value=""
-                />
-                <input
-                  type="hidden"
-                  name="page_url_ee"
-                  id="page_url_ee"
-                  value=""
-                />
-                <div class="col-md-6">
-                  <select
-                    class="col programme-select selectpickerHome custom-select py-2 mb-3"
-                    name="work_exp_ee"
-                    id="work_exp_ee"
-                  >
-                    <option value="">Work Experience</option>
-                    <option value="5 Years">5 Years</option>
-                    <option value="6 Years">6 Years</option>
-                    <option value="7 Years">7 Years</option>
-                    <option value="8 Years">8 Years</option>
-                    <option value="9 Years">9 Years</option>
-                    <option value="10 Years">10 Years</option>
-                    <option value="More than 10 years">
-                      More than 10 years
-                    </option>
-                    <option value="More than 15 years">
-                      More than 15 years
-                    </option>
-                    <option value="More than 20 years">
-                      More than 20 years
-                    </option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer text-left">
-              <button
-                type="submit"
-                class="bg-site-color white-back-btn text-white"
-              >
-                SUBMIT
-              </button>
-              <button
-                type="button"
-                class="submit-btn white-back-btn"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-            <input
-              type="text"
-              name="username5"
-              id="username5"
-              value=""
-              style="opacity: 0"
-            />
-          </form>
-        </div>
-      </div>
-    </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <script src="js/tooltip-validate.js"></script>
     <script src="js/form-validate.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(".admissions-form-popup").click(function () {
-          $("#newModal").modal("show");
-        });
-        $("#newModal").on("hidden.bs.modal", function () {
-          $(".tooltip").remove();
-        });
-        $("#newModal1").on("hidden.bs.modal", function () {
-          $(".tooltip").remove();
-        });
-        $(".opn-dwnld-frm").click(function (e) {
-          e.preventDefault();
-          var href = $(this).attr("href");
-          var url = window.location.href;
-          var href1 = href.split("/").pop();
-          $("#file_name").val(href1);
-          $("#file_url").val(href);
-          $("#page_url").val(url);
-          var lead = 0;
-          if ($(this).data("lead")) {
-            lead = 1;
-          }
-          $("#add_to_lead").val(lead);
-          if (window.location.href == "#") {
-            var callback = function () {
-              //                        if (typeof (url) != 'undefined') {
-              //                            window.location = url;
-              //                        }
-            };
-            gtag("event", "conversion", {
-              send_to: "AW-751441524/LpfvCPjW1_EBEPSsqOYC",
-              event_callback: callback,
-            });
-          }
-          $("#newModal1").modal("show");
-        });
-        $(".opn-ee-frm").click(function (e) {
-          e.preventDefault();
-          var href = $(this).attr("href");
-          var url = window.location.href;
-          var href1 = href.split("/").pop();
-          $("#file_name_ee").val(href1);
-          $("#file_url_ee").val(href);
-          $("#page_url_ee").val(url);
-          $("#newModal2").modal("show");
-        });
-      });
-    </script>
+    
     <script src="js/slick.js" type="text/javascript"></script>
     <script src="js/slick-lightbox.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(".portfolio-slides").slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        mobileFirst: true,
-      });
-      $(".portfolio-slides").slickLightbox({
-        itemSelector: "a",
-        navigateByKeyboard: true,
-      });
-    </script>
     <script>
       $(document).ready(function () {
         $(".card:first-child .collapse").removeClass("show");
@@ -3517,78 +2906,8 @@
         items: 1,
       });
     </script>
-    <script>
-      $(".spkers-main").slick({
-        dots: true,
-        infinite: false,
-        margin: 10,
-        speed: 500,
-        rows: 1,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        arrows: true,
-        autoplaySpeed: 15000,
-        responsive: [
-          {
-            breakpoint: 991,
-            arrows: true,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: true,
-            },
-          },
-          {
-            breakpoint: 768,
-            arrows: false,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots: true,
-            },
-          },
-          {
-            breakpoint: 520,
-            settings: {
-              arrows: false,
-              dots: true,
-              infinite: false,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      });
-    </script>
+    
 
-    <script>
-      var swiper = new Swiper(".swiper-container", {
-        effect: "coverflow", // Change the effect to coverflow for 3D rotation
-        grabCursor: true, // Enables a hand cursor on hover
-        centeredSlides: true, // Keep the active slide centered
-        slidesPerView: 3, // Display 3 slides with one in focus
-        loop: true, // Allow looping for an infinite slider
-        coverflowEffect: {
-          rotate: -20, // Slide rotation angle
-          stretch: 0, // Stretch the slide spacing
-          depth: 100, // Add depth to slides
-          modifier: 1, // Multiplier for the effect
-          slideShadows: true, // Enable shadows on the slides
-        },
-        autoplay: {
-          delay: 4000, // Delay between slides
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
+    
   </body>
 </html>
