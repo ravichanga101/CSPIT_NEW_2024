@@ -1585,9 +1585,9 @@
     <section id="calender-section" class="calender-section">
   <div class="text-center py-4" style="background-color: var(--site-color);">
     <h2 style="color: #fff;">EVENT CALENDAR</h2>
-    <div class="d-flex justify-content-center" style="gap: 20px;">
+    <div class=" container d-flex justify-content-center" style="gap: 20px;">
       <!-- Calendar for October -->
-      <div style="background-color: white; padding: 5px; border-radius: 5px; width: 40%;">
+      <div style="background-color: white; padding: 5px; border-radius: 5px; width: 50%;">
         <iframe
           src="https://calendar.google.com/calendar/embed?src=kabirmota1234%40gmail.com&ctz=UTC&showTitle=0&showTz=0&dates=20241001/20241031"
           style="border: 0; width: 95%; height: 400px;"
@@ -1596,7 +1596,7 @@
         ></iframe>
       </div>
       <!-- Calendar for November -->
-      <div style="background-color: white; padding: 5px; border-radius: 5px;width: 40%;">
+      <div style="background-color: white; padding: 5px; border-radius: 5px;width: 50%;">
         <iframe
           src="https://calendar.google.com/calendar/embed?src=kabirmota1234%40gmail.com&ctz=UTC&showTitle=0&showTz=0&dates=20241101/20241130"
           style="border: 0; width: 95%; height: 400px;"
@@ -1949,103 +1949,123 @@
 
     </section>
 
-    <section id="testimonials">
-      <div class="feedback-section">
-        <h2 class="text-center" style="font-weight: bold;">TESTIMONIALS</h2>
-    <div class="container">
-        <div class="testimonial-slider">
-          <div class="testimonial-track">
-            <!-- Slide 1 -->
-            <div class="testimonial-card">
-              <img src="faculty_image/AbhishekPatel.webp" alt="Parent">
-              <h5>John Doe</h5>
-              <h6 style="font-style: italic;">Student</h6>
-              <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
-            </div>
-    
-            <!-- Slide 2 -->
-            <div class="testimonial-card">
-              <img src="faculty_image/Akshitakadam.webp" alt="Parent">
+    <section id="testimonials" class="feedback-section">
+      <h2 class="text-center fw-bold">TESTIMONIALS</h2>
+      <div class="d-flex align-items-center justify-content-right">
+        <button id="prevBtn" class="btn  d-flex align-items-center justify-content-center ">
+          <i class="bi bi-chevron-left" style="font-size: xxx-large; color: white;font-weight: 900;"></i>
+        </button>
+        <div class="container">
+          <div id="testimonialCarousel" class="testimonial-slider overflow-hidden position-relative">
+            <div class="testimonial-track d-flex">
+              <!-- Testimonial Cards -->
+              <div class="testimonial-card me-3">
+                <img src="faculty_image/AbhishekPatel.webp" alt="Student Image">
+                <h5>John Doe</h5>
+                <h6 style="font-style: italic;">Student</h6>
+                <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
+              </div>
+              
+            <div class="testimonial-card me-3">
+              <img src="faculty_image/Akshitakadam.webp" alt="Parent Image">
               <h5>Jane Smith</h5>
-              <h6 style="font-style: italic;">Parents</h6>
+              <h6 style="font-style: italic;">Parent</h6>
               <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
             </div>
     
-            <!-- Slide 3 -->
-            <div class="testimonial-card">
-              <img src="faculty_image/AvaniKhokhariya.webp" alt="Parent">
-              <h5>Jane Smith</h5>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card me-3">
+              <img src="faculty_image/AvaniKhokhariya.webp" alt="Alumni Image">
+              <h5>Jane Doe</h5>
               <h6 style="font-style: italic;">Alumni</h6>
               <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
             </div>
-
-            <div class="testimonial-card">
-              <img src="faculty_image/AneriPandya.webp" alt="Parent">
+    
+            <!-- Additional testimonials -->
+            <div class="testimonial-card me-3">
+              <img src="faculty_image/AneriPandya.webp" alt="Student Image">
+              <h5>Mark Smith</h5>
+              <h6 style="font-style: italic;">Student</h6>
+              <p>"This college provided excellent support for my education. Highly recommended!"</p>
+            </div>
+            <div class="testimonial-card me-3">
+              <img src="faculty_image/PavitraModi.webp" alt="Student Image">
+              <h5>Emma Watson</h5>
+              <h6 style="font-style: italic;">Student</h6>
+              <p>"The campus is vibrant, and the professors are highly knowledgeable!"</p>
+            </div>
+            <div class="testimonial-card me-3">
+              <img src="faculty_image/Akshitakadam.webp" alt="Parent Image">
+              <h5>Jane Smith</h5>
+              <h6 style="font-style: italic;">Parent</h6>
+              <p>"The faculty is amazing, and my son has grown academically and personally!"</p>
+            </div>
+            <div class="testimonial-card me-3">
+              <img src="faculty_image/AbhishekPatel.webp" alt="Student Image">
               <h5>John Doe</h5>
               <h6 style="font-style: italic;">Student</h6>
               <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
             </div>
-            <div class="testimonial-card">
-              <img src="faculty_image/PavitraModi.webp" alt="Parent">
-              <h5>John Doe</h5>
-              <h6 style="font-style: italic;">Student</h6>
-              <p>"This college provided excellent support for my child's education. Highly recommended!"</p>
+            
             </div>
-            <!-- Add more slides if needed -->
           </div>
         </div>
-    
-        <!-- Slider controls -->
-        
+          <button id="nextBtn" class="btn  d-flex align-items-center justify-content-center">
+            <i class="bi bi-chevron-right" style="font-size: xxx-large; color: white;font-weight: 900;"></i>
+          </button>
       </div>
-    </div>
     </section>
-
+    
     <script>
       const track = document.querySelector('.testimonial-track');
-      const slides = Array.from(document.querySelectorAll('.testimonial-card'));
-      const slideWidth = slides[0].offsetWidth+20; // Slide width including margin
-      let index = 1; // Start at the first slide (after the cloned last)
-      let isTransitioning = false;
+      const nextBtn = document.getElementById('nextBtn');
+      const prevBtn = document.getElementById('prevBtn');
     
-      // Clone first and last slide
-      const firstClone = slides[0].cloneNode(true);
-      const lastClone = slides[slides.length - 1].cloneNode(true);
+      // Variables to control the current slide and testimonials in view
+      const testimonials = Array.from(track.children);
+      const testimonialsPerView = 3;  // Number of testimonials to show at once
+      let currentIndex = 0;
     
-      track.appendChild(firstClone);
-      track.insertBefore(lastClone, slides[0]);
+      // Function to update the slider position
+      function updateSlidePosition() {
+        const testimonialWidth = testimonials[0].offsetWidth + 16;  // Adjust for margin
+        track.style.transform = `translateX(-${testimonialWidth * currentIndex}px)`;
+      }
     
-      track.style.transform = `translateX(-${slideWidth}px)`;
+      // Next button event listener
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < testimonials.length - testimonialsPerView) {
+          currentIndex += 1;
+        } else {
+          currentIndex = 0; // Reset to start if at the end
+        }
+        updateSlidePosition();
+      });
     
-      // Auto-slide function
-      const moveSlider = () => {
-        if (isTransitioning) return;
-        isTransitioning = true;
+      // Previous button event listener
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+        } else {
+          currentIndex = testimonials.length - testimonialsPerView; // Go to end if at the start
+        }
+        updateSlidePosition();
+      });
     
-        index++;
-        track.style.transition = 'transform 0.5s ease';
-        track.style.transform = `translateX(-${index * slideWidth}px)`;
+      // Set initial position
+      updateSlidePosition();
     
-        // Reset index for circular loop
-        track.addEventListener('transitionend', () => {
-          if (index === slides.length- 1) {
-            // If it's the cloned first slide, jump back to the real first slide
-            track.style.transition = 'none';
-            index = 1;
-            track.style.transform = `translateX(-${index * slideWidth}px)`;
-          } else if (index === 0) {
-            // If it's the cloned last slide, jump to the real last slide
-            track.style.transition = 'none';
-            index = slides.length;
-            track.style.transform = `translateX(-${index * slideWidth}px)`;
-          }
-          isTransitioning = false;
-        });
-      };
-    
-      // Set auto-slide interval to 3 seconds
-      let slideInterval = setInterval(moveSlider, 2000);
+      // Auto-slide functionality
+      setInterval(() => {
+        if (currentIndex < testimonials.length - testimonialsPerView) {
+          currentIndex += 1;
+        } else {
+          currentIndex = 0; // Reset to start if at the end
+        }
+        updateSlidePosition();
+      }, 3000); // Change slide every 3 seconds (3000 ms)
     </script>
+    
     
     
 
