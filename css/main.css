@@ -908,6 +908,10 @@ section#thrust-areas {
   margin-bottom: 10px;
 }
 
+.testimonial-card p{
+  font-size: smaller;
+}
+
 /* ------------------------ANNOUNCEMET --------------*/
 /* Modern Announcement Section Styling */
 .announcement-section {
