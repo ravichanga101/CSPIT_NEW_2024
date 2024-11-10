@@ -94,6 +94,10 @@ hr {
   border-color: rgba(0, 0, 0, 0.2);
 }
 
+html {
+  scroll-behavior:smooth;
+}
+
 body {
   /* font-family: "Roboto-Light"; */
   overflow-x: hidden !important;
@@ -864,7 +868,7 @@ section#thrust-areas {
 
 .testimonial-slider {
   overflow: hidden;
-  width: 100%; /* Adjust width as needed */
+  width: 100%;
   position: relative;
 }
 
@@ -881,8 +885,7 @@ section#thrust-areas {
   text-align: center;
   margin: 0 10px;
   min-width: 300px;
-  /* flex: 0 0 31%; Shows 3 cards at a time */
-  flex: 0 0 10%;
+  flex: 0 0 31.3%; /* Default - 3 cards at a time */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease;
 }
@@ -895,9 +898,78 @@ section#thrust-areas {
   margin-bottom: 10px;
 }
 
-.testimonial-card p{
+.testimonial-card p {
   font-size: smaller;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .testimonial-card {
+    flex: 0 0 85%;  /* 1 card at a time, increase width for mobile */
+    margin: 0 5%;  /* Reduce margin for better space utilization */
+  }
+
+  .testimonial-slider {
+    padding: 0;  /* Remove extra padding */
+  }
+
+  /* Adjust arrow buttons */
+  #prevBtn, #nextBtn {
+    font-size: 2rem;  /* Smaller arrow size */
+    padding: 10px;  /* Adjust padding for better fit */
+  }
+
+  /* Center arrows vertically */
+  #prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #prevBtn {
+    left: 10px;  /* Position left arrow */
+  }
+
+  #nextBtn {
+    right: 10px;  /* Position right arrow */
+  }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 45%;  /* 2 cards at a time on tablets */
+    margin: 0 10px;  /* Adjust margin for spacing */
+  }
+
+  .testimonial-slider {
+    padding: 0 20px;  /* Add padding for better spacing */
+  }
+
+  /* Adjust arrow buttons */
+  #prevBtn, #nextBtn {
+    font-size: 2.5rem;  /* Medium arrow size */
+    padding: 15px;  /* Adjust padding for better fit */
+  }
+
+  /* Center arrows vertically */
+  #prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #prevBtn {
+    left: 10px;  /* Position left arrow */
+  }
+
+  #nextBtn {
+    right: 10px;  /* Position right arrow */
+  }
+}
+
+
+
 
 /* ------------------------ANNOUNCEMET --------------*/
 /* Modern Announcement Section Styling */

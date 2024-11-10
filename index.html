@@ -1077,7 +1077,7 @@
           <!-- Announcement Card 1 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('https://via.placeholder.com/300');"></div>
+              <div class="announcement-image" style="background-image: url('images1/background.jpg');"></div>
               <div class="announcement-content">
                 <span class="date">Nov 08, 2024</span>
                 <h3>Admissions Open for 2025 Batch</h3>
@@ -1090,7 +1090,7 @@
           <!-- Announcement Card 2 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('https://via.placeholder.com/300');"></div>
+              <div class="announcement-image" style="background-image: url('images1/events_5.png');"></div>
               <div class="announcement-content">
                 <span class="date">Nov 05, 2024</span>
                 <h3>Cultural Fest Coming Soon</h3>
@@ -1103,7 +1103,7 @@
           <!-- Announcement Card 3 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('https://via.placeholder.com/300');"></div>
+              <div class="announcement-image" style="background-image: url('images1/library.jpg');"></div>
               <div class="announcement-content">
                 <span class="date">Nov 01, 2024</span>
                 <h3>New Library Hours</h3>
@@ -1116,11 +1116,11 @@
           <!-- Announcement Card 4 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('https://via.placeholder.com/300');"></div>
+              <div class="announcement-image" style="background-image: url('images1/dosehack.jpg');"></div>
               <div class="announcement-content">
-                <span class="date">Nov 08, 2024</span>
-                <h3>Admissions Open for 2025 Batch</h3>
-                <p>Enroll now for the upcoming academic year. Make sure to apply before the deadline.</p>
+                <span class="date">Sept 25, 2024</span>
+                <h3>DoesHack Hackathon</h3>
+                <p>Meditab presents a 24 hour long Hackathon named DoesHack offering internship opportunities.</p>
                 <a href="#" class="read-more">Read more →</a>
               </div>
             </div>
@@ -2152,7 +2152,7 @@
     </script>
     
     
-    <section id="message">
+    <section id="message" class="message">
       <!-- Dean and Principal Messages Section -->
     <div class="container mt-5 dean-principal-section">
     <!-- Dean's Message Card -->
@@ -2238,15 +2238,35 @@
     </section>
 
     <!-- DISPLAY SECTIONS ON SCOLL---------------------- -->
-    <!-- <script>
-      console.log(window);
-         window.sr = ScrollReveal({ duration: 1000, scale: 1});
-         sr.reveal('.scalar-section');
-         sr.reveal('.section-5');
-         sr.reveal('.section-3');
-         sr.reveal('.section-4');
-         sr.reveal('.section-5');
-    </script> -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      window.sr = ScrollReveal({
+        duration: 1000,
+        scale: 1,
+        reset: true,  // Optional: reset when scrolling back
+        origin: 'top',
+        distance: '50px',
+        viewFactor: 0.10  // Trigger when 25% of the element is in view
+      });
+
+      sr.reveal('.announcement-section');
+      sr.reveal('.scalar-section');
+      sr.reveal('.programs');
+      sr.reveal('.collaborations-section');
+      sr.reveal('.chapter-section');
+      sr.reveal('.club-section');
+      sr.reveal('.section-4');
+      sr.reveal('.calender-section');
+      sr.reveal('.gallery-section');
+      sr.reveal('.student-work');
+      sr.reveal('.thrust-areas');
+      sr.reveal('.feedback-section');
+      sr.reveal('.message');
+    });
+
+    </script>
 
 <br><br>
     <script type="application/ld+json">
