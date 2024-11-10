@@ -590,15 +590,15 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .circle-item:hover {
-  border: 10px solid #033c67;
+  border: 10px solid #0056b3;
 }
 
 .circle-item:hover img {
-  transform: scale(1.3);
+  transform: scale(1.4);
 }
 
 .circle-body {
@@ -614,7 +614,7 @@ section#thrust-areas {
 
 /* First row for 5 items */
 .row-cols-custom-5 .col {
-  flex: 0 0 auto;
+  flex: 0 0 15rem;
   width: calc(20% - 10px); /* Adjust for 5 equal-width items */
   margin: 5px;
 }
@@ -626,7 +626,7 @@ section#thrust-areas {
 }
 
 .row-cols-custom-4 .col {
-  flex: 0 0 auto;
+  flex: 0 0 17rem;
   width: calc(25% - 10px); /* Adjust for 4 centered items */
   margin: 5px;
 }
@@ -657,42 +657,29 @@ section#thrust-areas {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .row-cols-custom-5 .col {
-    flex: 0 0 30%; /* Two items per row on medium screens */
-    max-width: 30%; /* Limit the max width */
-    margin-bottom: 20px; /* Space between rows */
-  }
-
+  .row-cols-custom-5 .col,
   .row-cols-custom-4 .col {
-    flex: 0 0 30%; /* One item per row on small screens */
-    max-width: 30%; /* Limit the max width */
-    margin-bottom: 20px; /* Space between rows */
+    flex: 0 0 45%; /* Two items per row on tablets */
+    max-width: 45%;
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 576px) {
+  .circle-item {
+    width: 140px;
+    height: 140px;
+  }
+
   .circle-title {
-    font-size: 1rem; /* Reduce font size for smaller screens */
+    font-size: 1rem;
   }
 
-  /* Adjusting margins and padding on smaller devices */
-  .circle-body {
-    padding: 10px 0; /* Add padding for better spacing */
-  }
-  .circle-item img {
-    width: 90%; /* Adjust size for smaller screens */
-    height: 90%; /* Adjust size for smaller screens */
-  }
-  .row-cols-custom-5 .col {
-    flex: 0 0 45%; /* Two items per row on medium screens */
-    max-width: 45%; /* Limit the max width */
-    margin-bottom: 20px; /* Space between rows */
-  }
-
+  .row-cols-custom-5 .col,
   .row-cols-custom-4 .col {
-    flex: 0 0 45%; /* One item per row on small screens */
-    max-width: 45%; /* Limit the max width */
-    margin-bottom: 20px; /* Space between rows */
+    flex: 0 0 100%; /* One item per row on small screens */
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 }
 
