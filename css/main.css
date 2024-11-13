@@ -301,44 +301,118 @@ img {
 }
 
 /* ---------------------- STUDENT WORK ---------------- */
-/* Flexbox adjustments for height matching */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch; /* Ensures all cards are stretched to match height */
+
+.student-work-section {
+  background-color: var(--site-color);
 }
 
-.large-card {
-  flex-grow: 1; /* Allows the large card to grow equally */
+.section-title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-.small-card {
-  flex-grow: 1; /* Ensures small cards in the grid grow equally */
+/* Common styles for all cards */
+.student-large-card,
+.student-small-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  background-color: #fff;
 }
 
-.small-card img,
-.large-card img {
-  height: 100%; /* Ensures that images take the full height of their container */
+.student-large-card:hover,
+.student-small-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for Images */
+.student-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.d-flex {
-  display: flex;
+.student-large-card .student-image {
+  height: 470px; /* Larger image for the main card */
 }
 
-.flex-grow-1 {
+/* Text Below Image */
+.student-card-text {
+  padding: 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+
+/* Ensuring equal heights for large and small cards */
+.student-large-card {
+  display: flex;
+  flex-direction: column;
+  height: 97%; /* Allow the large card to grow to the height of the smaller cards */
+}
+
+.student-small-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make smaller cards fill the space equally */
+}
+
+.col-md-6 {
+  margin-bottom: 1rem;
+}
+
+/* Styling for the smaller card's image and text */
+.student-small-card .student-image {
+  height: 200px; /* Set a fixed height for the image in small cards */
+}
+
+.student-small-card .student-card-text {
   flex-grow: 1;
-}
-
-.col-lg-6 {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #fff; /* Set background color to white */
+  color: #333; /* Ensure text is dark for readability */
   display: flex;
-  flex-direction: column; /* Aligns small cards vertically in the right column */
+  justify-content: center;
+  align-items: flex-end;
 }
 
+/* Spacing adjustments for rows */
 
-.student-work .card-text {
-  font-weight:500;
+
+/* Ensuring the large card is equal height with the two smaller cards combined */
+.student-work-section .container d-flex {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+@media (max-width: 992px) {
+  .student-large-card {
+    height: auto; /* Let the large card have flexible height on medium screens */
+  }
+  .col-lg-6 {
+    flex: 1 0 100%;
+    margin-bottom: 20px;
+  }
+  .student-image {
+    height: auto; /* Let images resize properly on small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem; /* Make title smaller on smaller screens */
+  }
+}
+
 
 /* ------------------------PROGRAMS----------------------- */
 #programs {
