@@ -8,97 +8,170 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Include SheetJS to read Excel data -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <style>
+      /* Global Styles */
       body {
-        padding: 50px;
-        background-color: #e7e9ea;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #033c67, #6aa0d3);
+        color: #fff;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
       }
-      .container {
+
+      .title h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 35px;
+        position: relative;
+        text-align: center;
+      }
+
+      /* Layout Adjustments */
+      .layout {
         display: flex;
-        justify-content: center;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 20px;
       }
+
+      /* Sidebar Styles */
       .sidenav {
         width: 300px;
-        background-color: #f1f1f1;
+        background: #f7f7f7;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         padding: 20px;
-        margin-right: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: fit-content;
+        position: sticky;
+        top: 20px;
       }
+
+      .sidenav h4 {
+        color: #033c67;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
       .sidenav a {
-        padding: 10px 0;
-        text-decoration: none;
-        color: black;
         display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        margin: 10px 0;
       }
+
       .sidenav a:hover {
-        color: #900c3f;
+        background: #033c67;
+        color: #fff;
       }
+
+      /* Card Container */
+      .cards-container {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      /* Card Styles */
       .card {
-        width: 300px;
-        margin-bottom: 30px;
+        background: #fff;
+        border-radius: 10px;
         text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 2%;
       }
+
       .card:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
       }
+
+      .card img {
+        width: 100%;
+        height: 300px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
       .card h4 {
         color: #033c67;
         font-size: 16px;
+        margin: 10px 0;
       }
+
       .card h5 {
-        font-weight: 400;
         font-size: 14px;
+        font-weight: normal;
+        color: #555;
+        margin-bottom: 5px;
       }
-      .profile-card img {
-        width: 100%;
-        height: 300px;
-        border-radius: 5px;
+
+      .card p {
+        color: #666;
+        font-size: 14px;
         margin-bottom: 10px;
-        transition: transform 0.3s ease;
       }
-      .card:hover .profile-card img {
-        transform: scale(1.1);
-      }
-      .title {
-        margin-bottom: 40px;
-      }
-      .title h3 {
+
+      .card p strong {
         color: #033c67;
-        font-weight: bold;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .cards-container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .layout {
+          flex-direction: column;
+        }
+
+        .sidenav {
+          width: 100%;
+        }
+
+        .cards-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .cards-container {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
     <div class="title">
-      <h3>People</h3>
+      <h2>MEET OUR FACULTY</h2>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div class="layout">
       <!-- Sidebar -->
-      <div class="sidenav">
-        <h4>Faculty</h4>
+      <aside class="sidenav">
+        <h4>Faculty Departments</h4>
         <hr />
         <a href="#">Chemical Engineering</a>
-        <hr />
         <a href="#">Computer Science and Engineering</a>
-        <hr />
         <a href="#">Mechanical Engineering</a>
-        <hr />
         <a href="#">Electrical Engineering</a>
-        <hr />
-      </div>
+        <a href="#">Artificial Intelligence and Machine Learning</a>
+        <a href="#">Information Technology</a>
+      </aside>
 
-      <!-- Profile Cards Container -->
-      <div class="container">
-        <div class="row" id="faculty-cards">
-          <!-- Faculty cards will be populated here dynamically -->
-        </div>
+      <!-- Faculty Cards Container -->
+      <div class="cards-container" id="faculty-cards">
+        <!-- Cards will be populated dynamically -->
       </div>
     </div>
 
@@ -118,9 +191,6 @@
             const sheetName = workbook.SheetNames[0];
             const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header: 1 });
 
-            // Log the sheet data for debugging
-            console.log(sheetData); // Add this line to check the data
-
             const facultyCards = document.getElementById("faculty-cards");
             facultyCards.innerHTML = "";
 
@@ -128,21 +198,18 @@
               const row = sheetData[i];
               const [name, title, degree, researchInterests, imageSrc] = row;
 
-              // Ensure no undefined values
               if (!name || !title || !degree || !researchInterests || !imageSrc) {
                 console.warn(`Incomplete data for row ${i + 1}:`, row);
                 continue;
               }
 
-              // Make sure to correct the image source
-              const imagePath = imageSrc.replace(/\\/g, "/"); // Convert backslashes to forward slashes if needed
+              const imagePath = imageSrc.replace(/\\/g, "/");
 
-              // Generate a clickable card
               const card = document.createElement("div");
-              card.className = "col-lg-4 col-md-6 col-sm-12";
+              card.className = "card";
               card.innerHTML = `
-                <a href="details.html?name=${encodeURIComponent(name)}" class="text-decoration-none text-dark">
-                  <div class="card profile-card">
+               <a href="details.html?name=${encodeURIComponent(name)}" class="text-decoration-none text-dark">
+                  <div class="">
                     <img src="${imagePath}" alt="${name}" />
                     <h4>${name}</h4>
                     <h5>${title}</h5>
@@ -158,7 +225,6 @@
           .catch((error) => console.error("Error loading Excel file:", error));
       }
 
-      // Call the function on page load
       window.onload = fetchFacultyData;
     </script>
   </body>
