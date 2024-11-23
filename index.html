@@ -81,10 +81,15 @@
     <link rel="stylesheet" href="css/slick-lightbox.css" />
     <link rel="stylesheet" href="css/zozo.tabs.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-    rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <script type="text/javascript">
       var base_url = "/";
@@ -137,8 +142,11 @@
     </script>
     <link rel="stylesheet" href="css/bootstrap-select.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/vatsal-style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/vatsal-style.css" />
     <title>Chandubhai S. Patel Institute of Technology</title>
     <style>
       .subnav {
@@ -153,8 +161,8 @@
         background-color: inherit;
         margin: 0;
       }
-     
-/*       
+
+      /*       
             .nav-row-down li::before{
                 content: '';
                 display: block;
@@ -208,7 +216,7 @@
       .subnav-content a:hover:after {
         background: white;
       }
-      
+
       .subnav:hover > .subnav-content,
       .subnav-content
         > .dropdown-submenu.second-sub1:hover
@@ -265,7 +273,7 @@
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .quick-links a{
+      .quick-links a {
         font-weight: 500;
       }
     </style>
@@ -308,7 +316,11 @@
         left: 0;
         width: 100%;
         height: 100%; /* Change this value to adjust how much of the top is darkened */
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)); /* Adjust the alpha for darkness */
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.2)
+        ); /* Adjust the alpha for darkness */
         z-index: 2; /* Ensure it is above the video */
       }
       /* Overlay content settings (if you want to add any) */
@@ -329,206 +341,232 @@
     <!-- <link href="css/style_1.css" rel="stylesheet" /> -->
     <style>
       .topbar {
-          /* background-color: transparent; Fully transparent */
-          background-color:#0c4da2;
-          color: white;
-          font-size: 0.9rem;
-          padding: 5px 0;
-          position: fixed;
-          top: 0;
-          width: 100%; /* Starts aligned with logo */
-          z-index: 1000;
-          transition: background-color 0.3s; /* Smooth transition */
+        /* background-color: transparent; Fully transparent */
+        background-color: #0c4da2;
+        color: white;
+        font-size: 0.9rem;
+        padding: 5px 0;
+        position: fixed;
+        top: 0;
+        width: 100%; /* Starts aligned with logo */
+        z-index: 1000;
+        transition: background-color 0.3s; /* Smooth transition */
       }
 
       .topbar a {
-          color: white;
-          margin-right: 15px;
-          text-decoration: none;
-          font-size: 16px; /* Smaller font size for topbar */
-          font-weight: 600;
+        color: white;
+        margin-right: 15px;
+        text-decoration: none;
+        font-size: 16px; /* Smaller font size for topbar */
+        font-weight: 600;
       }
-
 
       /* Navbar */
       .navbar-custom {
-        font-family: 'Montserrat', sans-serif;
-          /* background-color: transparent; */
+        font-family: "Montserrat", sans-serif;
+        /* background-color: transparent; */
         /* background-color: #f5f7fa; */
-        background-color:white;
-        color:#0c4da2;
-          /* padding: 10px 0; */
-          position: fixed;
-          top: 42px; /* Below the topbar */
-          width: 100%;
-          z-index: 1000;
-          transition: background-color 0.3s, padding 0.3s; /* Smooth transition */
+        background-color: white;
+        color: #0c4da2;
+        /* padding: 10px 0; */
+        position: fixed;
+        top: 42px; /* Below the topbar */
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s, padding 0.3s; /* Smooth transition */
       }
 
       /* Navbar with background change on scroll */
       .navbar-custom.scrolled {
-          /* background-color: white; White background on scroll */
-          padding: 5px 0; /* Less padding when scrolled */
+        /* background-color: white; White background on scroll */
+        padding: 5px 0; /* Less padding when scrolled */
       }
 
       /* Logo styling */
       .navbar-custom .navbar-brand {
-          display: flex;
-          align-items: center;
+        display: flex;
+        align-items: center;
       }
 
       /* Second row of navbar items */
       .navbar-row-2 {
-          display: flex;
-          justify-content: flex-start; /* Align closer to logo */
-          gap: 50px; /* Larger gap between options */
-          align-items: center;
-          font-size: 20px; /* Larger font for second row */
-          margin-top: 10px; /* Bring the second row closer to the logo */
-          width: 100%; /* Second row takes up 80% width */
+        display: flex;
+        justify-content: flex-start; /* Align closer to logo */
+        gap: 50px; /* Larger gap between options */
+        align-items: center;
+        font-size: 20px; /* Larger font for second row */
+        margin-top: 10px; /* Bring the second row closer to the logo */
+        width: 100%; /* Second row takes up 80% width */
       }
 
       /* Navbar items styling */
       .navbar-custom .nav-link {
-          /* color: white; Initial text color */
-          padding: 5px 10px;
-          font-weight: 600;
-          text-decoration: none; /* Remove underline from links */
+        /* color: white; Initial text color */
+        padding: 5px 10px;
+        font-weight: 600;
+        text-decoration: none; /* Remove underline from links */
       }
 
       /* Change text color on scroll */
       .navbar-custom.scrolled .nav-link {
-          color: #033c67; /* Change text color on scroll */
+        color: #033c67; /* Change text color on scroll */
       }
 
       /* Change the hover color of navbar menu options to yellow */
-      .navbar-row-2 .nav-link:hover, .navbar-row-1 .nav-link:hover{
-          color: #ffcc00 !important; /* Yellow hover effect */
+      .navbar-row-2 .nav-link:hover,
+      .navbar-row-1 .nav-link:hover {
+        color: #ffcc00 !important; /* Yellow hover effect */
       }
-
-
 
       /* Dropdown Menu Styling */
       .dropdown-menu {
-          background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Gradient background */
-          border-radius: 8px; /* Rounded corners */
-          padding: 10px; /* Padding for the dropdown */
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
-          transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and transform */
-          transform: translateY(-10px); /* Initial upward position */
-          opacity: 0; /* Initially hidden */
-          visibility: hidden; /* Initially hidden */
-          display: flex; /* Use flexbox for horizontal layout */
-          flex-direction: row; /* Align items in a row */
-          justify-content: flex-start; /* Align items to the start */
+        background: linear-gradient(
+          135deg,
+          #f5f7fa 0%,
+          #c3cfe2 100%
+        ); /* Gradient background */
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px; /* Padding for the dropdown */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and transform */
+        transform: translateY(-10px); /* Initial upward position */
+        opacity: 0; /* Initially hidden */
+        visibility: hidden; /* Initially hidden */
+        display: flex; /* Use flexbox for horizontal layout */
+        flex-direction: row; /* Align items in a row */
+        justify-content: flex-start; /* Align items to the start */
       }
 
       /* Show dropdown on hover */
       .navbar-row-2 .dropdown:hover .dropdown-menu {
-          display: flex; /* Keep it as flex on hover */
-          opacity: 1; /* Fade in */
-          visibility: visible; /* Ensure it’s visible */
-          transform: translateY(0); /* Move down into position */
+        display: flex; /* Keep it as flex on hover */
+        opacity: 1; /* Fade in */
+        visibility: visible; /* Ensure it’s visible */
+        transform: translateY(0); /* Move down into position */
       }
 
       /* Dropdown Item Styling */
       .dropdown-item {
-          color: #333; /* Darker text color */
-          padding: 10px 15px; /* Padding for items */
-          font-weight: 500; /* Font weight */
-          transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-          margin-right: 15px; /* Add some space between items */
-          border-radius: 4px; /* Rounded corners for items */
+        color: #333; /* Darker text color */
+        padding: 10px 15px; /* Padding for items */
+        font-weight: 500; /* Font weight */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+        margin-right: 15px; /* Add some space between items */
+        border-radius: 4px; /* Rounded corners for items */
       }
 
       /* Remove margin from last item */
       .dropdown-item:last-child {
-          margin-right: 0; /* No margin for the last item */
+        margin-right: 0; /* No margin for the last item */
       }
 
       /* Hover Effect for Dropdown Items */
       .dropdown-item:hover {
-          background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background on hover */
-          color: #007bff; /* Change text color on hover */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.2
+        ); /* Semi-transparent white background on hover */
+        color: #007bff; /* Change text color on hover */
       }
 
       /* Optional: Add a subtle animation */
       .dropdown-item {
-          position: relative; /* For pseudo-element */
+        position: relative; /* For pseudo-element */
       }
 
       .dropdown-item::after {
-          content: ""; /* Pseudo-element for underline */
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          height: 2px;
-          background-color: #007bff; /* Accent color for the underline */
-          transform: scaleX(0); /* Start hidden */
-          transition: transform 0.3s ease; /* Smooth animation */
+        content: ""; /* Pseudo-element for underline */
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background-color: #007bff; /* Accent color for the underline */
+        transform: scaleX(0); /* Start hidden */
+        transition: transform 0.3s ease; /* Smooth animation */
       }
 
       .dropdown-item:hover::after {
-          transform: scaleX(1); /* Show underline on hover */
+        transform: scaleX(1); /* Show underline on hover */
       }
-  </style>
+    </style>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="home">
     <section>
       <!-- navbar -->
       <div class="container-fluid nav-wrapper d-none d-lg-block">
-        <nav id="navbar_top" class="navbar navbar-expand-lg border-bottom-0 nav-bg navbar-cont">
-        <div class="container-fluid  align-items-stretch navbar">
-                <div class="col-2 navbar-brand m-0 p-2https://github.com/clubgamma/Weather-Web-App-2024/pull/11 text-center "  >
-                    <div class="logo-box-wrap">
-                        <img src="images1/logo1.png" class="nav-logo" alt="" style="width:100px;" />
-                    </div>
-                </div>
+        <nav
+          id="navbar_top"
+          class="navbar navbar-expand-lg border-bottom-0 nav-bg navbar-cont"
+        >
+          <div class="container-fluid align-items-stretch navbar">
+            <div
+              class="col-2 navbar-brand m-0 p-2https://github.com/clubgamma/Weather-Web-App-2024/pull/11 text-center"
+            >
+              <div class="logo-box-wrap">
+                <img
+                  src="images1/logo1.png"
+                  class="nav-logo"
+                  alt=""
+                  style="width: 100px"
+                />
+              </div>
+            </div>
 
-                <div class="navbar col-10 px-0 nav-bg">
-                    <button class="navbar-toggler my-2" type="button" data-toggle="collapse"
-                        data-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse flex-column align-items-start ml-0" id="navbarCollapse">
-                        <ul class="quick-links navbar-nav nav-sub justify-content-end mx-auto nav-row-up">
-                            <li class="">
-                                <a class="nav-link py-0 px-4" href="#">
-                                    Placement
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link py-0 px-4" href="#">
-                                    Gallery
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link py-0 px-4" href="#">
-                                    Scholarships
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link py-0 px-4" href="./faculty.html">
-                                    Faculty & Staff
-                                </a>
-                            </li>
-                            <li class="">
-                                <a class="nav-link py-0 px-4" href="#">
-                                    Alumni
-                                </a>
-                            </li>
-                            
-                        </ul>
-                        <ul class="navbar-nav flex-row mx-auto nav-row-down nav-main">
-                            <li class="nav-item subnav">
-                                <a class="nav-link py-0 subnavbtn" href="JavaScript:Void(0);">About Us</a>
-                                <div class="subnav-content">
+            <div class="navbar col-10 px-0 nav-bg">
+              <button
+                class="navbar-toggler my-2"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarCollapse"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse flex-column align-items-start ml-0"
+                id="navbarCollapse"
+              >
+                <ul
+                  class="quick-links navbar-nav nav-sub justify-content-end mx-auto nav-row-up"
+                >
+                  <li class="">
+                    <a class="nav-link py-0 px-4" href="#"> Placement </a>
+                  </li>
+                  <li class="">
+                    <a class="nav-link py-0 px-4" href="#"> Gallery </a>
+                  </li>
+                  <li class="">
+                    <a class="nav-link py-0 px-4" href="#"> Scholarships </a>
+                  </li>
+                  <li class="">
+                    <a class="nav-link py-0 px-4" href="./faculty.html">
+                      Faculty & Staff
+                    </a>
+                  </li>
+                  <li class="">
+                    <a class="nav-link py-0 px-4" href="#"> Alumni </a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav flex-row mx-auto nav-row-down nav-main">
+                  <li class="nav-item subnav">
+                    <a
+                      class="nav-link py-0 subnavbtn"
+                      href="JavaScript:Void(0);"
+                      >About Us</a
+                    >
+                    <!-- <div class="subnav-content">
                                     <ul class="list-unstyled subnav-unit-wrap">
                                         <li class="subnav-unit dropdown-submenu second-sub1">
                                             <a class="subnav-link text-uppercase"
@@ -554,314 +592,469 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item subnav">
-                                <a class="nav-link py-0 subnavbtn" href="#">Academics</a>
-                                <div class="subnav-content">
-                                    <ul class="list-unstyled subnav-unit-wrap">
-                                        <li class="subnav-unit">
-                                            <a class="subnav-link text-uppercase" href="#under-graduate-programs">
-                                              <span>Undergraduate Programs</span>
-                                            </a>
-                                        </li>
-                                        <li class="subnav-unit dropdown-submenu second-sub2">
-                                            <a class="subnav-link subnav-link text-uppercase"
-                                                href="#post-graduate-programs"><span>Postgraduate
-                                                    Programs</span></a>
-                                        </li>
-                                        <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase"
-                                              href=""><span>PhD</span></a>
-                                        </li>
-                                        <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase"
-                                              href="https://drive.google.com/drive/folders/1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ" target="_blank"><span>Academic Calendar</span></a>
-                                        </li>
-                                        <li class="subnav-unit">
-                                            <a class="subnav-link text-uppercase" href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2" target="_blank">
-                                              <span>Academic Regulations</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item subnav">
-                              <a class="nav-link py-0 subnavbtn" >Committees</a>
-                              <div class="subnav-content">
-                                  <ul class="list-unstyled subnav-unit-wrap">
-                                      <li class="subnav-unit">
-                                          <a class="text-uppercase" href="https://www.charusat.ac.in/cspit/Grievance-Redressal-CSPIT.html" target="_blank">
-                                              Grievance Redressal
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu second-sub2">
-                                          <a class="subnav-link text-uppercase"
-                                              href="https://www.charusat.ac.in/anti-ragging" target="_blank"><span>Anti-Ragging</span></a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                        <a class="text-uppercase"
-                                            href="">ICC</a>
-                                      </li>
-                                  </ul>
-                              </div>
-                            </li>
-                            <li class="nav-item subnav">
-                              <a class="nav-link py-0 subnavbtn" href="#">Programs </a>
-                              <div class="subnav-content">
-                                  <ul class="list-unstyled subnav-unit-wrap">
-                                      <li class="subnav-unit">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/ce/" target="_blank">
-                                              <span>Computer Engineering</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu second-sub2">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/it/" target="_blank">
-                                              <span>Information Technology</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/cse/" target="_blank">
-                                              <span>Computer Science and Engineering</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/ec/" target="_blank">
-                                              <span>Electronics and Communication</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu second-sub2">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/" target="_blank">
-                                              <span>AIML</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://cspitcivil.com/" target="_blank">
-                                              <span>Civil Engineering</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/me/" target="_blank">
-                                              <span>Mechanical Engineering</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.ac.in/cspit/ee/" target="_blank">
-                                              <span>Electrical Engineering</span>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </li>
-                          
-                          
-                            <li class="nav-item subnav">
-                                <a class="nav-link py-0" href="/research/">Research</a>
-                                <div class="subnav-content">
-                                  <ul class="list-unstyled subnav-unit-wrap">
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="#">
-                                              Research Facilities
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu second-sub2">
-                                          <a class="subnav-link text-uppercase"
-                                              href="#"><span>Research Projects</span></a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu ">
-                                        <a class="subnav-link text-uppercase"
-                                            href="#"><span>Research Centers</span></a>
-                                      </li>
-                                      <li class="subnav-unit ">
-                                        <a class="subnav-link text-uppercase" href="#">
-                                           <span> Publications</span>
-                                        </a>
-                                    </li>
-                                  </ul>
-                              </div>
-                            </li>
-                            <li class="nav-item subnav">
-                              <a class="nav-link py-0 subnavbtn" href="#">Student Corner</a>
-                              <div class="subnav-content">
-                                  <ul class="list-unstyled subnav-unit-wrap">
-                                      <li class="subnav-unit">
-                                          <a class="subnav-link text-uppercase" href="https://www.charusat.ac.in/documents/pdfs/data_1/Code_Of_Conduct/Student%20code%20of%20Conduct.pdf" target="_blank">
-                                              <span>Code Of Conduct</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu second-sub2">
-                                          <a class="subnav-link text-uppercase" href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2" target="_blank">
-                                              <span>Syllabus</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.edu.in:912/OthPaymentApp/" target="_blank">
-                                              <span>Transcript</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.edu.in:912/FeesPaymentApp/" target="_blank">
-                                              <span>Pay Fees</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu second-sub2">
-                                          <a class="subnav-link text-uppercase" href="https://charusat.edu.in:912/Uniexamresult/" target="_blank">
-                                              <span>University Result</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://icreate.charusat.ac.in/" target="_blank">
-                                              <span>Icreate</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://drive.google.com/drive/u/1/folders/1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW" target="_blank">
-                                              <span>Old Question Paper</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                              <span>Feedback</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                              <span>Library</span>
-                                          </a>
-                                      </li>
-                                      <li class="subnav-unit dropdown-submenu">
-                                          <a class="subnav-link text-uppercase" href="https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO" target="_blank">
-                                              <span>Downloads</span>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </li>
-                          
-                          <li class="nav-item subnav">
-                            <a class="nav-link py-0 subnavbtn" href="JavaScript:Void(0);">Student Life</a>
-                            <div class="subnav-content">
-                                <ul class="list-unstyled subnav-unit-wrap">
-                                    <li class="subnav-unit dropdown-submenu second-sub1">
-                                        <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                            <span>Gallery</span>
-                                        </a>
-                                    </li>
-                                    <li class="subnav-unit dropdown-submenu second-sub1">
-                                        <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                            <span>Clubs</span>
-                                        </a>
-                                    </li>
-                                    <li class="subnav-unit">
-                                        <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                            <span>Sports</span>
-                                        </a>
-                                    </li>
-                                    <li class="subnav-unit">
-                                        <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                            <span>Events</span>
-                                        </a>
-                                    </li>
-                                    <li class="subnav-unit">
-                                        <a class="subnav-link text-uppercase" href="#" target="_blank">
-                                            <span>Health Services</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                </div> -->
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href="#">Academics</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#under-graduate-programs"
+                          >
+                            <span>Undergraduate Programs</span>
+                          </a>
                         </li>
-                        
-                        </ul>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link subnav-link text-uppercase"
+                            href="#post-graduate-programs"
+                            ><span>Postgraduate Programs</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a class="subnav-link text-uppercase" href=""
+                            ><span>PhD</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://drive.google.com/drive/folders/1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ"
+                            target="_blank"
+                            ><span>Academic Calendar</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2"
+                            target="_blank"
+                          >
+                            <span>Academic Regulations</span>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
-                </div>
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn">Committees</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="text-uppercase"
+                            href="https://www.charusat.ac.in/cspit/Grievance-Redressal-CSPIT.html"
+                            target="_blank"
+                          >
+                            Grievance Redressal
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://www.charusat.ac.in/anti-ragging"
+                            target="_blank"
+                            ><span>Anti-Ragging</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a class="text-uppercase" href="">ICC</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href="#">Programs </a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/ce/"
+                            target="_blank"
+                          >
+                            <span>Computer Engineering</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/it/"
+                            target="_blank"
+                          >
+                            <span>Information Technology</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/cse/"
+                            target="_blank"
+                          >
+                            <span>Computer Science and Engineering</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/ec/"
+                            target="_blank"
+                          >
+                            <span>Electronics and Communication</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/"
+                            target="_blank"
+                          >
+                            <span>AIML</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://cspitcivil.com/"
+                            target="_blank"
+                          >
+                            <span>Civil Engineering</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/me/"
+                            target="_blank"
+                          >
+                            <span>Mechanical Engineering</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.ac.in/cspit/ee/"
+                            target="_blank"
+                          >
+                            <span>Electrical Engineering</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0" href="/research/">Research</a>
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit dropdown-submenu">
+                          <a class="subnav-link text-uppercase" href="#">
+                            Research Facilities
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a class="subnav-link text-uppercase" href="#"
+                            ><span>Research Projects</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a class="subnav-link text-uppercase" href="#"
+                            ><span>Research Centers</span></a
+                          >
+                        </li>
+                        <li class="subnav-unit">
+                          <a class="subnav-link text-uppercase" href="#">
+                            <span> Publications</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item subnav">
+                    <a class="nav-link py-0 subnavbtn" href="#"
+                      >Student Corner</a
+                    >
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://www.charusat.ac.in/documents/pdfs/data_1/Code_Of_Conduct/Student%20code%20of%20Conduct.pdf"
+                            target="_blank"
+                          >
+                            <span>Code Of Conduct</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2"
+                            target="_blank"
+                          >
+                            <span>Syllabus</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.edu.in:912/OthPaymentApp/"
+                            target="_blank"
+                          >
+                            <span>Transcript</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.edu.in:912/FeesPaymentApp/"
+                            target="_blank"
+                          >
+                            <span>Pay Fees</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub2">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://charusat.edu.in:912/Uniexamresult/"
+                            target="_blank"
+                          >
+                            <span>University Result</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://icreate.charusat.ac.in/"
+                            target="_blank"
+                          >
+                            <span>Icreate</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://drive.google.com/drive/u/1/folders/1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW"
+                            target="_blank"
+                          >
+                            <span>Old Question Paper</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Feedback</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Library</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO"
+                            target="_blank"
+                          >
+                            <span>Downloads</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="nav-item subnav">
+                    <a
+                      class="nav-link py-0 subnavbtn"
+                      href="JavaScript:Void(0);"
+                      >Student Life</a
+                    >
+                    <div class="subnav-content">
+                      <ul class="list-unstyled subnav-unit-wrap">
+                        <li class="subnav-unit dropdown-submenu second-sub1">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Gallery</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit dropdown-submenu second-sub1">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Clubs</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Sports</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Events</span>
+                          </a>
+                        </li>
+                        <li class="subnav-unit">
+                          <a
+                            class="subnav-link text-uppercase"
+                            href="#"
+                            target="_blank"
+                          >
+                            <span>Health Services</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
         </nav>
-    </div>
-    <!-- Searchh -->
-    <div class="container-fluid nav-wrap-sm d-block d-lg-none">
+      </div>
+      <!-- Searchh -->
+      <div class="container-fluid nav-wrap-sm d-block d-lg-none">
         <div class="row">
-            <div class="col-9">
-                <div class="navbar-brand m-0 p-0">
-                    <a href="/">
-                        <div class="logo-box-wrap">
-                          <img src="/images/cspit_logo.jpeg" class="nav-logo" alt="" />
-                        </div>
-                    </a>
+          <div class="col-9">
+            <div class="navbar-brand m-0 p-0">
+              <a href="/">
+                <div class="logo-box-wrap">
+                  <img src="/images/cspit_logo.jpeg" class="nav-logo" alt="" />
                 </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-3 d-flex justify-content-center hamburger-wrap">
+            <div class="search-icon">
+              <a class="pr-4" href="#"
+                ><i
+                  onclick="javascript:$('.search-block').show();"
+                  class="fa fa-search"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </div>
+            <div class="mx-auto bar-wrap">
+              <button
+                class="navbar-toggler p-0 border-0"
+                type="button"
+                data-toggle="offcanvas"
+              >
+                <span class="bar mt-0"></span><span class="bar"></span
+                ><span class="bar"></span>
+              </button>
+            </div>
+          </div>
+          <div class="search-block">
+            <button
+              onclick="javascript:$('.search-block').hide();"
+              type="button"
+              class="close"
+              aria-label="Close"
+            >
+              <i class="fas fa-times-circle"></i>
+            </button>
+            <form id="searchForm" action="/search/">
+              <input
+                name="q"
+                type="text"
+                id="btn-search"
+                placeholder="Start Searching"
+                class="form-control"
+                value=""
+              /><button type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--  SIDEBAR -->
+      <nav
+        class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark d-block d-lg-none"
+      >
+        <div
+          class="navbar-collapse offcanvas-collapse"
+          id="navbarsExampleDefault"
+        >
+          <div class="row">
+            <div class="col-9">
+              <div class="navbar-brand m-0 p-0">
+                <!-- <a class="m-0 p-0" href="/"><img class="img-fluid logo-img" src="/site/assets/files/1/default_logo_final_png.1400x0.webp" alt="logo"></a> -->
+                <a href="/">
+                  <div class="logo-box-wrap">
+                    <img src="/images1/logo.jpeg" class="nav-logo" alt="" />
+                  </div>
+                </a>
+              </div>
             </div>
             <div class="col-3 d-flex justify-content-center hamburger-wrap">
-                <div class="search-icon">
-                    <a class="pr-4" href="#"><i onclick="javascript:$('.search-block').show();" class="fa fa-search"
-                            aria-hidden="true"></i></a>
-                </div>
-                <div class="mx-auto bar-wrap">
-                    <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                        <span class="bar mt-0"></span><span class="bar"></span><span class="bar"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="search-block">
-                <button onclick="javascript:$('.search-block').hide();" type="button" class="close"
-                    aria-label="Close">
-                    <i class="fas fa-times-circle"></i>
+              <div class="mx-auto bar-wrap">
+                <button
+                  class="navbar-toggler p-0 border-0"
+                  type="button"
+                  data-toggle="offcanvas"
+                >
+                  <span class="bar mt-0"></span><span class="bar"></span
+                  ><span class="bar"></span>
                 </button>
-                <form id="searchForm" action="/search/">
-                    <input name="q" type="text" id="btn-search" placeholder="Start Searching" class="form-control"
-                        value="" /><button type="submit">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </form>
+              </div>
             </div>
-        </div>
-    </div>
-    <!--  SIDEBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark d-block d-lg-none">
-        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-            <div class="row">
-                <div class="col-9">
-                    <div class="navbar-brand m-0 p-0">
-                        <!-- <a class="m-0 p-0" href="/"><img class="img-fluid logo-img" src="/site/assets/files/1/default_logo_final_png.1400x0.webp" alt="logo"></a> -->
-                        <a href="/">
-                            <div class="logo-box-wrap">
-                                <img src="/images1/logo.jpeg" class="nav-logo" alt="" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-3 d-flex justify-content-center hamburger-wrap">
-                    <div class="mx-auto bar-wrap">
-                        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                            <span class="bar mt-0"></span><span class="bar"></span><span class="bar"></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-4">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Placement</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Scholarships</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./faculty.html">Faculty & staff</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Alumni</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/media/">About Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="JavaScript:Void(0);" id="academics"
-                            data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Academics</a>
-                            <!-- <a class="nav-link dropdown-toggle" href="#" id="academics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Academics</a> -->
-                        <!-- <div class="dropdown-menu" aria-labelledby="academics">
+          </div>
+          <div class="mt-4">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="">Placement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Scholarships</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./faculty.html">Faculty & staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="">Alumni</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/media/">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="JavaScript:Void(0);"
+                  id="academics"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Academics</a
+                >
+                <!-- <a class="nav-link dropdown-toggle" href="#" id="academics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Academics</a> -->
+                <!-- <div class="dropdown-menu" aria-labelledby="academics">
                             <a class="dropdown-item" href="/academics/schools-centres/">Schools &amp; Centres</a><a
                                 class="dropdown-item" href="/academics/programmes/">Programmes</a><a
                                 class="dropdown-item" href="/academics/learning-initiatives/">Learning
@@ -871,42 +1064,48 @@
                                 class="dropdown-item" href="/academics/academic-calendar-2024-25/">Academic Calendar
                                 2024-25</a>
                         </div> -->
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="JavaScript:Void(0);" id="admission"
-                            data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Committees</a><!--<a class="nav-link dropdown-toggle" href="#" id="admission" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admission</a> -->
-                        <!-- <div class="dropdown-menu" aria-labelledby="admission">
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="JavaScript:Void(0);"
+                  id="admission"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Committees</a
+                ><!--<a class="nav-link dropdown-toggle" href="#" id="admission" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admission</a> -->
+                <!-- <div class="dropdown-menu" aria-labelledby="admission">
                             <a class="dropdown-item" href="">Undergraduate
                                 Admission</a><a class="dropdown-item" href="">Graduate
                                 Admission</a><a class="dropdown-item" href="">Doctoral
                                 Admission</a><a class="dropdown-item" href="">Fees
                                 &amp; Financial Aid</a>
                         </div> -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/faculty/">Departments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/research/">Research</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/faculty/">Student Corner</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/research/">Student Life</a>
-                  </li>
-                </ul>
-            </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faculty/">Departments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/research/">Research</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faculty/">Student Corner</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/research/">Student Life</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    <!-- /navbar -->
+      </nav>
+      <!-- /navbar -->
     </section>
     <section id="banner" class="section-1">
-    <!-- Optional JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Optional JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       <!-- IMAGE SLIDERRRR -->
-        <div id="homeTopSlider" class="owl-carousel owl-theme"  >
+      <div id="homeTopSlider" class="owl-carousel owl-theme">
         <div
           class="item"
           style="
@@ -915,7 +1114,7 @@
             background-image: url(images1/slider_1.jpg) !important;
           "
         >
-        <div class="overlay"></div>
+          <div class="overlay"></div>
         </div>
         <div
           class="item"
@@ -924,7 +1123,8 @@
             filter: brightness(1.5);
             background-image: url(images1/slider_2.jpg) !important;
           "
-        ><div class="overlay"></div>
+        >
+          <div class="overlay"></div>
         </div>
         <div
           class="item"
@@ -933,9 +1133,10 @@
             filter: brightness(1.5);
             background-image: url(images1/background.jpg) !important;
           "
-        ><div class="overlay"></div>
+        >
+          <div class="overlay"></div>
         </div>
-        
+
         <div
           class="item"
           style="
@@ -943,7 +1144,8 @@
             filter: brightness(1.5);
             background-image: url(images1/slider_2.jpg) !important;
           "
-        ><div class="overlay"></div>
+        >
+          <div class="overlay"></div>
         </div>
       </div>
       <!-- carosal end-->
@@ -951,36 +1153,39 @@
 
     <!-- ABOUT US -->
     <section class="section-intro">
-			<div class="section-intro__cont">
-				<h1>Unleash your
-					<span class="highlight">Potential</span>
-					and
-					<span class="highlight">grow Consistently </span>
-					with CSPIT
-				</h1>
-				<p>
-					<span style="font-weight: bold;">Chandubhai S Patel Institute of Technology </span>, is the first institute
-					established in year 2000 at Education Campus, Changa (now CHARUSAT).
-					The institute is managed through a think tank of academician,
-					scientists, engineers and professionals from all parts of the world.
-				</p>
+      <div class="section-intro__cont">
+        <h1>
+          Unleash your
+          <span class="highlight">Potential</span>
+          and
+          <span class="highlight">grow Consistently </span>
+          with CSPIT
+        </h1>
+        <p>
+          <span style="font-weight: bold"
+            >Chandubhai S Patel Institute of Technology </span
+          >, is the first institute established in year 2000 at Education
+          Campus, Changa (now CHARUSAT). The institute is managed through a
+          think tank of academician, scientists, engineers and professionals
+          from all parts of the world.
+        </p>
 
-				<div class="intro-module">
-					<h2>Vision</h2>
-					<p>
-						To become a leading institute for creation and dissemination of
-						knowledge in the frontiers of technology.
-					</p>
-				</div>
-				<div class="intro-module">
-					<h2>Mission</h2>
-					<p>
-						To prepare world-class technocrats and researchers and facilitate
-						enhanced deployment of technology for betterment of lives.
-					</p>
-				</div>
-			</div>
-		</section>
+        <div class="intro-module">
+          <h2>Vision</h2>
+          <p>
+            To become a leading institute for creation and dissemination of
+            knowledge in the frontiers of technology.
+          </p>
+        </div>
+        <div class="intro-module">
+          <h2>Mission</h2>
+          <p>
+            To prepare world-class technocrats and researchers and facilitate
+            enhanced deployment of technology for betterment of lives.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section id="whats-new">
       <div class="container-fluid">
@@ -1054,14 +1259,14 @@
                     <h3>INFRASTRUCTURE</h3>
                     <p></p>
                     <p>
-                      CSPIT is having well developed infrastructure for all the tech enthusiasts.
+                      CSPIT is having well developed infrastructure for all the
+                      tech enthusiasts.
                     </p>
                     <p></p>
                   </div>
                 </div>
               </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -1070,29 +1275,41 @@
     <section class="announcement-section">
       <div class="container modern-announcement-section">
         <h2 class="text-center mb-4">ANNOUNCEMENTS</h2>
-        
+
         <div class="row announcement-cards">
           <!-- Announcement Card 1 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('images1/background.jpg');"></div>
+              <div
+                class="announcement-image"
+                style="background-image: url('images1/background.jpg')"
+              ></div>
               <div class="announcement-content">
                 <span class="date">Nov 08, 2024</span>
                 <h3>Admissions Open for 2025 Batch</h3>
-                <p>Enroll now for the upcoming academic year. Make sure to apply before the deadline.</p>
+                <p>
+                  Enroll now for the upcoming academic year. Make sure to apply
+                  before the deadline.
+                </p>
                 <a href="#" class="read-more">Read more →</a>
               </div>
             </div>
           </div>
-          
+
           <!-- Announcement Card 2 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('images1/events_5.png');"></div>
+              <div
+                class="announcement-image"
+                style="background-image: url('images1/events_5.png')"
+              ></div>
               <div class="announcement-content">
                 <span class="date">Nov 05, 2024</span>
                 <h3>Cultural Fest Coming Soon</h3>
-                <p>Be a part of our annual cultural fest! Sign up now to participate in various events.</p>
+                <p>
+                  Be a part of our annual cultural fest! Sign up now to
+                  participate in various events.
+                </p>
                 <a href="#" class="read-more">Read more →</a>
               </div>
             </div>
@@ -1101,11 +1318,17 @@
           <!-- Announcement Card 3 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('images1/library.jpg');"></div>
+              <div
+                class="announcement-image"
+                style="background-image: url('images1/library.jpg')"
+              ></div>
               <div class="announcement-content">
                 <span class="date">Nov 01, 2024</span>
                 <h3>New Library Hours</h3>
-                <p>Library hours have been updated. Check out the new timings starting November 10.</p>
+                <p>
+                  Library hours have been updated. Check out the new timings
+                  starting November 10.
+                </p>
                 <a href="#" class="read-more">Read more →</a>
               </div>
             </div>
@@ -1114,11 +1337,17 @@
           <!-- Announcement Card 4 -->
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="announcement-card">
-              <div class="announcement-image" style="background-image: url('images1/dosehack.jpg');"></div>
+              <div
+                class="announcement-image"
+                style="background-image: url('images1/dosehack.jpg')"
+              ></div>
               <div class="announcement-content">
                 <span class="date">Sept 25, 2024</span>
                 <h3>DoesHack Hackathon</h3>
-                <p>Meditab presents a 24 hour long Hackathon named DoesHack offering internship opportunities.</p>
+                <p>
+                  Meditab presents a 24 hour long Hackathon named DoesHack
+                  offering internship opportunities.
+                </p>
                 <a href="#" class="read-more">Read more →</a>
               </div>
             </div>
@@ -1130,238 +1359,304 @@
       </div>
     </section>
 
-
     <section class="scalar-section" id="scalars">
       <div class="stats-section">
         <div class="container">
-        <h2>SCALARS</h2>
-        <div style="margin-bottom: 50px;"></div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-users"></i></div>
-            <div class="stat-number" data-target="36">0</div>
-            <div class="stat-title">PhD</div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-flask"></i></div>
-            <div class="stat-number" data-target="16">0</div>
-            <div class="stat-title">Research Projects</div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-trophy"></i></div>
-            <div class="stat-number" data-target="45">0</div>
-            <div class="stat-title">Ongoing Projects</div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-briefcase"></i></div>
-            <div class="stat-number" data-target="115">0</div>
-            <div class="stat-title">Entrepreneurs</div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 70px;">
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
+          <h2>SCALARS</h2>
+          <div style="margin-bottom: 50px"></div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon"><i class="fas fa-users"></i></div>
+              <div class="stat-number" data-target="36">0</div>
+              <div class="stat-title">PhD</div>
             </div>
-            <div class="stat-number" data-target="118">0</div>
-            <div class="stat-title">Faculty Members</div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon"><i class="fas fa-flask"></i></div>
+              <div class="stat-number" data-target="16">0</div>
+              <div class="stat-title">Research Projects</div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon"><i class="fas fa-trophy"></i></div>
+              <div class="stat-number" data-target="45">0</div>
+              <div class="stat-title">Ongoing Projects</div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon"><i class="fas fa-briefcase"></i></div>
+              <div class="stat-number" data-target="115">0</div>
+              <div class="stat-title">Entrepreneurs</div>
+            </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-newspaper"></i></div>
-            <div class="stat-number" data-target="2313">0</div>
-            <div class="stat-title">Publications</div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-            <div class="stat-number" data-target="61">0</div>
-            <div class="stat-title">Number of Grants</div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-            <div class="stats-icon"><i class="fas fa-hand-holding-usd"></i></div>
-            <div class="stat-number" data-target="55751855">751855</div>
-            <div class="stat-title">Amount of Grants</div>
+          <div class="row" style="margin-top: 70px">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <div class="stat-number" data-target="118">0</div>
+              <div class="stat-title">Faculty Members</div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon"><i class="fas fa-newspaper"></i></div>
+              <div class="stat-number" data-target="2313">0</div>
+              <div class="stat-title">Publications</div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon">
+                <i class="fas fa-file-invoice-dollar"></i>
+              </div>
+              <div class="stat-number" data-target="61">0</div>
+              <div class="stat-title">Number of Grants</div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="stats-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+              </div>
+              <div class="stat-number" data-target="55751855">751855</div>
+              <div class="stat-title">Amount of Grants</div>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
     <section class="section-5 programs" id="programs">
       <div class="container my-5">
-          <h2 class="text-center mb-4">PROGRAMS OFFERED</h2>
-          <div class="under-graduate" id="under-graduate-programs">
-              <h3 class="mb-2" style="font-family: 'Playfair'; font-size:xx-large; font:bold">Under Graduate Programs</h3>
-              <hr>
-              <div class="row row-cols-1 row-cols-md-4 g-4">
-
-                  <!-- Card 1 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/cse/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/cs.png" class="card-img-top" alt="B.Tech in Computer Science">
-                              <div class="card-body">
-                                  <h5 class="card-title">Computer Science & Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+        <h2 class="text-center mb-4">PROGRAMS OFFERED</h2>
+        <div class="under-graduate" id="under-graduate-programs">
+          <h3
+            class="mb-2"
+            style="font-family: 'Playfair'; font-size: xx-large; font: bold"
+          >
+            Under Graduate Programs
+          </h3>
+          <hr />
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/cse/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/cs.png"
+                    class="card-img-top"
+                    alt="B.Tech in Computer Science"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Computer Science & Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 2 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/ec/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/ec.avif" class="card-img-top" alt="B.Tech in Electronics Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Electronics Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 2 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/ec/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/ec.avif"
+                    class="card-img-top"
+                    alt="B.Tech in Electronics Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Electronics Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 3 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/it/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/it.avif" class="card-img-top" alt="B.Tech in Information Technology">
-                              <div class="card-body">
-                                  <h5 class="card-title">Information Technology</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 3 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/it/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/it.avif"
+                    class="card-img-top"
+                    alt="B.Tech in Information Technology"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Information Technology</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 4 -->
-                  <div class="col">
-                      <a href="https://cspitcivil.com/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/civil.avif" class="card-img-top" alt="B.Tech in Civil Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Civil Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 4 -->
+            <div class="col">
+              <a href="https://cspitcivil.com/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/civil.avif"
+                    class="card-img-top"
+                    alt="B.Tech in Civil Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Civil Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 5 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/ce/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/ce.png" class="card-img-top" alt="B.Tech in Computer Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Computer Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 5 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/ce/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/ce.png"
+                    class="card-img-top"
+                    alt="B.Tech in Computer Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Computer Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 6 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/me/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/mechanical.avif" class="card-img-top" alt="B.Tech in Mechanical Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Mechanical Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 6 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/me/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/mechanical.avif"
+                    class="card-img-top"
+                    alt="B.Tech in Mechanical Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Mechanical Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 7 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/aiml.png" class="card-img-top" alt="B.Tech in Artificial Intelligence and Machine Learning">
-                              <div class="card-body">
-                                  <h5 class="card-title">Artificial Intelligence and Machine Learning</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 7 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/aiml.png"
+                    class="card-img-top"
+                    alt="B.Tech in Artificial Intelligence and Machine Learning"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      Artificial Intelligence and Machine Learning
+                    </h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 8 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/ee/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/electrical.png" class="card-img-top" alt="B.Tech in Electrical Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Electrical Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 8 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/ee/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/electrical.png"
+                    class="card-img-top"
+                    alt="B.Tech in Electrical Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Electrical Engineering</h5>
                   </div>
-              </div>
+                </div>
+              </a>
+            </div>
           </div>
+        </div>
 
-          <div class="mt-40 post-graduate" id="post-graduate-programs">
-              <h3 class="mb-2" style="font-family: 'Playfair'; font-size:xx-large; font:bold">Post Graduate Programs</h3>
-              <hr>
-              <div class="row row-cols-1 row-cols-md-4 g-4">
-
-                  <!-- Card 1 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/me/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/cs.png" class="card-img-top" alt="M.Tech in Advanced Manufacturing Technology">
-                              <div class="card-body">
-                                  <h5 class="card-title">Advanced Manufacturing Technology</h5>
-                              </div>
-                          </div>
-                      </a>
+        <div class="mt-40 post-graduate" id="post-graduate-programs">
+          <h3
+            class="mb-2"
+            style="font-family: 'Playfair'; font-size: xx-large; font: bold"
+          >
+            Post Graduate Programs
+          </h3>
+          <hr />
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/me/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/cs.png"
+                    class="card-img-top"
+                    alt="M.Tech in Advanced Manufacturing Technology"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      Advanced Manufacturing Technology
+                    </h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 2 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/ce/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/ce.png" class="card-img-top" alt="M.Tech in Computer Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Computer Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 2 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/ce/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/ce.png"
+                    class="card-img-top"
+                    alt="M.Tech in Computer Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Computer Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 3 -->
-                  <div class="col">
-                      <a href="https://cspitcivil.com/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/electrical.png" class="card-img-top" alt="M.Tech in Structural Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Structural Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 3 -->
+            <div class="col">
+              <a href="https://cspitcivil.com/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/electrical.png"
+                    class="card-img-top"
+                    alt="M.Tech in Structural Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Structural Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 4 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit/me/" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/it.avif" class="card-img-top" alt="M.Tech in Thermal Engineering">
-                              <div class="card-body">
-                                  <h5 class="card-title">Thermal Engineering</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 4 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit/me/" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/it.avif"
+                    class="card-img-top"
+                    alt="M.Tech in Thermal Engineering"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Thermal Engineering</h5>
                   </div>
+                </div>
+              </a>
+            </div>
 
-                  <!-- Card 5 -->
-                  <div class="col">
-                      <a href="https://charusat.ac.in/cspit" class="card-link">
-                          <div class="card h-100">
-                              <img src="images1/civil.avif" class="card-img-top" alt="PGDEAMT">
-                              <div class="card-body">
-                                  <h5 class="card-title">PGDEAMT</h5>
-                              </div>
-                          </div>
-                      </a>
+            <!-- Card 5 -->
+            <div class="col">
+              <a href="https://charusat.ac.in/cspit" class="card-link">
+                <div class="card h-100">
+                  <img
+                    src="images1/civil.avif"
+                    class="card-img-top"
+                    alt="PGDEAMT"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">PGDEAMT</h5>
                   </div>
-
-              </div>
+                </div>
+              </a>
+            </div>
           </div>
+        </div>
       </div>
-  </section>
+    </section>
 
     <section class="collaborations-section">
       <div class="container">
@@ -1369,63 +1664,78 @@
         <div class="row justify-content-center">
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/aws.png" alt="CLOUD PRACT">
+              <img src="images1/industry courses/aws.png" alt="CLOUD PRACT" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/AWS_Academy_logo.webp" alt="SYSOPS">
+              <img
+                src="images1/industry courses/AWS_Academy_logo.webp"
+                alt="SYSOPS"
+              />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/cisco.png" alt="SOLUTION ARCH">
+              <img
+                src="images1/industry courses/cisco.png"
+                alt="SOLUTION ARCH"
+              />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/Cisco_Networking_Academy.webp" alt="DEVELOPER">
+              <img
+                src="images1/industry courses/Cisco_Networking_Academy.webp"
+                alt="DEVELOPER"
+              />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/code_unnati.png" alt="GCCF">
+              <img src="images1/industry courses/code_unnati.png" alt="GCCF" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/comptia_partner.webp" alt="Red Hat">
+              <img
+                src="images1/industry courses/comptia_partner.webp"
+                alt="Red Hat"
+              />
             </div>
           </div>
 
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/ec-council.webp" alt="NDE">
+              <img src="images1/industry courses/ec-council.webp" alt="NDE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/microsoft.png" alt="EHE">
+              <img src="images1/industry courses/microsoft.png" alt="EHE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/nptel.jpg" alt="DFE">
+              <img src="images1/industry courses/nptel.jpg" alt="DFE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/oracle.png" alt="CCNA">
+              <img src="images1/industry courses/oracle.png" alt="CCNA" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/redhat.png" alt="EDUNET">
+              <img src="images1/industry courses/redhat.png" alt="EDUNET" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
-              <img src="images1/industry courses/tata_strive.png" alt="KERALA">
+              <img
+                src="images1/industry courses/tata_strive.png"
+                alt="KERALA"
+              />
             </div>
           </div>
           <!-- <div class="col-md-2 col-6 card-wrapper">
@@ -1441,58 +1751,61 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <section class="chapter-section">
       <div class="container">
-        <h2 style="color: black;">STUDENT CHAPTERS</h2>
+        <h2 style="color: black">STUDENT CHAPTERS</h2>
         <div class="row justify-content-center">
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/acm.png" alt="CLOUD PRACT">
+              <img src="images1/Student_Chapters/acm.png" alt="CLOUD PRACT" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/CISCO.png" alt="SYSOPS">
+              <img src="images1/Student_Chapters/CISCO.png" alt="SYSOPS" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/cropped-bbn-logo.png" alt="SOLUTION ARCH">
+              <img
+                src="images1/Student_Chapters/cropped-bbn-logo.png"
+                alt="SOLUTION ARCH"
+              />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/csi.png" alt="DEVELOPER">
+              <img src="images1/Student_Chapters/csi.png" alt="DEVELOPER" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/IEEE.jpg" alt="GCCF">
+              <img src="images1/Student_Chapters/IEEE.jpg" alt="GCCF" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/IETE.jpg" alt="Red Hat">
+              <img src="images1/Student_Chapters/IETE.jpg" alt="Red Hat" />
             </div>
           </div>
 
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/ishare.png" alt="NDE">
+              <img src="images1/Student_Chapters/ishare.png" alt="NDE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/NPTL.png" alt="EHE">
+              <img src="images1/Student_Chapters/NPTL.png" alt="EHE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-chapters">
-              <img src="images1/Student_Chapters/SAECLUB.png" alt="DFE">
+              <img src="images1/Student_Chapters/SAECLUB.png" alt="DFE" />
             </div>
           </div>
-          
+
           <!-- <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card">
               <img src="images1/colab1.jpeg" alt="CCNA">
@@ -1503,70 +1816,79 @@
         <!-- <a href="#" class="btn btn-primary-custom">SEE ALL PARTNERS</a> -->
       </div>
     </section>
-    <br>
+    <br />
     <section class="club-section">
       <div class="container">
         <h2>STUDENT CLUBS</h2>
         <div class="row justify-content-center">
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/awsc.webp" alt="CLOUD PRACT">
+              <img src="images1/Student Club/awsc.webp" alt="CLOUD PRACT" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/ADWITIYA AAKASH - circle - dark.png" alt="SYSOPS">
+              <img
+                src="images1/Student Club/ADWITIYA AAKASH - circle - dark.png"
+                alt="SYSOPS"
+              />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/btech.webp" alt="SOLUTION ARCH">
+              <img src="images1/Student Club/btech.webp" alt="SOLUTION ARCH" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/CC.jpg" alt="DEVELOPER">
+              <img src="images1/Student Club/CC.jpg" alt="DEVELOPER" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/Club_Gamma.png" alt="GCCF">
+              <img src="images1/Student Club/Club_Gamma.png" alt="GCCF" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/Cyber_Security.png" alt="Red Hat">
+              <img
+                src="images1/Student Club/Cyber_Security.png"
+                alt="Red Hat"
+              />
             </div>
           </div>
 
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/DSLogo.png" alt="NDE">
+              <img src="images1/Student Club/DSLogo.png" alt="NDE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/eb corelone.webp" alt="EHE">
+              <img src="images1/Student Club/eb corelone.webp" alt="EHE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/ML_Club.png" alt="DFE">
+              <img src="images1/Student Club/ML_Club.png" alt="DFE" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/innovation.png" alt="CCNA">
+              <img src="images1/Student Club/innovation.png" alt="CCNA" />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/Robotics_Club_CSPIT.jpeg" alt="EDUNET">
+              <img
+                src="images1/Student Club/Robotics_Club_CSPIT.jpeg"
+                alt="EDUNET"
+              />
             </div>
           </div>
           <div class="col-md-2 col-6 card-wrapper">
             <div class="logo-card-club">
-              <img src="images1/Student Club/saeindia.png" alt="KERALA">
+              <img src="images1/Student Club/saeindia.png" alt="KERALA" />
             </div>
           </div>
           <!-- <div class="col-md-2 col-6 card-wrapper">
@@ -1579,138 +1901,154 @@
         <!-- <a href="#" class="btn btn-primary-custom">SEE ALL PARTNERS</a> -->
       </div>
     </section>
-    <br><br>
+    <br /><br />
     <section class="section-4" id="events">
       <!-- <div class="container-fluid event-news-wrap"> -->
       <div class="container event-news-wrap">
-        <h2 style="font: bold;"> EVENTS </h2>
-        <br>
+        <h2 style="font: bold">EVENTS</h2>
+        <br />
         <div class="row">
           <!-- First Event Card -->
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0">
+          <div
+            class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0"
+          >
             <div class="card">
-                <img
-                  class="card-img-top-event position-relative"
-                  src="images1/events_1.png"
-                  alt="Spoural"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
+              <img
+                class="card-img-top-event position-relative"
+                src="images1/events_1.png"
+                alt="Spoural"
+                style="width: 100%; height: 400px; object-fit: cover"
+              />
               <div class="position-absolute">
                 <p class="corner-text">22 August 2024 - 25 August 2024</p>
               </div>
               <div class="card-body bg-v text-white">
-                <p class="card-title">
-                  SPOURAL 2023
-                </p>
+                <p class="card-title">SPOURAL 2023</p>
               </div>
             </div>
           </div>
 
           <!-- Second Event Card -->
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0">
+          <div
+            class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0"
+          >
             <div class="card">
-                <img
-                  class="card-img-top-event position-relative"
-                  src="images1/events_2.png"
-                  alt="Education Expo"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-              
+              <img
+                class="card-img-top-event position-relative"
+                src="images1/events_2.png"
+                alt="Education Expo"
+                style="width: 100%; height: 400px; object-fit: cover"
+              />
+
               <div class="position-absolute">
                 <p class="corner-text">21 September 2024 - 5 July 2025</p>
               </div>
               <div class="card-body bg-v text-white">
-                <p class="card-title">
-                  Education Expo
-                </p>
+                <p class="card-title">Education Expo</p>
               </div>
             </div>
           </div>
 
           <!-- Third Event Card -->
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0">
+          <div
+            class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0"
+          >
             <div class="card">
-              
-                <img
-                  class="card-img-top-event position-relative"
-                  src="images1/events_3.png"
-                  alt="Cognizance 2024"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-              
+              <img
+                class="card-img-top-event position-relative"
+                src="images1/events_3.png"
+                alt="Cognizance 2024"
+                style="width: 100%; height: 400px; object-fit: cover"
+              />
+
               <div class="position-absolute">
                 <p class="corner-text">17 January 2024 - 19 January 2024</p>
               </div>
               <div class="card-body bg-v text-white">
-                <p class="card-title">
-                  Cognizance - Techfest
-                </p>
+                <p class="card-title">Cognizance - Techfest</p>
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0">
+          <div
+            class="col-xs-12 col-sm-12 col-md-3 col-lg-3 px-sm-3 px-md-3 p-lg-3 pb-4 pt-0"
+          >
             <div class="card">
-              
-                <img
-                  class="card-img-top-event position-relative"
-                  src="images1/events_5.png"
-                  alt="Cognizance 2024"
-                  style="width: 100%; height: 400px; object-fit: cover;"
-                />
-              
+              <img
+                class="card-img-top-event position-relative"
+                src="images1/events_5.png"
+                alt="Cognizance 2024"
+                style="width: 100%; height: 400px; object-fit: cover"
+              />
+
               <div class="position-absolute">
                 <p class="corner-text">17 January 2024 - 19 January 2024</p>
               </div>
               <div class="card-body bg-v text-white">
-                <p class="card-title">
-                  TedX-CHARUSAT
-                </p>
+                <p class="card-title">TedX-CHARUSAT</p>
               </div>
             </div>
           </div>
-         </div>
+        </div>
       </div>
     </section>
 
     <section id="calender-section" class="calender-section">
-  <div class="text-center py-4" style="background-color: var(--site-color);">
-    <h2 style="color: #fff;">EVENT CALENDAR</h2>
-    <div class=" container d-flex justify-content-center" style="gap: 20px;">
-      <!-- Calendar for October -->
-      <div style="background-color: white; padding: 5px; border-radius: 5px; width: 50%;">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=kabirmota1234%40gmail.com&ctz=UTC&showTitle=0&showTz=0&dates=20241001/20241031"
-          style="border: 0; width: 95%; height: 400px;"
-          frameborder="0"
-          scrolling="no"
-        ></iframe>
+      <div class="text-center py-4" style="background-color: var(--site-color)">
+        <h2 style="color: #fff">EVENT CALENDAR</h2>
+        <div class="container d-flex justify-content-center" style="gap: 20px">
+          <!-- Calendar for October -->
+          <div
+            style="
+              background-color: white;
+              padding: 5px;
+              border-radius: 5px;
+              width: 50%;
+            "
+          >
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=kabirmota1234%40gmail.com&ctz=UTC&showTitle=0&showTz=0&dates=20241001/20241031"
+              style="border: 0; width: 95%; height: 400px"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <!-- Calendar for November -->
+          <div
+            style="
+              background-color: white;
+              padding: 5px;
+              border-radius: 5px;
+              width: 50%;
+            "
+          >
+            <iframe
+              src="https://calendar.google.com/calendar/embed?src=kabirmota1234%40gmail.com&ctz=UTC&showTitle=0&showTz=0&dates=20241101/20241130"
+              style="border: 0; width: 95%; height: 400px"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+        </div>
+        <div class="text-center mt-0">
+          <a
+            href="./event_calender.html"
+            style="color: #f8fcff"
+            class="calendar-link"
+            >Open Event Calendar</a
+          >
+        </div>
       </div>
-      <!-- Calendar for November -->
-      <div style="background-color: white; padding: 5px; border-radius: 5px;width: 50%;">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=kabirmota1234%40gmail.com&ctz=UTC&showTitle=0&showTz=0&dates=20241101/20241130"
-          style="border: 0; width: 95%; height: 400px;"
-          frameborder="0"
-          scrolling="no"
-        ></iframe>
-      </div>
-    </div>
-    <div class="text-center mt-0">
-      <a href="./event_calender.html" style="color:#f8fcff" class="calendar-link">Open Event Calendar</a>
-    </div>
-  </div>
-</section>
+    </section>
 
-    <section id="thrust-areas" class="container thrust-areas ">
-      <h2 class="text-center" style="font: bold;">THRUST AREAS</h2>
+    <section id="thrust-areas" class="container thrust-areas">
+      <h2 class="text-center" style="font: bold">THRUST AREAS</h2>
 
       <!-- First Row: 5 Circles -->
       <div class="row row-cols-custom-5 g-4 mt-5">
-
         <!-- Circle 1 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust1.jpeg" alt="Circle image">
+            <img src="images1/thrust1.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">AI, ML and Data Science</h5>
@@ -1720,7 +2058,7 @@
         <!-- Circle 2 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust2.jpeg" alt="Circle image">
+            <img src="images1/thrust2.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">VLSI & Embedded Systems</h5>
@@ -1730,17 +2068,19 @@
         <!-- Circle 3 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust3.jpeg" alt="Circle image">
+            <img src="images1/thrust3.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
-            <h5 class="circle-title">Cyber Security / Blockchain and Technology</h5>
+            <h5 class="circle-title">
+              Cyber Security / Blockchain and Technology
+            </h5>
           </div>
         </div>
 
         <!-- Circle 4 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust4.jpeg" alt="Circle image">
+            <img src="images1/thrust4.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">Composite Materials</h5>
@@ -1750,32 +2090,32 @@
         <!-- Circle 5 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust5.jpeg" alt="Circle image">
+            <img src="images1/thrust5.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">Thermal Engineering</h5>
           </div>
         </div>
-
       </div>
 
       <!-- Second Row: 4 Circles (Centered) -->
       <div class="row row-cols-custom-4 g-4 mt-4">
-
         <!-- Circle 6 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust6.jpeg" alt="Circle image">
+            <img src="images1/thrust6.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
-            <h5 class="circle-title">Structural and Environmental Engineering</h5>
+            <h5 class="circle-title">
+              Structural and Environmental Engineering
+            </h5>
           </div>
         </div>
 
         <!-- Circle 7 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust7.jpg" alt="Circle image">
+            <img src="images1/thrust7.jpg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">RF & Microwave Engineering</h5>
@@ -1785,7 +2125,7 @@
         <!-- Circle 8 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust20.jpeg" alt="Circle image">
+            <img src="images1/thrust20.jpeg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">High Performance Computing</h5>
@@ -1795,39 +2135,51 @@
         <!-- Circle 9 -->
         <div class="col">
           <div class="circle-item">
-            <img src="images1/thrust8.jpg" alt="Circle image">
+            <img src="images1/thrust8.jpg" alt="Circle image" />
           </div>
           <div class="circle-body">
             <h5 class="circle-title">Electric Vehicles</h5>
           </div>
         </div>
-
       </div>
-
     </section>
 
     <section id="students-work" class="student-work-section">
-      <div class="container-fluid text-center py-5" style="background-color: var(--site-color);">
+      <div
+        class="container-fluid text-center py-5"
+        style="background-color: var(--site-color)"
+      >
         <h2 class="section-title">STUDENTS Projects</h2>
         <div class="container d-flex justify-content-center">
-          <div class="row g-4 align-items-stretch" style="width: 100%;">
-    
+          <div class="row g-4 align-items-stretch" style="width: 100%">
             <!-- Large Card on the Left (Equal height with two smaller cards) -->
             <div class="col-lg-6">
               <div class="student-large-card">
-                <img src="images1/projects1.png" alt="Formula Race Car" class="student-image">
+                <img
+                  src="images1/projects1.png"
+                  alt="Formula Race Car"
+                  class="student-image"
+                />
                 <div class="student-card-text">
-                  <p>The team from CSPIT in collaboration with OJASWAT Motorsport made a Formula level car to participate in a national level contest.</p>
+                  <p>
+                    The team from CSPIT in collaboration with OJASWAT Motorsport
+                    made a Formula level car to participate in a national level
+                    contest.
+                  </p>
                 </div>
               </div>
             </div>
-    
+
             <!-- Right Side 2x2 Grid of Smaller Cards -->
             <div class="col-lg-6 d-flex flex-column">
               <div class="row g-4 flex-grow-1">
                 <div class="col-md-6">
                   <div class="student-small-card">
-                    <img src="images1/project_2.png" alt="Project 1" class="student-image">
+                    <img
+                      src="images1/project_2.png"
+                      alt="Project 1"
+                      class="student-image"
+                    />
                     <div class="student-card-text">
                       <p>Design and Fabrication of Pneumatic Car Bumper</p>
                     </div>
@@ -1835,7 +2187,11 @@
                 </div>
                 <div class="col-md-6">
                   <div class="student-small-card">
-                    <img src="images1/projects3.png" alt="Project 2" class="student-image">
+                    <img
+                      src="images1/projects3.png"
+                      alt="Project 2"
+                      class="student-image"
+                    />
                     <div class="student-card-text">
                       <p>Auto. Air Inflation System In Tyre With Pressure</p>
                     </div>
@@ -1845,196 +2201,278 @@
               <div class="row g-4 flex-grow-1">
                 <div class="col-md-6">
                   <div class="student-small-card">
-                    <img src="images1/sprojects_1.png" alt="Project 3" class="student-image">
+                    <img
+                      src="images1/sprojects_1.png"
+                      alt="Project 3"
+                      class="student-image"
+                    />
                     <div class="student-card-text">
-                      <p>Flight time optimization of Quadcopter Using Solar Power Energy Source</p>
+                      <p>
+                        Flight time optimization of Quadcopter Using Solar Power
+                        Energy Source
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="student-small-card">
-                    <img src="images1/projects1.png" alt="Project 4" class="student-image">
+                    <img
+                      src="images1/projects1.png"
+                      alt="Project 4"
+                      class="student-image"
+                    />
                     <div class="student-card-text">
-                      <p>ANIDERS - Animal Intrusion Detection and Repellent System</p>
+                      <p>
+                        ANIDERS - Animal Intrusion Detection and Repellent
+                        System
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-    
           </div>
         </div>
       </div>
     </section>
-    
 
-    
     <section id="message" class="message">
       <!-- Dean and Principal Messages Section -->
-    <div class="container mt-5 dean-principal-section">
-    <!-- Dean's Message Card -->
-    <div class="dean-principal-message-card">
-    <div class="row g-0 align-items-center">
-      <div class="col-md-3 text-center">
-        <!-- <img
+      <div class="container mt-5 dean-principal-section">
+        <!-- Dean's Message Card -->
+        <div class="dean-principal-message-card">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-3 text-center">
+              <!-- <img
           src="faculty_image/Back_Dean_VijayChaudhary-removebg-preview.jpg"
           alt="Dean Image"
           class="dean-principal-message-image"
         /> -->
 
-        <img
-          src="Dean_orange.jpg"
-          alt="Dean Image"
-          class="dean-principal-message-image"
-        />
+              <img
+                src="Dean_orange.jpg"
+                alt="Dean Image"
+                class="dean-principal-message-image"
+              />
 
-        <div class="dean-principal-person-info">
-          <strong>Dr. Vijaykumar Chaudhary</strong>
-          <p>Dean – FTE</p>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="card-body">
-          <h2 class="dean-principal-message-title">Dean's Message</h2>
-          <p class="dean-principal-message-text">
-            Welcome to CSPIT, CHARUSAT! As Dean, I'm thrilled to lead our
-            community of scholars, learners, and innovators. Together, let's
-            embrace excellence, diversity, and collaboration. Students,
-            seize every opportunity to grow and make a difference. Faculty,
-            your dedication shapes futures. Staff, your efforts keep our
-            institute thriving. Let's foster an inclusive environment where
-            every voice matters. I'm excited to witness our collective achievements.
-          </p>
-          <!-- <p class="dean-principal-message-text">
+              <div class="dean-principal-person-info">
+                <strong>Dr. Vijaykumar Chaudhary</strong>
+                <p>Dean – FTE</p>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h2 class="dean-principal-message-title">Dean's Message</h2>
+                <p class="dean-principal-message-text">
+                  Welcome to CSPIT, CHARUSAT! As Dean, I'm thrilled to lead our
+                  community of scholars, learners, and innovators. Together,
+                  let's embrace excellence, diversity, and collaboration.
+                  Students, seize every opportunity to grow and make a
+                  difference. Faculty, your dedication shapes futures. Staff,
+                  your efforts keep our institute thriving. Let's foster an
+                  inclusive environment where every voice matters. I'm excited
+                  to witness our collective achievements.
+                </p>
+                <!-- <p class="dean-principal-message-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quia at similique excepturi voluptates, veritatis maxime, eius aperiam dicta molestiae autem. Officiis hic cumque saepe nam fugiat aut voluptates itaque?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, ullam.
           </p> -->
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    </div>
 
-    <hr class="dean-principal-hr" />
-    <!-- Principal's Message Card -->
-    <div class="dean-principal-message-card">
-    <div class="row g-0 align-items-center flex-row-reverse">
-      <div class="col-md-3 text-center">
-        <!-- <img
+        <hr class="dean-principal-hr" />
+        <!-- Principal's Message Card -->
+        <div class="dean-principal-message-card">
+          <div class="row g-0 align-items-center flex-row-reverse">
+            <div class="col-md-3 text-center">
+              <!-- <img
           src="faculty_image/Back_Principal_Trushit_Sir-removebg-preview.jpg"
           alt="Principal Image"
           class="dean-principal-message-image"
         /> -->
 
+              <img
+                src="Principal_Blue.png"
+                alt="Principal Image"
+                class="dean-principal-message-image"
+              />
 
-        <img
-          src="Principal_Blue.png"
-          alt="Principal Image"
-          class="dean-principal-message-image"
-        />
-
-        <div class="dean-principal-person-info">
-          <strong>Dr. Trushit Upadhyaya</strong>
-          <p>Principal – CSPIT</p>
-        </div>
-      </div>
-      <div class="col-md-9">
-        <div class="card-body">
-          <h2 class="dean-principal-message-title">Principal's Message</h2>
-          <p class="dean-principal-message-text">
-            Welcome to CSPIT, where we foster excellence and innovation in engineering education. To our students: Embrace opportunities, challenge yourself, and cultivate a passion for lifelong learning. Faculty: Your dedication molds future leaders; continue to inspire and innovate. Staff: Your commitment ensures our success; thank you for your invaluable contributions. Together, let's uphold integrity, excellence, and inclusivity. As Principal, I'm excited about the journey ahead. Let's collaborate, learn, and grow as we shape the future of engineering together.
-          </p>
-          <!-- <p class="dean-principal-message-text">
+              <div class="dean-principal-person-info">
+                <strong>Dr. Trushit Upadhyaya</strong>
+                <p>Principal – CSPIT</p>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h2 class="dean-principal-message-title">
+                  Principal's Message
+                </h2>
+                <p class="dean-principal-message-text">
+                  Welcome to CSPIT, where we foster excellence and innovation in
+                  engineering education. To our students: Embrace opportunities,
+                  challenge yourself, and cultivate a passion for lifelong
+                  learning. Faculty: Your dedication molds future leaders;
+                  continue to inspire and innovate. Staff: Your commitment
+                  ensures our success; thank you for your invaluable
+                  contributions. Together, let's uphold integrity, excellence,
+                  and inclusivity. As Principal, I'm excited about the journey
+                  ahead. Let's collaborate, learn, and grow as we shape the
+                  future of engineering together.
+                </p>
+                <!-- <p class="dean-principal-message-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur perferendis saepe nesciunt voluptatem necessitatibus quibusdam doloribus non laborum, tempora dolorum totam fugit neque adipisci, maiores mollitia incidunt nulla reprehenderit!
           </p> -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
-    <!-- End of Dean and Principal Messages Section -->
-
+      <!-- End of Dean and Principal Messages Section -->
     </section>
 
     <section id="testimonials" class="feedback-section">
       <h2 class="text-center fw-bold">TESTIMONIALS</h2>
       <div class="d-flex align-items-center justify-content-right">
-        <button id="prevBtn" class="btn  d-flex align-items-center justify-content-center ">
-          <i class="bi bi-chevron-left" style="font-size: xxx-large; color: white;font-weight: 900;"></i>
+        <button
+          id="prevBtn"
+          class="btn d-flex align-items-center justify-content-center"
+        >
+          <i
+            class="bi bi-chevron-left"
+            style="font-size: xxx-large; color: white; font-weight: 900"
+          ></i>
         </button>
         <div class="container">
-          <div id="testimonialCarousel" class="testimonial-slider overflow-hidden position-relative">
+          <div
+            id="testimonialCarousel"
+            class="testimonial-slider overflow-hidden position-relative"
+          >
             <div class="testimonial-track d-flex">
               <!-- Testimonial Cards -->
               <div class="testimonial-card me-3">
-                <img src="https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-2.webp" alt="Student Image">
+                <img
+                  src="https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-2.webp"
+                  alt="Student Image"
+                />
                 <h5>Aishwarya Biju</h5>
-                <h6 style="font-style: italic;">Student</h6>
+                <h6 style="font-style: italic">Student</h6>
                 <p>
                   "The faculties are always enthusiastic to help us in all
-                  means. Here apart from polishing us for the being the
-                  part of industry they also arrange many technical and
-                  non-technical events as for the overall development of
-                  students.""
+                  means. Here apart from polishing us for the being the part of
+                  industry they also arrange many technical and non-technical
+                  events as for the overall development of students.""
                 </p>
               </div>
-              
-            <div class="testimonial-card me-3">
-              <img src="https://www.charusat.ac.in/cspit/images/testimony/it/testimonial-2.webp" alt="Parent Image">
-              <h5>Meet Shah</h5>
-              <h6 style="font-style: italic;">Parent</h6>
-              <p>"CSPIT provides perfect platform for the students to scan, search and work over their ideas with the best support and guidance provided by the faculty members. Students are also acknowledged with all the upcoming technologies used and are also taught to use them which trains them for their challenging and bright future."</p>
-            </div>
-    
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card me-3">
-              <img src="https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-3.webp" alt="Alumni Image">
-              <h5>Nilesh Ranpura</h5>
-              <h6 style="font-style: italic;">Project Manager, eInfochip</h6>
-              <p>"We have been hiring students from your department as well as giving them Summer Internships in our organization. The quality of the students from Electronics and Communication Engineering of CHARUSAT University is outstanding and the one’s we have employed from campus recruitment are truly an asset to our organization."</p>
-            </div>
 
-            <!-- Testimonial 4 -->    
-            <div class="testimonial-card me-3">
-              <img src="https://www.charusat.ac.in/cspit/images/testimony/it/testimonial-1.webp" alt="Student Image">
-              <h5>Ila Pokar</h5>
-              <h6 style="font-style: italic;">Parent</h6>
-              <p>"Charusat by providing various facilities to the students has proved that it is not only being study oriented university. The counselling batches assigned to the respective faculties has been an initiative that has helped the students at various points in their college life. Along with the platforms that it provides to enhance the co-curricular skills is pretty good."</p>
-            </div>
+              <div class="testimonial-card me-3">
+                <img
+                  src="https://www.charusat.ac.in/cspit/images/testimony/it/testimonial-2.webp"
+                  alt="Parent Image"
+                />
+                <h5>Meet Shah</h5>
+                <h6 style="font-style: italic">Parent</h6>
+                <p>
+                  "CSPIT provides perfect platform for the students to scan,
+                  search and work over their ideas with the best support and
+                  guidance provided by the faculty members. Students are also
+                  acknowledged with all the upcoming technologies used and are
+                  also taught to use them which trains them for their
+                  challenging and bright future."
+                </p>
+              </div>
 
-            <!-- Testimonial 5 -->           
-            <div class="testimonial-card me-3">
-              <img src="https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-7.webp" alt="Student Image">
-              <h5>Mr. Parthav Vyas</h5>
-              <h6 style="font-style: italic;">Director of Engineering, Scaledge Technology</h6>
-              <p>"We have observed that Charusat Changa's EC students receive exceptional motivation, guidance, and support from their dedicated faculty members, which is truly remarkable. As a student aspiring to build a successful career, it is crucial to choose an institute that values holistic development. In that regard, Charusat Changa stands out as an institute that prioritizes comprehensive growth."</p>
-            </div>
+              <!-- Testimonial 3 -->
+              <div class="testimonial-card me-3">
+                <img
+                  src="https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-3.webp"
+                  alt="Alumni Image"
+                />
+                <h5>Nilesh Ranpura</h5>
+                <h6 style="font-style: italic">Project Manager, eInfochip</h6>
+                <p>
+                  "We have been hiring students from your department as well as
+                  giving them Summer Internships in our organization. The
+                  quality of the students from Electronics and Communication
+                  Engineering of CHARUSAT University is outstanding and the
+                  one’s we have employed from campus recruitment are truly an
+                  asset to our organization."
+                </p>
+              </div>
 
+              <!-- Testimonial 4 -->
+              <div class="testimonial-card me-3">
+                <img
+                  src="https://www.charusat.ac.in/cspit/images/testimony/it/testimonial-1.webp"
+                  alt="Student Image"
+                />
+                <h5>Ila Pokar</h5>
+                <h6 style="font-style: italic">Parent</h6>
+                <p>
+                  "Charusat by providing various facilities to the students has
+                  proved that it is not only being study oriented university.
+                  The counselling batches assigned to the respective faculties
+                  has been an initiative that has helped the students at various
+                  points in their college life. Along with the platforms that it
+                  provides to enhance the co-curricular skills is pretty good."
+                </p>
+              </div>
+
+              <!-- Testimonial 5 -->
+              <div class="testimonial-card me-3">
+                <img
+                  src="https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-7.webp"
+                  alt="Student Image"
+                />
+                <h5>Mr. Parthav Vyas</h5>
+                <h6 style="font-style: italic">
+                  Director of Engineering, Scaledge Technology
+                </h6>
+                <p>
+                  "We have observed that Charusat Changa's EC students receive
+                  exceptional motivation, guidance, and support from their
+                  dedicated faculty members, which is truly remarkable. As a
+                  student aspiring to build a successful career, it is crucial
+                  to choose an institute that values holistic development. In
+                  that regard, Charusat Changa stands out as an institute that
+                  prioritizes comprehensive growth."
+                </p>
+              </div>
             </div>
           </div>
         </div>
-          <button id="nextBtn" class="btn  d-flex align-items-center justify-content-center">
-            <i class="bi bi-chevron-right" style="font-size: xxx-large; color: white;font-weight: 900;"></i>
-          </button>
+        <button
+          id="nextBtn"
+          class="btn d-flex align-items-center justify-content-center"
+        >
+          <i
+            class="bi bi-chevron-right"
+            style="font-size: xxx-large; color: white; font-weight: 900"
+          ></i>
+        </button>
       </div>
     </section>
-    
+
     <script>
-      const track = document.querySelector('.testimonial-track');
-      const nextBtn = document.getElementById('nextBtn');
-      const prevBtn = document.getElementById('prevBtn');
-    
+      const track = document.querySelector(".testimonial-track");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
       // Variables to control the current slide and testimonials in view
       const testimonials = Array.from(track.children);
-      const testimonialsPerView = 3;  // Number of testimonials to show at once
+      const testimonialsPerView = 3; // Number of testimonials to show at once
       let currentIndex = 0;
-    
+
       // Function to update the slider position
       function updateSlidePosition() {
-        const testimonialWidth = testimonials[0].offsetWidth + 16;  // Adjust for margin
-        track.style.transform = `translateX(-${testimonialWidth * currentIndex}px)`;
+        const testimonialWidth = testimonials[0].offsetWidth + 16; // Adjust for margin
+        track.style.transform = `translateX(-${
+          testimonialWidth * currentIndex
+        }px)`;
       }
-    
+
       // Next button event listener
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener("click", () => {
         if (currentIndex < testimonials.length - testimonialsPerView) {
           currentIndex += 1;
         } else {
@@ -2042,9 +2480,9 @@
         }
         updateSlidePosition();
       });
-    
+
       // Previous button event listener
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener("click", () => {
         if (currentIndex > 0) {
           currentIndex -= 1;
         } else {
@@ -2052,10 +2490,10 @@
         }
         updateSlidePosition();
       });
-    
+
       // Set initial position
       updateSlidePosition();
-    
+
       // Auto-slide functionality
       setInterval(() => {
         if (currentIndex < testimonials.length - testimonialsPerView) {
@@ -2069,7 +2507,7 @@
 
     <section class="py-5 bg-light gallery-section">
       <div class="container">
-        <h2 style="font: bold;">  GALLERY </h2>
+        <h2 style="font: bold">GALLERY</h2>
         <ul
           class="nav nav-pills justify-content-center mb-5 gallery-nav-pills"
           id="galleryTabs"
@@ -2134,7 +2572,12 @@
         </ul>
 
         <div class="tab-content" id="galleryTabsContent">
-          <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+          <div
+            class="tab-pane fade show active"
+            id="all"
+            role="tabpanel"
+            aria-labelledby="all-tab"
+          >
             <div class="row">
               <div class="col-md-4 col-sm-6">
                 <div class="gallery-card">
@@ -2166,7 +2609,12 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="cultural" role="tabpanel" aria-labelledby="cultural-tab">
+          <div
+            class="tab-pane fade"
+            id="cultural"
+            role="tabpanel"
+            aria-labelledby="cultural-tab"
+          >
             <div class="row">
               <div class="col-md-4 col-sm-6">
                 <div class="gallery-card">
@@ -2189,7 +2637,12 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="technical" role="tabpanel" aria-labelledby="technical-tab">
+          <div
+            class="tab-pane fade"
+            id="technical"
+            role="tabpanel"
+            aria-labelledby="technical-tab"
+          >
             <div class="row">
               <div class="col-md-4 col-sm-6">
                 <div class="gallery-card">
@@ -2221,7 +2674,12 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="sports" role="tabpanel" aria-labelledby="sports-tab">
+          <div
+            class="tab-pane fade"
+            id="sports"
+            role="tabpanel"
+            aria-labelledby="sports-tab"
+          >
             <div class="row">
               <div class="col-md-4 col-sm-6">
                 <div class="gallery-card">
@@ -2242,34 +2700,33 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-      window.sr = ScrollReveal({
-        duration: 1000,
-        scale: 1,
-        reset: true,  // Optional: reset when scrolling back
-        origin: 'top',
-        distance: '50px',
-        viewFactor: 0.10  // Trigger when 25% of the element is in view
+      document.addEventListener("DOMContentLoaded", function () {
+        window.sr = ScrollReveal({
+          duration: 1000,
+          scale: 1,
+          reset: true, // Optional: reset when scrolling back
+          origin: "top",
+          distance: "50px",
+          viewFactor: 0.1, // Trigger when 25% of the element is in view
+        });
+
+        sr.reveal(".announcement-section");
+        sr.reveal(".scalar-section");
+        sr.reveal(".programs");
+        sr.reveal(".collaborations-section");
+        sr.reveal(".chapter-section");
+        sr.reveal(".club-section");
+        sr.reveal(".section-4");
+        sr.reveal(".calender-section");
+        sr.reveal(".gallery-section");
+        sr.reveal(".student-work");
+        sr.reveal(".thrust-areas");
+        sr.reveal(".feedback-section");
+        sr.reveal(".message");
       });
-
-      sr.reveal('.announcement-section');
-      sr.reveal('.scalar-section');
-      sr.reveal('.programs');
-      sr.reveal('.collaborations-section');
-      sr.reveal('.chapter-section');
-      sr.reveal('.club-section');
-      sr.reveal('.section-4');
-      sr.reveal('.calender-section');
-      sr.reveal('.gallery-section');
-      sr.reveal('.student-work');
-      sr.reveal('.thrust-areas');
-      sr.reveal('.feedback-section');
-      sr.reveal('.message');
-    });
-
     </script>
 
-<br><br>
+    <br /><br />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
@@ -2352,24 +2809,30 @@
       }
     </script>
 
-
     <footer
       class="footer-bs text-white container-fluid pt-40 pb-0 footer_bottom_bg"
     >
       <div class="container-custom mx-auto">
         <div class="row">
           <div
-            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 footer-brand animated fadeInLeft "  style="text-align: center;"
+            class="col-xl-3 col-lg-3 col-md-3 col-sm-6 footer-brand animated fadeInLeft"
+            style="text-align: center"
           >
             <img
-              class="img-fluid mb-4 bg-white p-2 "
+              class="img-fluid mb-4 bg-white p-2"
               src="images1/logo1.png"
-              style="width: 150px; height: auto;background: transparent !important;"
+              style="
+                width: 150px;
+                height: auto;
+                background: transparent !important;
+              "
               alt=""
             />
-            <h5 style="font-weight: bold;">CHANDUBHAI S. PATEL <br> INSTITUTE OF TECHNOLOGY</h5>
-            <br>
-            
+            <h5 style="font-weight: bold">
+              CHANDUBHAI S. PATEL <br />
+              INSTITUTE OF TECHNOLOGY
+            </h5>
+            <br />
           </div>
           <div
             class="col-xl-3 col-lg-3 col-md-3 col-sm-6 py-xs-2 py-2 quick-links-nav"
@@ -2377,30 +2840,38 @@
             <div class="quick-links col-md-12 pl-0 text-lg-left text-xl-center">
               <ul class="list-unstyled text-left d-inline-block">
                 <li>
-                  <h5 style="color: #ffcc00; font-weight: bold;">Quick Links</h5>
+                  <h5 style="color: #ffcc00; font-weight: bold">Quick Links</h5>
                 </li>
                 <li>
-                  <a class="hvr-underline-from-left" href="https://www.charusat.ac.in/cspit/files/CSPIT_Mandatory%20Disclosure_2023-24.pdf" target="_blank" rel="noopener noreferrer"
+                  <a
+                    class="hvr-underline-from-left"
+                    href="https://www.charusat.ac.in/cspit/files/CSPIT_Mandatory%20Disclosure_2023-24.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >Mandatory Disclosure</a
                   >
                 </li>
                 <li>
-                  <a class="hvr-underline-from-left" href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer"
+                  <a
+                    class="hvr-underline-from-left"
+                    href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >NIRF</a
                   >
                 </li>
                 <li>
                   <a
                     class="hvr-underline-from-left"
-                    href="https://www.charusat.ac.in/cspit/files/EOA-Report-2024-2025.PDF " target="_blank" rel="noopener noreferrer"
+                    href="https://www.charusat.ac.in/cspit/files/EOA-Report-2024-2025.PDF "
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >AICTE EOA</a
                   >
                 </li>
                 <li>
-                  <a class="hvr-underline-from-left" href=""
-                    >Privacy Policy</a
-                  >
-                </li> 
+                  <a class="hvr-underline-from-left" href="">Privacy Policy</a>
+                </li>
                 <li>
                   <a class="hvr-underline-from-left" href="">Sitemap</a>
                 </li>
@@ -2412,40 +2883,41 @@
           >
             <ul class="list-unstyled text-left d-inline-block mb-0 py-2">
               <li>
-                <h5 style="color: #ffcc00; font-weight: bold;">Contact Us</h5>
+                <h5 style="color: #ffcc00; font-weight: bold">Contact Us</h5>
               </li>
               <li>
-                <a class="hvr-underline-from-left"  
-                    >Phone: +91-2697-265112</a>
+                <a class="hvr-underline-from-left">Phone: +91-2697-265112</a>
               </li>
               <li>
                 <p>
-                  <a href="mailto:principal.cspit@charusat.ac.in" class="text-white">Email: principal.cspit@charusat.ac.in</a>
+                  <a
+                    href="mailto:principal.cspit@charusat.ac.in"
+                    class="text-white"
+                    >Email: principal.cspit@charusat.ac.in</a
+                  >
                 </p>
               </li>
               <address class="footer-text-sm mb-1">
                 <p>
                   Off. Nadiad-Petlad Highway,
-                  <br>Changa-388421, Anand, Gujarat, India
+                  <br />Changa-388421, Anand, Gujarat, India
                 </p>
               </address>
-    
-        </ul>
+            </ul>
           </div>
           <div
             class="col-xl-3 col-lg-3 col-md-3 col-sm-6 pt-2 py-sm-0 float-md-right justify-content-center footer-left-box"
           >
-            <h5 style="color: #ffcc00; font-weight: bold;">Location</h5>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.41961737984!2d72.81767727475798!3d22.60080043193719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c699400001%3A0xb50162f2acb04c04!2sCSPIT%20(CE%2FIT)!5e0!3m2!1sen!2sin!4v1729709960389!5m2!1sen!2sin"
-            width="100%"
-            height="190"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-          <p class="footer-text-sm">Visit us at our campus in Changa.</p>
-
+            <h5 style="color: #ffcc00; font-weight: bold">Location</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.41961737984!2d72.81767727475798!3d22.60080043193719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c699400001%3A0xb50162f2acb04c04!2sCSPIT%20(CE%2FIT)!5e0!3m2!1sen!2sin!4v1729709960389!5m2!1sen!2sin"
+              width="100%"
+              height="190"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+            <p class="footer-text-sm">Visit us at our campus in Changa.</p>
           </div>
         </div>
         <div
@@ -2507,7 +2979,6 @@
       </div>
     </footer>
 
-
     <a id="go_top" class="d-block d-sm-none"><i class="fa fa-angle-up"></i></a>
     <script data-cfasync="false" src="js/email-decode.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
@@ -2525,7 +2996,7 @@
       });
     </script>
     <script src="js/css-polyfills.min.js"></script>
-    
+
     <!-- NAVBAR SCROLL -->
     <script type="text/javascript">
       $(document).ready(function () {
@@ -2560,8 +3031,8 @@
       $("#homeTopSlider").owlCarousel({
         loop: true,
         autoplay: true,
-        animateOut: 'fadeIn',
-        animateOut: 'fadeOut',
+        animateOut: "fadeIn",
+        animateOut: "fadeOut",
         autoplayTimeout: 3000,
         margin: 10,
         nav: false,
@@ -2569,7 +3040,6 @@
         items: 1,
       });
     </script>
-
 
     <!-- COUNTER FOR SCALAR -->
     <script>
@@ -2579,17 +3049,17 @@
         const incrementValue = targetValue / (animationDuration / 16);
 
         // Reveal the element with a smooth transition
-        element.style.opacity = '1';
-        element.style.transform = 'translateY(0)'; // Reset the position
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)"; // Reset the position
 
         // Function to format the number to K, M, or B
         function formatNumber(num) {
           if (num >= 1e9) {
-            return (num / 1e9).toFixed(1) + 'B';
+            return (num / 1e9).toFixed(1) + "B";
           } else if (num >= 1e6) {
-            return (num / 1e6).toFixed(1) + 'M';
-          // } else if (num >= 1e3) {
-          //   return (num / 1e3).toFixed(1) + 'K';
+            return (num / 1e6).toFixed(1) + "M";
+            // } else if (num >= 1e3) {
+            //   return (num / 1e3).toFixed(1) + 'K';
           } else {
             return num.toString();
           }
@@ -2609,21 +3079,21 @@
       }
 
       function handleScrollTrigger(entries, scrollObserver) {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const numberElements = document.querySelectorAll('.stat-number');
-            const iconElements = document.querySelectorAll('.stats-icon');
+            const numberElements = document.querySelectorAll(".stat-number");
+            const iconElements = document.querySelectorAll(".stats-icon");
 
             // Animate number stats
-            numberElements.forEach(numberEl => {
-              const targetValue = +numberEl.getAttribute('data-target');
+            numberElements.forEach((numberEl) => {
+              const targetValue = +numberEl.getAttribute("data-target");
               runCounterAnimation(numberEl, targetValue);
             });
 
             // Fade in icons with smooth transition
-            iconElements.forEach(iconEl => {
-              iconEl.style.opacity = '1';
-              iconEl.style.transform = 'translateY(0)'; // Reset the position
+            iconElements.forEach((iconEl) => {
+              iconEl.style.opacity = "1";
+              iconEl.style.transform = "translateY(0)"; // Reset the position
             });
 
             scrollObserver.unobserve(entry.target); // Stop observing once animated
@@ -2633,13 +3103,12 @@
 
       // Scroll observer for the stats section
       const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
-        threshold: 0.5
+        threshold: 0.5,
       });
 
-      const statsSection = document.getElementById('scalars');
+      const statsSection = document.getElementById("scalars");
       scrollObserver.observe(statsSection);
     </script>
-
 
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript" src="js/zozo.tabs.min.js"></script>
@@ -2886,7 +3355,7 @@
       });
     </script>
     <script type="text/javascript" src="js/scrollreveal.js"></script>
-    
+
     <!-- hover panel width  -->
     <script>
       $(document).ready(function () {
@@ -3002,14 +3471,14 @@
         });
       }
     </script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
     <script src="js/tooltip-validate.js"></script>
     <script src="js/form-validate.js"></script>
-    
+
     <script src="js/slick.js" type="text/javascript"></script>
     <script src="js/slick-lightbox.js" type="text/javascript"></script>
     <script>
@@ -3031,8 +3500,5 @@
         items: 1,
       });
     </script>
-    
-
-    
   </body>
 </html>
