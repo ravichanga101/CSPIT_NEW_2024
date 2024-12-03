@@ -533,7 +533,7 @@ img {
   }
 }
 /* ------------------------STUDENT CHAPTER ------------------------- */
-.courses , .professional-society{
+.courses , .professional-society, .club-section{
   padding-bottom:4%;
   padding-top:2%;
   background-color: var(--site-color);
@@ -609,7 +609,7 @@ img {
         padding: .5rem; } }
 
 
-
+        
 
 .chapter-section{
   color: #fff;
