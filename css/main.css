@@ -609,7 +609,52 @@ img {
         padding: .5rem; } }
 
 
-        
+        .accordion {
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .accordion-header {
+          padding: 15px;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+          background-color: #f9f9f9;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #ccc;
+        }
+        .accordion-header:hover {
+          background-color: #f1f1f1;
+        }
+        .accordion-content {
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.5s ease, padding 0.5s ease;
+          padding: 0 15px;
+          background-color: #fff;
+          border-top: 1px solid #ccc;
+        }
+        .accordion-content.open {
+          max-height: 100%;
+          padding: 15px;
+        }
+        .accordion-content table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        .accordion-content th, .accordion-content td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        .accordion-content th {
+          background-color: #f4f4f4;
+        }
+        .accordion-content tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
 
 .chapter-section{
   color: #fff;
