@@ -455,6 +455,7 @@ img {
 }
 
 .collaborations-section h2,
+.courses h2,
 .scalar-section h2,
 .event-news-wrap h2,
 .programs h2,
@@ -532,6 +533,84 @@ img {
   }
 }
 /* ------------------------STUDENT CHAPTER ------------------------- */
+.courses {
+  padding-bottom:4%;
+  padding-top:2%;
+  background-color: var(--site-color);
+  color: #333; }
+  .courses-section {
+    width: 100%;
+    padding: 5% 7%; }
+    .courses-section--head {
+      width: 100%;
+      font-size: clamp(1.5625rem, 1.25vw + 1rem, 3.75rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      padding: 1%;
+      border-radius: 4rem;
+      background-color: #ffffffa7; }
+      .courses-section--head .svg-cont {
+        width: 5rem;
+        height: 5rem;
+        padding: .5rem;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: .5rem;
+        background-color: #ffffff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+        @media (max-width: 768px) {
+          .courses-section--head .svg-cont {
+            width: 4rem;
+            height: 4rem; } }
+        .courses-section--head .svg-cont svg {
+          margin: 2px 0 0 0; }
+  .courses__cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4rem;
+    flex-wrap: wrap; }
+    .courses__cont--item {
+      width: 12%;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: #fff;
+      padding: 1rem;
+      aspect-ratio: 1/1;
+      border: 5px solid #fff; }
+      .courses__cont--item img {
+        width: 100%;
+        object-fit: cover; }
+
+@media (max-width: 768px) {
+  .courses {
+    padding: 10% 5%; }
+    .courses-section--head {
+      font-size: 1rem;
+      gap: .5rem;
+      padding: .5rem .8rem;
+      margin-bottom: 3rem; }
+      .courses-section--head .svg-cont {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 0;
+        aspect-ratio: 1/1; }
+    .courses__cont {
+      gap: 1rem; }
+      .courses__cont--item {
+        width: 25%;
+        padding: .5rem; } }
+
+
+
+
 .chapter-section{
   color: #fff;
   padding: 40px 0;
