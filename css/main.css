@@ -463,7 +463,7 @@ img {
 .thrust-areas h2,
 .feedback-section h2,
 .calender-section h2,
-.gallery-section h2, .club-section h2, .chapter-section h2 , .announcement-section h2{
+.gallery-section h2, .club-section h2, .chapter-section h2 , .announcement-section h2,.professional-society h2{
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 35px;
@@ -533,7 +533,7 @@ img {
   }
 }
 /* ------------------------STUDENT CHAPTER ------------------------- */
-.courses {
+.courses , .professional-society{
   padding-bottom:4%;
   padding-top:2%;
   background-color: var(--site-color);
