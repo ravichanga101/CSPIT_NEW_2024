@@ -631,13 +631,13 @@ img {
         .accordion-content {
           overflow: hidden;
           max-height: 0;
-          transition: max-height 0.5s ease, padding 0.5s ease;
+          transition: max-heigh 1s ease, padding 0.5s ease;
           padding: 0 15px;
           background-color: #fff;
           border-top: 1px solid #ccc;
         }
         .accordion-content.open {
-          max-height: 100%;
+          max-height: none !important;
           padding: 15px;
         }
         .accordion-content table {
@@ -2802,35 +2802,7 @@ ul.social-network li {
 #programmePageSlider .item {
   height: 100vh;
 }
-.sport-accordion-bg .person-name {
-  /* font-family: "Playfair-Bold"; */
-  font-size: 20px;
-  color: var(--site-color);
-  display: block;
-  display: -webkit-box;
-  max-width: 100%;
-  /* height: 65px; */
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 5px;
-}
-.sport-accordion-bg .person-name {
-  margin: 8px 0 0px;
-  text-transform: uppercase;
-}
-.sport-accordion-bg .person-desg {
-  /* font-family: "Playfair-Bold"; */
-  color: var(--secondary-color);
-  display: -webkit-box;
-  max-width: 100%;
-  /* -webkit-line-clamp: 2; */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 5px;
-}
+
 .event-page-main h1.block-head {
   font-size: 1.5rem;
 }
