@@ -1830,10 +1830,10 @@ address {
     height: 100%;
   }
   #navbarCollapse .nav-row-up {
-    height: 50%;
+    height: 30%;
   }
   #navbarCollapse .nav-row-down {
-    height: 50%;
+    height: 70%;
   }
   .navbar-expand-lg .navbar-nav .nav-link {
     height: 100%;
