@@ -1237,21 +1237,21 @@ section#thrust-areas {
 }
 
 .date {
-  font-size: 14px;
+  font-size: 18px;
   color: #007BFF;
   font-weight: bold;
   display: inline-block;
 }
 
 .announcement-content h3 {
-  font-size: 18px;
+  font-size: 22px;
   color: #333;
   margin: 10px 0;
 }
 
 .announcement-content p {
   color: #555;
-  font-size: 15px;
+  font-size: 18px;
   margin: 0 0 10px;
 }
 
@@ -1259,7 +1259,7 @@ section#thrust-areas {
   text-decoration: none;
   color: #007BFF;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
   transition: color 0.3s ease;
 }
 
