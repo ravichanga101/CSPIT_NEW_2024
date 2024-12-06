@@ -1274,7 +1274,7 @@ section#thrust-areas {
 
 .testimonials-section {
   padding: 3%;
-  background-color: #4287fe;
+  background-color: #0056b3;
   width: 100%;
   padding: 3% 7%;
   letter-spacing: -0.5px !important ;
@@ -1678,10 +1678,7 @@ ul li {
 .nav-row-up li.active {
   color: white;
   background: var(--site-color);
-  /*border-bottom: 0.5px solid var(--secondary-color-border);
-    border-right: 0.5px solid var(--secondary-color-border);
-    border-left: 0.5px solid var(--secondary-color-border);
-    */
+  
 }
 
 .nav-row-up li.active {
@@ -1702,9 +1699,10 @@ ul li {
 }
 
 .nav-row-down .nav-item {
-  &:not(:last-child) {
+  /* &:not(:last-child) { */
     border-right: 0.5px solid var(--secondary-color-border);
-  }
+    /* border-bottom: 2px solid var(--secondary-color-border); */
+  /* } */
 }
 
 .nav-row-down .nav-link:hover,

@@ -3735,6 +3735,9 @@ section > .container-custom ul.about_list li:before {
 .top-link {
   color: #fdfdfd !important;
   background-color: #0056b3;
+  
+  font-weight:bold !important;
+  letter-spacing: 1px !important;
 }
 .top-link:hover {
   color: #e8fd07 !important;

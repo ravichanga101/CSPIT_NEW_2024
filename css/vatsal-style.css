@@ -1,17 +1,5 @@
 :root {
-  /* --site-color: #90241e;*/
-  /* --site-color: #801214;
-    --site-color: rgb(128,18,20); */
-
-  /* --site-color: #0066b3; */
-  /* --site-color: rgb(128,18,20); */
-
-  /* --site-color: #033c67; site colorrrrr*/
-  /* --site-color: #4287fe; */
   --site-color:#0056b3;
-
-  /* --site-color-transparent: #90241ee6; */
-  /* --site-color-transparent: rgba(144, 36, 30, 0.7); */
 
   --site-color-transparent: #ff4500;
 
@@ -46,10 +34,10 @@
 }
 
 .nav-wrapper{
-  width: 98%;
+  width: 100%;
   display: block;
-  margin: 1%;
-  position: fixed;
+  /* margin: 1%; */
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 10;
