@@ -1,145 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSPIT Enhanced Announcements</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        .bg-gradient-blue {
-            background: linear-gradient(180deg, #e6f3ff 0%, #ffffff 100%);
-        }
-        .announcement-card {
-            transition: all 0.3s ease;
-        }
-        .announcement-card:hover {
-            /* transform: translateY(-5px); */
-            box-shadow: 0 0px 30px #0d6dfd54 !important;
-        }
-        .icon-wrapper {
-            transition: transform 0.3s ease;
-        }
-        .announcement-card:hover .icon-wrapper {
-            transform: scale(1.1);
-        }
-        .btn-learn-more {
-            padding: 8px 16px;
-            transition: transform 0.3s ease;
-            display: inline-flex;
-            align-items: middle;
-            font-size: 1rem;
-        }
-        .btn-learn-more .bi::before {
-            transition: .2s;
-            vertical-align: -.1em !important;
-        }
-        .btn-learn-more:hover .bi::before {
-            transform: scale(1.28) translateX(2px);
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background-color: #4287fe;
-            margin: 10px auto 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Announcements</title>
+  <style>
+    /* Announcement Bar */
+    .announcement-bar {
+      background: linear-gradient(to right, #0056b3, #0078d7);
+      color: #fff;
+      padding: 10px 20px;
+      font-family: "Mona-sans";
+      font-size: 25px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    /* Keep the title and icon fixed */
+    .announcement-title {
+      font-weight: bold;
+      margin-right: 15px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Scrolling content area */
+    .announcement-content-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .announcement-content {
+      display: flex;
+      animation: scrollLeft 20s linear infinite;
+    }
+
+    /* List of announcements */
+    .announcement-list {
+      display: inline-flex;
+      gap: 50px;
+    }
+
+    .announcement-list li {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+      flex-shrink: 0;
+    }
+
+    .announcement-list li:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      color: #ffeb3b;
+      transition: color 0.3s ease;
+    }
+
+    /* Scrolling Animation */
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .announcement-bar {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <section class="py-5 bg-gradient-blue">
-        <div class="container">
-            <h2 class="text-center text-primary fw-bold mb-5 section-title">Latest Announcements</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card announcement-card h-100 bg-blue-100 border-0 shadow">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-wrapper mb-3">
-                                <i class="bi bi-calendar-event text-primary" style="font-size: 3rem;"></i>
-                            </div>
-                            <h3 class="card-title h5 text-dark mb-3">Upcoming Events</h3>
-                            <p class="card-text text-muted mb-4">Join us for the Annual Tech Fest on May 15th. Showcase your innovative projects and ideas!</p>
-                            <a href="#" class="btn btn-primary rounded-pill btn-learn-more">
-                                Learn More <i class="bi bi-chevron-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card announcement-card h-100 bg-yellow-100 border-0 shadow">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-wrapper mb-3">
-                                <i class="bi bi-trophy text-warning" style="font-size: 3rem;"></i>
-                            </div>
-                            <h3 class="card-title h5 text-dark mb-3">Academic Achievement</h3>
-                            <p class="card-text text-muted mb-4">Congratulations to our students who won the National Coding Championship!</p>
-                            <a href="#" class="btn btn-primary rounded-pill btn-learn-more">
-                                Learn More <i class="bi bi-chevron-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card announcement-card h-100 bg-red-100 border-0 shadow">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-wrapper mb-3">
-                                <i class="bi bi-megaphone text-danger" style="font-size: 3rem;"></i>
-                            </div>
-                            <h3 class="card-title h5 text-dark mb-3">Important Notice</h3>
-                            <p class="card-text text-muted mb-4">The library will be closed for renovations from June 1st to 15th. Online resources will remain available.</p>
-                            <a href="#" class="btn btn-primary rounded-pill btn-learn-more">
-                                Learn More <i class="bi bi-chevron-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card announcement-card h-100 bg-green-100 border-0 shadow">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-wrapper mb-3">
-                                <i class="bi bi-book text-success" style="font-size: 3rem;"></i>
-                            </div>
-                            <h3 class="card-title h5 text-dark mb-3">New Course Offerings</h3>
-                            <p class="card-text text-muted mb-4">Explore our new AI and Machine Learning courses starting next semester. Enroll now!</p>
-                            <a href="#" class="btn btn-primary rounded-pill btn-learn-more">
-                                Learn More <i class="bi bi-chevron-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card announcement-card h-100 bg-pink-100 border-0 shadow">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-wrapper mb-3">
-                                <i class="bi bi-heart text-danger" style="font-size: 3rem;"></i>
-                            </div>
-                            <h3 class="card-title h5 text-dark mb-3">Community Outreach</h3>
-                            <p class="card-text text-muted mb-4">Join our volunteer program and make a difference in the local community. Sign up today!</p>
-                            <a href="#" class="btn btn-primary rounded-pill btn-learn-more">
-                                Learn More <i class="bi bi-chevron-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card announcement-card h-100 bg-purple-100 border-0 shadow">
-                        <div class="card-body text-center p-4">
-                            <div class="icon-wrapper mb-3">
-                                <i class="bi bi-gear text-purple" style="font-size: 3rem;"></i>
-                            </div>
-                            <h3 class="card-title h5 text-dark mb-3">System Maintenance</h3>
-                            <p class="card-text text-muted mb-4">The student portal will undergo maintenance on May 20th from 10 PM to 2 AM. Plan accordingly.</p>
-                            <a href="#" class="btn btn-primary rounded-pill btn-learn-more">
-                                Learn More <i class="bi bi-chevron-right ms-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Announcement Section -->
+  <div class="announcement-bar">
+    <span class="announcement-title">📢 Announcements:</span>
+    <div class="announcement-content-wrapper">
+      <div class="announcement-content">
+        <ul class="announcement-list">
+          <li>Admissions for 2024 are now open! Apply before December 31.</li>
+          <li>Annual Tech Fest starts on January 15, 2024. Register now!</li>
+          <li>Semester exams will begin from December 10, 2023.</li>
+          <li>Campus recruitment drive scheduled for February 2024.</li>
+        </ul>
+        <!-- Duplicate the list to make scrolling continuous -->
+        
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -10,8 +10,10 @@
       margin: 0;
       padding: 0;
       font-family: "Arial", sans-serif;
-      background: url(images1/background.jpg) no-repeat center center fixed;
-      
+      /* background: url(images1/background.jpg) no-repeat center center fixed; */
+      background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0,0,0,0.4)), 
+            url(images1/background.jpg) no-repeat center center fixed;
+background-size: cover;
       background-size: cover;
       color: #fff;
       overflow-x: hidden;
@@ -21,16 +23,18 @@
     .timeline-container {
       width: 80%;
       margin: 0 auto;
-      padding: 40px 0;
+      padding: 15px 0;
     }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
+    h2{
       font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 35px;
+      position: relative;
+      text-align: center;
       color: #ffeb3b;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     }
+    
 
     /* Timeline Vertical Bar */
     .timeline {
@@ -126,46 +130,66 @@
   </style>
 </head>
 <body>
+  <!-- <iframe src="./navbar.html" style="width: 100%;"></iframe> -->
   <div class="timeline-container">
-    <h1>CSPIT Timeline</h1>
+    <h2>ABOUT US</h2>
     <ul class="timeline">
       <li class="timeline-item">
         <div class="year">2000</div>
-        <h3>About CSPIT</h3>
+        <h3>Establishment</h3>
         <p>Chandubhai S Patel Institute of Technology (CSPIT), established in 2000, started with 240 seats across 4 Bachelor Degree programs and now offers 8 Bachelor programs, Postgraduate, and Ph.D. programs.</p>
       </li>
+      <li class="timeline-item">
+        <div class="year">2013</div>
+        <h3>NBA accreditation</h3>
+        <p>The Computer Engineering Department at the Chandubhai S. Patel Institute of Technology (CSPIT) was accredited by the National Board of Accreditation (NBA) in 2013 and 2016.</p>
+      </li>
+      
       <li class="timeline-item">
         <div class="year">2017</div>
         <h3>Environment Auditor Recognition</h3>
         <p>Recognized as Schedule I Environment Auditor by Gujarat Pollution Control Board (GPCB) [2017-2023].</p>
       </li>
       <li class="timeline-item">
-        <div class="year">2022</div>
-        <h3>NABL Accreditation</h3>
-        <p>Concrete Technology Laboratory (2022-2024) and Geotechnical Engineering Laboratory (2023-25).</p>
+        <div class="year">2019</div>
+        <h3>GSIRF Rankings: 3-Star.</h3>
+        <p>CSPIT was awarded 3-Star GSIRF Ranking</p>
       </li>
       <li class="timeline-item">
-        <div class="year">2022</div>
-        <h3>CHARUSAT - Motorola Collaboration</h3>
-        <p>CHARUSAT - Motorola Solutions Research and Innovation Center (CMRC) inaugurated in February 2022.</p>
-      </li>
-      <li class="timeline-item">
-        <div class="year">2013</div>
-        <h3>Accreditations</h3>
-        <p>National Board of Accreditation (NBA) for Computer Engineering Department in 2013 and 2016.</p>
-      </li>
-      <li class="timeline-item">
-        <div class="year">2022</div>
-        <h3>GSIRF Star Rankings</h3>
-        <p>GSIRF Rankings: 5-Star (2022), 4-Star (2021 & 2020), 3-Star (2019).</p>
+        <div class="year">2020</div>
+        <h3>GSIRF Rankings: 4-Star.</h3>
+        <p>CSPIT was awarded 4-Star GSIRF Ranking</p>
       </li>
       <li class="timeline-item">
         <div class="year">2021</div>
+        <h3>GSIRF Star Rankings</h3>
+        <p>GSIRF Rankings: 5-Star</p>
+        <br />
         <h3>NIRF Rankings</h3>
         <p>NIRF 2021 Engineering: Rank-band 251-300.</p>
       </li>
+
+      <li class="timeline-item">
+        <div class="year">2022</div>
+        <h3>GSIRF Rankings: 5-Star.</h3>
+        <p>CSPIT was awarded 4-Star GSIRF Ranking</p>
+        <br />
+        <h3>Motorola Solutions</h3>
+        <p>CHARUSAT - Motorola Solutions Research and Innovation Center (CMRC) inaugurated in February 2022.</p>
+        
+        
+      </li>
+
+      <li class="timeline-item">
+        <div class="year">2023</div>
+        <h3>NABL Accreditation</h3>
+        <p>NABL Accredited Concrete Technology Laboratory (2022-2024).</p>
+        <p>NABL Accredited Geotechnical Engineering Laboratory (2023-2025).</p>
+      </li>
+      
     </ul>
   </div>
+  <!-- <iframe src="./footer.html" style="width: 100%; height: auto;"></iframe> -->
 
   <script>
     // Intersection Observer for Scroll Animation

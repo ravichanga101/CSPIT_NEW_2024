@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <link rel="stylesheet" href="css/bootstrap-select.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/offcanvas.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/vatsal-style.css" />
+     <link rel="icon" href="images1/logo.jpeg" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css?v=1"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick-theme.css" />
+    <link rel="stylesheet" href="css/slick-lightbox.css" />
+    <link rel="stylesheet" href="css/zozo.tabs.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+        .subnav {
+          float: left;
+          overflow: hidden;
+        }
+        .subnav .subnavbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          padding: 14px 16px;
+          background-color: inherit;
+          margin: 0;
+        }
+  
+        /*       
+              .nav-row-down li::before{
+                  content: '';
+                  display: block;
+                  width: 0;
+                  height: 0;
+                  position: absolute;
+                  border-top: 8px solid var(--site-color);
+                  border-bottom: 8px solid transparent;
+                  border-left: 8px solid transparent;
+                  border-right: 8px solid transparent;
+                  top: 100%;
+                  left: 50%;
+              }
+              */
+        .subnav-content {
+          display: none;
+          position: absolute;
+          left: 0;
+          background-color: var(--site-color);
+          width: 100%;
+          z-index: 1;
+          justify-content: center;
+          border: 0.5px solid #92a5b0;
+        }
+        .subnav-content a {
+          float: left;
+          color: white;
+          text-decoration: none;
+          /* padding: 16px 0;*/
+          font-size: 14px;
+          position: relative;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+        .subnav-content div {
+          padding: 0 16px;
+          position: relative;
+        }
+        .subnav-content div:not(:last-child):after {
+          content: "|";
+          color: white;
+          position: absolute;
+          right: -1.5px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .subnav-content a:hover:after {
+          background: white;
+        }
+  
+        .subnav:hover > .subnav-content,
+        .subnav-content
+          > .dropdown-submenu.second-sub1:hover
+          .dropdown-menu.subnav-content {
+          display: flex;
+        }
+        .dropdown-menu.subnav-content {
+          padding: 0px;
+        }
+        .second-sub1:hover .second-sub-nav {
+          display: flex;
+          background-color: var(--site-color);
+        }
+        .subnav-dropdown-menu li {
+          list-style-type: none;
+        }
+        .subnav-unit-wrap .subnav-dropdown-menu li:first-child {
+          border-left: 0px;
+        }
+        .subnav-content {
+          text-align: center;
+          margin: 0px auto;
+          flex-direction: column;
+        }
+        .subnav-unit-wrap {
+          display: flex;
+          width: 100%;
+          padding: 0;
+        }
+        .subnav-unit {
+          flex-grow: 1;
+          flex-basis: 0;
+          border-right: 0.5px solid var(--secondary-color-border);
+          border-bottom: 0.5px solid var(--secondary-color-border);
+          align-self: center;
+          /* padding: 16px; */
+          height: 72px;
+          display: flex;
+          align-items: center;
+          padding: 0px 5px;
+        }
+        .subnav-unit-wrap li:first-child {
+          border-left: 0.05px solid var(--secondary-color-border);
+        }
+        .subnav-unit-wrap .subnav-link span {
+          border-bottom: 5px solid var(--site-color) !important;
+        }
+        .subnav-unit-wrap .subnav-link:hover span,
+        .subnav-unit-wrap .subnav-link.active span {
+          border-bottom: 5px solid #fff !important;
+        }
+        .subnav-unit-wrap.sub {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+  
+        .quick-links a {
+          font-weight: 500;
+        }
+      </style>
+      
+</head>
+<body id="home">
+    <section>
+        <!-- navbar -->
+        <div class=" nav-wrapper d-none d-lg-block">
+          <nav
+            id="navbar_top"
+            class="navbar navbar-expand-lg border-bottom-0 nav-bg navbar-cont"
+            style="color: #0c4da2; "
+          >
+            <div class="container-fluid align-items-stretch navbar" style="border-bottom: 2px solid var(--secondary-color-border);">
+              <div
+                class="col-2 navbar-brand m-0 p-2 text-center"
+              >
+                <div class="logo-box-wrap">
+                  <img
+                    src="images1/logo2.png"
+                    class="nav-logo"
+                    alt=""
+                    style="width: 100px ;background: none;"
+                  />
+                  <!-- <h1 style="padding: 10%; font-weight: bold;">C S P I T</h1> -->
+                </div>
+              </div>
+    
+              <div class="navbar col-10 px-0 nav-bg">
+                <button
+                  class="navbar-toggler my-2"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarCollapse"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                  class="collapse navbar-collapse flex-column align-items-start ml-0"
+                  id="navbarCollapse"
+                >
+                  <ul
+                    class="quick-links navbar-nav nav-sub justify-content-end mx-auto nav-row-up "
+                  >
+                    <li class="">
+                      <a
+                        class="nav-link py-0 px-4 top-link"
+                        href="https://www.charusat.ac.in/placement"
+                        target="_blank"
+                      >
+                        Placement
+                      </a>
+                    </li>
+                    <li class="">
+                      <a class="nav-link py-0 px-4 top-link" href="#gallery">
+                        Gallery
+                      </a>
+                    </li>
+                    <li class="">
+                      <a class="nav-link py-0 px-4 top-link" href="#">
+                        Newsletter
+                      </a>
+                    </li>
+                    <li class="">
+                      <a
+                        class="nav-link py-0 px-4 top-link"
+                        href="https://www.charusat.ac.in/scholarship"
+                        target="_blank"
+                      >
+                        Scholarships
+                      </a>
+                    </li>
+                    <li class="">
+                      <a
+                        class="nav-link py-0 px-4 top-link"
+                        href="./faculty.html"
+                      >
+                        Faculty & Staff
+                      </a>
+                    </li>
+                    <li class="">
+                      <a class="nav-link py-0 px-4 top-link" href="https://alumni.charusat.ac.in/" target="_blank"> Alumni </a>
+                    </li>
+                  </ul>
+                  <ul class="navbar-nav flex-row mx-auto nav-row-down nav-main">
+                    <li class="nav-item subnav">
+                      <a class="nav-link py-0 subnavbtn" href="#about-us"
+                        >About Us</a
+                      >
+                      <!-- <div class="subnav-content">
+                                      <ul class="list-unstyled subnav-unit-wrap">
+                                          <li class="subnav-unit dropdown-submenu second-sub1">
+                                              <a class="subnav-link text-uppercase"
+                                                  href="#"><span>History</span></a>
+                                          </li>
+                                          <li class="subnav-unit dropdown-submenu second-sub1">
+                                              <a class="subnav-link text-uppercase"
+                                                  href="#"><span>Vision</span></a>                                   
+                                          </li>
+                                          <li class="subnav-unit">
+                                              <a class="subnav-link text-uppercase" href="#">
+                                                <span>Leadership</span>
+                                              </a>
+                                          </li>
+                                          <li class="subnav-unit">
+                                              <a class="subnav-link text-uppercase" href="#">
+                                                <span>MoU</span>
+                                              </a>
+                                          </li>
+                                          <li class="subnav-unit">
+                                              <a class="subnav-link text-uppercase" href="#">
+                                                <span>Accreditation - NBA, NIRF, NAAC</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </div> -->
+                    </li>
+                    <li class="nav-item subnav">
+                      <a class="nav-link py-0 subnavbtn" href="#">Academics</a>
+                      <div class="subnav-content">
+                        <ul class="list-unstyled subnav-unit-wrap">
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="#under-graduate-programs"
+                            >
+                              <span>Undergraduate Programs</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu second-sub2">
+                            <a
+                              class="subnav-link subnav-link text-uppercase"
+                              href="#post-graduate-programs"
+                              ><span>Postgraduate Programs</span></a
+                            >
+                          </li>
+    
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://www.charusat.ac.in/assets/files/PHD/PhD_Regulations.pdf"
+                              target="_blank"
+                              ><span>Ph.D.</span></a
+                            >
+                          </li>
+                          <!-- <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://www.charusat.ac.in/course-single#PGDEAMT"
+                              target="_blank"
+                            >
+                              <span>PGP</span>
+                            </a>
+                          </li> -->
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item subnav">
+                      <a class="nav-link py-0 subnavbtn" href="#">Centres</a>
+                      <div class="subnav-content">
+                        <ul class="list-unstyled subnav-unit-wrap">
+                          <li class="subnav-unit">
+                            <a
+                              class="text-uppercase subnav-link"
+                              href="https://www.charusat.ac.in/GRC"
+                              target="_blank"
+                            >
+                            <span>Grievance Redressal</span>
+                              
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://www.charusat.ac.in/ICC"
+                              target="_blank"
+                              >ICC</a
+                            >
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://www.charusat.ac.in/CREDP"
+                              target="_blank"
+                              >Rural Education Development</a
+                            >
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://www.charusat.ac.in/wdc"
+                              target="_blank"
+                              >WOMEN DEVELOPMENT CELL</a
+                            >
+                          </li>
+    
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://www.charusat.ac.in/csic"
+                              target="_blank"
+                              >Startup and Innovation Centre</a
+                            >
+                          </li>
+    
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://www.charusat.ac.in/eoc"
+                              target="_blank"
+                              >Equal Opportunity Cell</a
+                            >
+                          </li>
+    
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://www.charusat.ac.in/university-industry-interaction-cell"
+                              target="_blank"
+                              >Industry Interaction Cell</a
+                            >
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="text-uppercase"
+                              href="https://isc.charusat.ac.in/"
+                              target="_blank"
+                              >International Student Cell</a
+                            >
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item subnav">
+                      <a class="nav-link py-0 subnavbtn" href="">Committees</a>
+                      <div class="subnav-content">
+                        <ul class="list-unstyled subnav-unit-wrap">
+                          
+                          <li class="subnav-unit dropdown-submenu second-sub2">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://www.charusat.ac.in/anti-ragging"
+                              target="_blank"
+                              ><span>Anti-Ragging</span></a
+                            >
+                          </li>
+    
+                          <li class="subnav-unit dropdown-submenu second-sub2">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://pledge.mygov.in/fightagainstdrugabuse/"
+                              target="_blank"
+                              ><span>Anti-Drug</span></a
+                            >
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </li>
+    
+                    <li class="nav-item subnav">
+                      <a class="nav-link py-0 subnavbtn" href="">Research</a>
+                      <div class="subnav-content">
+                        <ul class="list-unstyled subnav-unit-wrap">
+                          <li class="subnav-unit dropdown-submenu">
+                            <a class="subnav-link text-uppercase" href="#">
+                              Research Facilities
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu second-sub2">
+                            <a class="subnav-link text-uppercase" href="#"
+                              ><span>Research Projects</span></a
+                            >
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </li>
+                    
+                    <li class="nav-item subnav">
+                      <a class="nav-link py-0 subnavbtn" href="#"
+                        >Student Corner</a
+                      >
+                      <div class="subnav-content">
+                        <ul class="list-unstyled subnav-unit-wrap">
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://www.charusat.ac.in/documents/pdfs/data_1/Code_Of_Conduct/Student%20code%20of%20Conduct.pdf"
+                              target="_blank"
+                            >
+                              <span>Code Of Conduct</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://drive.google.com/drive/folders/1LgF2k8N_GeRCs-O50PvXUiywW-Bk8Lyw"
+                              target="_blank"
+                            >
+                              <span>Student Handbook </span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu second-sub2">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2"
+                              target="_blank"
+                            >
+                              <span>Syllabus</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://charusat.edu.in:912/OthPaymentApp/"
+                              target="_blank"
+                            >
+                              <span>Request Transcript</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://charusat.edu.in:912/FeesPaymentApp/"
+                              target="_blank"
+                            >
+                              <span>Pay Fees</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu second-sub2">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://charusat.edu.in:912/Uniexamresult/"
+                              target="_blank"
+                            >
+                              <span>View Result</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://icreate.charusat.ac.in/"
+                              target="_blank"
+                            >
+                              <span>Icreate</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://drive.google.com/drive/u/1/folders/1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW"
+                              target="_blank"
+                            >
+                              <span>Past Year Question Paper</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://drive.google.com/drive/folders/1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ"
+                              target="_blank"
+                              ><span>Academic</span></a
+                            >
+                          </li>
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://drive.google.com/drive/folders/1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2"
+                              target="_blank"
+                            >
+                              <span>Academic Regulation</span>
+                            </a>
+                          </li>
+    
+                          <!-- <li class="subnav-unit dropdown-submenu">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="https://drive.google.com/drive/folders/10-XqFw6ISXnDeyajK8oB3YIIj6NfrIyO"
+                              target="_blank"
+                            >
+                              <span>Downloads</span>
+                            </a>
+                          </li> -->
+                        </ul>
+                      </div>
+                    </li>
+    
+                    <!-- <li class="nav-item subnav">
+                      <a
+                        class="nav-link py-0 subnavbtn"
+                        href="JavaScript:Void(0);"
+                        >Student Life</a
+                      >
+                      <div class="subnav-content">
+                        <ul class="list-unstyled subnav-unit-wrap">
+                          <li class="subnav-unit dropdown-submenu second-sub1">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="#"
+                              target="_blank"
+                            >
+                              <span>Gallery</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit dropdown-submenu second-sub1">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="#"
+                              target="_blank"
+                            >
+                              <span>Clubs</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="#"
+                              target="_blank"
+                            >
+                              <span>Sports</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="#"
+                              target="_blank"
+                            >
+                              <span>Events</span>
+                            </a>
+                          </li>
+                          <li class="subnav-unit">
+                            <a
+                              class="subnav-link text-uppercase"
+                              href="#"
+                              target="_blank"
+                            >
+                              <span>Health Services</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- Searchh -->
+        <div class="container-fluid nav-wrap-sm d-block d-lg-none">
+          <div class="row">
+            <div class="col-9">
+              <div class="navbar-brand m-0 p-0">
+                <a href="/">
+                  <div class="logo-box-wrap">
+                    <img src="/images/cspit_logo.jpeg" class="nav-logo" alt="" />
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-3 d-flex justify-content-center hamburger-wrap">
+              <div class="search-icon">
+                <a class="pr-4" href="#"
+                  ><i
+                    onclick="javascript:$('.search-block').show();"
+                    class="fa fa-search"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+              </div>
+              <div class="mx-auto bar-wrap">
+                <button
+                  class="navbar-toggler p-0 border-0"
+                  type="button"
+                  data-toggle="offcanvas"
+                >
+                  <span class="bar mt-0"></span><span class="bar"></span
+                  ><span class="bar"></span>
+                </button>
+              </div>
+            </div>
+            <div class="search-block">
+              <button
+                onclick="javascript:$('.search-block').hide();"
+                type="button"
+                class="close"
+                aria-label="Close"
+              >
+                <i class="fas fa-times-circle"></i>
+              </button>
+              <form id="searchForm" action="/search/">
+                <input
+                  name="q"
+                  type="text"
+                  id="btn-search"
+                  placeholder="Start Searching"
+                  class="form-control"
+                  value=""
+                /><button type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--  SIDEBAR -->
+        <nav
+          class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark d-block d-lg-none"
+        >
+          <div
+            class="navbar-collapse offcanvas-collapse"
+            id="navbarsExampleDefault"
+          >
+            <div class="row">
+              <div class="col-9">
+                <div class="navbar-brand m-0 p-0">
+                  <!-- <a class="m-0 p-0" href="/"><img class="img-fluid logo-img" src="/site/assets/files/1/default_logo_final_png.1400x0.webp" alt="logo"></a> -->
+                  <a href="/">
+                    <div class="logo-box-wrap">
+                      <img src="/images1/logo.jpeg" class="nav-logo" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-3 d-flex justify-content-center hamburger-wrap">
+                <div class="mx-auto bar-wrap">
+                  <button
+                    class="navbar-toggler p-0 border-0"
+                    type="button"
+                    data-toggle="offcanvas"
+                  >
+                    <span class="bar mt-0"></span><span class="bar"></span
+                    ><span class="bar"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <ul class="navbar-nav mr-auto" style="color: #0c4da2">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="https://www.charusat.ac.in/placement"
+                    target="_blank"
+                    >Placement</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="">Scholarships</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="./faculty.html">Faculty & staff</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://alumni.charusat.ac.in/">Alumni</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/media/">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="JavaScript:Void(0);"
+                    id="academics"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Academics</a
+                  >
+                  <!-- <a class="nav-link dropdown-toggle" href="#" id="academics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Academics</a> -->
+                  <!-- <div class="dropdown-menu" aria-labelledby="academics">
+                              <a class="dropdown-item" href="/academics/schools-centres/">Schools &amp; Centres</a><a
+                                  class="dropdown-item" href="/academics/programmes/">Programmes</a><a
+                                  class="dropdown-item" href="/academics/learning-initiatives/">Learning
+                                  Initiatives</a><a class="dropdown-item" href="/academics/libraries/">Libraries</a><a
+                                  class="dropdown-item"
+                                  href="/academics/interdisciplinary-learning/">Interdisciplinary Learning</a><a
+                                  class="dropdown-item" href="/academics/academic-calendar-2024-25/">Academic Calendar
+                                  2024-25</a>
+                          </div> -->
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="JavaScript:Void(0);"
+                    id="admission"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Committees</a
+                  ><!--<a class="nav-link dropdown-toggle" href="#" id="admission" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admission</a> -->
+                  <!-- <div class="dropdown-menu" aria-labelledby="admission">
+                              <a class="dropdown-item" href="">Undergraduate
+                                  Admission</a><a class="dropdown-item" href="">Graduate
+                                  Admission</a><a class="dropdown-item" href="">Doctoral
+                                  Admission</a><a class="dropdown-item" href="">Fees
+                                  &amp; Financial Aid</a>
+                          </div> -->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/faculty/">Departments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/research/">Research</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/faculty/">Student Corner</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/research/">Student Life</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- /navbar -->
+      </section>
+</body>
+</html>
