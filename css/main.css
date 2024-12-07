@@ -464,7 +464,7 @@ img {
 .chapter-section h2,
 .announcement-section h2,
 .professional-society h2,
-.testimonials-section h2 {
+.testimonials-section h2, .mou-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 35px;
@@ -536,7 +536,7 @@ img {
 /* ------------------------STUDENT CHAPTER ------------------------- */
 .courses,
 .professional-society,
-.club-section {
+.club-section,.mou-section {
   padding-bottom: 4%;
   padding-top: 2%;
   background-color: var(--site-color);
