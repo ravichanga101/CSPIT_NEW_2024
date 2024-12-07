@@ -147,9 +147,9 @@ input[type="submit"] {
 
 /* ABOUT US ---------------------------- */
 .section-intro {
-  padding: 8% 8%;
+  padding: 4% 8%;
   width: 100vw;
-  background-image: url(".././images1/about-us-bg.webp");
+  background-image: url(".././images1/about-us-bg.jpg");
   background-size: cover;
 }
 
@@ -583,19 +583,19 @@ img {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap: 4rem;
+  gap: 3rem;
   flex-wrap: wrap;
 }
 .courses__cont--item {
-  width: 12%;
+  width: 14%;
   display: inline-flex;
   align-items: center;
   border-radius: 1rem;
   overflow: hidden;
   background-color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
   aspect-ratio: 1/1;
-  border: 5px solid #fff;
+  border: 2px solid #fff;
 }
 .courses__cont--item img {
   width: 100%;
@@ -1536,7 +1536,7 @@ section#thrust-areas {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 60px;
+  height: 40px;
 }
 
 /* Keep the title and icon fixed */
