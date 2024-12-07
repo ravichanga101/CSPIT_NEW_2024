@@ -1536,7 +1536,7 @@ section#thrust-areas {
 /*  ------------------- NEW ANNOUNCEMENT CSS--------- */
 /* Announcement Bar */
 .announcement-bar {
-  background: linear-gradient(to right, #0056b3, #0078d7);
+  background: linear-gradient(to right, #0056b3, #008cfe);
   color: #fff;
   padding: 10px 20px;
   font-family: "Mona-sans";
@@ -1549,6 +1549,11 @@ section#thrust-areas {
   align-items: center;
   justify-content: flex-start;
   height: 40px;
+  position: fixed; /* Fix at the bottom of the page */
+  bottom: 0; /* Align to the bottom */
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
 /* Keep the title and icon fixed */
