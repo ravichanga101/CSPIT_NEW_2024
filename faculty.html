@@ -80,6 +80,7 @@
 
       /* Card Styles */
       .card {
+        /* width:80%; */
         background: #fff;
         border-radius: 10px;
         text-align: center;
@@ -94,7 +95,7 @@
       }
 
       .card img {
-        width: 100%;
+        width: 80%;
         height: 300px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -102,7 +103,7 @@
 
       .card h4 {
         color: #033c67;
-        font-size: 16px;
+        font-size: 20px;
         margin: 10px 0;
       }
 
@@ -211,7 +212,7 @@
                <a href="details.html?name=${encodeURIComponent(name)}" class="text-decoration-none text-dark">
                   <div class="">
                     <img src="${imagePath}" alt="${name}" />
-                    <h4>${name}</h4>
+                    <h4><strong>${name}</strong></h4>
                     <h5>${title}</h5>
                     <p>${degree}</p>
                     <p><strong>Research Interests:</strong><br>${researchInterests}</p>

@@ -121,8 +121,7 @@
 
         <!-- Right Section: Accordion -->
         <div class="col-md-9">
-          <p class="research-interests">Research Interests:</p>
-          <p id="faculty-research-interests"></p>
+          
 
           <div class="accordion" id="facultyAccordion">
             <div class="accordion-item">
@@ -135,7 +134,7 @@
                   aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Academics
+                  Subjects Taught
                 </button>
               </h2>
               <div
@@ -149,7 +148,6 @@
                 </div>
               </div>
             </div>
-
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button
@@ -160,13 +158,37 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Research & Publications
+                  Areas of Expertise
                 </button>
               </h2>
               <div
                 id="collapseTwo"
                 class="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
+                data-bs-parent="#facultyAccordion"
+              >
+                <div class="accordion-body" id="faculty-research-interests">
+                  Detailed profile information goes here.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Research & Publications
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
                 data-bs-parent="#facultyAccordion"
               >
                 <div class="accordion-body" id="faculty-research">
@@ -225,56 +247,7 @@
               </div>
             </div>
 
-            <!-- <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFive">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
-                  Selected Conference Presentations and Invited Talks
-                </button>
-              </h2>
-              <div
-                id="collapseFive"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#facultyAccordion"
-              >
-                <div class="accordion-body" id="faculty-conference">
-                  Conference presentations details go here.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingSix">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseSix"
-                  aria-expanded="false"
-                  aria-controls="collapseSix"
-                >
-                  Fellowships
-                </button>
-              </h2>
-              <div
-                id="collapseSix"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingSix"
-                data-bs-parent="#facultyAccordion"
-              >
-                <div class="accordion-body" id="faculty-fellowships">
-                  Fellowship details go here.
-                </div>
-              </div>
-            </div> -->
-          </div>
+           </div>
         </div>
       </div>
     </div>
