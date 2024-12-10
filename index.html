@@ -2050,7 +2050,7 @@
     </section>
 
     <br />
-    <section class="club-section animate-on-scroll">
+    <!-- <section class="club-section animate-on-scroll">
       <h2 style="color: #fff;">STUDENT CLUBS</h2>
       <div class="container">
         <div class="courses__cont">
@@ -2066,12 +2066,7 @@
               <div class="item-info"></div>
             </a>
           </div>
-          <!-- <div class="courses__cont--item">
-            <a href="studentclub.html#club3">
-              <img loading="lazy" src="images1/Student Club/btech.webp" alt="SOLUTION ARCH" class="item-image">
-              <div class="item-info"></div>
-            </a>
-          </div> -->
+          
           <div class="courses__cont--item">
             <a href="studentclub.html#club4">
               <img loading="lazy" src="images1/Student Club/CC.jpg" alt="DEVELOPER" class="item-image">
@@ -2128,7 +2123,298 @@
           </div>
         </div>
       </div>
+    </section> -->
+    
+    <section class="club-section animate-on-scroll">
+      <h2 style="color: #fff; text-align: center;">STUDENT CLUBS</h2>
+      <div class="container">
+        <div class="courses__cont">
+          <!-- Club Items -->
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club1')">
+              <img loading="lazy" src="images1/Student Club/aws.jpeg" alt="AWS Student Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club2')">
+              <img loading="lazy" src="images1/Student Club/ADWITIYA AAKASH - circle - dark.png" alt="Adwitiya Aakash" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club3')">
+              <img loading="lazy" src="images1/Student Club/Aiml.png" alt="Adwitiya Aakash" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club4')">
+              <img loading="lazy" src="images1/Student Club/CC.jpg" alt="Developer Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club5')">
+              <img loading="lazy" src="images1/Student Club/Club_Gamma.png" alt="Gamma Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club6')">
+              <img loading="lazy" src="images1/Student Club/Cyber_Security.png" alt="Cyber Security Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club7')">
+              <img loading="lazy" src="images1/Student Club/Data Science Club.PNG" alt="Data Science Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club8')">
+              <img loading="lazy" src="images1/Student Club/eb corelone.webp" alt="Entrepreneurship Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club9')">
+              <img loading="lazy" src="images1/Student Club/ML_Club.png" alt="Machine Learning Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club10')">
+              <img loading="lazy" src="images1/Student Club/innovation.png" alt="Innovation Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club11')">
+              <img loading="lazy" src="images1/Student Club/Robotics_Club_CSPIT.jpeg" alt="Robotics Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club12')">
+              <img loading="lazy" src="images1/Student Club/saeindia.png" alt="SAE Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club13')">
+              <img loading="lazy" src="images1/Student Club/ChipXplorers Club.PNG" alt="ChipExplorers" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club14')">
+              <img loading="lazy" src="images1/Student Club/Competitive Programming Squad.PNG" alt="CP SQUAD" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club15')">
+              <img loading="lazy" src="images1/Student Club/Eloquence Club.PNG" alt="Eloquence" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club16')">
+              <img loading="lazy" src="images1/Student Club/Scraping the Sky Club.png" alt="Scraping the sky" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club17')">
+              <img loading="lazy" src="images1/Student Club/Information Security Club.PNG" alt="Information Security" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club18')">
+              <img loading="lazy" src="images1/Student Club/Debate Club.PNG" alt="Debate Club" class="item-image">
+            </a>
+          </div>
+          <div class="courses__cont--item">
+            <a onclick="openPopup('club19')">
+              <img loading="lazy" src="images1/Student Club/Code for Cause Club.PNG" alt="Code for Cause" class="item-image">
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
+    
+    <!-- Popup Modal -->
+    <div class="popup" id="club-popup">
+      <div class="popup-content">
+        <button class="popup-close" onclick="closePopup()">&times;</button>
+        <h2 class="popup-title" id="popup-title"></h2>
+        <div class="popup-body">
+          <div class="popup-image">
+            <img id="popup-image" src="" alt="Club Image">
+          </div>
+          <div class="popup-details">
+            <h3>Description</h3>
+            <p id="popup-description"></p>
+            <h3>Members</h3>
+            <ul id="popup-members"></ul>
+            <h3>Contact</h3>
+            <ul id="popup-contact"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script>
+      const clubs = {
+        club1: {
+        title: "AWS Student Club",
+        image: "images1/Student Club/aws.jpeg",
+        description: "Learn about cloud computing with hands-on labs, workshops, and certifications.",
+        members: ["John Doe", "Jane Smith"],
+        contact: ["John Doe", "Jane Smith"],
+      },
+      club2: {
+        title: "Advitiya Aakash Club",
+        image: "images1/Student Club/ADWITIYA AAKASH - circle - dark.png",
+        description: "Advitiya Aakash Club	Dr. Brijesh Kundaliya (brijeshkundaliya.ec@charusat.ac.in)	Advitiya Aakash is a vibrant Drone Club at the Electronics and Communication Department of Charusat University. It fosters innovation and creativity among students passionate about UAV technology. The club provides hands-on training in designing, building, and programming drones. Members explore applications like aerial mapping, surveillance, and delivery systems. It also organizes workshops on basic electronics technology, equipping students with foundational skills for advanced projects. Through these initiatives, students enhance their technical and problem-solving abilities. The club actively participates in national and international events, showcasing talent and expertise. Advitiya Aksha encourages collaboration and teamwork, preparing students for cutting-edge careers in drone technology. It promotes research and development, contributing to advancements in drone applications. Advitiya Aksha exemplifies the spirit of learning and innovation, empowering students to soar high in the skies of technology.",
+        members: ["Dr. Brijesh Kundaliya"],
+        contact: ["brijeshkundaliya.ec@charusat.ac.in"],
+      },
+      club3: {
+        title: "AI/ML Club",
+        image: "images1/Student Club/Aiml.png",
+        description: "Welcome to the AI/ML Club, where innovation thrives. Explore the realms of Artificial Intelligence and Machine Learning with us. Beginners and experts alike unite to craft a smarter tomorrow. Dive into cutting-edge technologies, collaborate on transformative projects, and empower yourself with knowledge that shapes the future of AI. Together, we're pushing boundaries and redefining possibilities in the digital age. Join us on this journey of discovery and innovation.",
+        members: ["Mr. Harshul Yagnik ", "Mr. Abhishek Patel "],
+        contact: ["harshulyagnik.cse@charusat.ac.in", "abhishekpatel.cse@charusat.ac.in"],
+      },
+      club4: {
+        title: "The Tribe of Creativity",
+        image: "images1/Student Club/CC.jpg",
+        description: "The Tribe of Creativity Club organizes vibrant cultural activities at the departmental level, fostering a sense of community among students and faculty. The club celebrates festivals like Navaratri with events such as Garba , Rangoli competitions, and traditional dress days, creating an inclusive and joyous atmosphere.It also hosts talent showcases, and fun competitions that encourage participation from everyone, allowing students and faculty to explore their artistic sides. These activities not only highlight cultural diversity but also strengthen bonds within the department",
+        members: ["Ms. Arpita Shah ", "Ms. Sneha Padhiar "],
+        contact: ["arpitashah.ce@charusat.ac.in", "snehapadhiar.ce@charusat.ac.in"],
+      },
+      club5: {
+        title: "Gamma Club",
+        image: "images1/Student Club/Club_Gamma.png",
+        description: "Club Gamma formulates a contributory platform to scrutinize learner's potential talents with profound guidance. The club assists in both technical and non-technical spheres. The pivot of the club fundamentally is to promote the inclusive growth of the learners and help the learners attain analytical knowledge.",
+        members: ["Mr. Ronak R Patel ","Ms. Trusha Patel ", "Ms. Vaishali Koria "],
+        contact: ["ronakrpatel.ce@charusat.ac.in","trushapatel.ce@charusat.ac.in", "vaishalikoria.ce@charusat.ac.in"],
+      },
+      club6: {
+        title: "Cyber Security Club",
+        image: "images1/Student Club/Cyber_Security.png",
+        description: "Learn about ethical hacking, cyber defense, and digital security.",
+        members: ["Alex Carter", "Linda Bell"],
+        contact: ["Alex Carter", "Linda Bell"],
+      },
+      club7: {
+        title: "Data Science Club",
+        image: "images1/Student Club/DSLogo.png",
+        description: "Dive into the world of data analytics, visualization, and machine learning.",
+        members: ["Chris Taylor", "Patricia Hill"],
+        contact: ["Chris Taylor", "Patricia Hill"],
+      },
+      club8: {
+        title: "Entrepreneurship Club",
+        image: "images1/Student Club/eb corelone.webp",
+        description: "Encouraging innovation and providing a platform for budding entrepreneurs.",
+        members: ["Sam Morris", "Olivia Garcia"],
+        contact: ["Sam Morris", "Olivia Garcia"],
+      },
+      club9: {
+        title: "Machine Learning Club",
+        image: "images1/Student Club/ML_Club.png",
+        description: "The Machine Learning Club serves as a hub for innovation and exploration in the rapidly evolving fields of Machine Learning (ML) and Deep Learning (DL). The club's mission is to empower students with cutting-edge knowledge, hands-on experience, and a deeper understanding of these transformative technologies. Through workshops, seminars, and project-based learning, the club equips members with the skills to design, implement, and evaluate ML and DL models. Faculty mentors and Students contribute to sessions, ensuring exposure to the latest advancements and real-world applications. Whether a beginner or an enthusiast, the club offers a platform for everyone to grow, connect, and contribute to the vibrant field of AI. With a commitment to excellence, the Machine Learning Club ensures that its members are well-prepared for the future of intelligent technologies.",
+        members: ["Mr. Dhaval Bhoi ", "Mr. Mrugendra Rahevar","Mr. Ronak N Patel "],
+        contact: ["dhavalbhoi.ce@charusat.ac.in","mrugendrarahevar.ce@charusat.ac.in", "ronakpatel.ce@charusat.ac.in"],
+      },
+      club10: {
+        title: "House of Innovation-Skills for Life",
+        image: "images1/Student Club/innovation.png",
+        description: "House of Innovation- Skills for life is a platform where students showcase their inner talent and abilities. This club helps the students to learn new skills which can help them build their character and career. They together work on projects and ideas in a group and brainstorm on the possible outcome.House of Innovation club aims to provide a stage for the students to foster creativity and critical thinking skills. Furthermore, they have language sessions, designing softwares, programming languages and many more.",
+        members: ["Mr. Vikas Panchal "],
+        contact: ["vikaspanchal.me@charusat.ac.in"],
+      },
+      club11: {
+        title: "Robotics Club",
+        image: "images1/Student Club/Robotics_Club_CSPIT.jpeg",
+        description: "Engage in designing, building, and programming robots.",
+        members: ["Noah Thompson", "Amelia Walker"],
+        contact: ["Noah Thompson", "Amelia Walker"],
+      },
+      club12: {
+        title: "SAE Club",
+        image: "images1/Student Club/saeindia.png",
+        description: "Explore the automotive world with SAE competitions and activities.",
+        members: ["Liam Scott", "Emma Harris"],
+        contact: ["Liam Scott", "Emma Harris"],
+      },
+      club13: {
+        title: "ChipXplorers Club",
+        image: "images1/Student Club/ChipXplorers Club.PNG",
+        description: "The VLSI Club is a dynamic platform that fosters innovation and skill development in Very Large Scale Integration (VLSI) and semiconductor technologies. It aims to nurture technical expertise, promote innovative thinking, and bridge the gap between academics and industry. The club conducts workshops, expert talks, and peer-to-peer learning activities throughout the year, focusing on tools like Cadence, Vivado, and FPGA. Students actively participate in certification courses, conferences, hackathon,mock interviews,panel discussions,alumni talks and research publications, enhancing their technical and research acumen. Integrating AI and IoT with VLSI is a key focus, allowing exploration of cutting-edge applications. The club encourages students to propose and lead various activities, fostering creativity and leadership. It serves as a hands-on platform for exploring the latest innovations in semiconductor technology, supported by real-world tools and applications. Students gain industry-relevant knowledge through collaborative learning and networking opportunities. By participating, students become future-ready professionals equipped to address challenges in the semiconductor field.",
+        members: ["Dr. Arpita Patel "],
+        contact: ["arpitapatel.ec@charusat.ac.in"],
+      },
+      club14: {
+        title: "Competitive Programming Squad",
+        image: "images1/Student Club/Competitive Programming Squad.PNG",
+        description: "Hone your coding skills with contests, problem-solving, and challenges.",
+        members: ["Michael Green", "Sophia Bennett"],
+        contact: ["cpsquad@example.com"],
+      },
+      club15: {
+        title: "Eloquence Club",
+        image: "images1/Student Club/Eloquence Club.PNG",
+        description: "Sharpen your public speaking, communication, and leadership skills.",
+        members: ["William Davis", "Ava Martin"],
+        contact: ["eloquence@example.com"],
+      },
+      club16: {
+        title: "Scraping the Sky Club",
+        image: "images1/Student Club/Scraping the Sky Club.png",
+        description: "Dive into civil engineering marvels with a focus on skyscrapers and mega projects.",
+        members: ["James Robinson", "Emily Wilson"],
+        contact: ["skyclub@example.com"],
+      },
+      club17: {
+        title: "Information Security Club",
+        image: "images1/Student Club/Information Security Club.PNG",
+        description: "The Cyber Security Club is an engaging platform for B.Tech Computer  students passionate about cybersecurity. Designed for peer learning, the club fosters knowledge-sharing among students through regular meetups and interactive activities. The club hosts online sessions every first and third Saturday, offering insights on real-world challenges and emerging trends in cybersecurity.Through workshops, discussions, and hands-on activities, students enhance their skills in ethical hacking, secure programming, and more. Join the Cyber Security Club to explore cutting-edge topics, connect with like-minded peers, and prepare for a future in the dynamic field of cybersecurity.",
+        members: ["Mr. Martin Parmar ", "Ms. Sneha Padhiar "],
+        contact: ["martinparmar.ce@charusat.ac.in", "snehapadhiar.ce@charusat.ac.in"],
+      },
+      club18: {
+        title: "Debate Club",
+        image: "images1/Student Club/Debate Club.PNG",
+        description: "Challenge your critical thinking and debating skills with intriguing topics.",
+        members: ["Ethan Scott", "Olivia Garcia"],
+        contact: ["debateclub@example.com"],
+      },
+      club19: {
+        title: "Code For Cause Club",
+        image: "images1/Student Club/Code for Cause Club.PNG",
+        description: "A Code for Cause club is a coding club where a group of interested and enthusiastic students who learn and practice coding together in a supportive environment. The Code for Cause club develops programming skills, computational skills and logical skills. In this club activities, students can enhance their knowledge and experience how to convert the knowledge in real time applications. This club provides a platform for the students to embedded certain hardware tools and particular code. The students are encouraged to participate in various technical competitions such as hackathon, codefiesta etc.",
+        members: ["Dr. Killol V. Pandya "],
+        contact: ["killolpandya.ec@charusat.ac.in"],
+      },
+    };
+
+
+      // Open popup
+      function openPopup(clubId) {
+        const clubData = clubs[clubId];
+        if (clubData) {
+          document.getElementById("popup-title").textContent = clubData.title;
+          document.getElementById("popup-image").src = clubData.image;
+          document.getElementById("popup-description").textContent = clubData.description;
+          document.getElementById("popup-members").innerHTML = clubData.members.map(member => `<li>${member}</li>`).join("");
+          document.getElementById("popup-contact").innerHTML = clubData.contact.map(item => `<li>${item}</li>`).join("");
+          document.getElementById("club-popup").style.display = "flex";
+        }
+      }
+
+      // Close popup
+      function closePopup() {
+        document.getElementById("club-popup").style.display = "none";
+      }
+
+      // Close popup when clicking outside the content
+      window.addEventListener("click", event => {
+        const popup = document.getElementById("club-popup");
+        if (event.target === popup) {
+          closePopup();
+        }
+      });
+    </script>
     <br>
     <section id="students-work" class="student-work-section">
       <div
