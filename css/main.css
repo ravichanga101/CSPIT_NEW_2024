@@ -324,7 +324,7 @@ img {
 
 .student-large-card:hover,
 .student-small-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -332,7 +332,7 @@ img {
 .student-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit:contain;
 }
 
 .student-large-card .student-image {
@@ -341,7 +341,7 @@ img {
 
 /* Text Below Image */
 .student-card-text {
-  padding: 0.6rem;
+  padding: 0.5rem;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -349,11 +349,11 @@ img {
 }
 
 /* Ensuring equal heights for large and small cards */
-.student-large-card {
+/* .student-large-card {
   display: flex;
   flex-direction: column;
-  height: 97%; /* Allow the large card to grow to the height of the smaller cards */
-}
+  height: 97%; 
+} */
 
 .student-small-card {
   display: flex;
@@ -367,13 +367,15 @@ img {
 
 /* Styling for the smaller card's image and text */
 .student-small-card .student-image {
-  height: 200px; /* Set a fixed height for the image in small cards */
+  padding: 5px;
+  height: 300px; /* Set a fixed height for the image in small cards */
 }
 
 .student-small-card .student-card-text {
   flex-grow: 1;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size:medium;
+  font-weight: 500;
   background-color: #fff; /* Set background color to white */
   color: #333; /* Ensure text is dark for readability */
   display: flex;
@@ -381,13 +383,145 @@ img {
   align-items: flex-end;
 }
 
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup Content */
+.popup-content {
+  background: #fff;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Popup Close Button */
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Popup Inner Layout */
+.popup-inner {
+  display: flex;
+  height: 100%;
+}
+
+/* Popup Left (Slider) */
+.popup-left {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-slider {
+  position: relative;
+  width: 90%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  transition: opacity 0.5s ease;
+}
+
+.slider-image.active {
+  display: block;
+  opacity: 1;
+}
+
+.popup-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.popup-slider-controls button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Popup Right (Details) */
+.popup-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.popup-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.popup-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.popup-contact li {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+/* Hover Effect for Project Cards */
+.student-small-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.student-small-card:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+
+
 /* Spacing adjustments for rows */
 
 /* Ensuring the large card is equal height with the two smaller cards combined */
-.student-work-section .container d-flex {
+/* .student-work-section .container d-flex {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 @media (max-width: 992px) {
   .student-large-card {
