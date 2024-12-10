@@ -384,117 +384,6 @@ img {
 }
 
 
-/* Popup Overlay */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Popup Content */
-.popup-content {
-  background: #fff;
-  width: 80%;
-  max-width: 1200px;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-/* Popup Close Button */
-.popup-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 1.5rem;
-  color: #333;
-  cursor: pointer;
-}
-
-/* Popup Inner Layout */
-.popup-inner {
-  display: flex;
-  height: 100%;
-}
-
-/* Popup Left (Slider) */
-.popup-left {
-  flex: 1;
-  background: #f8f9fa;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.popup-slider {
-  position: relative;
-  width: 90%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.slider-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-  transition: opacity 0.5s ease;
-}
-
-.slider-image.active {
-  display: block;
-  opacity: 1;
-}
-
-.popup-slider-controls {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin-top: 10px;
-}
-
-.popup-slider-controls button {
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-/* Popup Right (Details) */
-.popup-right {
-  flex: 1;
-  padding: 20px;
-}
-
-.popup-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.popup-description {
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.popup-contact li {
-  list-style: disc;
-  margin-left: 20px;
-  font-size: 1rem;
-}
-
 /* Hover Effect for Project Cards */
 .student-small-card {
   position: relative;
@@ -539,6 +428,186 @@ img {
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem; /* Make title smaller on smaller screens */
+  }
+}
+
+
+/* -------------PROJECTS POPUP------------- */
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup Content */
+.popup-content {
+  background: #fff;
+  width: 80%;
+  max-width: 1200px;
+  max-height: 90vh;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Popup Close Button */
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Popup Inner Layout */
+.popup-inner {
+  display: flex;
+  height: 100%;
+  overflow-y: auto; 
+}
+
+/* Popup Left (Slider) */
+.popup-left {
+  flex: 1;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-slider {
+  position: relative;
+  width: 90%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  transition: opacity 0.5s ease;
+  border: #0056b3 5px solid;
+}
+
+/* Relative flex grow size for popup slider */
+/* .popup-slider-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.popup-slider {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 10px; 
+} */
+
+.thumbnail-strip {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: var(--site-color); /* Highlight active thumbnail */
+}
+
+.slider-image.active {
+  display: block;
+  opacity: 1;
+}
+
+.popup-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.popup-slider-controls button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Popup Right (Details) */
+.popup-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.project-popup-title {
+  font-size: 2.2rem;
+  font-weight: bolder;
+  color: #0056b3;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.popup-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.popup-contact li {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .popup-content {
+    width: 95%;
+    max-width: 100%;
+    max-height: 95vh; /* Slightly more height for smaller screens */
+  }
+  .project-popup-title{
+    font-size: 1.4rem;
+  }
+  .popup-inner {
+    flex-direction: column; /* Stack title, image, and details vertically */
+    padding: 10px;
+  }
+
+  .popup-left {
+    width: 100%; /* Full width for the image slider */
+    order: 1; /* Place image slider below the title */
+  }
+
+  .popup-right {
+    width: 100%;
+    order: 2; /* Place details below the image slider */
+  }
+
+  .popup-slider {
+    height: 300px; /* Adjust slider height for mobile */
   }
 }
 
@@ -900,13 +969,15 @@ img {
 .popup-content {
   background: #f9f9f9;
   border-radius: 12px;
-  max-width: 1000px;
+  max-width: 1200px;
+  max-height: 90vh;
   width: 90%;
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   position: relative;
   text-align: left;
   animation: popupAnimation 0.3s ease-in-out;
+  overflow-y: auto; 
 }
 
 @keyframes popupAnimation {
@@ -1020,9 +1091,13 @@ img {
 }
 
 /* For Small Screens */
+
 @media (max-width: 768px) {
   .popup-content {
     padding: 15px;
+    width: 95%;
+    max-width: 100%;
+    max-height: 95vh;
   }
 
   .popup-image img {
