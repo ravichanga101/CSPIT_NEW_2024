@@ -169,21 +169,6 @@
         margin: 0;
       }
 
-      /*       
-            .nav-row-down li::before{
-                content: '';
-                display: block;
-                width: 0;
-                height: 0;
-                position: absolute;
-                border-top: 8px solid var(--site-color);
-                border-bottom: 8px solid transparent;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                top: 100%;
-                left: 50%;
-            }
-            */
       .subnav-content {
         display: none;
         position: absolute;
@@ -298,207 +283,7 @@
       content="Chandubhai S. Patel Institute of Technology"
     />
 
-    <style>
-      /* Video container settings */
-      .video-background {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      /* Fullscreen video settings */
-      .video-background video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
-      }
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; /* Change this value to adjust how much of the top is darkened */
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.6),
-          rgba(0, 0, 0, 0.2)
-        ); /* Adjust the alpha for darkness */
-        z-index: 2; /* Ensure it is above the video */
-      }
-      /* Overlay content settings (if you want to add any) */
-      .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-        z-index: 1; /* Ensures the content stays on top of the video */
-      }
-    </style>
-    <!-- <link href="css/style_1.css" rel="stylesheet" /> -->
-    <style>
-      .topbar {
-        /* background-color: transparent; Fully transparent */
-        background-color: #0c4da2;
-        color: white;
-        font-size: 0.9rem;
-        padding: 5px 0;
-        position: fixed;
-        top: 0;
-        width: 100%; /* Starts aligned with logo */
-        z-index: 1000;
-        transition: background-color 0.3s; /* Smooth transition */
-      }
-
-      .topbar a {
-        color: white;
-        margin-right: 15px;
-        text-decoration: none;
-        font-size: 16px; /* Smaller font size for topbar */
-        font-weight: 600;
-      }
-
-      /* Navbar */
-      .navbar-custom {
-        font-family: "Montserrat", sans-serif;
-        /* background-color: transparent; */
-        /* background-color: #f5f7fa; */
-        background-color: white;
-        color: #0c4da2;
-        /* padding: 10px 0; */
-        position: fixed;
-        top: 42px; /* Below the topbar */
-        width: 100%;
-        z-index: 1000;
-        transition: background-color 0.3s, padding 0.3s; /* Smooth transition */
-      }
-
-      /* Navbar with background change on scroll */
-      .navbar-custom.scrolled {
-        /* background-color: white; White background on scroll */
-        padding: 5px 0; /* Less padding when scrolled */
-      }
-
-      /* Logo styling */
-      .navbar-custom .navbar-brand {
-        display: flex;
-        align-items: center;
-      }
-
-      /* Second row of navbar items */
-      .navbar-row-2 {
-        display: flex;
-        justify-content: flex-start; /* Align closer to logo */
-        gap: 50px; /* Larger gap between options */
-        align-items: center;
-        font-size: 20px; /* Larger font for second row */
-        margin-top: 10px; /* Bring the second row closer to the logo */
-        width: 100%; /* Second row takes up 80% width */
-      }
-
-      /* Navbar items styling */
-      .navbar-custom .nav-link {
-        /* color: white; Initial text color */
-        padding: 5px 10px;
-        font-weight: 600;
-        text-decoration: none; /* Remove underline from links */
-      }
-
-      /* Change text color on scroll */
-      .navbar-custom.scrolled .nav-link {
-        color: #033c67; /* Change text color on scroll */
-      }
-
-      /* Change the hover color of navbar menu options to yellow */
-      .navbar-row-2 .nav-link:hover,
-      .navbar-row-1 .nav-link:hover {
-        color: #ffcc00 !important; /* Yellow hover effect */
-      }
-
-      /* Dropdown Menu Styling */
-      .dropdown-menu {
-        background: linear-gradient(
-          135deg,
-          #f5f7fa 0%,
-          #c3cfe2 100%
-        ); /* Gradient background */
-        border-radius: 8px; /* Rounded corners */
-        padding: 10px; /* Padding for the dropdown */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
-        transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and transform */
-        transform: translateY(-10px); /* Initial upward position */
-        opacity: 0; /* Initially hidden */
-        visibility: hidden; /* Initially hidden */
-        display: flex; /* Use flexbox for horizontal layout */
-        flex-direction: row; /* Align items in a row */
-        justify-content: flex-start; /* Align items to the start */
-      }
-
-      /* Show dropdown on hover */
-      .navbar-row-2 .dropdown:hover .dropdown-menu {
-        display: flex; /* Keep it as flex on hover */
-        opacity: 1; /* Fade in */
-        visibility: visible; /* Ensure it’s visible */
-        transform: translateY(0); /* Move down into position */
-      }
-
-      /* Dropdown Item Styling */
-      .dropdown-item {
-        color: #333; /* Darker text color */
-        padding: 10px 15px; /* Padding for items */
-        font-weight: 500; /* Font weight */
-        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-        margin-right: 15px; /* Add some space between items */
-        border-radius: 4px; /* Rounded corners for items */
-      }
-
-      /* Remove margin from last item */
-      .dropdown-item:last-child {
-        margin-right: 0; /* No margin for the last item */
-      }
-
-      /* Hover Effect for Dropdown Items */
-      .dropdown-item:hover {
-        background-color: rgba(
-          255,
-          255,
-          255,
-          0.2
-        ); /* Semi-transparent white background on hover */
-        color: #007bff; /* Change text color on hover */
-      }
-
-      /* Optional: Add a subtle animation */
-      .dropdown-item {
-        position: relative; /* For pseudo-element */
-      }
-
-      .dropdown-item::after {
-        content: ""; /* Pseudo-element for underline */
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 2px;
-        background-color: #007bff; /* Accent color for the underline */
-        transform: scaleX(0); /* Start hidden */
-        transition: transform 0.3s ease; /* Smooth animation */
-      }
-
-      .dropdown-item:hover::after {
-        transform: scaleX(1); /* Show underline on hover */
-      }
-    </style>
+   
 
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
@@ -528,7 +313,7 @@
                   src="images1/logo.png"
                   class="nav-logo"
                   alt=""
-                  style="width: 100px ;background: none;"
+                  style="width: 85px ;background: none;"
                 />
                 <!-- <h1 style="padding: 10%; font-weight: bold ;">C S P I T</h1> -->
               </div>
@@ -595,33 +380,6 @@
                     <a class="nav-link py-0 subnavbtn" href="./about_us.html" target="_blank"
                       >About Us</a
                     >
-                    <!-- <div class="subnav-content">
-                                    <ul class="list-unstyled subnav-unit-wrap">
-                                        <li class="subnav-unit dropdown-submenu second-sub1">
-                                            <a class="subnav-link text-uppercase"
-                                                href="#"><span>History</span></a>
-                                        </li>
-                                        <li class="subnav-unit dropdown-submenu second-sub1">
-                                            <a class="subnav-link text-uppercase"
-                                                href="#"><span>Vision</span></a>                                   
-                                        </li>
-                                        <li class="subnav-unit">
-                                            <a class="subnav-link text-uppercase" href="#">
-                                              <span>Leadership</span>
-                                            </a>
-                                        </li>
-                                        <li class="subnav-unit">
-                                            <a class="subnav-link text-uppercase" href="#">
-                                              <span>MoU</span>
-                                            </a>
-                                        </li>
-                                        <li class="subnav-unit">
-                                            <a class="subnav-link text-uppercase" href="#">
-                                              <span>Accreditation - NBA, NIRF, NAAC</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div> -->
                   </li>
                   <li class="nav-item subnav">
                     <a class="nav-link py-0 subnavbtn" href="#">Academics</a>
@@ -680,53 +438,53 @@
                        
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://www.charusat.ac.in/CREDP"
                             target="_blank"
-                            >Rural Education Development</a
+                            ><span>Rural Education Development</span></a
                           >
                         </li>
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://www.charusat.ac.in/wdc"
                             target="_blank"
-                            >WOMEN DEVELOPMENT CELL</a
+                            ><span>WOMEN DEVELOPMENT CELL</span></a
                           >
                         </li>
 
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://www.charusat.ac.in/csic"
                             target="_blank"
-                            >Startup and Innovation Centre</a
+                            ><span>Startup and Innovation Centre</span></a
                           >
                         </li>
 
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://www.charusat.ac.in/eoc"
                             target="_blank"
-                            >Equal Opportunity Cell</a
+                            ><span>Equal Opportunity Cell</span></a
                           >
                         </li>
 
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://www.charusat.ac.in/university-industry-interaction-cell"
                             target="_blank"
-                            >Industry Interaction Cell</a
+                            ><span>Industry Interaction Cell</span></a
                           >
                         </li>
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://isc.charusat.ac.in/"
                             target="_blank"
-                            >International Student Cell</a
+                            ><span>International Student Cell</span></a
                           >
                         </li>
                         
@@ -748,16 +506,16 @@
                         </li>
                         <li class="subnav-unit dropdown-submenu">
                           <a
-                            class="text-uppercase"
+                            class="text-uppercase subnav-link"
                             href="https://www.charusat.ac.in/ICC"
                             target="_blank"
-                            >Internal Complaint Committee</a
+                            ><span>Internal Complaint Committee</span></a
                           >
                         </li>
                         <li class="subnav-unit dropdown-submenu second-sub2">
                           <a
                             class="subnav-link text-uppercase"
-                            href="https://pledge.mygov.in/fightagainstdrugabuse/"
+                            href="./Resources/Anti.drug.circular.pdf"
                             target="_blank"
                             ><span>Anti-Drug</span></a
                           >
@@ -773,7 +531,7 @@
                       <ul class="list-unstyled subnav-unit-wrap">
                         <li class="subnav-unit dropdown-submenu">
                           <a class="subnav-link text-uppercase" href="#">
-                            Research Facilities
+                            <span>Research Facilities</span>
                           </a>
                         </li>
                         <li class="subnav-unit dropdown-submenu second-sub2">
