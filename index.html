@@ -293,6 +293,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    
   </head>
 
   <body id="home">
@@ -3823,6 +3824,132 @@ document.addEventListener('DOMContentLoaded', renderTestimonials);
       </div>
     </section>
 
+    <section class="py-5 gallery-section" id="gallery">
+      <div class="container">
+        <h2 style="font: bold">GALLERY</h2>
+        <div class="row">
+          <!-- Image Card -->
+          <div class="col-md-4 col-sm-6">
+            <div class="gallery-card">
+              <img
+                src="images1/events_1.png"
+                alt="Cultural Event"
+                class="gallery-image"
+                data-title="Cultural Fest"
+                data-date="March 25, 2024"
+                data-images="images1/events_1.png,images1/events_2.png,images1/events_3.png"
+              />
+              <div class="gallery-card-caption">
+                <h5>Cultural Fest</h5>
+                <p>Annual cultural celebration at CSPIT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Modal for Popup -->
+    <div id="customGalleryModal" class="custom-gallery-modal">
+      <div class="custom-gallery-modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="customEventTitle"></h3>
+        <p id="customEventDate"></p>
+        <div class="custom-gallery-slideshow">
+          <button class="prev-button">&lt;</button>
+          <img id="customMainImage" src="" alt="Slideshow Image" />
+          <button class="next-button">&gt;</button>
+        </div>
+        <div class="thumbnail-strip"></div>
+      </div>
+    </div>
+    
+    
+    <script>
+ // Modal Elements
+const modal = document.getElementById("customGalleryModal");
+const mainImage = document.getElementById("customMainImage");
+const eventTitle = document.getElementById("customEventTitle");
+const eventDate = document.getElementById("customEventDate");
+const thumbnailStrip = document.querySelector(".thumbnail-strip");
+const closeButton = document.querySelector(".close-button");
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+
+let images = [];
+let currentIndex = 0;
+let slideshowInterval;
+
+// Open Modal
+document.querySelectorAll(".gallery-image").forEach((img) => {
+  img.addEventListener("click", function () {
+    images = this.dataset.images.split(",");
+    currentIndex = 0;
+
+    // Set modal content
+    eventTitle.textContent = this.dataset.title;
+    eventDate.textContent = this.dataset.date;
+    updateModal();
+
+    // Show modal
+    modal.style.display = "block";
+
+    // Start slideshow
+    slideshowInterval = setInterval(nextImage, 3000);
+  });
+});
+
+// Close Modal
+const closeModal = () => {
+  modal.style.display = "none";
+  clearInterval(slideshowInterval);
+};
+
+closeButton.addEventListener("click", closeModal);
+
+// Close modal by clicking outside content
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// Update Modal Content
+function updateModal() {
+  mainImage.src = images[currentIndex];
+  thumbnailStrip.innerHTML = images
+    .map(
+      (img, index) =>
+        `<img src="${img}" class="${index === currentIndex ? "active" : ""}" />`
+    )
+    .join("");
+
+  // Add thumbnail click functionality
+  thumbnailStrip.querySelectorAll("img").forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+      currentIndex = index;
+      updateModal();
+    });
+  });
+}
+
+// Next Image
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateModal();
+}
+
+// Previous Image
+function previousImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateModal();
+}
+
+// Button Clicks
+prevButton.addEventListener("click", previousImage);
+nextButton.addEventListener("click", nextImage);
+
+    </script>
     <!-- DISPLAY SECTIONS ON SCOLL---------------------- -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
