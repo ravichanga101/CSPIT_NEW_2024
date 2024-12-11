@@ -1094,7 +1094,6 @@ img {
   list-style: disc;
 }
 
-/* Close Button */
 .popup-close-btn {
   margin-top: 20px;
   padding: 10px 20px;
@@ -1112,7 +1111,7 @@ img {
   background: #0078d7;
 }
 
-/* For Small Screens */
+
 
 @media (max-width: 768px) {
   .popup-content {
@@ -1150,8 +1149,7 @@ img {
 }
 
 /* ----------------------Student Club --------------------------- */
-.club-section {
-  /* background-color: #011829; */
+/* .club-section {
   background-color: var(--site-color);
   color: #fff;
   padding: 40px 0;
@@ -1179,19 +1177,19 @@ img {
 }
 @media (max-width: 768px) {
   .logo-card-club {
-    width: 120px; /* Adjust width for mobile */
-    height: 80px; /* Adjust height for mobile */
+    width: 120px; 
+    height: 80px; 
   }
 
   .logo-card-club img {
-    max-width: 90%; /* Ensure the image size reduces on mobile */
+    max-width: 90%; 
     max-height: 90%;
   }
 }
 @media (max-width: 992px) {
   .logo-card-club {
-    width: 100px; /* Adjust width for tablet */
-    height: 70px; /* Adjust height for tablet */
+    width: 100px;
+    height: 70px; 
   }
 
   .logo-card-club img {
@@ -1201,15 +1199,15 @@ img {
 }
 @media (max-width: 1024px) {
   .logo-card-club {
-    width: 100px; /* Adjust width for tablet */
-    height: 70px; /* Adjust height for tablet */
+    width: 100px;
+    height: 70px;
   }
 
   .logo-card-club img {
     max-width: 90%;
     max-height: 90%;
   }
-}
+} */
 
 /*----------------------- THRUST AREA-------------------- */
 .circle-item {
