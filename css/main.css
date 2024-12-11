@@ -1406,6 +1406,7 @@ section#thrust-areas {
 .gallery-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: solid rgba(0, 86, 179, 0.8) 7px;
 }
 .gallery-card img {
   width: 100%;
@@ -1489,7 +1490,7 @@ section#thrust-areas {
 .custom-gallery-slideshow img {
   max-height: 100%;
   width: auto;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .prev-button,
@@ -1502,8 +1503,8 @@ section#thrust-areas {
   color: #fff;
   padding: 10px 15px;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 20px;
+  border-radius: 10px;
+  font-size: 30px;
 }
 
 .prev-button {
@@ -1514,15 +1515,15 @@ section#thrust-areas {
   right: 10px;
 }
 
-.thumbnail-strip {
+.gallery-thumbnail-strip {
   display: flex;
   justify-content: center;
-  overflow-x: auto;
+  /* overflow-x:auto; */
   gap: 10px;
   margin-top: 10px;
 }
 
-.thumbnail-strip img {
+.gallery-thumbnail-strip img {
   width: 80px;
   height: 60px;
   cursor: pointer;
@@ -1531,11 +1532,11 @@ section#thrust-areas {
   transition: transform 0.3s;
 }
 
-.thumbnail-strip img.active {
+.gallery-thumbnail-strip img.active {
   border-color: #007bff;
 }
 
-.thumbnail-strip img:hover {
+.gallery-thumbnail-strip img:hover {
   transform: scale(1.1);
 }
 
