@@ -381,9 +381,7 @@
                 </ul>
                 <ul class="navbar-nav flex-row mx-auto nav-row-down nav-main">
                   <li class="nav-item subnav">
-                    <a class="nav-link py-0 subnavbtn" href="./about_us.html" target="_blank"
-                      >About Us</a
-                    >
+                    <a class="nav-link py-0 subnavbtn" href="javascript:void(0)" id="aboutUsBtn">About Us</a>
                   </li>
                   <li class="nav-item subnav">
                     <a class="nav-link py-0 subnavbtn" href="#">Academics</a>
@@ -945,7 +943,101 @@
       </div>
       <!-- carosal end-->
     </section>
+    <div class="modal" id="aboutUsModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        
+        <div class="about-us-intro__cont">
+          <h2 style="text-align: center; font-weight: 700;">ABOUT US</h2>
+          <hr style="border: 2px solid #ffcc00;">
 
+          <p>
+            <span style="font-weight: bold "
+              >Chandubhai S Patel Institute of Technology</span>, 
+              is the first institute established in year 2000 at Education
+            Campus, Changa (now CHARUSAT). The institute is managed through a
+            think tank of academician, scientists, engineers and professionals
+            from all parts of the world.
+          </p>
+          
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="year">2000</div>
+            <h3>Establishment</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2013</div>
+            <h3>NBA Accreditation</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2017</div>
+            <h3>Environment Auditor Recognition</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2019</div>
+            <h3>GSIRF: 3-Star</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2020</div>
+            <h3>GSIRF: 4-Star</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2021</div>
+            <h3>NIRF: 251-300</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2022</div>
+            <h3>CHARUSAT Motorola Solutions Research and Innovation Center (CMRC)</h3>
+          </li>
+          <li class="timeline-item">
+            <div class="year">2023</div>
+            <h3>NABL Accredited Laboratory</h3>
+          </li>
+        </ul>
+        <div class="intro-module-container">
+          <div class="intro-module">
+            
+            <h2>Vision</h2>
+            <p>
+              To become a leading institute for creation and dissemination of
+              knowledge in the frontiers of technology.
+            </p>
+          </div>
+          <div class="intro-module">
+            <h2>Mission</h2>
+            <p>
+              To prepare world-class technocrats and researchers and facilitate
+              enhanced deployment of technology for the betterment of lives.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    <script>
+      // Modal functionality
+      const aboutUsBtn = document.getElementById("aboutUsBtn");
+      const aboutUsModal = document.getElementById("aboutUsModal");
+      const closeModala = document.getElementById("closeModal");
+  
+      // Open modal on click
+      aboutUsBtn.addEventListener("click", () => {
+        aboutUsModal.style.display = "block";
+      });
+  
+      // Close modal on click
+      closeModal.addEventListener("click", () => {
+        aboutUsModal.style.display = "none";
+      });
+  
+      // Close modal when clicking outside the content
+      window.addEventListener("click", (event) => {
+        if (event.target === aboutUsModal) {
+          aboutUsModal.style.display = "none";
+        }
+      });
+    </script>  
     <section class="announcement" id="announcement-section">
       <div class="announcement-bar">
         <span class="announcement-title">📢</span>
