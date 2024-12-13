@@ -457,6 +457,7 @@ img {
       padding: 20px;
       width: 90%;
       background: linear-gradient(145deg, rgba(0, 0, 0, 0.85), rgba(40, 40, 40, 0.95));
+      /* background: linear-gradient(145deg, #003d73, #0056b3); */
       border-radius: 20px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     }
@@ -507,7 +508,7 @@ img {
 }
 
 .intro-module h2 {
-  font-size: clamp(1.5rem, 1.2vw + 0.96rem, 2.5rem);
+  font-size: x-large;
   font-weight: 700;
   color: #f57c00;
   margin-bottom: 1rem;
