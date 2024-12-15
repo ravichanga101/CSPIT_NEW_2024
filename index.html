@@ -3139,13 +3139,19 @@ function closeProjectPopup() {
 				</div>
 			</div> -->
       <h2 style="color: #fff;">TESTIMONIALS</h2>
+      <div class="slider-container"></div>
+      <button class="slider-btn left-btn" style="left: 50px;">&#8249;</button>
+        <div class="testimonials-slider">
 			<div class="testimonials-container">
 				<!-- Testimonial cards will be rendered here -->
 			</div>
+    </div>
+    <button class="slider-btn right-btn" style="right: 50px;">&#8250;</button>
+</div>
 		</section>
 
     <script>
-        const testimonials = [
+   const testimonials = [
     {
         id: 3,
         name: 'Nilesh Ranpura',
@@ -3180,14 +3186,7 @@ function closeProjectPopup() {
         designation: 'Student',
         testimonial: 'CSPIT provides perfect platform for the students to scan, search and work over their ideas with the best support and guidance provided by the faculty members. Students are also acknowledged with all the upcoming technologies used and are also taught to use them which trains them for their challenging and bright future.',
         imageSrc: 'https://www.charusat.ac.in/cspit/images/testimony/it/testimonial-2.webp'
-    },
-    // {
-    //     id: 6,
-    //     name: 'Sophia White',
-    //     designation: 'Creative Director',
-    //     testimonial: 'We have been very pleased with the outcomes. The communication and service are simply brilliant.',
-    //     imageSrc: './resources/Testimonials/image-6.jpeg'
-    // }
+    }
 ];
 
 // Function to create a testimonial card
@@ -3244,11 +3243,44 @@ function renderTestimonials() {
     });
 }
 
+// Slider Logic
+let currentInd = 0;
+
+// Function to update the slider position
+function updateSlider() {
+    const container = document.querySelector('.testimonials-container');
+    const visibleItems = 3; // Number of visible items in one row
+    const offset = currentInd * -(100 / visibleItems); // Adjust sliding by visible width
+    container.style.transform = `translateX(${offset}%)`;
+}
+
+// Event listeners for slider buttons
+document.querySelector('.left-btn').addEventListener('click', () => {
+    currentInd = (currentInd > 0) ? currentInd - 1 : testimonials.length - 3; // Loop back to end
+    updateSlider();
+});
+
+document.querySelector('.right-btn').addEventListener('click', () => {
+    currentInd = (currentInd < testimonials.length - 3) ? currentInd + 1 : 0; // Loop back to start
+    updateSlider();
+});
+
+// Automatic Slider Logic
+function startAutoSlider() {
+    setInterval(() => {
+        currentInd = (currentInd < testimonials.length - 3) ? currentInd + 1 : 0; // Loop back to start
+        updateSlider();
+    }, 3000); // Slides every 3 seconds
+}
+
 // Initialize the testimonials section
-document.addEventListener('DOMContentLoaded', renderTestimonials);
+document.addEventListener('DOMContentLoaded', () => {
+    renderTestimonials();
+    startAutoSlider();
+});
 
-    </script>
 
+ </script>
     <!-- <section id="testimonials" class="feedback-section">
       <h2 class="text-center fw-bold">TESTIMONIALS</h2>
       <div class="d-flex align-items-center justify-content-right">
