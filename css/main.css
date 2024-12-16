@@ -431,7 +431,268 @@ img {
     font-size: 2rem; /* Make title smaller on smaller screens */
   }
 }
+/* ---------------- ABOUT US POPUP-------------- */
 
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0);
+      z-index: 1000;
+      overflow-y: auto;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+      
+    }
+
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      padding: 20px;
+      width: 90%;
+      background: linear-gradient(145deg, rgba(0, 0, 0, 0.85), rgba(40, 40, 40, 0.95));
+      /* background: linear-gradient(145deg, #003d73, #0056b3); */
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: #ffeb3b;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      color: #f57c00;
+      transform: scale(1.2);
+    }
+    .about-us-intro__cont{
+      width: 100%;
+      padding: 1.5rem;
+      /* background-color: #ffffffa7; */
+      /* background-image: url(../images1/background.jpg) no-repeat center center fixed; */
+      color: #ffffff;
+      border-radius: 40px;
+      font-weight: 300;
+      font-size: clamp(0.875rem, 0.7vw + 0.56rem, 2.1rem);
+    }
+    /* Flexbox for Vision and Mission */
+.intro-module-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.intro-module {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-module:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.intro-module h2 {
+  font-size: x-large;
+  font-weight: 700;
+  color: #f57c00;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.intro-module p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-module-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .intro-module {
+    text-align: left;
+  }
+
+  .section-intro__cont {
+    width: 90%;
+    padding: 2rem;
+    border-radius: 20px;
+  }
+}
+/* Timeline Container */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 80px 0;
+  padding: 20px;
+  list-style: none;
+  height: 200px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5;
+  width: 90%;
+  height: 5px;
+  background: linear-gradient(to right, #ffeb3b, #f57c00);
+  z-index: 0;
+  border-radius: 5px;
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  width: 120px;
+  text-align: center;
+}
+
+/* Timeline Year Container - Subtle Style */
+.timeline-item .year {
+  font-size: 1.2rem;
+  color: #333;
+  background: rgba(255, 255, 255, 1);
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  position: relative;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.timeline-item .year:hover {
+  background: #ffeb3b;
+  color: #000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.timeline-item h3 {
+  font-size: 1rem;
+  color: #ffeb3b;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 1);
+  padding: 8px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 220px;
+}
+
+/* Positioning Text Above and Below with Arrows */
+/* Positioning Text Above and Below with Correct Arrows */
+.timeline-item:nth-child(odd) h3 {
+  top: -120px; /* Place text above for odd items */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(even) h3 {
+  bottom: -120px; /* Place text below for even items */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Arrow Line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 4px; /* Arrow line width */
+  background: #ffeb3b;
+  z-index: 0;
+}
+
+/* Arrow Head */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 1;
+}
+
+/* Odd Items - Arrow Upwards */
+.timeline-item:nth-child(odd)::before {
+  height: 80px; /* Adjust height of arrow line */
+  bottom: 100%; /* Start from the year and point upwards */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(even)::after {
+  border-width: 0 10px 10px 10px; /* Create a upward-pointing arrow */
+  border-color: transparent transparent #ffeb3b transparent;
+  bottom: 3%; /* Align arrow head with the end of the line */
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
+/* Even Items - Arrow Downwards */
+.timeline-item:nth-child(even)::before {
+  height: 80px; /* Adjust height of arrow line */
+  top: 100%; /* Start from the year and point downwards */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(odd)::after {
+  border-width: 10px 10px 0 10px; /* Create an downward-pointing arrow */
+  border-color: #ffeb3b transparent transparent transparent;
+  top: 3%; /* Align arrow head with the end of the line */
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .timeline {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .timeline-item {
+    width: auto;
+    margin: 20px 0;
+  }
+
+  .timeline-item h3 {
+    position: static;
+    transform: none;
+  }
+
+  .timeline-item::after {
+    top: 50%;
+  }
+
+  .timeline-item::before {
+    display: none;
+  }
+}
 
 /* -------------PROJECTS POPUP------------- */
 /* Popup Overlay */
