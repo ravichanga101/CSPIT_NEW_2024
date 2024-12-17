@@ -321,6 +321,10 @@ img {
   position: relative;
   background-color: #fff;
 }
+/* 
+.student-small-card img{
+  border-radius: 15px !important;
+} */
 
 .student-large-card:hover,
 .student-small-card:hover {
@@ -332,7 +336,8 @@ img {
 .student-image {
   width: 100%;
   height: 100%;
-  object-fit:contain;
+  object-fit:fill;
+  border-radius: 15px !important;
 }
 
 .student-large-card .student-image {
@@ -367,7 +372,7 @@ img {
 
 /* Styling for the smaller card's image and text */
 .student-small-card .student-image {
-  padding: 5px;
+  padding: 7px;
   height: 300px; /* Set a fixed height for the image in small cards */
 }
 
@@ -759,11 +764,13 @@ img {
 .slider-image {
   width: 100%;
   height: 100%;
+  padding: 10px;
   object-fit: contain;
   display: none;
   transition: opacity 0.5s ease;
-  border: #0056b3 5px solid;
+  border: #0056b3 3px solid;
 }
+
 
 /* Relative flex grow size for popup slider */
 /* .popup-slider-wrapper {
@@ -883,6 +890,11 @@ img {
   color: #2978ff; /* Change color on hover */
   font-weight: bold; /* Make the title bold */
 }
+.card-link img{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+}
 .card-title {
   transition: color 0.3s, font-weight 0.5s;
 }
@@ -895,8 +907,7 @@ img {
 }
 
 .card-img-top {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  /* border-radius: 15px; */
   width: 100%;
   height: 170px;
 }
