@@ -457,7 +457,7 @@ img {
 
     .modal-content {
       position: relative;
-      margin: 5% auto;
+      margin: 0.5% auto;
       padding: 20px;
       width: 90%;
       background: linear-gradient(145deg, rgba(0, 0, 0, 0.85), rgba(40, 40, 40, 0.95));
