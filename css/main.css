@@ -1524,7 +1524,7 @@ section#thrust-areas {
 .row-cols-custom-5 .col {
   flex: 0 0 15rem;
   width: calc(20% - 10px); /* Adjust for 5 equal-width items */
-  margin: 5px 0;
+  margin: 5px;
 }
 
 /* Second row for 4 centered items */
@@ -1540,8 +1540,6 @@ section#thrust-areas {
 }
 /* General Styles */
 .thrust-areas {
-  width: 100vw;
-  overflow: hidden;
   padding: 40px 0; /* Add some padding to the section */
 }
 
