@@ -3245,7 +3245,7 @@ function createTestimonialCard(testimonial) {
 // Function to render testimonial cards
 function renderTestimonials() {
     const container = document.querySelector('.testimonials-container');
-    container.innerHTML = '';  // Clear existing content
+    container.innerHTML = ''; // Clear existing content
 
     testimonials.forEach(testimonial => {
         const card = createTestimonialCard(testimonial);
@@ -3256,36 +3256,60 @@ function renderTestimonials() {
 // Slider Logic
 let currentInd = 0;
 
-// Function to update the slider position
 function updateSlider() {
     const container = document.querySelector('.testimonials-container');
-    const visibleItems = 3; // Number of visible items in one row
-    const offset = currentInd * -(100 / visibleItems); // Adjust sliding by visible width
-    container.style.transform = `translateX(${offset}%)`;
+    const slider = document.querySelector('.testimonials-slider');
+    const totalCards = testimonials.length;
+
+    // Dynamically calculate visible cards based on screen size
+    const visibleCards = getVisibleCards();
+    const cardWidth = slider.offsetWidth / visibleCards;
+
+    // Prevent sliding out of bounds
+    if (currentInd < 0) currentInd = 0;
+    if (currentInd > totalCards - visibleCards) currentInd = totalCards - visibleCards;
+
+    // Apply the transform to slide by card width
+    container.style.transform = `translateX(-${currentInd * cardWidth}px)`;
+}
+
+// Function to determine visible cards based on screen width
+function getVisibleCards() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 768) return 1; // Mobile: 1 card visible
+    if (screenWidth <= 1024) return 2; // Tablet: 2 cards visible
+    return 3; // Desktop: 3 cards visible
 }
 
 // Event listeners for slider buttons
 document.querySelector('.left-btn').addEventListener('click', () => {
-    currentInd = (currentInd > 0) ? currentInd - 1 : testimonials.length - 3; // Loop back to end
+    currentInd--;
     updateSlider();
 });
 
 document.querySelector('.right-btn').addEventListener('click', () => {
-    currentInd = (currentInd < testimonials.length - 3) ? currentInd + 1 : 0; // Loop back to start
+    currentInd++;
     updateSlider();
 });
 
 // Automatic Slider Logic
 function startAutoSlider() {
     setInterval(() => {
-        currentInd = (currentInd < testimonials.length - 3) ? currentInd + 1 : 0; // Loop back to start
+        currentInd++;
         updateSlider();
-    }, 3000); // Slides every 3 seconds
+    }, 3000);
 }
+
+// Adjust slider on window resize
+window.addEventListener('resize', () => {
+    currentInd = 0;
+    updateSlider();
+});
 
 // Initialize the testimonials section
 document.addEventListener('DOMContentLoaded', () => {
     renderTestimonials();
+    updateSlider(); // Ensure proper alignment on load
     startAutoSlider();
 });
 
