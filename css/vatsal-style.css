@@ -72,4 +72,6 @@
 
 .blue-back{
   background-color: var(--site-color) !important;
+
+  border: none !important;
 }
