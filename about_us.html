@@ -113,6 +113,22 @@ background-size: cover;
       opacity: 1;
       transform: translateY(0);
     }
+    .back-home {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #d9e2ec;
+        transition: color 0.3s ease;
+      }
+
+      .back-home:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
 
     /* Responsive Design */
     @media screen and (max-width: 768px) {
@@ -131,6 +147,7 @@ background-size: cover;
 </head>
 <body>
   <!-- <iframe src="./navbar.html" style="width: 100%;"></iframe> -->
+  <a href="index.html" class="back-home">← Back to Home</a>
   <div class="timeline-container">
     <h2>ABOUT US</h2>
     <ul class="timeline">
