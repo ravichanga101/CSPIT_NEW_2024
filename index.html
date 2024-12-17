@@ -2297,7 +2297,7 @@
             <div class="courses__cont--item">
               <div class="overlay">
                 <a onclick="openPopup('club7')">
-                  <img loading="lazy" src="images1/Student Club/DS_CLUB.png"
+                  <img loading="lazy" src="images1/Student Club/DSLogo.png"
                     alt="Data Science Club" class="item-image">
                 </a>
               </div>
@@ -2361,7 +2361,7 @@
             <div class="courses__cont--item">
               <div class="overlay">
                 <a onclick="openPopup('club15')">
-                  <img loading="lazy" src="images1/Student Club/ELOQUENCE.png"
+                  <img loading="lazy" src="images1/Student Club/Eloquence.png"
                     alt="Eloquence" class="item-image">
                 </a>
               </div>
@@ -4135,26 +4135,25 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2 style="font-weight: bold;">GALLERY</h2>
         <ul class="nav nav-pills justify-content-center mb-5 gallery-nav-pills">
           <li class="nav-item">
-            <button class="gallery-nav-link active" data-category="All">ALL
-              EVENTS</button>
+            <button class="gallery-nav-link active" data-category="Infrastructure">
+              INFRASTRUCTURE
+            </button>
           </li>
           <li class="nav-item">
-            <button class="gallery-nav-link"
-              data-category="Cultural">CULTURAL</button>
+            <button class="gallery-nav-link" data-category="Cultural">CULTURAL</button>
           </li>
           <li class="nav-item">
-            <button class="gallery-nav-link"
-              data-category="Technical">TECHNICAL</button>
+            <button class="gallery-nav-link" data-category="Technical">TECHNICAL</button>
           </li>
           <li class="nav-item">
-            <button class="gallery-nav-link"
-              data-category="Sports">SPORTS</button>
+            <button class="gallery-nav-link" data-category="Sports">SPORTS</button>
           </li>
         </ul>
-
+    
         <div class="row" id="galleryContainer"></div>
       </div>
     </section>
+    
 
     <div id="customGalleryModal" class="custom-gallery-modal">
       <div class="custom-gallery-modal-content">
@@ -4174,39 +4173,39 @@ document.addEventListener('DOMContentLoaded', () => {
      // Data for the gallery
 const galleryData = [
   {
+    title: "Campus Buildings",
+    // date: "March 10, 2024",
+    category: "Infrastructure",
+    images: ["images1/gallery/infra6.avif", "images1/gallery/infra3.jpg"],
+    description: "Modern campus buildings and facilities.",
+  },
+  {
+    title: "Laboratories Facilities",
+    // date: "April 15, 2024",
+    category: "Infrastructure",
+    images: ["images1/gallery/infra2.jpeg", "images1/gallery/infra5.jpg"],
+    description: "Well-equipped laboratories with extensive resources.",
+  },
+  {
     title: "Cultural Fest",
     date: "March 25, 2024",
     category: "Cultural",
-    images: ["images1/events_1.png", "images1/events_2.png", "images1/events_3.png","images1/events_5.png","images1/events_1.png","images1/events_2.png","images1/events_3.png"],
-    description: "Annual cultural celebration at CSPIT",
+    images: ["images1/events_1.png", "images1/events_2.png"],
+    description: "Annual cultural celebration at CSPIT.",
   },
   {
     title: "Tech Symposium",
     date: "April 12, 2024",
     category: "Technical",
-    images: ["images1/events_2.png", "images1/events_1.png", "images1/events_3.png"],
-    description: "Showcasing innovative projects",
+    images: ["images1/events_2.png", "images1/events_3.png"],
+    description: "Showcasing innovative projects.",
   },
   {
-    title: "Annual Sports Meet",
-    date: "February 10, 2024",
-    category: "Sports",
-    images: ["images1/events_3.png", "images1/events_1.png", "images1/events_2.jpeg"],
-    description: "Celebrating sportsmanship and athleticism",
-  },
-  {
-    title: "Tech Bootcamp",
-    date: "May 15, 2024",
+    title: "Cognizance",
+    date: "January 18-19, 2024",
     category: "Technical",
-    images: ["images1/events_1.png", "images1/events_2.png"],
-    description: "Hands-on learning experience in technology.",
-  },
-  {
-    title: "Cultural Night",
-    date: "March 30, 2024",
-    category: "Cultural",
-    images: ["images1/events_1.png", "images1/events_3.png"],
-    description: "An evening of cultural performances.",
+    images: ["images1/events_3.png", "images1/events_2.png"],
+    description: "Celebrating sportsmanship and athleticism.",
   },
 ];
 
@@ -4231,17 +4230,14 @@ let slideshowInterval;
 function renderGallery(category) {
   galleryContainer.innerHTML = ""; // Clear previous items
 
-  const filteredData =
-    category === "All"
-      ? galleryData
-      : galleryData.filter((item) => item.category === category);
+  const filteredData = galleryData.filter((item) => item.category === category);
 
   if (filteredData.length === 0) {
     galleryContainer.innerHTML = `<p class="text-center">No events found for this category.</p>`;
     return;
   }
 
-  filteredData.forEach((event, index) => {
+  filteredData.forEach((event) => {
     const col = document.createElement("div");
     col.className = "col-md-4 col-sm-6";
 
@@ -4252,7 +4248,7 @@ function renderGallery(category) {
     img.src = event.images[0];
     img.alt = event.title;
     img.className = "gallery-image";
-    img.dataset.index = galleryData.indexOf(event); // Use original index from galleryData
+    img.dataset.index = galleryData.indexOf(event);
 
     const caption = document.createElement("div");
     caption.className = "gallery-card-caption";
@@ -4271,6 +4267,24 @@ function renderGallery(category) {
     galleryContainer.appendChild(col);
   });
 }
+
+// Tab Switching
+galleryTabs.forEach((tab) => {
+  tab.addEventListener("click", (e) => {
+    galleryTabs.forEach((tab) => tab.classList.remove("active"));
+    tab.classList.add("active");
+
+    const category = tab.dataset.category;
+    renderGallery(category);
+  });
+});
+
+// Initial Render for "Infrastructure"
+document.addEventListener("DOMContentLoaded", () => {
+  renderGallery("Infrastructure"); // Default category
+});
+
+
 
 // Open Modal
 galleryContainer.addEventListener("click", (e) => {
@@ -4510,15 +4524,15 @@ renderGallery("All");
                 <li>
                   <a
                     class="hvr-underline-from-left"
-                    href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf"
-                    target="_blank"
+                    
+                    onclick="openPopup('popupNIRF')"
                     rel="noopener noreferrer">NIRF</a>
                 </li>
                 <li>
                   <a
                     class="hvr-underline-from-left"
-                    href="https://www.charusat.ac.in/cspit/files/EOA-Report-2024-2025.PDF "
-                    target="_blank"
+                    
+                    onclick="openPopup('popupAICTE')"
                     rel="noopener noreferrer">AICTE EOA</a>
                 </li>
                 <!-- <li>
@@ -4618,6 +4632,131 @@ renderGallery("All");
       </div>
       <br>
     </footer>
+
+    <section>
+      <!-- AICTE EOA and NIRF Popup Containers -->
+<!-- NIRF Popup -->
+      <div id="popupNIRF" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closePopup('popupNIRF')">&times;</span>
+          <h3 class="modal-main-heading">National Institute Ranking Framework (NIRF)</h3>
+          <hr />
+          <h5 class="modal-sub-heading">Reports:</h5>
+          <ul class="modal-links">
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2024.pdf" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2024
+              </a>
+            </li>
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/CSPIT_NIRF_2023.pdf" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2023
+              </a>
+            </li>
+            <li>
+              <a href="https://charusat.edu.in/iqac/nirf/NIRF2022/" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2022
+              </a>
+            </li>
+            <li>
+              <a href="https://charusat.edu.in/iqac/nirf/NIRF2021/" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2021
+              </a>
+            </li>
+            <li>
+              <a href="https://charusat.edu.in/iqac/nirf/NIRF2020/" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2020
+              </a>
+            </li>
+            <li>
+              <a href="https://charusat.edu.in/iqac/nirf/NIRF2019/" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2019
+              </a>
+            </li>
+            <li>
+              <a href="https://charusat.edu.in/iqac/nirf/NIRF2018/" target="_blank" rel="noopener noreferrer">
+                NIRF Report 2018
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AICTE Popup -->
+      <div id="popupAICTE" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closePopup('popupAICTE')">&times;</span>
+          <h3 class="modal-main-heading">All India Council for Technical Education (AICTE)</h3>
+          <hr />
+          <h5 class="modal-sub-heading">Reports:</h5>
+          <ul class="modal-links">
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/EOA-Report-2024-2025.PDF" target="_blank" rel="noopener noreferrer">
+                AICTE EOA Report 2024-2025
+              </a>
+            </li>
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/EOA-Report-2023-2024.pdf" target="_blank" rel="noopener noreferrer">
+                AICTE EOA Report 2023-2024
+              </a>
+            </li>
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/EOA-Report-2022-2023.PDF" target="_blank" rel="noopener noreferrer">
+                AICTE EOA Report 2022-2023
+              </a>
+            </li>
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/2021-2022.PDF" target="_blank" rel="noopener noreferrer">
+                AICTE EOA Report 2021-2022
+              </a>
+            </li>
+            <li>
+              <a href="https://www.charusat.ac.in/cspit/files/2020-2021.PDF" target="_blank" rel="noopener noreferrer">
+                AICTE EOA Report 2020-2021
+              </a>
+            </li>
+            <li>
+              <a href="https://charusat.ac.in/cspit/files/2019-2020.PDF" target="_blank" rel="noopener noreferrer">
+                AICTE EOA Report 2019-2020
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </section>
+    <script>
+      // Open Popup
+function openPopup(popupId) {
+  const popup = document.getElementById(popupId);
+  popup.style.display = "flex"; // Make it visible
+  setTimeout(() => {
+    popup.classList.add("show"); // Add animation class after a small delay
+  }, 10);
+}
+
+// Close Popup
+function closePopup(popupId) {
+  const popup = document.getElementById(popupId);
+  popup.classList.remove("show"); // Remove animation class
+  setTimeout(() => {
+    popup.style.display = "none"; // Hide popup after animation
+  }, 300); // Match this delay with the transition duration in CSS
+}
+
+// Close popup when clicking outside the modal content
+window.addEventListener("click", function (event) {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach((modal) => {
+    if (event.target === modal) {
+      closePopup(modal.id);
+    }
+  });
+});
+
+
+    </script>
 
     <a id="go_top" class="d-block d-sm-none"><i class="fa fa-angle-up"></i></a>
     <script data-cfasync="false" src="js/email-decode.min.js"></script>
