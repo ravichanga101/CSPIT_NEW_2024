@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSPIT Timeline</title>
-  <style>
-    /* General Body Styles */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Arial", sans-serif;
-      /* background: url(images1/background.jpg) no-repeat center center fixed; */
-      background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0,0,0,0.4)), 
-            url(images1/background.jpg) no-repeat center center fixed;
-background-size: cover;
-      background-size: cover;
-      color: #fff;
-      overflow-x: hidden;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSPIT Timeline</title>
+    <style>
+      /* General Body Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+        /* background: url(images1/background.jpg) no-repeat center center fixed; */
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+          url(images1/background.jpg) no-repeat center center fixed;
+        background-size: cover;
+        background-size: cover;
+        color: #fff;
+        overflow-x: hidden;
+      }
 
-    /* Page Container */
-    .timeline-container {
-      width: 80%;
-      margin: 0 auto;
-      padding: 15px 0;
-    }
-    h2{
-      font-size: 2.5rem;
-      font-weight: bold;
-      margin-bottom: 35px;
-      position: relative;
-      text-align: center;
-      color: #ffeb3b;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-    
+      /* Page Container */
+      .timeline-container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px 0;
+      }
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 35px;
+        position: relative;
+        text-align: center;
+        color: #ffeb3b;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      }
 
-    /* Timeline Vertical Bar */
-    .timeline {
-      position: relative;
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
+      /* Timeline Vertical Bar */
+      .timeline {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
 
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 10px;
-      height: 100%;
-      background: linear-gradient(to bottom, #ffeb3b, #f57c00);
-      z-index: -1;
-    }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 10px;
+        height: 100%;
+        background: linear-gradient(to bottom, #ffeb3b, #f57c00);
+        z-index: -1;
+      }
 
-    /* Timeline Item Styles */
-    .timeline-item {
-      position: relative;
-      margin: 20px 0;
-      padding: 20px 40px;
-      width: 50%;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease-out;
-    }
+      /* Timeline Item Styles */
+      .timeline-item {
+        position: relative;
+        margin: 20px 0;
+        padding: 20px 40px;
+        width: 50%;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease-out;
+      }
 
-    .timeline-item:nth-child(odd) {
-      right: 70px;
-    }
+      .timeline-item:nth-child(odd) {
+        right: 70px;
+      }
 
-    .timeline-item:nth-child(even) {
-      left: 50%;
-    }
+      .timeline-item:nth-child(even) {
+        left: 50%;
+      }
 
-    .timeline-item .year {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: -60px;
-      font-size: 1.5rem;
-      color: #ffeb3b;
-      background: #000;
-      padding: 10px 20px;
-      border-radius: 8px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    }
+      .timeline-item .year {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -60px;
+        font-size: 1.5rem;
+        color: #ffeb3b;
+        background: #000;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
 
-    .timeline-item:nth-child(even) .year {
-      left: auto;
-      right: -60px;
-    }
+      .timeline-item:nth-child(even) .year {
+        left: auto;
+        right: -60px;
+      }
 
-    .timeline-item h3 {
-      margin: 0 0 10px;
-      font-size: 1.5rem;
-      color: #ffeb3b;
-    }
+      .timeline-item h3 {
+        margin: 0 0 10px;
+        font-size: 1.5rem;
+        color: #ffeb3b;
+      }
 
-    .timeline-item p {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #fff;
-    }
+      .timeline-item p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #fff;
+      }
 
-    /* Animation when scrolling */
-    .timeline-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .back-home {
+      /* Animation when scrolling */
+      .timeline-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .back-home {
         position: absolute;
         top: 20px;
         left: 20px;
@@ -129,103 +128,200 @@ background-size: cover;
         text-decoration: underline;
       }
 
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .timeline-item {
+          width: 90%;
+          left: 5% !important;
+        }
 
-    /* Responsive Design */
-    @media screen and (max-width: 768px) {
-      .timeline-item {
-        width: 90%;
-        left: 5% !important;
+        .timeline-item .year {
+          left: -45px !important;
+          right: auto;
+          font-size: 1.2rem;
+        }
+      }
+      .intro-module-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
       }
 
-      .timeline-item .year {
-        left: -45px !important;
-        right: auto;
-        font-size: 1.2rem;
+      .intro-module {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        border-radius: 15px;
+        /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-    }
-  </style>
-</head>
-<body>
-  <!-- <iframe src="./navbar.html" style="width: 100%;"></iframe> -->
-  <a href="index.html" class="back-home">← Back to Home</a>
-  <div class="timeline-container">
-    <h2>ABOUT US</h2>
-    <ul class="timeline">
-      <li class="timeline-item">
-        <div class="year">2000</div>
-        <h3>Establishment</h3>
-        <p>Chandubhai S Patel Institute of Technology (CSPIT), established in 2000, started with 240 seats across 4 Bachelor Degree programs and now offers 8 Bachelor programs, Postgraduate, and Ph.D. programs.</p>
-      </li>
-      <li class="timeline-item">
-        <div class="year">2013</div>
-        <h3>NBA accreditation</h3>
-        <p>The Computer Engineering Department at the Chandubhai S. Patel Institute of Technology (CSPIT) was accredited by the National Board of Accreditation (NBA) in 2013 and 2016.</p>
-      </li>
-      
-      <li class="timeline-item">
-        <div class="year">2017</div>
-        <h3>Environment Auditor Recognition</h3>
-        <p>Recognized as Schedule I Environment Auditor by Gujarat Pollution Control Board (GPCB) [2017-2023].</p>
-      </li>
-      <li class="timeline-item">
-        <div class="year">2019</div>
-        <h3>GSIRF Rankings: 3-Star.</h3>
-        <p>CSPIT was awarded 3-Star GSIRF Ranking</p>
-      </li>
-      <li class="timeline-item">
-        <div class="year">2020</div>
-        <h3>GSIRF Rankings: 4-Star.</h3>
-        <p>CSPIT was awarded 4-Star GSIRF Ranking</p>
-      </li>
-      <li class="timeline-item">
-        <div class="year">2021</div>
-        <h3>GSIRF Star Rankings</h3>
-        <p>GSIRF Rankings: 5-Star</p>
-        <br />
-        <h3>NIRF Rankings</h3>
-        <p>NIRF 2021 Engineering: Rank-band 251-300.</p>
-      </li>
 
-      <li class="timeline-item">
-        <div class="year">2022</div>
-        <h3>GSIRF Rankings: 5-Star.</h3>
-        <p>CSPIT was awarded 4-Star GSIRF Ranking</p>
-        <br />
-        <h3>Motorola Solutions</h3>
-        <p>CHARUSAT - Motorola Solutions Research and Innovation Center (CMRC) inaugurated in February 2022.</p>
+      .intro-module:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .intro-module h2 {
+        font-size: x-large;
+        font-weight: 700;
+        color: #f57c00;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .intro-module p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .intro-module-container {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .intro-module {
+          text-align: left;
+        }
+
+        .section-intro__cont {
+          width: 90%;
+          padding: 2rem;
+          border-radius: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <iframe src="./navbar.html" style="width: 100%;"></iframe> -->
+    <a href="index.html" class="back-home">← Back to Home</a>
+    <div class="timeline-container">
+      <!-- <h2>ABOUT US</h2> -->
+      <div class="about-us-intro__cont">
+        <h2 style="text-align: center; font-weight: 700">ABOUT US</h2>
+        <hr style="border: 2px solid #ffcc00" />
+
+        <p>
+          <span style="font-weight: bold"
+            >Chandubhai S Patel Institute of Technology</span
+          >, is the first institute established in year 2000 at Education
+          Campus, Changa (now CHARUSAT). The institute is managed through a
+          think tank of academician, scientists, engineers and professionals
+          from all parts of the world.
+        </p>
+        <div class="intro-module-container">
+          <div class="intro-module">
+            <h2>Vision</h2>
+            <p>
+              To become a leading institute for creation and dissemination of
+              knowledge in the frontiers of technology.
+            </p>
+          </div>
+          <div class="intro-module">
+            <h2>Mission</h2>
+            <p>
+              To prepare world-class technocrats and researchers and facilitate
+              enhanced deployment of technology for the betterment of lives.
+            </p>
+          </div>
+        </div>
+        <h2 style="text-align: center; font-weight: 700">CSPIT JOURNEY</h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="year">2000</div>
+            <h3>Establishment</h3>
+            <!-- <p>
+              Chandubhai S Patel Institute of Technology (CSPIT), established in
+              2000, started with 240 seats across 4 Bachelor Degree programs and
+              now offers 8 Bachelor programs, Postgraduate, and Ph.D. programs.
+            </p> -->
+          </li>
+          <li class="timeline-item">
+            <div class="year">2013</div>
+            <h3>NBA accreditation</h3>
+            <!-- <p>
+              The Computer Engineering Department at the Chandubhai S. Patel
+              Institute of Technology (CSPIT) was accredited by the National
+              Board of Accreditation (NBA) in 2013 and 2016.
+            </p> -->
+          </li>
         
+          <li class="timeline-item">
+            <div class="year">2017</div>
+            <h3>Environment Auditor Recognition</h3>
+            <!-- <p>
+              Recognized as Schedule I Environment Auditor by Gujarat Pollution
+              Control Board (GPCB) [2017-2023].
+            </p> -->
+          </li>
+          <li class="timeline-item">
+            <div class="year">2019</div>
+            <h3>GSIRF Rankings: 3-Star.</h3>
+            <!-- <p>CSPIT was awarded 3-Star GSIRF Ranking</p> -->
+          </li>
+          <li class="timeline-item">
+            <div class="year">2020</div>
+            <h3>GSIRF Rankings: 4-Star.</h3>
+            <!-- <p>CSPIT was awarded 4-Star GSIRF Ranking</p> -->
+          </li>
+          <li class="timeline-item">
+            <div class="year">2021</div>
+            <h3>GSIRF Star Rankings</h3>
+            <!-- <p>GSIRF Rankings: 5-Star</p> -->
+            <br />
+            <h3>NIRF Rankings</h3>
+            <!-- <p>NIRF 2021 Engineering: Rank-band 251-300.</p> -->
+          </li>
         
-      </li>
+          <li class="timeline-item">
+            <div class="year">2022</div>
+            <h3>GSIRF Rankings: 5-Star.</h3>
+            <!-- <p>CSPIT was awarded 4-Star GSIRF Ranking</p> -->
+            <br />
+            <h3>Motorola Solutions</h3>
+            <!-- <p>
+              CHARUSAT - Motorola Solutions Research and Innovation Center
+              (CMRC) inaugurated in February 2022.
+            </p> -->
+          </li>
+        
+          <li class="timeline-item">
+            <div class="year">2023</div>
+            <h3>NABL Accreditation</h3>
+            <!-- <p>NABL Accredited Concrete Technology Laboratory (2022-2024).</p> -->
+            <!-- <p>
+              NABL Accredited Geotechnical Engineering Laboratory (2023-2025).
+            </p> -->
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+    <!-- <iframe src="./footer.html" style="width: 100%; height: auto;"></iframe> -->
 
-      <li class="timeline-item">
-        <div class="year">2023</div>
-        <h3>NABL Accreditation</h3>
-        <p>NABL Accredited Concrete Technology Laboratory (2022-2024).</p>
-        <p>NABL Accredited Geotechnical Engineering Laboratory (2023-2025).</p>
-      </li>
-      
-    </ul>
-  </div>
-  <!-- <iframe src="./footer.html" style="width: 100%; height: auto;"></iframe> -->
+    <script>
+      // Intersection Observer for Scroll Animation
+      const items = document.querySelectorAll(".timeline-item");
 
-  <script>
-    // Intersection Observer for Scroll Animation
-    const items = document.querySelectorAll(".timeline-item");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            } else {
+              entry.target.classList.remove("visible");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    items.forEach((item) => observer.observe(item));
-  </script>
-</body>
+      items.forEach((item) => observer.observe(item));
+    </script>
+  </body>
 </html>
