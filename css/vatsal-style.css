@@ -63,3 +63,13 @@
 .nav-main{
   border-left: 1px solid var(--secondary-color-border);
 }
+
+.mobile-nav-logo{
+  width: 20% !important;
+  margin-left: 4% !important;
+  aspect-ratio: 1/1;
+}
+
+.blue-back{
+  background-color: var(--site-color) !important;
+}
