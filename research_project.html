@@ -109,7 +109,7 @@
   </style>
 </head>
 <body>
-  <a href="index.html" class="back-home">← Back to Home</a>
+  <a href="index.html" class="back-home" onclick="goBackToHome()">← Back to Home</a>
   <div class="overlay"></div>
   <div class="container">
     <h1><i class="fas fa-microscope project-icon"></i> Research Projects</h1>
@@ -167,6 +167,14 @@
         }
         tableBody.appendChild(tr);
       });
+    }
+
+    function goBackToHome() {
+    // Redirect to home page
+    window.location.href = "index.html"; // Replace with your actual homepage URL
+
+    // Close the current tab
+    window.close();
     }
   </script>
 </body>
