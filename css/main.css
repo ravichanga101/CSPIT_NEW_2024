@@ -405,7 +405,8 @@ img {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  border: #151515 8px solid;  
+  /* border: #151515 7px solid;   */
+  border: #e4ba14 7px solid;  
   border-radius: 5%;
 }
 
@@ -457,7 +458,7 @@ img {
 
     .modal-content {
       position: relative;
-      margin: 5% auto;
+      margin: 0.5% auto;
       padding: 20px;
       width: 90%;
       background: linear-gradient(145deg, rgba(0, 0, 0, 0.85), rgba(40, 40, 40, 0.95));
@@ -1218,8 +1219,8 @@ img {
 } 
 .club-section .courses__cont--item:hover {
   transform: scale(1.2); /* Popup effect */
-  border: 7px solid #151515; /* Thin blue border */
-  
+  /* border: 7px solid #151515; */
+  border: #e4ba14 7px solid;  
 }
 .club-section .courses__cont--item {
   /* position: relative; */
@@ -1420,6 +1421,159 @@ img {
   }
 }
 
+/* ---------------------- Footer Popup --------------------------- */
+/* Popup Background Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* Popup Content Box */
+.modal-content {
+  background: #ffffff;
+  padding: 30px;
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+
+  /* Animation properties */
+  transform: scale(0.2); /* Initial size is smaller */
+  opacity: 0; /* Initially hidden */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth scale and fade-in */
+}
+
+/* Show Modal Effect */
+.modal.show {
+  opacity: 1; /* Fully visible */
+}
+
+.modal.show .modal-content {
+  transform: scale(1); /* Full size */
+  opacity: 1; /* Fully visible */
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #777;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Main Heading */
+.modal-main-heading {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Sub Heading */
+.modal-sub-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  margin: 15px 0;
+  text-align: left;
+}
+
+/* Links Section */
+.modal-links {
+  list-style-type: disc; /* This adds bullets */
+  /* padding-left: 20px; */
+  margin-top: 10px;
+  text-align: left;
+}
+
+.modal-links li {
+  margin: 10px 0;
+}
+
+.modal-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.modal-links a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Horizontal Line */
+hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 10px 0 20px 0;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    width: 70%; /* Reduce width on smaller screens */
+    padding: 20px; /* Less padding on mobile */
+  }
+
+  .modal-main-heading {
+    font-size: 1.5rem; /* Smaller heading size */
+  }
+
+  .modal-sub-heading {
+    font-size: 1.1rem; /* Slightly smaller subheading */
+  }
+
+  .modal-links a {
+    font-size: 0.9rem; /* Slightly smaller font size for links */
+  }
+
+  .modal-links {
+    padding-left: 15px; /* Reduce indentation for smaller screens */
+  }
+}
+
+/* Responsive Styles for Very Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 80%; /* Full width on very small screens */
+    padding: 15px; /* Less padding on very small screens */
+  }
+
+  .modal-main-heading {
+    font-size: 1.3rem; /* Even smaller heading size */
+  }
+
+  .modal-sub-heading {
+    font-size: 1rem; /* Smaller subheading */
+  }
+
+  .modal-links a {
+    font-size: 0.8rem; /* Smaller font size for links */
+  }
+}
+
+
 /* ----------------------Student Club --------------------------- */
 /* .club-section {
   background-color: var(--site-color);
@@ -1524,7 +1678,7 @@ section#thrust-areas {
 .row-cols-custom-5 .col {
   flex: 0 0 15rem;
   width: calc(20% - 10px); /* Adjust for 5 equal-width items */
-  margin: 5px 0;
+  margin: 5px;
 }
 
 /* Second row for 4 centered items */
@@ -1540,8 +1694,6 @@ section#thrust-areas {
 }
 /* General Styles */
 .thrust-areas {
-  width: 100vw;
-  overflow: hidden;
   padding: 40px 0; /* Add some padding to the section */
 }
 
@@ -1684,7 +1836,7 @@ section#thrust-areas {
 }
 .gallery-card img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   transition: all 0.3s ease;
 }
