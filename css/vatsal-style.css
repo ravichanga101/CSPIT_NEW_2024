@@ -75,3 +75,12 @@
 
   border: none !important;
 }
+
+a{
+  outline: none !important;
+}
+
+.nav-item{
+  /* border: none !important; */
+  outline: none !important;
+}
