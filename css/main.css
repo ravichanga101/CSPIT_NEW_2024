@@ -507,10 +507,7 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.intro-module:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+
 
 .intro-module h2 {
   font-size: x-large;
@@ -2511,7 +2508,9 @@ section#thrust-areas {
   font-weight: normal;
   flex-shrink: 0;
 }
-
+.announce{
+  color: white;
+}
 .announcement-list li:hover {
   text-decoration: underline;
   cursor: pointer;
