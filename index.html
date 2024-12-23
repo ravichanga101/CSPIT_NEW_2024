@@ -4,7 +4,7 @@
     <meta
       name="google-site-verification"
       content="N27TPCuhCPrWRkNVs_jn231eJMqMxQuybxpG0I3i16g" />
-    <script async src="js/fbevents.js"></script>
+    <!-- <script async src="js/fbevents.js"></script>
     <script async src="js/gtm.js"></script>
     <script>
       (function (h, o, t, j, a, r) {
@@ -22,8 +22,8 @@
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
     <script async src="js/hotjar-1384988.js"></script>
-    <!-- Google Tag Manager -->
-    <!--        <script>(function (w, d, s, l, i) {
+    Google Tag Manager 
+          <script>(function (w, d, s, l, i) {
                 w[l] = w[l] || [];
                 w[l].push({'gtm.start':
                             new Date().getTime(), event: 'gtm.js'});
@@ -33,10 +33,10 @@
                 j.src =
                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                 f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-WV5GSHC');</script>-->
-    <!-- End Google Tag Manager -->
-    <!-- Required meta tags -->
-    <!-- Google Tag Manager -->
+            })(window, document, 'script', 'dataLayer', 'GTM-WV5GSHC');</script>
+    End Google Tag Manager 
+    Required meta tags 
+    Google Tag Manager
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -48,7 +48,7 @@
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-5C9Q93");
-    </script>
+    </script> -->
     <style>
       html {
         scrollbar-width:thin; /* Makes the scrollbar thin */
@@ -98,14 +98,14 @@
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=AW-751441524"></script>
-    <script>
+    <!-- <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
       gtag("config", "AW-751441524", { cookie_flags: "SameSite=None;Secure" });
-    </script>
+    </script> -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/offcanvas.css" />
 
@@ -115,7 +115,7 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script type="application/ld+json">
+    <!-- <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "CollegeOrUniversity",
@@ -138,7 +138,7 @@
           "https://ahduni.edu.in/"
         ]
       }
-    </script>
+    </script> -->
     <link rel="stylesheet" href="css/bootstrap-select.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -4369,88 +4369,7 @@ renderGallery("All");
     </script>
 
     <br /><br />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org/",
-        "@type": "WebSite",
-        "name": "CHARUSAT University",
-        "url": "https://ahduni.edu.in/search/?q=djg",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://ahduni.edu.in/search/?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-    <script>
-      const tag = document.createElement("script");
-      const firstScriptTag = document.getElementsByTagName("script")[0];
-      const videoID = document
-        .querySelector(".video-bg-player")
-        .getAttribute("data-video");
-      const videoOverlay = document.querySelector(".video-bg-overlay");
-      const playerOptions = {
-        autohide: 1,
-        autoplay: 1,
-        controls: 0,
-        disablekb: 1,
-        enablejsapi: 1,
-        iv_load_policy: 3,
-        loop: 1,
-        modestbranding: 1,
-        mute: 1,
-        playlist: videoID,
-        rel: 0,
-        showinfo: 0,
-      };
-      tag.src = "https://www.youtube.com/iframe_api";
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      let ytPlayer;
-      function onYouTubeIframeAPIReady() {
-        ytPlayer = new YT.Player("yt-player", {
-          events: {
-            onReady: onPlayerReady,
-            onStateChange: onPlayerStateChange,
-          },
-          height: "720",
-          playerVars: playerOptions,
-          width: "1280",
-          videoId: videoID,
-        });
-      }
-      function onPlayerReady(event) {
-        event.target.playVideo();
-        const videoDuration = event.target.getDuration();
-        setInterval(function () {
-          const videoCurrentTime = event.target.getCurrentTime();
-          const timeDifference = videoDuration - videoCurrentTime;
-          if (timeDifference < 2 && timeDifference > 0) {
-            event.target.seekTo(0);
-          }
-        }, 1000);
-      }
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-          videoOverlay.classList.add("video-bg-overlay--fadeOut");
-        }
-      }
-    </script>
     <!-- footer -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org/",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home Page",
-            "item": "https://ahduni.edu.in/"
-          }
-        ]
-      }
-    </script>
-
     <footer
       class="footer-bs text-white container-fluid pt-40 pb-0 footer_bottom_bg">
       <div class="container-custom mx-auto">
@@ -4855,7 +4774,7 @@ renderGallery("All");
     <script type="text/javascript" src="js/flexcroll.js"></script>
     <script type="text/javascript" src="js/jquery.flip.min.js"></script>
     <script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
-    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.mixitup.min.js"></script> -->
     <script type="text/javascript" src="js/list.min.js"></script>
     <script type="text/javascript" src="js/scrollPosStyler.min.js"></script>
     <script type="text/javascript" src="js/validate.min.js"></script>
@@ -4939,84 +4858,8 @@ renderGallery("All");
       //}
     </script>
     <!-- SEARCH  -->
-    <script>
-      var site_url = "/site/templates/";
-      var btnSearch = document.getElementById("btn-search");
-      btnSearch.addEventListener("focus", function () {
-        btnSearch.value = "";
-        btnSearch.placeholder = "Start Searching";
-      });
-      btnSearch.addEventListener("blur", function () {
-        btnSearch.value = "";
-        btnSearch.placeholder = "";
-      });
-      // Get the input field
-      var inputProgramme = document.getElementById("btn-search-programme");
-      if (inputProgramme != null) {
-        // Execute a function when the user releases a key on the keyboard
-        inputProgramme.addEventListener("keyup", function (event) {
-          // Cancel the default action, if needed
-          event.preventDefault();
-          // Number 13 is the "Enter" key on the keyboard
-          if (event.keyCode === 13) {
-            // Trigger the button element with a click
-            document.getElementById("searchFormProgramme").submit();
-          }
-        });
-      }
-      var submitBtn = document.getElementById("submit-btn");
-      if (submitBtn != null) {
-        submitBtn.addEventListener("click", function (event) {
-          document.getElementById("searchFormProgramme").submit();
-        });
-      }
-      // FORCE ALPHABETS ON INPUTS
-      function onlyAlphabets(event) {
-        var value = String.fromCharCode(event.which);
-        var pattern = new RegExp(/[a-zåäö ]/i);
-        return pattern.test(value);
-      }
-      $('input[name="fullname"]').bind("keypress", onlyAlphabets);
-      // VALIDATE METHODS
-      /*$.validator.addMethod(
-     "phone",
-     function(value, element) {
-     var result = true;
-     console.log(value);
-     if(value == 9999999999 || value == 8888888888 || value == 7777777777 || value == 6666666666 || value ==5555555555 || value ==4444444444 || value ==3333333333 || value ==2222222222 || value ==1111111111 || value==0000000000) {
-     result = false;
-     return result;
-     }
-     return result;
-     },
-     "Please enter valid phone number."
-     );*/
-      $.validator.addMethod(
-        "lettersOnly",
-        function (value, element) {
-          return this.optional(element) || /^[a-z\s]+$/i.test(value);
-        },
-        "Only alphabetical characters"
-      );
-      $.validator.addMethod(
-        "inusPhone",
-        function (value, element) {
-          return (
-            this.optional(element) || /^(\+\d{1,3}[- ]?)?\d{10}$/.test(value)
-          );
-        },
-        "Please enter a valid phone number."
-      );
-      /*$('input[name="phone"]')
-     .on("keypress keyup blur",function (event) {
-     $(this).val($(this).val().replace(/[^\d].+/, ""));
-     if ((event.which < 48 || event.which > 57)) {
-     event.preventDefault();
-     }
-     });*/
-    </script>
 
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         $(".owl-carousel").owlCarousel({
           loop: false,
@@ -5029,7 +4872,6 @@ renderGallery("All");
           items: 1,
           arrows: true,
           responsive: {
-            // breakpoint from 0 up
             0: {
               autoplay: false,
               animateOut: "fadeIn",
@@ -5038,7 +4880,6 @@ renderGallery("All");
               touchDrag: true,
               mouseDrag: true,
             },
-            // breakpoint from 768 up
             769: {
               autoplay: false,
               animateOut: "fadeIn",
@@ -5091,7 +4932,7 @@ renderGallery("All");
           },
         },
       });
-    </script>
+    </script> -->
     <script type="text/javascript" src="js/scrollreveal.js"></script>
 
     <!-- hover panel width  -->
@@ -5133,7 +4974,7 @@ renderGallery("All");
     </script>
 
     <script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function () {
         $(".selectpickerHome").selectpicker({
           liveSearch: false,
@@ -5208,7 +5049,7 @@ renderGallery("All");
           },
         });
       }
-    </script>
+    </script> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -5227,7 +5068,7 @@ renderGallery("All");
         $(".card:first-child .card-header .row").addClass("collapsed");
       });
     </script>
-    <script>
+    <!-- <script>
       $("#homeSlider2").owlCarousel({
         loop: true,
         autoplay: true,
@@ -5239,6 +5080,6 @@ renderGallery("All");
         dots: false,
         items: 1,
       });
-    </script>
+    </script> -->
   </body>
 </html>
