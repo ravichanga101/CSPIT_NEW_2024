@@ -53,19 +53,19 @@ body {
   color: #3498db; /* Change text color on hover */
 }
 
-.person-info {
+/* .person-info {
   font-size: 16px;
   margin-top: 10px;
 }
 .person-info strong {
   display: block;
   font-size: 18px;
-}
+} */
 hr {
   border-top: 2px solid #900c3f;
 }
 
-label.error {
+/* label.error {
   font-size: 0.9rem;
   color: #ff0000;
   position: relative;
@@ -75,15 +75,15 @@ label.error {
 #agree-error.error,
 #ug_agree-error.error {
   top: 0px;
-}
+} */
 .tooltip-inner {
   background-color: #801214;
 }
-form button[type="Submit"].d-block {
+/* form button[type="Submit"].d-block {
   width: 100%;
   line-height: 1.5;
   background-color: #fff;
-}
+} */
 
 .bootstrap-select .dropdown-menu {
   max-height: inherit !important;
@@ -99,7 +99,7 @@ form button[type="Submit"].d-block {
   padding: 1rem !important;
 }
 /*#take-tour { background-image: url(../../images/tour-map-img.jpg);}*/
-#take-tour {
+/* #take-tour {
   background-image: none;
 }
 #take-tour .box {
@@ -116,7 +116,6 @@ form button[type="Submit"].d-block {
   top: calc(25vh - 30px);
 }
 
-/****** Netlink CSS 2020 ******/
 #news h5.section-head,
 #events h5.section-head {
   border: none;
@@ -148,9 +147,9 @@ form button[type="Submit"].d-block {
 }
 #events {
   margin-bottom: 60px;
-}
+} */
 /* EVENTSSS */
-#events .carousel-item,
+/* #events .carousel-item,
 #events .item,
 #events .item .card {
   height: 100%;
@@ -257,7 +256,7 @@ form button[type="Submit"].d-block {
 }
 #news-home .owl-carousel .owl-stage {
   display: flex;
-}
+} */
 /* NAVBAR---------------------------------------------- */
 .nav-wrap {
   top: 20px;
@@ -426,16 +425,16 @@ map area {
   margin-bottom: 30px;
 }
 
-#paper-cards .card-body {
+/* #paper-cards .card-body {
   padding: 0px;
 }
 #paper-cards .card-text a,
 .card-text .tab-title {
   color: #212529;
-}
+} */
 
 /****** Grid CSS ******/
-#whats-new {
+/* #whats-new {
   padding: 0;
   background-color: #eee;
 }
@@ -495,7 +494,7 @@ map area {
   font-size: 1rem;
   color: #fff;
   margin-bottom: 0;
-}
+} */
 .span-2 {
   grid-column-end: span 2;
   grid-row-end: span 1;
@@ -516,7 +515,7 @@ map area {
   grid-column-end: span 4;
   grid-row-end: span 1;
 }
-.section-6 .portfolio-slides .slick-slide {
+/* .section-6 .portfolio-slides .slick-slide {
   width: 33.33% !important;
 }
 .section-6 .portfolio-slides,
@@ -581,7 +580,7 @@ map area {
 }
 .library-logo-list .odscard {
   height: 100%;
-}
+} */
 
 /* Pagination CSS */
 section > .container-custom ul.pagination li.page-item:before {
@@ -605,7 +604,7 @@ ul.pagination li.page-item a.page-link:focus,
 ul.pagination li.page-item a.page-link:hover {
   box-shadow: none;
 }
-
+/* 
 .faculty-testimonial.journey-blk .owl-nav {
   display: block;
 }
@@ -637,7 +636,7 @@ ul.pagination li.page-item a.page-link:hover {
 }
 #Featuring-Alumni .owl-dots {
   display: none;
-}
+} */
 
 .accordion-content h4 {
   border-bottom: 0px solid;
@@ -664,7 +663,7 @@ ul.pagination li.page-item a.page-link:hover {
   height: 0px;
 }
 
-.press-section h2 {
+/* .press-section h2 {
   font-family: Playfair-Regular;
 }
 
@@ -725,7 +724,7 @@ ul.vc-tabs li.nav-item a.active {
   font-size: 18px;
   color: var(--site-color);
   background-color: transparent;
-}
+} */
 
 /****** Responsive CSS for Grid Layout ******/
 @media screen and (min-width: 870px) {
@@ -782,7 +781,7 @@ ul.vc-tabs li.nav-item a.active {
 }
 /****** Grid CSS End ******/
 
-@media screen and (max-width: 1199px) {
+/* @media screen and (max-width: 1199px) {
   #news article {
     margin-bottom: 10px;
   }
@@ -843,9 +842,9 @@ ul.vc-tabs li.nav-item a.active {
   .mecard-block .mecard {
     padding: 30px 10px;
   }
-  /*    .carousel-item, .item {
+     .carousel-item, .item {
             background-image: none !important;
-        }*/
+        }
   .slider-height.item {
     min-height: 560px;
   }
@@ -1022,7 +1021,7 @@ ul.vc-tabs li.nav-item a.active {
 }
 .mb-60 {
   margin-bottom: 60px;
-}
+} */
 .social-icons a:first-child {
   color: #333;
   font-size: 18px;
@@ -1070,7 +1069,7 @@ ul.vc-tabs li.nav-item a.active {
   border: none;
   color: #801214;
 }
-.blog-sidebar ul {
+/* .blog-sidebar ul {
   padding-left: 0px;
 }
 .blog-sidebar img {
@@ -1104,19 +1103,19 @@ ul.vc-tabs li.nav-item a.active {
 #sidebar .filter-btn {
   width: 100%;
   margin-bottom: 15px;
-  /* padding: 16px 16px; */
+  padding: 16px 16px;
   text-align: left;
   cursor: pointer !important;
   margin: 0px;
   display: inline-block;
   float: left;
-  /* border-bottom: 0.2px solid #919191; */
+  border-bottom: 0.2px solid #919191;
   background: var(--light-gray);
   font-family: "Roboto-Light";
   font-size: 16px;
   padding: 0 15px;
-}
-.filter-btn div {
+} */
+/* .filter-btn div {
   border-bottom: 0.2px solid #919191;
   padding: 12px 0 10px;
 }
@@ -1455,8 +1454,8 @@ h4.post-author-name {
 }
 .bg-dgray .card {
   border-radius: 0px;
-}
-#events .owl-carousel .item .card .bg-dgray p a {
+} */
+/* #events .owl-carousel .item .card .bg-dgray p a {
   color: #333;
   font-weight: 600;
 }
@@ -1587,8 +1586,8 @@ section > .container-custom ul.list li:before,
 .logo_box:hover {
   border: 1px solid #ccc;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.175);
-}
-.fliter li a:hover,
+} */
+/* .fliter li a:hover,
 .fliter li a:focus {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.175);
 }
@@ -1845,8 +1844,8 @@ section > .container-custom .filter-content ul li:before {
 }
 .footer-dash a:hover {
   border: none;
-}
-.banner_heading {
+} */
+/* .banner_heading {
   font-family: "Playfair-Bold";
   color: white;
   letter-spacing: 2px;
@@ -2102,8 +2101,8 @@ section > .container-custom .filter-content ul li:before {
 }
 .top_banner_bg img {
   width: 650px;
-}
-.latest_news_bg {
+} */
+/* .latest_news_bg {
   margin-bottom: 0px !important;
 }
 .latest_news_bg .item .bg-v {
@@ -2143,7 +2142,7 @@ section > .container-custom .filter-content ul li:before {
 }
 .step_well_dtl {
   margin-top: 50px;
-}
+} */
 /* BANNER VIDEO CSS START */
 /*.fullscreen-video-background {
   background: #000;
@@ -2245,7 +2244,7 @@ section > .container-custom .filter-content ul li:before {
 
 /* BANNER VIDEO CSS END */
 
-.video-bg-container {
+/* .video-bg-container {
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -2410,8 +2409,8 @@ section > .container-custom .content-details ul li:before {
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 30px;
-}
-.admission-round .footer-dash {
+} */
+/* .admission-round .footer-dash {
   width: 100%;
   height: unset;
   margin-bottom: 0px !important;
@@ -2601,7 +2600,7 @@ section > .container-custom .content-details ul li:before {
 .sideform {
   position: fixed;
   right: 0;
-  /* top: 180px; */
+  /* top: 180px; 
   top: 5%;
   z-index: 99;
   max-width: 450px;
@@ -2700,7 +2699,7 @@ section > .container-custom .content-details ul li:before {
 .sideform-msg {
   position: fixed;
   right: 0;
-  /* top: 180px; */
+  top: 180px;
   top: 20%;
   z-index: 99;
   max-width: 450px;
@@ -2860,9 +2859,9 @@ section > .container-custom .content-details ul li:before {
   font-family: "Roboto-Light";
   line-height: 1.2;
   margin-bottom: 0.5rem;
-}
+} */
 /* INTERNATIONAL AFFAIRS TEMPLATE CSS START */
-.basic-foundation-main.info-wrap:before {
+/* .basic-foundation-main.info-wrap:before {
   top: 0;
 }
 .key-golas-bg {
@@ -2894,10 +2893,10 @@ section > .container-custom .content-details ul li:before {
   max-height: 100%;
   width: 100%;
   height: 100%;
-}
+} */
 
 /* ARBORETUM TEMPLATE CSS START */
-.arboretum-list .card-body {
+/* .arboretum-list .card-body {
   position: absolute;
   bottom: 30px;
   left: 0;
@@ -2986,14 +2985,14 @@ section > .container-custom ul.about_list li:before {
 }
 .container-custom ul.about_list {
   padding-left: 0px;
-}
+} */
 /* ARBORETUM TEMPLATE CSS END */
 
-.advisory-council a h4 {
+/* .advisory-council a h4 {
   color: #801214;
   font-family: "Playfair-Bold";
   margin-top: 30px;
-}
+} */
 
 @media (max-width: 1999px) {
   .carousel-caption .text-img2 {
@@ -3429,9 +3428,7 @@ section > .container-custom ul.about_list li:before {
   .admission-main-cls .simple-button-plugin {
     width: 200px;
   }
-  .admission-main-cls. lateral-admission-btn {
-    width: 100%;
-  }
+  
   #homeTopSlider .item {
     height: 45vh;
   }
