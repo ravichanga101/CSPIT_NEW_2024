@@ -2948,12 +2948,19 @@ const galleryData = [
     images: ["images1/events_1.webp", "images1/events_2.webp"],
     description: "Annual cultural celebration at CSPIT.",
   },
+  // {
+  //   title: "Tech Symposium",
+  //   date: "April 12, 2024",
+  //   category: "Technical",
+  //   images: ["images1/events_2.webp", "images1/events_3.webp"],
+  //   description: "Showcasing innovative projects.",
+  // },
   {
-    title: "Tech Symposium",
-    date: "April 12, 2024",
+    title: "TEDx",
+    date: "January 18-19, 2024",
     category: "Technical",
-    images: ["images1/events_2.webp", "images1/events_3.webp"],
-    description: "Showcasing innovative projects.",
+    images: ["images1/gallery/TEDx/ted4.webp","images1/gallery/TEDx/ted1.webp","images1/gallery/TEDx/ted2.webp","images1/gallery/TEDx/ted3.webp","images1/gallery/TEDx/ted5.webp","images1/gallery/TEDx/ted6.webp","images1/gallery/TEDx/ted7.webp","images1/gallery/TEDx/ted8.webp","images1/gallery/TEDx/ted9.webp","images1/gallery/TEDx/ted10.webp","images1/gallery/TEDx/ted11.webp","images1/gallery/TEDx/ted12.webp"],
+    description: "Celebrating sportsmanship and athleticism.",
   },
   {
     title: "Cognizance",
@@ -3051,7 +3058,7 @@ galleryContainer.addEventListener("click", (e) => {
     updateModal();
 
     modal.style.display = "block";
-    slideshowInterval = setInterval(nextImage, 1500);
+    slideshowInterval = setInterval(nextImage, 600);
   }
 });
 
