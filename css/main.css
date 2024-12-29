@@ -2232,7 +2232,7 @@ section#thrust-areas {
 .testimonials-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  gap: 25px; /* Spacing between cards */
+  gap: 22px; /* Spacing between cards */
 }
 
 .testimonial-card {
