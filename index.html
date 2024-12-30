@@ -2777,13 +2777,27 @@ function updateSlider() {
     const visibleCards = getVisibleCards();
     const cardWidth = slider.offsetWidth / visibleCards;
 
-    // Prevent sliding out of bounds
-    if (currentInd < 0) currentInd = 0;
-    if (currentInd > totalCards - visibleCards) currentInd = totalCards - visibleCards;
-
-    // Apply the transform to slide by card width
-    container.style.transform = `translateX(-${currentInd * cardWidth}px)`;
+    // Move to the next slide
+    currentInd++;
+    if (currentInd < totalCards) {
+        container.style.transition = "transform 1.5s ease-in-out"; // Smooth slide
+        container.style.transform = `translateX(-${currentInd * cardWidth}px)`;
+    } else {
+        // Reset to the first slide after reaching the last
+        setTimeout(() => {
+            container.style.transition = "none"; // Disable transition for instant reset
+            currentInd = 0; // Reset to the first slide
+            container.style.transform = `translateX(0) transform 0.5s `; // Jump to the first slide
+        }, 1500); // Match the transition duration
+    }
 }
+
+function startSlider() {
+    setInterval(updateSlider, 5000); // Slide every 5 seconds
+}
+
+document.addEventListener("DOMContentLoaded", startSlider);
+
 
 // Function to determine visible cards based on screen width
 function getVisibleCards() {
