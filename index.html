@@ -894,10 +894,10 @@ window.addEventListener("click", (event) => {
         <div class="announcement-content-wrapper">
           <div class="announcement-content">
             <ul class="announcement-list">
-              <a href="#" class="announce"><li>Annual Tech Fest starts on January 15, 2024. Register now!</li></a>
+              <!-- <a href="#" class="announce"><li>Annual Tech Fest starts on January 15, 2024. Register now!</li></a>
               <a href="#" class="announce"><li>Admissions for 2024 are now open! Apply before December 31.</li></a>
               <a href="#" class="announce"><li>Semester exams will begin from December 10, 2023.</li></a>
-              <a href="#" class="announce"><li>Campus recruitment drive scheduled for February 2024.</li></a>
+              <a href="#" class="announce"><li>Campus recruitment drive scheduled for February 2024.</li></a> -->
             </ul>
           </div>
         </div>
@@ -2679,35 +2679,35 @@ window.addEventListener("click", (event) => {
         designation: 'Student',
         name: 'Melita Castelino',
         testimonial: "I am privileged to be a part of the Computer Science and Engineering department at CSPIT. The teaching methodology, well-equipped laboratories, and faculty support have significantly advanced my career. From hands-on workshops to one-on-one counseling, the department offers it all. The faculty encourages students to engage in extracurricular activities and supports our startup ventures and research. I appreciate the department's initiative in organizing hackathons, allowing us to showcase our skills. Expert talks, industry visits, and peer learning sessions broaden our horizons and provide valuable insights into the real world. I am truly grateful for the opportunities provided here.",
-        imageSrc: '../images1/Melita.jpg'
+        imageSrc: './images1/Melita.jpg'
     },
     {
         id: 7,
         designation: 'Student',
         name: 'Shail Macwan',
         testimonial: "I am truly thankful for the incredible learning environment and the many opportunities that have helped me grow. The department's focus on fields like AI, ML and Competitive programming, along with the workshops and technical events, has given me the chance to apply what I’ve learned in practical, real-world situations. These experiences have not only strengthened my skills but also allowed me to work closely with my peers and come up with creative solutions. The support and encouragement from the faculty have been instrumental in shaping both my academic journey and future career.",
-        imageSrc: '../images1/Shail.jpg'
+        imageSrc: './images1/Shail.jpg'
     },
     {
         id: 8,
         designation: 'Student',
         name: 'Jayti Shah',
         testimonial: "The Computer Science and Engineering (CSE) department at our college provides an outstanding learning environment! Along with regular classes, the department organizes fun activities like the Tower of Hanoi challenge and treasure hunts, making learning both enjoyable and interesting. They also arrange industrial visits and hackathons, giving us valuable real-world exposure. These events not only sharpen our technical and problem-solving skills but also enhance our practical knowledge. The engaging activities and hands-on experience make studying here incredibly enriching.",
-        imageSrc: '../images1/Jayti.jpg'
+        imageSrc: './images1/Jayti.jpg'
     },
     {
         id: 9,
         designation: 'Parent',
         name: 'Amit Panchal',
         testimonial: "As a parent of Shruti Panchal (22CS044) in the Computer Science & Engineering department, I want to express my sincere gratitude for the excellent education and support provided by the department. The workshops and hackathons have been incredibly beneficial, allowing Shruti to develop practical skills in a hands-on environment. These experiences, combined with the well-rounded curriculum, have given her the confidence and knowledge to excel in the tech field. I truly appreciate the faculty's dedication to nurturing the students' growth and encouraging innovation.",
-        imageSrc: '../images1/AmitPanchal.jpg'
+        imageSrc: './images1/AmitPanchal.jpg'
     },
     {
         id: 10,
         designation: 'Parent',
         name: 'Piyush Patel',
         testimonial: "I am highly impressed with the CSE Department. The expert sessions organized regularly offer students, including my daughter Pia, valuable exposure to industry insights and new technologies. I particularly appreciate the department's personalized counseling facility, where each student is guided by a dedicated faculty member throughout the year. This mentorship ensures consistent academic and personal support, fostering both professional and personal growth. Kudos to the department for their dedication to student success!",
-        imageSrc: '../images1/PiyushPatel.jpg'
+        imageSrc: './images1/PiyushPatel.jpg'
     }
 ];
 
@@ -2777,27 +2777,13 @@ function updateSlider() {
     const visibleCards = getVisibleCards();
     const cardWidth = slider.offsetWidth / visibleCards;
 
-    // Move to the next slide
-    currentInd++;
-    if (currentInd < totalCards) {
-        container.style.transition = "transform 1.5s ease-in-out"; // Smooth slide
-        container.style.transform = `translateX(-${currentInd * cardWidth}px)`;
-    } else {
-        // Reset to the first slide after reaching the last
-        setTimeout(() => {
-            container.style.transition = "none"; // Disable transition for instant reset
-            currentInd = 0; // Reset to the first slide
-            container.style.transform = `translateX(0) transform 0.5s `; // Jump to the first slide
-        }, 1500); // Match the transition duration
-    }
+    // Prevent sliding out of bounds
+    if (currentInd < 0) currentInd = 0;
+    if (currentInd > totalCards - visibleCards) currentInd = totalCards - visibleCards;
+
+    // Apply the transform to slide by card width
+    container.style.transform = `translateX(-${currentInd * cardWidth}px)`;
 }
-
-function startSlider() {
-    setInterval(updateSlider, 5000); // Slide every 5 seconds
-}
-
-document.addEventListener("DOMContentLoaded", startSlider);
-
 
 // Function to determine visible cards based on screen width
 function getVisibleCards() {
@@ -3008,7 +2994,7 @@ const galleryData = [
     title: "TEDx",
     date: "January 18-19, 2024",
     category: "Technical",
-    images: ["images1/gallery/TEDx/ted4.webp","images1/gallery/TEDx/ted1.webp","images1/gallery/TEDx/ted2.webp","images1/gallery/TEDx/ted3.webp","images1/gallery/TEDx/ted5.webp","images1/gallery/TEDx/ted6.webp","images1/gallery/TEDx/ted7.webp","images1/gallery/TEDx/ted8.webp","images1/gallery/TEDx/ted9.webp","images1/gallery/TEDx/ted10.webp","images1/gallery/TEDx/ted11.webp","images1/gallery/TEDx/ted12.webp"],
+    images: ["images1/gallery/TEDx/ted4.webp","images1/gallery/TEDx/ted1.webp","images1/gallery/TEDx/ted2.webp","images1/gallery/TEDx/ted3.webp","images1/gallery/TEDx/ted5.webp","images1/gallery/TEDx/ted6.webp","images1/gallery/TEDx/ted7.webp","images1/gallery/TEDx/ted12.webp"],
     description: "Celebrating sportsmanship and athleticism.",
   },
   {
