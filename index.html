@@ -2935,18 +2935,18 @@ document.addEventListener('DOMContentLoaded', () => {
     <script>
       const galleryData = [
         {
-          title: "Cultural Fest",
+          title: "SPOURAL",
           date: "March 25, 2024",
           category: "Cultural",
-          images: ["images1/events_1.webp", "images1/events_2.webp"],
-          description: "Annual cultural celebration at CSPIT.",
+          images: ["images1/events_1.webp", "images1/gallery/Cultural/cultural2.webp","images1/gallery/Cultural/cultural3.webp","images1/gallery/Cultural/cultural4.webp","images1/gallery/Cultural/cultural5.webp","images1/gallery/Cultural/cultural7.webp"],
+          description: "SPOURAL celebration at CSPIT.",
         },
         {
           title: "TEDx",
           date: "January 18-19, 2024",
           category: "Technical",
           images: ["images1/gallery/TEDx/ted1.webp","images1/gallery/TEDx/ted4.webp","images1/gallery/TEDx/ted5.webp","images1/gallery/TEDx/ted10.webp","images1/gallery/TEDx/ted15.webp","images1/gallery/TEDx/ted18.webp"],
-          description: "Celebrating sportsmanship and athleticism.",
+          description: "TedX: Ingenious Creations",
         },
         {
           title: "AWS Student Community Day",
@@ -2980,7 +2980,7 @@ document.addEventListener('DOMContentLoaded', () => {
           title: "Sports at CHARUSAT",
           // date: "September 25-26, 2024",
           category: "Sports",
-          images: ["images1/gallery/dosehack/dose0.webp","images1/gallery/dosehack/dose1.webp","images1/gallery/dosehack/dose2.webp","images1/gallery/dosehack/dose7.webp","images1/gallery/dosehack/dose9.webp"],
+          images: ["images1/gallery/Sports/sports4.webp","images1/gallery/Sports/sports1.webp","images1/gallery/Sports/sports2.webp","images1/gallery/Sports/sports3.webp","images1/gallery/Sports/sports5.webp","images1/gallery/Sports/sports6.webp","images1/gallery/Sports/sports7.webp"],
           description: "Various sports promoted at CHARUSAT",
         },
       ];
@@ -3025,7 +3025,7 @@ document.addEventListener('DOMContentLoaded', () => {
           img.alt = event.title;
           img.className = "gallery-image";
           img.dataset.index = galleryData.indexOf(event);
-    
+          img.loading="lazy";
           const caption = document.createElement("div");
           caption.className = "gallery-card-caption";
     
@@ -3042,6 +3042,14 @@ document.addEventListener('DOMContentLoaded', () => {
           col.appendChild(card);
           galleryContainer.appendChild(col);
         });
+        // if (filteredData.length <= 2) {
+        //   galleryContainer.style.display = "flex";
+        //   galleryContainer.style.justifyContent = "center";
+        //   galleryContainer.style.alignItems = "center";
+        //   galleryContainer.style.flexWrap = "wrap";
+        // } else {
+        //   galleryContainer.style.display = ""; 
+        // }
       }
     
       // Tab Switching
