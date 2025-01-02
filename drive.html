@@ -349,6 +349,8 @@
             updatePageHeading(); // Update the heading and title based on URL
             const folderId = getFolderIdFromURL(); // Get the folder ID from URL
             fetchFiles(folderId); // Fetch files in the folder
+            const newUrl = window.location.origin + window.location.pathname;
+            history.replaceState({}, document.title, newUrl);
         };
     </script>
 </body>
