@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYLLABUS</title> <!-- Default title -->
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images1/logo.jpeg" type="image/x-icon" />
+    <style>
+        /* Reset and global styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Roboto';
+            background: #e1e1e1;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        .header {
+            background: #004aad;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: relative; /* Ensure the back button is correctly positioned */
+        }
+
+        .header h2 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 600;
+            text-align: center; /* Centered heading */
+            flex-grow: 1; /* Ensure heading takes up available space */
+        }
+
+        /* Back to Homepage button */
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #d9e2ec;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Go Back button */
+        .back-button {
+            padding: 12px 24px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+            position: absolute;
+            right: 100px; /* Right-aligned */
+            top: 20px;  /* Top alignment */
+            display: none; /* Initially hidden */
+        }
+
+        .back-button:hover {
+            background: #1a5bbf;
+        }
+
+        /* Main content area */
+        .main-content {
+            flex: 1;
+            padding: 20px 40px;
+            overflow-y: auto;
+        }
+
+        /* File grid */
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Dynamic card size for responsiveness */
+            gap: 20px;
+        }
+
+        /* File card styling */
+        .file-card {
+            background: #fff;
+            color: #333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s;
+        }
+
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* File and Folder icons */
+        .file-icon, .folder-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .folder-icon {
+            color: #f39c12; /* Bright golden color for folder */
+        }
+
+        .file-icon {
+            color: #2ecc71; /* Green color for files */
+        }
+
+        .file-card:hover .folder-icon, 
+        .file-card:hover  {
+            transform: scale(1.07);
+            color: #e67e22; /* Folder color change on hover */
+        }
+
+        /* Specific file types */
+        .file-pdf {
+            color: #e74c3c; /* Original red color for PDFs */
+        }
+
+        .file-pdf:hover {
+            color: #d35400; /* Darker orange color on hover */
+            transform: scale(1.1);
+        }
+
+        .file-image {
+            color: #f39c12;
+        }
+        .file-video {
+            color: #9b59b6;
+        }
+
+        .file-video:hover {
+            color: #8e44ad;
+            transform: scale(1.1);
+        }
+
+        .file-card h3 {
+            font-size: 1rem;
+            margin: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .header h2 {
+                font-size: 1.5rem;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .file-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller grid items for medium screens */
+            }
+
+            .file-card {
+                padding: 15px;
+            }
+
+            .file-icon, .folder-icon {
+                font-size: 35px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .file-card {
+                padding: 15px;
+            }
+
+            .file-icon, .folder-icon {
+                font-size: 30px;
+            }
+
+            .back-button {
+                width: 100%;
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h2 {
+                font-size: 1.2rem;
+            }
+
+            .file-grid {
+                grid-template-columns: 1fr; /* One column on smaller screens */
+            }
+
+            .file-icon, .folder-icon {
+                font-size: 28px;
+            }
+
+            .file-card h3 {
+                font-size: 0.9rem; /* Smaller text for file names */
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h2 id="page-heading">SYLLABUS</h2>
+        <a href="index.html" class="back-home" onclick="goBackToHome()">← Back to Home</a>
+        <button id="back-button" class="back-button" style="display: none;" onclick="navigateBack()">Go Back</button>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <div id="file-list" class="file-grid">Loading files...</div>
+    </div>
+
+    <script>
+        const apiKey = "AIzaSyAmJUAgBJRLq5dMk07vkaJr-fFPcVSb6Pc";
+        const folderStack = []; // To manage folder navigation history
+
+        // Function to get parameters from URL
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Function to update the heading dynamically based on URL and update the page title
+        function updatePageHeading() {
+            const heading = getURLParameter('heading') || "SYLLABUS"; // Default heading if not provided
+            document.getElementById('page-heading').textContent = heading;
+            document.title = heading; // Update the page title as well
+        }
+
+        // Function to get folder ID from URL
+        function getFolderIdFromURL() {
+            return getURLParameter('folderId') || '1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2'; // Default folder if none provided
+        }
+
+        async function fetchFiles(folderId) {
+            const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const fileList = document.getElementById("file-list");
+                fileList.innerHTML = ""; // Clear the loading text
+
+                data.files.forEach(file => {
+                    const link = document.createElement("a");
+                    link.className = "file-card";
+
+                    const icon = document.createElement("div");
+
+                    if (file.mimeType === "application/vnd.google-apps.folder") {
+                        icon.classList.add("folder-icon");
+                        icon.innerHTML = '<i class="fas fa-folder"></i>'; // Folder icon
+                    } else {
+                        icon.classList.add("file-icon");
+                        if (file.mimeType === "application/pdf") {
+                            icon.classList.add("file-pdf");
+                            icon.innerHTML = '<i class="fas fa-file-pdf"></i>'; // PDF icon
+                        } else if (file.mimeType === "image/jpeg" || file.mimeType === "image/png") {
+                            icon.classList.add("file-image");
+                            icon.innerHTML = '<i class="fas fa-file-image"></i>'; // Image icon
+                        } else if (file.mimeType === "video/mp4") {
+                            icon.classList.add("file-video");
+                            icon.innerHTML = '<i class="fas fa-file-video"></i>'; // Video icon
+                        } else {
+                            icon.innerHTML = '<i class="fas fa-file-alt"></i>'; // Default file icon
+                        }
+                    }
+
+                    const title = document.createElement("h3");
+                    title.textContent = file.name;
+
+                    link.appendChild(icon);
+                    link.appendChild(title);
+
+                    if (file.mimeType === "application/vnd.google-apps.folder") {
+                        link.href = "#"; // Prevent default navigation
+                        link.onclick = (e) => {
+                            e.preventDefault();
+                            openFolder(file.id);
+                        };
+                    } else {
+                        link.href = `https://drive.google.com/file/d/${file.id}/view`;
+                        link.target = "_blank";
+                    }
+
+                    fileList.appendChild(link);
+                });
+
+                // Show back button if there's a folder history
+                document.getElementById("back-button").style.display = folderStack.length > 0 ? "block" : "none";
+            } catch (error) {
+                console.error("Error fetching files:", error);
+                document.getElementById("file-list").textContent = "Error loading files.";
+            }
+        }
+
+        function openFolder(folderId) {
+            folderStack.push(folderId);
+            fetchFiles(folderId);
+        }
+
+        function navigateBack() {
+            folderStack.pop();
+            const previousFolder = folderStack[folderStack.length - 1] || getFolderIdFromURL(); // Return to last folder or default folder
+            fetchFiles(previousFolder);
+        }
+        
+        function goBackToHome() {
+            // Redirect to home page
+            window.location.href = "index.html"; // Replace with your actual homepage URL
+
+            // Close the current tab
+            window.close();
+        }
+
+        // Initial setup when page loads
+        window.onload = () => {
+            updatePageHeading(); // Update the heading and title based on URL
+            const folderId = getFolderIdFromURL(); // Get the folder ID from URL
+            fetchFiles(folderId); // Fetch files in the folder
+        };
+    </script>
+</body>
+</html>
