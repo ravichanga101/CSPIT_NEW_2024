@@ -3053,14 +3053,14 @@ document.addEventListener('DOMContentLoaded', () => {
           col.appendChild(card);
           galleryContainer.appendChild(col);
         });
-        // if (filteredData.length <= 2) {
-        //   galleryContainer.style.display = "flex";
-        //   galleryContainer.style.justifyContent = "center";
-        //   galleryContainer.style.alignItems = "center";
-        //   galleryContainer.style.flexWrap = "wrap";
-        // } else {
-        //   galleryContainer.style.display = ""; 
-        // }
+        if (filteredData.length <= 2) {
+          galleryContainer.style.display = "flex";
+          galleryContainer.style.justifyContent = "center";
+          galleryContainer.style.alignItems = "center";
+          galleryContainer.style.flexWrap = "wrap";
+        } else {
+          galleryContainer.style.display = ""; 
+        }
       }
     
       // Tab Switching
