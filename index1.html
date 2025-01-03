@@ -936,9 +936,9 @@ window.addEventListener("click", (event) => {
     </section>
 
     <section class="section-5 programs" id="programs">
-      <div class="container my-5" id="under-graduate-programs">
-        <h2 class="text-center mb-4" >PROGRAMS OFFERED</h2>
-        <div class="under-graduate" >
+      <div class="container my-5">
+        <h2 class="text-center mb-4">PROGRAMS OFFERED</h2>
+        <div class="under-graduate" id="under-graduate-programs">
           <h3
             class="mb-2"
             style="font-family: 'Playfair'; font-size: xx-large; font: bold">
@@ -1069,16 +1069,16 @@ window.addEventListener("click", (event) => {
                     class="card-img-top"
                     alt="B.Tech in Electrical Engineering"
                     loading="lazy" />
-                  <div class="card-body" >
-                    <h5 class="card-title" id="post-graduate-programs">Electrical Engineering</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Electrical Engineering</h5>
                   </div>
                 </div>
               </a>
             </div>
           </div>
         </div>
-        <!-- <div style="height: 40px; visibility: hidden;" id="post-graduate-programs"></div> -->
-        <div class="mt-40 post-graduate" >
+    
+        <div class="mt-40 post-graduate" id="post-graduate-programs">
           <h3
             class="mb-2"
             style="font-family: 'Playfair'; font-size: xx-large; font: bold">
@@ -2906,180 +2906,242 @@ document.addEventListener('DOMContentLoaded', () => {
     </section>
     <br />
 
-    <section class="gallery-section py-5" id="gallery">
+    <section class="py-5 gallery-section" id="gallery">
       <div class="container">
         <h2 style="font-weight: bold;">GALLERY</h2>
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <div class="stacked-cards" onclick="openModal('Cultural')">
-              <div class="stacked-card">
-                <img src="images1/gallery/Cultural/cultural2.webp" alt="Cultural Event 1">
-              </div>
-              <div class="stacked-card">
-                <img src="images1/gallery/Cultural/cultural3.webp" alt="Cultural Event 2">
-              </div>
-              <div class="stacked-card">
-                <img src="images1/gallery/Cultural/cultural4.webp" alt="Cultural Event 3">
-              </div>
-            </div>
-            <p class="stacked-caption">Cultural Events</p>
-          </div>
+        <ul class="nav nav-pills justify-content-center mb-5 gallery-nav-pills">
+          <!-- <li class="nav-item">
+            <button class="gallery-nav-link active" data-category="Infrastructure">
+              INFRASTRUCTURE
+            </button>
+          </li> -->
+          <li class="nav-item">
+            <button class="gallery-nav-link active" data-category="Cultural">CULTURAL</button>
+          </li>
+          <li class="nav-item">
+            <button class="gallery-nav-link" data-category="Technical">TECHNICAL</button>
+          </li>
+          <li class="nav-item">
+            <button class="gallery-nav-link" data-category="Sports">SPORTS</button>
+          </li>
+        </ul>
     
-          <div class="col-md-4 col-sm-6">
-            <div class="stacked-cards" onclick="openModal('Technical')">
-              <div class="stacked-card">
-                <img src="images1/gallery/TEDx/ted1.webp" alt="Technical Event 1">
-              </div>
-              <div class="stacked-card">
-                <img src="images1/gallery/TEDx/ted4.webp" alt="Technical Event 2">
-              </div>
-              <div class="stacked-card">
-                <img src="images1/gallery/TEDx/ted5.webp" alt="Technical Event 3">
-              </div>
-            </div>
-            <p class="stacked-caption">Technical Events</p>
-          </div>
-    
-          <div class="col-md-4 col-sm-6">
-            <div class="stacked-cards" onclick="openModal('Sports')">
-              <div class="stacked-card">
-                <img src="images1/gallery/Sports/sports1.webp" alt="Sports Event 1">
-              </div>
-              <div class="stacked-card">
-                <img src="images1/gallery/Sports/sports2.webp" alt="Sports Event 2">
-              </div>
-              <div class="stacked-card">
-                <img src="images1/gallery/Sports/sports3.webp" alt="Sports Event 3">
-              </div>
-            </div>
-            <p class="stacked-caption">Sports Events</p>
-          </div>
-        </div>
+        <div class="row" id="galleryContainer"></div>
       </div>
     </section>
-    
-    
     <div id="customGalleryModal" class="custom-gallery-modal">
       <div class="custom-gallery-modal-content">
         <span class="close-button">&times;</span>
         <h3 id="customEventTitle"></h3>
+        <p id="customEventDate"></p>
         <div class="custom-gallery-slideshow">
           <button class="prev-button">&lt;</button>
-          <img id="customMainImage" src="" alt="Slideshow Image" loading="lazy" />
+          <img id="customMainImage" src alt="Slideshow Image" loading="lazy"/>
           <button class="next-button">&gt;</button>
         </div>
         <div class="gallery-thumbnail-strip"></div>
       </div>
     </div>
-    
 
     <script>
-     const galleryData = {
-  Cultural: [
-    "images1/gallery/Cultural/cultural2.webp",
-    "images1/gallery/Cultural/cultural3.webp",
-    "images1/gallery/Cultural/cultural4.webp",
-    "images1/gallery/Cultural/cultural5.webp",
-    "images1/gallery/Cultural/cultural7.webp",
-  ],
-  Technical: [
-    "images1/gallery/TEDx/ted1.webp",
-    "images1/gallery/TEDx/ted4.webp",
-    "images1/gallery/TEDx/ted5.webp",
-    "images1/gallery/TEDx/ted10.webp",
-    "images1/gallery/TEDx/ted15.webp",
-    "images1/gallery/TEDx/ted18.webp",
-    "images1/gallery/AWS Commuinity Day/aws1.webp",
-    "images1/gallery/AWS Commuinity Day/aws3.webp",
-    "images1/gallery/semiconductor/semi1.webp",
-    "images1/gallery/dosehack/dose0.webp",
-  ],
-  Sports: [
-    "images1/gallery/Sports/sports4.webp",
-    "images1/gallery/Sports/sports1.webp",
-    "images1/gallery/Sports/sports2.webp",
-    "images1/gallery/Sports/sports3.webp",
-    "images1/gallery/Sports/sports5.webp",
-    "images1/gallery/Sports/sports7.webp",
-  ],
-};
-
-const modal = document.getElementById("customGalleryModal");
-const mainImage = document.getElementById("customMainImage");
-const eventTitle = document.getElementById("customEventTitle");
-const thumbnailStrip = document.querySelector(".gallery-thumbnail-strip");
-const closeButton = document.querySelector(".close-button");
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
-
-let currentImages = [];
-let currentIndex = 0;
-
-// Open Modal
-function openModal(category) {
-  currentImages = galleryData[category];
-  currentIndex = 0;
-  eventTitle.textContent = `${category.toUpperCase()} EVENTS`;
-  updateModal();
-  modal.style.display = "block";
-}
-
-// Close Modal
-function closeModal() {
-  modal.style.display = "none";
-}
-
-closeButton.addEventListener("click", closeModal);
-window.addEventListener("click", (event) => {
-  if (event.target === modal) closeModal();
-});
-
-// Update Modal
-function updateModal() {
-  mainImage.src = currentImages[currentIndex];
-  thumbnailStrip.innerHTML = currentImages
-    .map(
-      (img, index) =>
-        `<img src="${img}" class="${index === currentIndex ? "active" : ""}" />`
-    )
-    .join("");
-
-  // Add click listeners to thumbnails
-  thumbnailStrip.querySelectorAll("img").forEach((thumb, index) => {
-    thumb.addEventListener("click", () => {
-      currentIndex = index;
-      updateModal();
-    });
-  });
-}
-
-// Navigation
-prevButton.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-  updateModal();
-  restartAutoSlider();
-});
-
-nextButton.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % currentImages.length;
-  updateModal();
-  restartAutoSlider();
-});
-function startAutoSlider() {
-  autoSliderInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % currentImages.length;
-    updateModal();
-  }, 2000); // Change the image every 3 seconds
-}
-
-function stopAutoSlider() {
-  clearInterval(autoSliderInterval);
-}
-
-function restartAutoSlider() {
-  stopAutoSlider();
-  startAutoSlider();
-}
+      const galleryData = [
+        {
+          title: "SPOURAL",
+          date: "March 25, 2024",
+          category: "Cultural",
+          images: ["images1/events_1.webp", "images1/gallery/Cultural/cultural2.webp","images1/gallery/Cultural/cultural3.webp","images1/gallery/Cultural/cultural4.webp","images1/gallery/Cultural/cultural5.webp","images1/gallery/Cultural/cultural7.webp"],
+          description: "SPOURAL celebration at CSPIT.",
+        },
+        {
+          title: "TEDx",
+          date: "January 18-19, 2024",
+          category: "Technical",
+          images: ["images1/gallery/TEDx/ted1.webp","images1/gallery/TEDx/ted4.webp","images1/gallery/TEDx/ted5.webp","images1/gallery/TEDx/ted10.webp","images1/gallery/TEDx/ted15.webp","images1/gallery/TEDx/ted18.webp"],
+          description: "TedX: Ingenious Creations",
+        },
+        {
+          title: "AWS Student Community Day",
+          date: "January 18-19, 2024",
+          category: "Technical",
+          images: ["images1/gallery/AWS Commuinity Day/aws2.webp", "images1/gallery/AWS Commuinity Day/aws1.webp","images1/gallery/AWS Commuinity Day/aws3.webp","images1/gallery/AWS Commuinity Day/aws5.webp","images1/gallery/AWS Commuinity Day/aws7.webp"],
+          description: "AWS Community Day students held by AWS Club of IT department.",
+        },
+        {
+          title: "Semiconductor Summit",
+          date: "September 30 - October 19, 2024",
+          category: "Technical",
+          images: ["images1/gallery/semiconductor/semi6.png","images1/gallery/semiconductor/semi1.webp","images1/gallery/semiconductor/semi2.webp","images1/gallery/semiconductor/semi3.webp","images1/gallery/semiconductor/semi4.webp","images1/gallery/semiconductor/semi5.webp"],
+          description: "Semiconductor Summit 2024",
+        },
+        {
+          title: "DoseHack Hackathon",
+          date: "September 25-26, 2024",
+          category: "Technical",
+          images: ["images1/gallery/dosehack/dose0.webp","images1/gallery/dosehack/dose1.webp","images1/gallery/dosehack/dose2.webp","images1/gallery/dosehack/dose7.webp","images1/gallery/dosehack/dose9.webp"],
+          description: "DoseHack Hackathon 2024",
+        },
+        // {
+        //   title: "Endownment Chair Activity",
+        //   date: "September 25-26, 2024",
+        //   category: "Technical",
+        //   images: ["images1/gallery/dosehack/dose0.webp","images1/gallery/dosehack/dose1.webp","images1/gallery/dosehack/dose2.webp","images1/gallery/dosehack/dose7.webp","images1/gallery/dosehack/dose9.webp"],
+        //   description: "DoseHack Hackathon 2024",
+        // },
+        {
+          title: "Sports at CHARUSAT",
+          // date: "September 25-26, 2024",
+          category: "Sports",
+          images: ["images1/gallery/Sports/sports4.webp","images1/gallery/Sports/sports1.webp","images1/gallery/Sports/sports2.webp","images1/gallery/Sports/sports3.webp","images1/gallery/Sports/sports5.webp","images1/gallery/Sports/sports6.webp","images1/gallery/Sports/sports7.webp"],
+          description: "Various sports promoted at CHARUSAT",
+        },
+      ];
+    
+      // DOM elements
+      const galleryContainer = document.getElementById("galleryContainer");
+      const galleryTabs = document.querySelectorAll(".gallery-nav-link");
+      const modal = document.getElementById("customGalleryModal");
+      const mainImage = document.getElementById("customMainImage");
+      const eventTitle = document.getElementById("customEventTitle");
+      const eventDate = document.getElementById("customEventDate");
+      const thumbnailStrip = document.querySelector(".gallery-thumbnail-strip");
+      const closeButton = document.querySelector(".close-button");
+      const prevButton = document.querySelector(".prev-button");
+      const nextButton = document.querySelector(".next-button");
+    
+      // Variables for modal functionality
+      let currentImages = [];
+      let currentIndex = 0;
+      let slideshowInterval;
+    
+      // Render Gallery
+      function renderGallery(category) {
+        galleryContainer.innerHTML = ""; // Clear previous items
+    
+        const filteredData = galleryData.filter((item) => item.category === category);
+    
+        if (filteredData.length === 0) {
+          galleryContainer.innerHTML = `<p class="text-center">No events found for this category.</p>`;
+          return;
+        }
+    
+        filteredData.forEach((event) => {
+          const col = document.createElement("div");
+          col.className = "col-md-4 col-sm-6";
+    
+          const card = document.createElement("div");
+          card.className = "gallery-card";
+    
+          const img = document.createElement("img");
+          img.src = event.images[0];
+          img.alt = event.title;
+          img.className = "gallery-image";
+          img.dataset.index = galleryData.indexOf(event);
+          img.loading="lazy";
+          const caption = document.createElement("div");
+          caption.className = "gallery-card-caption";
+    
+          const h5 = document.createElement("h5");
+          h5.textContent = event.title;
+    
+          const p = document.createElement("p");
+          p.textContent = event.description;
+    
+          caption.appendChild(h5);
+          caption.appendChild(p);
+          card.appendChild(img);
+          card.appendChild(caption);
+          col.appendChild(card);
+          galleryContainer.appendChild(col);
+        });
+        if (filteredData.length <= 2) {
+          galleryContainer.style.display = "flex";
+          galleryContainer.style.justifyContent = "center";
+          galleryContainer.style.alignItems = "center";
+          galleryContainer.style.flexWrap = "wrap";
+        } else {
+          galleryContainer.style.display = ""; 
+        }
+      }
+    
+      // Tab Switching
+      galleryTabs.forEach((tab) => {
+        tab.addEventListener("click", (e) => {
+          galleryTabs.forEach((tab) => tab.classList.remove("active"));
+          tab.classList.add("active");
+    
+          const category = tab.dataset.category;
+          renderGallery(category);
+        });
+      });
+    
+      // Initial Render for "Cultural"
+      document.addEventListener("DOMContentLoaded", () => {
+        renderGallery("Cultural"); // Default category
+      });
+    
+      // Open Modal
+      galleryContainer.addEventListener("click", (e) => {
+        if (e.target.classList.contains("gallery-image")) {
+          const index = e.target.dataset.index;
+          const event = galleryData[index];
+    
+          currentImages = event.images;
+          currentIndex = 0;
+    
+          eventTitle.textContent = event.title;
+          eventDate.textContent = event.date;
+          updateModal();
+    
+          modal.style.display = "block";
+          slideshowInterval = setInterval(nextImage, 1400);
+        }
+      });
+    
+      // Close Modal
+      const closeModal = () => {
+        modal.style.display = "none";
+        clearInterval(slideshowInterval);
+      };
+    
+      closeButton.addEventListener("click", closeModal);
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+    
+      // Update Modal
+      function updateModal() {
+        mainImage.src = currentImages[currentIndex];
+        thumbnailStrip.innerHTML = currentImages
+          .map(
+            (img, index) =>
+              `<img src="${img}" class="${index === currentIndex ? "active" : ""}" />`
+          )
+          .join("");
+    
+        // Add click listeners to the thumbnails
+        thumbnailStrip.querySelectorAll("img").forEach((thumb, index) => {
+          thumb.addEventListener("click", () => {
+            currentIndex = index;
+            updateModal();
+          });
+        });
+      }
+    
+      // Next Image
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateModal();
+      }
+    
+      // Previous Image
+      function previousImage() {
+        currentIndex =
+          (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateModal();
+      }
+    
+      prevButton.addEventListener("click", previousImage);
+      nextButton.addEventListener("click", nextImage);
     </script>
 
     <!-- DISPLAY SECTIONS ON SCOLL---------------------- -->
