@@ -16,7 +16,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="format-detection" content="telephone=no" />
-  <link rel="icon" href="images1/logo.jpeg" type="image/x-icon" />
+  <link rel="icon" href="images1/logo.png" type="image/x-icon" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -186,17 +186,19 @@
       <nav id="navbar_top" class="navbar navbar-expand-lg border-bottom-0 nav-bg navbar-cont" style="color: #0c4da2; ">
         <div class="container-fluid align-items-stretch navbar"
           style="border-bottom: 2px solid var(--secondary-color-border);">
-          <div class="col-2 navbar-brand m-0 p-2 text-center">
+          <div class="col-2 navbar-brand m-0  text-center">
             <div class="logo-box-wrap" style="position: relative; display: inline-block;">
-              <img src="images1/CSPIT_Logo.png" class="nav-logo" alt="CSPIT Logo" style="
-                width: 90px;
-                box-shadow: 
-                  inset -4px -4px 8px rgba(255, 255, 255, 0.9),
-                  6px 6px 10px rgba(0, 0, 0, 0.3);
-                padding: 4px;
-              " loading="lazy" />
+              <a href="index.html">
+                <img src="images1/CSPIT_Logo.png" class="nav-logo" alt="CSPIT Logo" style="
+                  width: 90px;
+                  box-shadow: 
+                    inset -4px -4px 8px rgba(255, 255, 255, 0.9),
+                    6px 6px 10px rgba(0, 0, 0, 0.3);
+                  padding: 4px;
+                " loading="lazy"/> </a>
             </div>
           </div>
+          
 
 
           <div class="navbar col-10 px-0 nav-bg">
@@ -3175,31 +3177,17 @@
 
   <!-- NAVBAR SCROLL -->
   <script type="text/javascript">
-    $(document).ready(function () {
-      if ($(window).width() > 992) {
-        var navbar_height = $(".navbar").outerHeight();
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-            $(".nav-wrap").css("height", navbar_height + "px");
-            $("#navbar_top").addClass("fixed-top").slideDown("slow");
-          } else {
-            $("#navbar_top").removeClass("fixed-top");
-            $(".nav-wrap").css("height", "auto");
-          }
-        });
-      } // end if
-      $(
-        'span.text:contains("Global Executive Master of Business Management in Pharmaceutical Management")'
-      )
-        .parent("a")
-        .parent("li")
-        .remove();
-      $("select")
-        .find(
-          'option[value="global-executive-master-of-business-management-in-pharmaceutical-management"]'
-        )
-        .remove();
-    }); // jquery end
+    document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar_top");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add("fixed-top");
+      } else {
+        navbar.classList.remove("fixed-top");
+      }
+      });
+    });
   </script>
   <script type="text/javascript" src="js/offcanvas.js"></script>
   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
