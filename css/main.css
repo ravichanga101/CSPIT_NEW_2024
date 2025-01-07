@@ -396,20 +396,60 @@ img {
   cursor: pointer;
 }
 
-.student-small-card:hover::after {
-  content: "";
+.student-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.project-hover-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0); /* Initially transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
-  /* border: #151515 7px solid;   */
-  border: #e4ba14 7px solid;  
+  transition: background 0.3s ease;
   border-radius: 5%;
+  
 }
 
+.project-hover-text {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.project-hover-text a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #e4ba14;
+  border-radius: 5px;
+}
+
+.project-hover-text a:hover {
+  background: #e4ba14;
+  color: #151515;
+}
+
+.student-small-card:hover .project-hover-overlay {
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay on hover */
+  border: 7px solid #e4ba14;
+}
+
+.student-small-card:hover .project-hover-text {
+  opacity: 1; /* Show "Click Here" text */
+}
 
 /* Spacing adjustments for rows */
 
