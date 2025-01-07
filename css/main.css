@@ -1210,21 +1210,20 @@ img {
     max-height: 90%;
   }
 }
-.club-section .courses__cont--item{
+.club-section .courses__cont--item {
   transition: transform 0.4s ease, border 0.3s ease;
-} 
-.club-section .courses__cont--item img{
+  cursor: pointer;
+  position: relative; /* Added for hover effect overlay */
+  overflow: hidden; /* Ensures the scaling image doesn't overflow */
+}
+
+.club-section .courses__cont--item img {
   transition: transform 0.3s ease;
-} 
+}
+
 .club-section .courses__cont--item:hover {
   transform: scale(1.2); /* Popup effect */
-  /* border: 7px solid #151515; */
-  border: #e4ba14 7px solid;  
-}
-.club-section .courses__cont--item {
-  /* position: relative; */
-  /* overflow: hidden; */
-  cursor: pointer;
+  border: #e4ba14 7px solid;
 }
 
 .club-section .courses__cont--item:hover::after {
@@ -1234,15 +1233,40 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9); /* Darker overlay */
   z-index: 1;
-  pointer-events: none; 
+  pointer-events: none;
+  transition: background 0.3s ease; /* Smooth overlay transition */
 }
-
 
 .club-section .courses__cont--item:hover img {
-  transform: scale(1.05); 
+  transform: scale(1.2); /* Slight scale-up effect */
 }
+
+/* Hover Text Styling */
+.club-section .courses__cont--item .hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding: 10px 20px;
+  white-space: nowrap; /* Prevents text wrapping */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.club-section .courses__cont--item:hover .hover-text {
+  opacity: 1;
+  transform: translate(-50%, -45%);
+}
+
+
 
 /* POPUP FOR STUDENTS CLUB--------------------------- */
 /* General Popup Styles */
