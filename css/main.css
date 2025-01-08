@@ -2437,6 +2437,7 @@ section#thrust-areas {
 .testimonials-section .testimonial-card .testimonial-card-info .testimonial-card-paragraph {
   font-size: 1rem;
   color: #333;
+  text-align: justify;
 }
 
 /* RESPONSIVENESS */

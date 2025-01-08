@@ -1831,7 +1831,7 @@
         </div>
         <div class="popup-details">
           <!-- <h3>Description</h3> -->
-          <p id="popup-description"></p>
+          <p id="popup-description" style="text-align: justify;"></p>
           <h3>Members</h3>
           <ul id="popup-members"></ul>
           <h3>Contact</h3>
@@ -2121,7 +2121,7 @@
         <!-- Right Side for Details -->
         <div class="popup-right">
           <!-- <h2 class="project-popup-title">Project Title</h2> -->
-          <p class="popup-description"><span>Project Description</span></p>
+          <p class="popup-description" style="text-align: justify;"><span>Project Description</span></p>
           <ul class="popup-contact">
             <li>Contact Person 1</li>
             <li>Contact Person 2</li>
@@ -2522,36 +2522,36 @@
         imageSrc: './images1/PiyushPatel.jpg'
       }
     ];
-
-    // Function to create a testimonial card
-    function createTestimonialCard(testimonial) {
-      const card = document.createElement('div');
-      card.classList.add('testimonial-card');
+// Function to create a testimonial card
+// Function to create a testimonial card
+function createTestimonialCard(testimonial) {
+      const card = document.createElement("div");
+      card.classList.add("testimonial-card");
 
       // Image element
-      const image = document.createElement('img');
-      image.classList.add('testimonial-card-image');
+      const image = document.createElement("img");
+      image.classList.add("testimonial-card-image");
       image.src = testimonial.imageSrc;
       image.alt = testimonial.name;
-      image.loading = 'lazy';
+      image.loading = "lazy";
 
       // Info wrapper
-      const infoWrapper = document.createElement('div');
-      infoWrapper.classList.add('testimonial-card-info');
+      const infoWrapper = document.createElement("div");
+      infoWrapper.classList.add("testimonial-card-info");
 
       // Name element
-      const name = document.createElement('h3');
-      name.classList.add('testimonial-card-name');
+      const name = document.createElement("h3");
+      name.classList.add("testimonial-card-name");
       name.textContent = testimonial.name;
 
       // Designation element
-      const designation = document.createElement('p');
-      designation.classList.add('testimonial-card-designation');
+      const designation = document.createElement("p");
+      designation.classList.add("testimonial-card-designation");
       designation.textContent = testimonial.designation;
 
       // Testimonial paragraph
-      const paragraph = document.createElement('p');
-      paragraph.classList.add('testimonial-card-paragraph');
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("testimonial-card-paragraph");
       paragraph.textContent = testimonial.testimonial;
 
       // Append elements to the info wrapper
@@ -2568,33 +2568,67 @@
 
     // Function to render testimonial cards
     function renderTestimonials() {
-      const container = document.querySelector('.testimonials-container');
-      container.innerHTML = ''; // Clear existing content
+      const container = document.querySelector(".testimonials-container");
+      container.innerHTML = ""; // Clear existing content
 
-      testimonials.forEach(testimonial => {
+      testimonials.forEach((testimonial) => {
         const card = createTestimonialCard(testimonial);
         container.appendChild(card);
       });
+
+      // Duplicate first and last few cards for seamless infinite scrolling
+      const visibleCards = getVisibleCards();
+      for (let i = 0; i < visibleCards; i++) {
+        // Clone first few cards and append to the end
+        const firstClone = createTestimonialCard(testimonials[i]);
+        firstClone.classList.add("clone");
+        container.appendChild(firstClone);
+
+        // Clone last few cards and prepend to the beginning
+        const lastClone = createTestimonialCard(testimonials[testimonials.length - 1 - i]);
+        lastClone.classList.add("clone");
+        container.insertBefore(lastClone, container.firstChild);
+      }
     }
 
     // Slider Logic
     let currentInd = 0;
+    let autoSliderInterval;
 
     function updateSlider() {
-      const container = document.querySelector('.testimonials-container');
-      const slider = document.querySelector('.testimonials-slider');
+      const container = document.querySelector(".testimonials-container");
+      const slider = document.querySelector(".testimonials-slider");
       const totalCards = testimonials.length;
 
       // Dynamically calculate visible cards based on screen size
       const visibleCards = getVisibleCards();
       const cardWidth = slider.offsetWidth / visibleCards;
 
-      // Prevent sliding out of bounds
-      if (currentInd < 0) currentInd = 0;
-      if (currentInd > totalCards - visibleCards) currentInd = totalCards - visibleCards;
-
       // Apply the transform to slide by card width
-      container.style.transform = `translateX(-${currentInd * cardWidth}px)`;
+      container.style.transition = "transform 0.5s ease-in-out";
+      container.style.transform = `translateX(-${(currentInd + visibleCards + 1) * cardWidth}px)`;
+    }
+
+    // Handle the transition end to reset position if needed
+    function handleTransitionEnd() {
+      const container = document.querySelector(".testimonials-container");
+      const visibleCards = getVisibleCards();
+      const totalCards = testimonials.length;
+      const cardWidth = document.querySelector(".testimonials-slider").offsetWidth / visibleCards;
+
+      if (currentInd >= totalCards) {
+        // Reset to the original first card
+        container.style.transition = "none";
+        currentInd = 0;
+        container.style.transform = `translateX(-${(currentInd + visibleCards + 1) * cardWidth}px)`;
+      }
+
+      if (currentInd < 0) {
+        // Reset to the original last card
+        container.style.transition = "none";
+        currentInd = totalCards - 1;
+        container.style.transform = `translateX(-${(currentInd + visibleCards + 1) * cardWidth}px)`;
+      }
     }
 
     // Function to determine visible cards based on screen width
@@ -2606,42 +2640,58 @@
     }
 
     // Event listeners for slider buttons
-    document.querySelector('.left-btn').addEventListener('click', () => {
+    document.querySelector(".left-btn").addEventListener("click", () => {
       currentInd--;
       updateSlider();
     });
 
-    document.querySelector('.right-btn').addEventListener('click', () => {
+    document.querySelector(".right-btn").addEventListener("click", () => {
       currentInd++;
       updateSlider();
     });
 
     // Automatic Slider Logic
     function startAutoSlider() {
-      setInterval(() => {
+      stopAutoSlider(); // Clear any existing intervals
+      autoSliderInterval = setInterval(() => {
         currentInd++;
         updateSlider();
-      }, 3000);
+      }, 3000); // Adjust interval as needed
+    }
+
+    function stopAutoSlider() {
+      clearInterval(autoSliderInterval);
     }
 
     // Adjust slider on window resize
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       currentInd = 0;
       updateSlider();
     });
 
-
     // Initialize the testimonials section
-    document.addEventListener('DOMContentLoaded', () => {
-      const sliderContainer = document.querySelector('.testimonials-container'); // Correct selector
-      sliderContainer.addEventListener('mouseover', stopAutoSlider);
-      sliderContainer.addEventListener('mouseout', startAutoSlider);
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider = document.querySelector(".testimonials-slider");
+      const container = document.querySelector(".testimonials-container");
+      
+      // Render testimonials and clones
       renderTestimonials();
-      updateSlider(); // Ensure proper alignment on load
+
+      // Set initial position after cloning
+      const visibleCards = getVisibleCards();
+      const cardWidth = slider.offsetWidth / visibleCards;
+      container.style.transform = `translateX(-${(currentInd + visibleCards + 1) * cardWidth}px)`;
+
+      // Start automatic slider
       startAutoSlider();
+
+      // Event listeners to stop/start auto slider on hover
+      slider.addEventListener("mouseover", stopAutoSlider);
+      slider.addEventListener("mouseout", startAutoSlider);
+
+      // Handle transition end for infinite scrolling
+      container.addEventListener("transitionend", handleTransitionEnd);
     });
-
-
   </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
