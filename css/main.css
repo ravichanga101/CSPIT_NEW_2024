@@ -1636,6 +1636,42 @@ hr {
     font-size: 0.8rem; /* Smaller font size for links */
   }
 }
+/* Ensure list pointers (bullets) are shown */
+.custom-modal-links {
+  list-style-type: circle; /* Or 'disc', 'square', etc. */
+  padding-left: 20px; /* Add padding for proper alignment */
+}
+
+.custom-modal-links li {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  list-style-type: inherit; /* Use the style defined for the parent */
+}
+
+.department-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  margin-right: 10px; /* Space between the text and the links */
+}
+
+.department-links {
+  display: flex;
+  gap: 10px; /* Even spacing between links */
+}
+
+.department-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.department-links a:hover {
+  color: #0056b3;
+}
+
+
 
 /* ----------------------Student Club --------------------------- */
 /* .club-section {
