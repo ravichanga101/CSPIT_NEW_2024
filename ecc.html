@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Conservation Cell | CHARUSAT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #0c525d;
+            --secondary-color: #34a0a4;
+            --accent-color: #f8961e;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Navigation Styles */
+        .nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 15px 0;
+        }
+
+        .nav ul li {
+            margin: 0 15px;
+        }
+
+        .nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        /* Objectives Section */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .objective-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .objective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .objective-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .objective-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Members Section */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .member-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: scale(1.05);
+        }
+
+        .member-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .member-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .member-card p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav ul li {
+                margin: 10px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* New styles for activities section */
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Energy Conservation Cell</h1>
+            <p>CHARUSAT - Empowering Sustainability Through Innovation</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="objectives" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Objectives</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <i data-feather="zap"></i>
+                    <h3>Promote Energy Conservation</h3>
+                    <p>Spread awareness about energy-saving measures and their importance.</p>
+                </div>
+                <div class="objective-card">
+                    <i data-feather="users"></i>
+                    <h3>Workshops & Seminars</h3>
+                    <p>Engage students and staff in interactive energy-saving activities and discussions.</p>
+                </div>
+                <div class="objective-card">
+                    <i data-feather="sun"></i>
+                    <h3>Non-Conventional Energy</h3>
+                    <p>Maximize energy generation using renewable sources and promote sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="members" class="section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="members-grid">
+                <div class="member-card">
+                    <img src="/placeholder.svg?height=150&width=150" alt="Dr. Nilay Patel">
+                    <h3>Dr. Nilay Patel</h3>
+                    <p>Head of Electrical Engineering</p>
+                    <p><strong>Role:</strong> Workshops, Feasibility Studies</p>
+                </div>
+                <!-- Add more member cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Activities</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Solar Power Initiative">
+                        <div class="card-body">
+                            <h5 class="card-title">Solar Power Initiative</h5>
+                            <p class="card-text">Total capacity of 990 KW installed at CHARUSAT campus.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="solar">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Annual Workshops">
+                        <div class="card-body">
+                            <h5 class="card-title">Annual Workshops</h5>
+                            <p class="card-text">Energy Conservation Day celebrations with interactive sessions.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="workshops">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Energy Audits">
+                        <div class="card-body">
+                            <h5 class="card-title">Energy Audits</h5>
+                            <p class="card-text">Conducting regular energy audits to identify conservation opportunities.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="audits">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Green Building Initiatives">
+                        <div class="card-body">
+                            <h5 class="card-title">Green Building Initiatives</h5>
+                            <p class="card-text">Implementing sustainable practices in campus construction and renovation.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="green">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Student Projects">
+                        <div class="card-body">
+                            <h5 class="card-title">Student Projects</h5>
+                            <p class="card-text">Supporting innovative energy conservation projects led by students.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="projects">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Community Outreach">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Outreach</h5>
+                            <p class="card-text">Extending energy conservation awareness to the local community.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="outreach">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i data-feather="user"></i>
+                    <p>Dr. Nilay Patel, Head of Electrical Engineering</p>
+                </div>
+                <div class="contact-item">
+                    <i data-feather="mail"></i>
+                    <a href="mailto:nilaypatel.ee@charusat.ac.in">nilaypatel.ee@charusat.ac.in</a>
+                </div>
+                <div class="contact-item">
+                    <i data-feather="phone"></i>
+                    <a href="tel:+911234567890">+91 123 456 7890</a>
+                </div>
+            </div>
+        </div>
+    </section<cut_off_point>
+a>
+                </div>
+            </div>
+        </div>
+    </section
+</cut_off_point>
+
+>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CHARUSAT Energy Conservation Cell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="activityModal" tabindex="-1" aria-labelledby="activityModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="activityModalLabel">Activity Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        feather.replace()
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const activityModal = document.getElementById('activityModal');
+            const modalTitle = activityModal.querySelector('.modal-title');
+            const modalBody = activityModal.querySelector('.modal-body');
+
+            activityModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const activity = button.getAttribute('data-activity');
+                
+                const activityDetails = {
+                    solar: {
+                        title: "Solar Power Initiative",
+                        content: "Our 990 KW solar power system is a cornerstone of CHARUSAT's commitment to sustainable energy. Installed across various campus buildings, this initiative significantly reduces our carbon footprint and serves as a living laboratory for students studying renewable energy technologies."
+                    },
+                    workshops: {
+                        title: "Annual Workshops",
+                        content: "Every year, we celebrate Energy Conservation Day with a series of workshops, seminars, and competitions. These events bring together students, faculty, and industry experts to discuss the latest trends in energy conservation and explore innovative solutions to energy challenges."
+                    },
+                    audits: {
+                        title: "Energy Audits",
+                        content: "Our team conducts regular energy audits across the campus to identify areas for improvement in energy efficiency. These audits have led to significant energy savings through the implementation of LED lighting, smart building systems, and optimized HVAC operations."
+                    },
+                    green: {
+                        title: "Green Building Initiatives",
+                        content: "CHARUSAT is committed to sustainable construction practices. Our green building initiatives include the use of energy-efficient materials, passive solar design, and water conservation systems in new constructions and renovations across the campus."
+                    },
+                    projects: {
+                        title: "Student Projects",
+                        content: "We actively support and mentor student-led projects in energy conservation. From developing small-scale renewable energy solutions to creating energy management apps, our students are at the forefront of innovation in sustainable technologies."
+                    },
+                    outreach: {
+                        title: "Community Outreach",
+                        content: "Our energy conservation efforts extend beyond the campus. Through community workshops, school programs, and partnerships with local organizations, we're spreading awareness about energy conservation and empowering the wider community to adopt sustainable practices."
+                    }
+                };
+
+                modalTitle.textContent = activityDetails[activity].title;
+                modalBody.innerHTML = `<p>${activityDetails[activity].content}</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
