@@ -10,10 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         :root {
-            --primary-color: #0c525d;
-            --secondary-color: #34a0a4;
+            --primary-color: #0056b3;
+            --secondary-color: #2081e9;
             --accent-color: #f8961e;
-            --background-color: #f4f4f4;
+            --background-color: #e1e1e1;
             --text-color: #333;
         }
 
@@ -90,7 +90,7 @@
 
         /* Section Styles */
         .section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .section-title {
@@ -214,7 +214,17 @@
             text-align: center;
             padding: 20px 0;
         }
-
+        .card-img-top{
+            padding: 10px;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .card{
+            border-radius: 20px;
+        }
         /* Responsive Design */
         @media (max-width: 768px) {
             .header h1 {
@@ -264,14 +274,6 @@
         </div>
     </header>
 
-    <nav class="nav">
-        <ul>
-            <li><a href="#objectives">Objectives</a></li>
-            <li><a href="#members">Members</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
     <section id="objectives" class="section">
         <div class="container">
@@ -317,9 +319,9 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Solar Power Initiative">
+                        <img src="./images1/ECC/solar.png" class="card-img-top" alt="Solar Power Initiative">
                         <div class="card-body">
-                            <h5 class="card-title">Solar Power Initiative</h5>
+                            <h5 class="card-title"><strong>Solar Power Plant Initiative</strong></h5>
                             <p class="card-text">Total capacity of 990 KW installed at CHARUSAT campus.</p>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="solar">Learn More</button>
                         </div>
@@ -327,50 +329,50 @@
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Annual Workshops">
+                        <img src="./images1/ECC/poster.jpg" class="card-img-top" alt="Annual Workshops">
                         <div class="card-body">
-                            <h5 class="card-title">Annual Workshops</h5>
-                            <p class="card-text">Energy Conservation Day celebrations with interactive sessions.</p>
+                            <h5 class="card-title"><strong>Annual Poster-Making Competition</strong></h5>
+                            <p class="card-text">Energy Conservation Cell organized poster making competition on National Energy Conservation Day .</p>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="workshops">Learn More</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Energy Audits">
+                        <img src="./images1/ECC/play.png" class="card-img-top" alt="Energy Audits">
                         <div class="card-body">
-                            <h5 class="card-title">Energy Audits</h5>
-                            <p class="card-text">Conducting regular energy audits to identify conservation opportunities.</p>
+                            <h5 class="card-title"><strong>Energy Conservation Day Play</strong></h5>
+                            <p class="card-text">A play was performed by students of the Electrical Engineering Department to raise awareness about National Energy Conservation Day.</p>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="audits">Learn More</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Green Building Initiatives">
+                        <img src="./images1/ECC/cons1.jpg" class="card-img-top" alt="Green Building Initiatives">
                         <div class="card-body">
-                            <h5 class="card-title">Green Building Initiatives</h5>
-                            <p class="card-text">Implementing sustainable practices in campus construction and renovation.</p>
+                            <h5 class="card-title"><strong>Energy Conservation Workshops</strong></h5>
+                            <p class="card-text">Organized annually for CHARUSAT Stakeholders aiming to increase understanding of energy conservation and energy-saving techniques.</p>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="green">Learn More</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Student Projects">
+                        <img src="./images1/ECC/solarproject.jpg" class="card-img-top" alt="Student Projects">
                         <div class="card-body">
-                            <h5 class="card-title">Student Projects</h5>
-                            <p class="card-text">Supporting innovative energy conservation projects led by students.</p>
+                            <h5 class="card-title"><strong>Solar Workshop for Students</strong></h5>
+                            <p class="card-text">Conducted to create awareness among students about solar panel-based projects focusing on the development and use of solar technologies.</p>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="projects">Learn More</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/placeholder.svg?height=200&width=300" class="card-img-top" alt="Community Outreach">
+                        <img src="./images1/ECC/cons1.jpg" class="card-img-top" alt="Community Outreach">
                         <div class="card-body">
-                            <h5 class="card-title">Community Outreach</h5>
-                            <p class="card-text">Extending energy conservation awareness to the local community.</p>
+                            <h5 class="card-title"><strong>LED Lighting Initiatives</strong></h5>
+                            <p class="card-text">LED Lighting Initiatives for replacement of conventional lighting with LED technology in classrooms.</p>
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#activityModal" data-activity="outreach">Learn More</button>
                         </div>
                     </div>
@@ -397,15 +399,7 @@
                 </div>
             </div>
         </div>
-    </section<cut_off_point>
-a>
-                </div>
-            </div>
-        </div>
-    </section
-</cut_off_point>
-
->
+    </section>
 
     <footer class="footer">
         <div class="container">
