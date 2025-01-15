@@ -2850,6 +2850,12 @@ function createTestimonialCard(testimonial) {
       if (event.target === modal) closeModal();
     });
 
+    document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" || event.key === "Esc") {
+      closeModal();
+    }
+  });
+
     // Update Modal
     function updateModal() {
       mainImage.src = currentImages[currentIndex];
