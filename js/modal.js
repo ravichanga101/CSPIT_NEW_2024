@@ -28,6 +28,12 @@ window.addEventListener("click", (event) => {
     closePopup();
   }
 });
+// Close popup when ESC key is pressed
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" || event.key === "Esc") {
+    closePopup();
+  }
+});
 
 //   ----------------------- PROJECT POPUP --------------------------------
 function openProjectPopup(projectId) {
@@ -115,10 +121,21 @@ function nextSlide() {
 function closeProjectPopup() {
   const popup = document.getElementById("project-popup");
   popup.style.display = "none";
-  if (event.target === popup) {
-    popup.style.display = "none";
-  }
 }
+
+// Close popup when ESC key is pressed
+window.addEventListener("click", (event) => {
+  const popup = document.getElementById("project-popup");
+  if (event.target === popup) {
+    closeProjectPopup();
+  }
+});
+// Close popup when ESC key is pressed
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" || event.key === "Esc") {
+    closeProjectPopup();
+  }
+});
 
 
 
@@ -128,30 +145,39 @@ function closeProjectPopup() {
         const popup = document.getElementById(popupId);
         popup.style.display = "flex"; // Make it visible
         setTimeout(() => {
-          popup.classList.add("custom-show"); // Add animation class after a small delay
+            popup.classList.add("custom-show"); // Add animation class after a small delay
         }, 10);
-      }
+    }
     
-      // Close Custom Popup
-      function closeCustomPopup(popupId) {
+    // Close Custom Popup
+    function closeCustomPopup(popupId) {
         const popup = document.getElementById(popupId);
         popup.classList.remove("custom-show"); // Remove animation class
         setTimeout(() => {
-          popup.style.display = "none"; // Hide popup after animation
+            popup.style.display = "none"; // Hide popup after animation
         }, 300); // Match this delay with the transition duration in CSS
-      }
+    }
     
-      // Close popup when clicking outside the modal content
-      window.addEventListener("click", function (event) {
+    // Close popup when clicking outside the modal content
+    window.addEventListener("click", function (event) {
         const modals = document.querySelectorAll(".custom-modal");
         modals.forEach((modal) => {
-          if (event.target === modal) {
-            closeCustomPopup(modal.id);
-          }
+            if (event.target === modal) {
+                closeCustomPopup(modal.id);
+            }
         });
-      });
-
-
+    });
+    
+    // Close popup when pressing the Escape key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") { // Check if the Escape key was pressed
+            const modals = document.querySelectorAll(".custom-modal.custom-show"); // Select visible modals
+            modals.forEach((modal) => {
+                closeCustomPopup(modal.id);
+            });
+        }
+    });
+    
 
 // ------------------- BTECH HONOS ACCORDIAN ------------------
 const accordionHeaders = document.querySelectorAll(".accordion-header");
