@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Instrument Showcase</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #ffc107;
+      --bg-color: #f4f7fc;
+      --card-bg: rgba(255, 255, 255, 0.9);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: #333;
+    }
+
+    .main-content {
+      background-image: url("./images1/about-us-bg.webp");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 2rem 0;
+      display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .instrument-container {    
+      width: 95%;
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background-color: var(--secondary-color);
+    }
+
+    .instrument-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .instrument-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .instrument-image {
+      height: 200px;
+      object-fit: contain;
+      background-color: #f8f9fa;
+      padding: 1rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .spec-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .spec-list li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .spec-list li:before {
+      content: "\f058";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 8px;
+      color: var(--secondary-color);
+    }
+
+    .modal-content {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border-bottom: none;
+    }
+
+    .modal-body {
+      padding: 2rem;
+    }
+
+    .modal-image {
+      max-height: 300px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .loading {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading::after {
+      content: "Loading";
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      animation: ellipsis 1.5s infinite;
+    }
+
+    @keyframes ellipsis {
+      0% { content: "Loading"; }
+      25% { content: "Loading."; }
+      50% { content: "Loading.."; }
+      75% { content: "Loading..."; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .instrument-container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <div class=" instrument-container">
+      <h1 class="mb-5">Interactive Instrument Showcase</h1>
+      
+      <div id="instrumentList" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Instrument cards will be dynamically added here -->
+      </div>
+
+      <div id="loading" class="text-center mt-5 loading"></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="instrumentModal" tabindex="-1" aria-labelledby="instrumentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="instrumentModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" src="/placeholder.svg" alt="" class="img-fluid modal-image">
+          <ul id="modalSpecList" class="spec-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const instruments = [
+      {
+        name: "IBM Server X3100 M4",
+        spec: [
+          "Processor: Intel® Xeon® CPU E3-1220 V2 @ 3.10GHz",
+          "RAM: 32GB",
+          "HDD: 500GB SATA HDD",
+          "Keyboard: IBM",
+          "Mouse: IBM"
+        ],
+        image: "./images1/facilities/IT_1.jpg"
+      },
+      {
+        name: "NVidia GPU TITAN X",
+        spec: [
+          "Processor: Intel® Core™ i7-8700K CPU @ 3.70GHz",
+          "RAM: 32 GB",
+          "HDD: 2 TB",
+          "Graphics Card: 1x NVIDIA GP 100 Accelerator card",
+          "Monitor: LG 22mp48hq LED",
+          "Keyboard: Logitech USB",
+          "Mouse: Logitech USB"
+        ],
+        image: "./images1/facilities/IT_2.jpg"
+      },
+      {
+        name: "Super Computer PARAM SAVAK",
+        spec: [
+          "Processor: 2 x Intel Xeon Scalable processors with minimum 16 Cores each, with a minimum 2.2 GHz Clock Speed",
+          "RAM: 96 GB ECC DDR4 2400 MHz RAM",
+          "HDD: 4x4 TB SATA – 3.5'' 7200 RPM HDD",
+          "Graphics Card: 1x NVIDIA GP 100 Accelerator card",
+          "Monitor: Benq GW2480 LED",
+          "Keyboard: Logitech USB",
+          "Mouse: Logitech USB"
+        ],
+        image: "./images1/facilities/IT_3.jpg"
+      },
+      {
+        name: "Supermicro 4U Server",
+        spec: [
+          "Processor: 2 x Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz Processors",
+          "RAM: 4x32GB 2933MHz DDR4 RAM",
+          "Storage: 5x3.5 14TB, 7.2K RPM, SATA 6Gb/s, 256M, 512e HeliumHFRoHS",
+          "Graphics Card: NVIDIA Quadro RTX 5000 16GB GDDR6"
+        ],
+        image: "./images1/facilities/IT_4.jpg"
+      },
+      {
+        name: "View Sonic Digital Board",
+        spec: [
+          "Processor: Intel i5-10210U",
+          "RAM: 8GB DDR4",
+          "Storage: 256 GB SSD"
+        ],
+        image: "./images1/facilities/IT_5.jpg"
+      }
+    ];
+
+    function createInstrumentCard(instrument, index) {
+      return `
+        <div class="col fade-in" style="animation-delay: ${index * 0.1}s;">
+          <div class="card h-100 instrument-card" data-bs-toggle="modal" data-bs-target="#instrumentModal" data-instrument-index="${index}">
+            <img src="${instrument.image}" class="card-img-top instrument-image" alt="${instrument.name}">
+            <div class="card-body">
+              <h5 class="card-title">${instrument.name}</h5>
+              <ul class="spec-list">
+                ${instrument.spec.slice(0, 3).map(spec => `<li>${spec}</li>`).join('')}
+              </ul>
+              ${instrument.spec.length > 3 ? '<p class="text-primary mt-2">Click for more details...</p>' : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function displayInstruments() {
+      const instrumentList = document.getElementById('instrumentList');
+      instrumentList.innerHTML = instruments.map(createInstrumentCard).join('');
+    }
+
+    function setupModalListeners() {
+      const modal = document.getElementById('instrumentModal');
+      modal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const instrumentIndex = button.getAttribute('data-instrument-index');
+        const instrument = instruments[instrumentIndex];
+
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalImage = document.getElementById('modalImage');
+        const modalSpecList = document.getElementById('modalSpecList');
+
+        modalTitle.textContent = instrument.name;
+        modalImage.src = instrument.image;
+        modalImage.alt = instrument.name;
+        modalSpecList.innerHTML = instrument.spec.map(spec => `<li>${spec}</li>`).join('');
+      });
+    }
+
+    // Simulate loading delay
+    setTimeout(() => {
+      document.getElementById('loading').style.display = 'none';
+      displayInstruments();
+      setupModalListeners();
+    }, 1000);
+  </script>
+</body>
+</html>
