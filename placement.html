@@ -75,12 +75,14 @@
     
         .table-container {
             width: 100%;
+             /* Allow horizontal scrolling */
         }
     
         .modern-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 1px 15px;
+            min-width: 600px; /* Ensure the table doesn't shrink too much */
         }
     
         .modern-table thead tr {
@@ -92,6 +94,7 @@
         .modern-table td {
             padding: 1rem;
             text-align: center;
+            word-wrap: break-word; /* Ensure text wraps properly */
         }
     
         .modern-table thead th {
@@ -145,10 +148,11 @@
             font-weight: 600;
             color: #0056b3;
         }
+    
         .modern-table tbody tr td:nth-child(5) {
             font-weight: 600;
-            /* color: #0056b3; */
         }
+    
         .modern-table tbody tr td:nth-child(6) {
             color: #ebb30a;
             font-weight: 850;
@@ -190,12 +194,11 @@
         }
     
         @media (max-width: 768px) {
+            .table-container{
+                overflow-x: auto;
+            }
             .placement-container {
                 padding: 1rem;
-            }
-    
-            .modern-table {
-                font-size: 0.9rem;
             }
     
             .modern-table th,
@@ -208,6 +211,7 @@
             }
         }
     </style>
+    
     
     <!-- Navbar CSS -->
     <style>
