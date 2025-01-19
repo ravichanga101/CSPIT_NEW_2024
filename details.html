@@ -137,7 +137,14 @@
             <img
               id="faculty-image"
               class="profile-img"
-              style="border: 5px solid #0066b3"
+              style="
+                border: 3px solid #0066b3;
+                box-shadow: 
+                  10px 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on right and bottom only */
+                border-radius: 10px;
+                background-color: #f0f0f0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
               loading="lazy"
             />
           </div>
