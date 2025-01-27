@@ -77,9 +77,9 @@
             stroke: var(--line-color);
             stroke-width: 4;
             fill: none;
-            stroke-dasharray: 5000;
-            stroke-dashoffset: 5000;
-            animation: drawLine 2s ease forwards;
+            stroke-dasharray: 8000;
+            stroke-dashoffset: 8000;
+            animation: drawLine 3s ease forwards;
         }
 
         @keyframes drawLine {
@@ -112,11 +112,13 @@
 
         <div class="position-relative">
             <!-- SVG snake line connecting all items -->
-            <svg class="snake-line" viewBox="0 0 1200 500" preserveAspectRatio="none">
-                <!-- First row to second row connection -->
+            <svg class="snake-line" viewBox="0 0 1200 800" preserveAspectRatio="none">
+                <!-- Extended path for three rows -->
                 <path class="snake-path" d="M100 40 L300 40 L500 40 L700 40 L900 40 L1100 40 L1200 40 
                                          L1200 320 
-                                         L900 320 L700 320 L500 320 L300 320 L100 320 L5 320"
+                                         L900 320 L700 320 L500 320 L300 320 L100 320 L5 320
+                                         L5 600
+                                         L300 600 L500 600 L700 600 L900 600 L1100 600 L1200 600"
                 />
             </svg>
 
@@ -126,73 +128,111 @@
                     <div class="col-md-3 timeline-item" style="animation-delay: 0.2s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2018</div>
-                            <h4>Foundation</h4>
-                            <p>Establishment of the college with modern infrastructure and facilities.</p>
+                            <div class="timeline-date">2000</div>
+                            <h5>Establishment</h4>
+                            <!-- <p>Establishment of the college with modern infrastructure and facilities.</p> -->
                         </div>
                     </div>
                     <div class="col-md-3 timeline-item" style="animation-delay: 0.4s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2019</div>
-                            <h4>Growth Phase</h4>
-                            <p>Introduction of new courses and expansion of academic programs.</p>
+                            <div class="timeline-date">2013</div>
+                            <h5>NBA Accreditation</h4>
+                            <!-- <p>Introduction of new courses and expansion of academic programs.</p> -->
                         </div>
                     </div>
                     <div class="col-md-3 timeline-item" style="animation-delay: 0.6s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2020</div>
-                            <h4>Digital Era</h4>
-                            <p>Implementation of digital learning platforms and virtual classrooms.</p>
+                            <div class="timeline-date">2016</div>
+                            <h5>NBA Accreditation</h4>
+                            <!-- <p>Implementation of digital learning platforms and virtual classrooms.</p> -->
                         </div>
                     </div>
                     <div class="col-md-3 timeline-item" style="animation-delay: 0.8s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2021</div>
-                            <h4>Research Hub</h4>
-                            <p>Establishment of research centers and innovation labs.</p>
+                            <div class="timeline-date">2017</div>
+                            <h5>Environment Auditor Recognition</h4>
+                            <!-- <p>Establishment of research centers and innovation labs.</p> -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Second Row (Reverse Direction) -->
+            <!-- Second Row -->
             <div class="timeline-row">
                 <div class="row">
                     <div class="col-md-3 timeline-item" style="animation-delay: 1.0s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
                             <div class="timeline-date">2022</div>
-                            <h4>Global Recognition</h4>
-                            <p>International accreditation and worldwide partnerships established.</p>
+                            <h5>CMRC</h4>
+                            <p>CHARUSAT Motorola Solutions Research and Innovation Center</p>
                         </div>
                     </div>
                     <div class="col-md-3 timeline-item" style="animation-delay: 1.2s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2023</div>
-                            <h4>Innovation Center</h4>
-                            <p>Launch of startup incubator and innovation ecosystem.</p>
+                            <div class="timeline-date">2021</div>
+                            <h5>NIRF - 251-300</h4>
+                            <!-- <p>Launch of startup incubator and innovation ecosystem.</p> -->
                         </div>
                     </div>
                     <div class="col-md-3 timeline-item" style="animation-delay: 1.4s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2024</div>
-                            <h4>Sustainability</h4>
-                            <p>Implementation of green campus initiatives and sustainable practices.</p>
+                            <div class="timeline-date">2020</div>
+                            <h5>GSIRF - 4 Star</h4>
+                            <!-- <p>Implementation of green campus initiatives and sustainable practices.</p> -->
                         </div>
                     </div>
                     <div class="col-md-3 timeline-item" style="animation-delay: 1.6s">
                         <div class="timeline-content">
                             <div class="timeline-dot"></div>
-                            <div class="timeline-date">2025</div>
-                            <h4>Future Ready</h4>
-                            <p>Preparing for next phase with advanced technology integration.</p>
+                            <div class="timeline-date">2019</div>
+                            <h5>GSIRF 3-Star</h4>
+                            <!-- <p>Preparing for next phase with advanced technology integration.</p> -->
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Third Row -->
+            <div class="timeline-row">
+                <div class="row">
+                    <div class="col-md-3 timeline-item" style="animation-delay: 1.8s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2023</div>
+                            <h5>NABL Accredited Laboratory</h4>
+                            <!-- <p>Advanced AI-powered learning systems and personalized education pathways.</p> -->
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 2.0s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2024</div>
+                            <h5>GSIRF: 5-Star</h4>
+                            <!-- <p>Expansion with international campuses and virtual learning hubs.</p> -->
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3 timeline-item" style="animation-delay: 2.2s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2028</div>
+                            <h5>Research Excellence</h4>
+                            <p>Achievement of top-tier research status and industry collaborations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 2.4s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2029</div>
+                            <h5>Future Vision</h4>
+                            <p>Setting new standards in education with innovative teaching methods.</p>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
