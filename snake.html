@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Timeline</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --line-color: #0d6efd;
+            --card-bg: #ffffff;
+        }
+
+        .timeline-container {
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .timeline-row {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            margin: 10px auto;
+            position: relative;
+            z-index: 3;
+            transition: transform 0.3s;
+        }
+
+        .timeline-dot:hover {
+            transform: scale(1.3);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .snake-line {
+            position: absolute;
+            background: none;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            z-index: 1;
+        }
+
+        .snake-path {
+            stroke: var(--line-color);
+            stroke-width: 4;
+            fill: none;
+            stroke-dasharray: 5000;
+            stroke-dashoffset: 5000;
+            animation: drawLine 2s ease forwards;
+        }
+
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .timeline-row {
+                margin-bottom: 30px;
+            }
+            
+            .timeline-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container timeline-container">
+        <h1 class="text-center mb-5">College Timeline</h1>
+
+        <div class="position-relative">
+            <!-- SVG snake line connecting all items -->
+            <svg class="snake-line" viewBox="0 0 1200 500" preserveAspectRatio="none">
+                <!-- First row to second row connection -->
+                <path class="snake-path" d="M100 40 L300 40 L500 40 L700 40 L900 40 L1100 40 L1200 40 
+                                         L1200 320 
+                                         L900 320 L700 320 L500 320 L300 320 L100 320 L5 320"
+                />
+            </svg>
+
+            <!-- First Row -->
+            <div class="timeline-row">
+                <div class="row">
+                    <div class="col-md-3 timeline-item" style="animation-delay: 0.2s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2018</div>
+                            <h4>Foundation</h4>
+                            <p>Establishment of the college with modern infrastructure and facilities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 0.4s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2019</div>
+                            <h4>Growth Phase</h4>
+                            <p>Introduction of new courses and expansion of academic programs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 0.6s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2020</div>
+                            <h4>Digital Era</h4>
+                            <p>Implementation of digital learning platforms and virtual classrooms.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 0.8s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2021</div>
+                            <h4>Research Hub</h4>
+                            <p>Establishment of research centers and innovation labs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row (Reverse Direction) -->
+            <div class="timeline-row">
+                <div class="row">
+                    <div class="col-md-3 timeline-item" style="animation-delay: 1.0s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2022</div>
+                            <h4>Global Recognition</h4>
+                            <p>International accreditation and worldwide partnerships established.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 1.2s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2023</div>
+                            <h4>Innovation Center</h4>
+                            <p>Launch of startup incubator and innovation ecosystem.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 1.4s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2024</div>
+                            <h4>Sustainability</h4>
+                            <p>Implementation of green campus initiatives and sustainable practices.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 timeline-item" style="animation-delay: 1.6s">
+                        <div class="timeline-content">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2025</div>
+                            <h4>Future Ready</h4>
+                            <p>Preparing for next phase with advanced technology integration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
