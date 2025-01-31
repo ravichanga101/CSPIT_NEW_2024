@@ -19,7 +19,7 @@ body {
 }
 
 
-.card {
+ .card {
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ body {
 }
 
 
-.card-body {
+.program-card-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;

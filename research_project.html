@@ -996,7 +996,6 @@
           </div>
         </div>
       </div>
-      <br />
     </footer>
 
     <section>
@@ -1326,57 +1325,57 @@
       }
     </script>
 
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        const navbar = document.getElementById("navbar_top");
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.getElementById("navbar_top");
 
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 50) {
-            navbar.classList.add("fixed-top");
-          } else {
-            navbar.classList.remove("fixed-top");
-          }
-        });
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+      navbar.classList.add("fixed-top");
+      } else {
+      navbar.classList.remove("fixed-top");
+      }
+  });
+  });
+</script>
+<script src="./js/modal.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Hover Panel -->
+<script>
+  $(document).ready(function () {
+  var screen = $(window);
+  if (screen.width() > 768) {
+      var logoWidth = $(".navbar-brand").width() + 2;
+      var newWidth = "calc(100% + " + logoWidth + "px)";
+      $(".subnav-content").css("width", newWidth);
+      $(".subnav-content").css("left", -logoWidth);
+      $(".dropdown-menu.subnav-content").css("width", "100%");
+      $(".dropdown-menu.subnav-content").css("left", "0px");
+      $(window).resize(function () {
+      var logoWidth = $(".navbar-brand").width() + 2;
+      var newWidth = "calc(100% + " + logoWidth + "px)";
+      $(".subnav-content").css("width", newWidth);
+      $(".subnav-content").css("left", -logoWidth);
+      $(".dropdown-menu.subnav-content").css("width", "100%");
+      $(".dropdown-menu.subnav-content").css("left", "0px");
       });
-    </script>
-    <script src="./js/modal.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Hover Panel -->
-    <script>
-      $(document).ready(function () {
-        var screen = $(window);
-        if (screen.width() > 768) {
-          var logoWidth = $(".navbar-brand").width() + 2;
-          var newWidth = "calc(100% + " + logoWidth + "px)";
-          $(".subnav-content").css("width", newWidth);
-          $(".subnav-content").css("left", -logoWidth);
-          $(".dropdown-menu.subnav-content").css("width", "100%");
-          $(".dropdown-menu.subnav-content").css("left", "0px");
-          $(window).resize(function () {
-            var logoWidth = $(".navbar-brand").width() + 2;
-            var newWidth = "calc(100% + " + logoWidth + "px)";
-            $(".subnav-content").css("width", newWidth);
-            $(".subnav-content").css("left", -logoWidth);
-            $(".dropdown-menu.subnav-content").css("width", "100%");
-            $(".dropdown-menu.subnav-content").css("left", "0px");
-          });
-        }
+  }
+  });
+  /* highlight nav-btn on panel hover */
+  $(".subnav-unit-wrap")
+  .on("mouseenter", function () {
+      //console.log('panel');
+      $(this)
+      .parents(".subnav")
+      .children(".nav-link")
+      .css({ "background-color": "var(--site-color)", color: "white" });
+  })
+  .on("mouseleave", function () {
+      $(this).parents(".subnav").children(".nav-link").css({
+      "background-color": "transparent",
+      color: "var(--secondary-color)",
       });
-      /* highlight nav-btn on panel hover */
-      $(".subnav-unit-wrap")
-        .on("mouseenter", function () {
-          //console.log('panel');
-          $(this)
-            .parents(".subnav")
-            .children(".nav-link")
-            .css({ "background-color": "var(--site-color)", color: "white" });
-        })
-        .on("mouseleave", function () {
-          $(this).parents(".subnav").children(".nav-link").css({
-            "background-color": "transparent",
-            color: "var(--secondary-color)",
-          });
-        });
-    </script>
+  });
+</script>
   </body>
 </html>
