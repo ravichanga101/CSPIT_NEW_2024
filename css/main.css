@@ -1970,6 +1970,30 @@ section#thrust-areas {
   font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+  .stacked-cards {
+    margin-bottom: 50px; /* Add spacing between sections */
+    max-width: 250px;
+  }
+
+  .stacked-card {
+    max-width: 220px; /* Adjust width for smaller screens */
+  }
+
+  .stacked-caption {
+    margin-top: 60px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stacked-card {
+    max-width: 250px; /* Make even smaller for very small screens */
+  }
+  .stacked-caption {
+    font-size: 0.9rem;
+  }
+}
 
 .gallery-nav-pills .gallery-nav-link:hover {
   background-color: #0057b334;
