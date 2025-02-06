@@ -2671,7 +2671,77 @@ function createTestimonialCard(testimonial) {
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <br />
+  <!-- <br />   -->
+  <!-- Notable Alumni Section -->
+  <section class="notable-alumni-section">
+    <div class="notable-alumni-container ">
+        <h2 class="notable-alumni-title">Notable Alumni</h2>
+
+        <div id="notableAlumniCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner" id="notableAlumniCarouselContent">
+                <!-- Alumni data will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <script>
+    async function fetchNotableAlumniData() {
+        try {
+            const response = await fetch('./alumni.xlsx'); // Ensure correct path
+            const data = await response.arrayBuffer();
+
+            const workbook = XLSX.read(data, { type: 'array' });
+            const sheetName = workbook.SheetNames[0]; // Assuming first sheet
+            const sheet = workbook.Sheets[sheetName];
+
+            // Convert Excel to JSON
+            const alumniData = XLSX.utils.sheet_to_json(sheet);
+            generateNotableAlumniSlides(alumniData);
+        } catch (error) {
+            console.error("Error fetching alumni data:", error);
+        }
+    }
+
+    function generateNotableAlumniSlides(data) {
+        const carouselContent = document.getElementById('notableAlumniCarouselContent');
+        carouselContent.innerHTML = "";
+
+        let slides = "";
+        let alumniGroup = [];
+        let slideIndex = 0;
+
+        data.forEach((alumni, index) => {
+            alumniGroup.push(`
+                <div class="notable-alumni-card">
+                    <img class="notable-alumni-photo" src="${alumni.Image || 'https://via.placeholder.com/100'}" alt="${alumni.Name}">
+                    <h5 class="notable-alumni-name">${alumni.Name}</h5>
+                    <p class="notable-alumni-info">${alumni.Designation}, ${alumni.Company}</p>
+                </div>
+            `);
+
+            // Every 18 alumni, create a new slide
+            if ((index + 1) % 12 === 0 || index === data.length - 1) {
+                slides += `
+                    <div class="carousel-item ${slideIndex === 0 ? 'active' : ''}">
+                        <div class="notable-alumni-grid">
+                            ${alumniGroup.join('')}
+                        </div>
+                    </div>
+                `;
+                alumniGroup = [];
+                slideIndex++;
+            }
+        });
+
+        carouselContent.innerHTML = slides;
+    }
+
+    // Call function on page load
+    fetchNotableAlumniData();
+  </script>
+<!-- <br/> -->
   <section class="mou-section animate-on-scroll">
     <h2 style="color: #fff;">CSPIT MOU</h2>
     <div class="container">

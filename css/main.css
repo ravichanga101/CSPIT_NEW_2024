@@ -979,7 +979,7 @@ img {
 .chapter-section h2,
 .announcement-section h2,
 .professional-society h2,
-.testimonials-section h2, .mou-section h2 {
+.testimonials-section h2, .mou-section h2,.notable-alumni-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 35px;
@@ -2540,6 +2540,100 @@ section#thrust-areas {
     transition: transform 0.5s ease-in-out;
   }
 }
+/*  ------------------ ALUMNI --------------------- */
+.notable-alumni-section {
+  position: relative;
+  background: url('../images1/about-us-bg.webp') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.notable-alumni-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.notable-alumni-container {
+  position: relative;
+  z-index: 1;
+}
+
+.notable-alumni-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.notable-alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.notable-alumni-card {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.notable-alumni-card:hover {
+  transform: scale(1.1);
+}
+
+.notable-alumni-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  transition: border-color 0.3s;
+}
+
+.notable-alumni-card:hover .notable-alumni-photo {
+  border-color: #2081e9;
+}
+
+.notable-alumni-name {
+  font-size: 1rem;
+  margin: 8px 0 3px;
+  font-weight: bold;
+}
+
+.notable-alumni-info {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .notable-alumni-grid {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .notable-alumni-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .notable-alumni-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* ------------------------ANNOUNCEMET --------------*/
 /* Modern Announcement Section Styling */
@@ -3149,7 +3243,7 @@ video:-webkit-full-page-media {
 }
 .carousel-item,
 .item {
-  height: 100vh;
+  /* height: 100vh; */
   background-size: cover;
 }
 .item {
