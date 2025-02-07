@@ -1,0 +1,823 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Edocom - Education & LMS Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>Admission - M.Tech. (CE)</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon-set.css" rel="stylesheet">
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/bootsnav.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5/html5shiv.min.js"></script>
+      <script src="assets/js/html5/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="./css/floating-btn.css">
+    
+    <style>
+        /*we need to style the popup with CSS so it is placed as a common popup does*/
+    #popup {
+            display:none;
+            position:absolute;
+            margin:0 auto;
+            padding: 50px 10px 10px 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            border-width: 5px;
+            border-style: double;
+            border-color: #FFFFFF;
+            background-color: white;
+    }
+    </style>
+    
+</head>
+
+<body>
+    
+     <!-- let's call the following div as the POPUP FRAME -->
+<!-- <div id="popup">
+
+    <h1 style="text-align:center">Scholarship 2020-21</h1>
+    <!-- and here comes the image -->
+   <!-- <img src="./files/M.Tech_Scholarship.JPG" alt="popup">
+
+        <!-- Now this is the button which closes the popup-->
+        <!-- <br><br><p style="text-align:center;"><button id="close" style="padding:0px 10px 0px 10px; border-bottom: 5px solid #1C6EA4; border-radius: 20px 20px 20px 20px;">Close button</button></p>
+
+        <!-- and finally we close the POPUP FRAME-->
+        <!-- everything on it will show up within the popup so you can add more things not just an image -->
+<!--</div>-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+//your jquery script here
+//with this first line we're saying: "when the page loads (document is ready) run the following script"
+$(document).ready(function () {
+
+    //select the POPUP FRAME and show it
+    $("#popup").hide().fadeIn(1000);
+
+    //close the POPUP if the button with id="close" is clicked
+    $("#close").on("click", function (e) {
+        e.preventDefault();
+        $("#popup").fadeOut(1000);
+    });
+
+});
+</script>
+    
+    <script type="text/javascript"> var npf_d='https://charusat.nopaperforms.com'; var npf_c='466'; var npf_m='1'; var s=document.createElement("script"); s.type="text/javascript"; s.async=true; s.src="https://track.nopaperforms.com/js/track.js"; document.body.appendChild(s); </script>
+   <div id="mySidenav" class="sidenav">
+      <a class="vt" href="http://117.239.83.200:8110/CHARUSAT_Virtual_Tour/CSPIT/" id="view360" target="_blank">360&#176; Virtual Tour &nbsp;&nbsp;<i class="fa fa-video-camera"></i></a>
+    </div>
+    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    
+    <!-- Modal Admission Form -->
+    <!-- <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2" style="text-align:center">Admissions Inquiry Form</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="npf_wgts" data-height="510px" data-w="597831ba0d2e61c094e77bb4aaab1d22"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- modal -->
+    <!-- Admission Button-->
+    <div id="mySidenav" class="sidenav">
+      <!-- <a class="admission" href="#myModal2" data-toggle="modal" id="inquiry">Admission Inquiry</a> -->
+      <a class="admission" href="https://charusat.nopaperforms.com/" id="application-form" target="_blank">Application Form</a>
+    </div>
+
+
+    <!-- Preloader Start -->
+    <div class="se-pre-con"></div>
+    <!-- Preloader Ends -->
+
+    <!-- Start Header Top 
+    ============================================= -->
+    <div class="top-bar-area bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 logo-box">
+                    <div class="logo">
+                        <a href="index.html"><img src="assets/img/logo-light.png" alt="Thumb"></a>
+                    </div>
+                </div>
+                <div class="col-md-8 address-info text-right">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fas fa-user-shield"></i> Email: <strong>hod.ce@charusat.ac.in</strong>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i> Help Line: <strong>+91-940-815-1969</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top -->
+
+    <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default logo-less small-pad navbar-sticky bootsnav">
+
+            <!-- Start Top Search -->
+            <div class="container">
+                <div class="row">
+                    <div class="top-search">
+                        <div class="input-group">
+                            <form action="#">
+                                <input type="text" name="text" class="form-control" placeholder="Search">
+                                <button type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Search -->
+
+            <div class="container">
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav inc-btn">
+                    <ul>
+                        <!--<li>
+                            <a href="#">Register</a>
+                        </li>-->
+                        <li>
+                            <a href="./files/MTech_CE_Brochure.pdf" target="_blank">M.Tech. Brochure</a>
+                        </li> 
+                    </ul>
+                </div>      
+                <!-- End Atribute Navigation -->
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-left" data-in="#" data-out="#">
+                        <li class="dropdown">
+                            <a href="#home">Home</a>
+                            <!--<ul class="dropdown-menu">
+                                <li><a href="index.html">Home Version One</a></li>
+                                <li><a href="index-2.html">Home Version Two</a></li>
+                            </ul>-->
+                        </li>
+			<li class="dropdown">
+                            <a href="#about">About Us</a>
+                        </li>
+			<li class="dropdown">
+                            <a href="#gallery">Gallery</a>
+                        </li>
+			<li class="dropdown">
+                            <!-- <a href="#fee structure">Fees Structure</a> -->
+                        </li>
+			<!-- <li class="dropdown">
+                            <a href="#fee structure">Scholarship</a>
+                        </li>
+             -->            <li class="dropdown">
+                            <a href="#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Banner 
+    ============================================= -->
+    <div class="banner-area shadow bg-fixed dark text-center text-light" style="background-image: url(assets/img/banner/11.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="box-table">
+                        <div class="box-cell">
+                            <div class="content search-content">
+                                <h2>M.Tech. Admission Open</br>2023-24</h2>
+                                <!--<ul>
+                                    <li><i class="fas fa-drafting-compass"></i> Architecture</li>
+                                    <li><i class="fas fa-book"></i> Education</li>
+                                    <li><i class="fas fa-globe-asia"></i> Geography</li>
+                                </ul>-->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="row">
+                                        <a class="btn btn-theme effect btn-sm" target="_blank" href="https://charusat.nopaperforms.com/">Application Form</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+
+
+<div class="about-area default-padding" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-items">
+                    <div class="col-md-6 about-info">
+                        <h2>About Department<span></span></h2>
+                        <blockquote style="text-align: justify;">
+                            Chandubhai S. Patel Institute of Technology was established in 2000 and U & P U. Patel Department of Computer Engineering is a part of the institute since inception. The CE department is committed to excel both in teaching and research.
+                        </blockquote>
+                        <br>
+                           <h4><strong>Duration: </strong><span>2 Years (Semester System)</span><br><strong>Teaching Mode:</strong>
+                        <span>Offline</span></h4><br>
+                        </div>
+                    </div>
+                    <div class="col-md-6 features text-light">
+                        <div class="row">
+                            <div class="equal-height col-md-6 col-sm-6">
+                                <div class="item mariner">
+                                    <a>
+                                           <h3>Research & Project based learning</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="equal-height col-md-6 col-sm-6">
+                                <div class="item brilliantrose">
+                                    <a>
+                                           <h3>State of the Art Research Facilities</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="equal-height col-md-6 col-sm-6">
+                                <div class="item casablanca">
+                                    <a>
+                                           <h3>Academic Enrichment through MOOC Courses</h3>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="equal-height col-md-6 col-sm-6">
+                                <div class="item malachite">
+                                    <a>
+                                           <h3>One-to-One Student Counseling</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Start Registrationg 
+    ============================================= -->
+    <div class="registration-area default-padding bg-dark text-light">
+        <!-- Fixed BG-->
+        <div class="fixed-bg bg-cover" style="background-image: url(assets/img/banner/3.jpg);"></div>
+        <!-- End Fixed BG-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 countdown">
+                    <!-- <h4><strong>Duration: </strong><span style="color: white;">2 Years (Semester System)</span><br><strong>Teaching Mode:</strong>
+                        <span style="color: white;">Online</span></h4>
+                    <p></p> -->
+                    <h2>Super Speciality Labs</h2>
+                    <ul>
+                        <li>Big Data Analytics Lab</li>
+                        <li>Internet of Things Lab</li>
+                        <li>Machine Learning/Deep Learning Lab</li>
+                        <li>High Speed Networking Lab</li>
+                        <li>Full Stack Development Lab</li>
+                        <li>Open Source Development Lab</li>
+                    </ul>
+                </div>
+                <!--<div class="col-md-5 reg-form">
+                    <form action="#">
+                        <h5>Free</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="First Name" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Last Name" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Email*" type="email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <select>
+                                        <option value="1">Chose Subject</option>
+                                        <option value="2">Computer Engineering</option>
+                                        <option value="4">Accounting Technologies</option>
+                                        <option value="5">Web Development</option>
+                                        <option value="6">Machine Language</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Phone" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit">
+                                    Rigister Now
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!-- End Registrationg -->
+
+    <!-- Start Categories 
+    ============================================= -->
+    <div class="category-area default-padding" id="fee structure">
+        <div class="container">
+            <div class="row">
+                <div class="site-heading text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2>Top Categories</h2>
+                        <!--<p>
+                            Discourse assurance estimable applauded to so. Him everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating excellence an to impression. 
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="category-items">
+                <div class="row">
+                    <!-- Single Item -->
+                    <div class="col-md-6 col-sm-6 equal-height">
+                        <div class="item mariner">
+                            <a href="./files/CE_Flyer_2023.pdf" target="_blank">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-algorithm"></i>
+                                    </div>
+                                    <div class="info" style="margin-top: 15px;">
+                                        <span>Department Brochure</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-6 col-sm-6 equal-height">
+                        <div class="item brilliantrose">
+                            <a href="./files/MTech_CE_Full_Booklet_2023-24_CBCS.pdf" target="_blank">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-chip"></i>
+                                    </div>
+                                    <div class="info" style="margin-top: 15px;">
+                                        <span>Syllabus</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item 
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item malachite">
+                            <a href="#">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-data-mining"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h5>Data Science</h5>
+                                        <p>
+                                            Current enrolled <strong>2544</strong>
+                                        </p>
+                                        <span>29 Courses</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="col-md-6 col-sm-6 equal-height">
+                        <div class="item mariner">
+                            <a href="./files/M.Tech_PO.pdf" target="_blank">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-data-mining"></i>
+                                    </div>
+                                    <div class="info" style="margin-top: 15px;">
+                                        <span>M.Tech - Pos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 equal-height">
+                        <!-- <div class="item mariner">
+                            <a href="./files/M.Tech_PO.pdf" target="_blank">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-data-mining"></i>
+                                    </div>
+                                    <div class="info" style="margin-top: 15px;">
+                                        <span>M.Tech - Pos</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> -->
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item 
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item casablanca">
+                            <a href="#">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-sketch"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h5>Architecture</h5>
+                                        <p>
+                                            Current enrolled <strong>1766</strong>
+                                        </p>
+                                        <span>39 Courses</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+                    <!-- End Single Item -->
+                    <!-- Single Item 
+                    <div class="col-md-4 col-sm-6 equal-height">
+                        <div class="item emerald">
+                            <a href="#">
+                                <div class="item-box">
+                                    <div class="icon">
+                                        <i class="flaticon-paint-palette"></i>
+                                    </div>
+                                    <div class="info">
+                                        <h5>Art & Design</h5>
+                                        <p>
+                                            Current enrolled <strong>4355</strong>
+                                        </p>
+                                        <span>36 Courses</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+                    <!-- End Single Item -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Gallery Start-->
+
+    <div class="container" id="gallery">
+            <div class="row">
+                <div class="site-heading text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2>Life @CHARUSAT</h2>
+                        <!--<p>
+                            Discourse assurance estimable applauded to so. Him everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating excellence an to impression. 
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="category-items">
+                <div class="row">
+                    <!-- Single Item -->
+                    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/1.JPG" alt="project">
+                        </div>
+                    </div>
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/2.JPG" alt="project">
+                        </div>
+                    </div>
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/3.JPG" alt="project">
+                        </div>
+                    </div>
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/4.png" alt="project">
+                        </div>
+                    </div>
+		</div>
+		</br>
+		<div class="row">
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/5.JPG" alt="project">
+                        </div>
+                    </div>
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/6.JPG" alt="project">
+                        </div>
+                    </div>
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/7.png" alt="project">
+                        </div>
+                    </div>
+		    <div class="col-md-3 col-sm-6 equal-height" align="center">
+                        <div class="item mariner">
+                                    <img class="img-fullwidth" src="images/life/8.png" alt="project">
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+</div>
+            </div>
+        </div>
+    <!-- End Categories -->
+    <!-- Start Testimonials 
+    ============================================= -->
+    <div class="testimonials-area carousel-shadow active-dots bg-gray default-padding bg-cover" style="background-image: url(assets/img/shape-bg.png);">
+        <div class="container">
+            <div class="row">
+                <div class="site-heading text-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2>What Students Says</h2>
+                        <!--<p>
+                            Discourse assurance estimable applauded to so. Him everything melancholy uncommonly but solicitude inhabiting projection off. Connection stimulated estimating excellence an to impression. 
+                        </p>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testimonial-items testimonial-carousel owl-carousel owl-theme text-center">
+                        <!-- Single Item -->
+                        <div class="item">
+                            <!--<div class="icon">
+                                <i class="ti-quote-left"></i>
+                            </div>-->
+                            <div class="content">
+                                <p align="justify">I was a student at CHARUSAT 2014 batch and can vouch for the university's excellence. The curriculum is up-to-date, the staff is informed and encouraging, and the environment is generally encouraging of both personal and professional development. I have seen my own life take a positive turn after enrolling here with many of my peers experiencing similar success. This is where I gained my self-assurance, and I'm very happy I selected CHARUSAT as my college. Plus, it's such a beautiful campus - it's like stepping into a dream every day!</p></br></br></br></br>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <img src="assets/img/team/1.jpg" alt="Thumb">
+                            </div>
+                            <div class="author">
+                                <h4>Niraj Gohel</h4>
+                                <span>Co-Founder at Aavatto</span>
+                                <span>Entrepreneur of The Year 2022</span>
+                                    
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="item">
+                            <!--<div class="icon">
+                                <i class="ti-quote-left"></i>
+                            </div>-->
+                            <div class="content">
+                                <p align="justify">“Pursuing B.Tech from CHARUSAT was life changing for me, I found faculties very positive, motivated and highly skilled in their area. I met the best people during my undergraduate who not only helped me find my passion but also always motivated to achieve more. I would also like to call out the great initiatives by professors, like Microsoft, Oracle, AWS academy sessions, Expert Seminars, Extraordinary Presentations and Labs and Experimentation. Here faculties not only focus on engineering studies but also overall development who can help you find your passion, finding guide as well as helping you balance engineering with extracurricular activities like music, art, dance and sports etc. I would highly recommend CHARUSAT for those who are passionate about Machines and wants to learn/grow, explore different areas and achieve more.”</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <img src="assets/img/team/2.jpg" alt="Thumb">
+                            </div>
+                            <div class="author">
+                                <h4>Yash Patel</h4>
+                                <span>Security Engineer, Microsoft</span>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="item">
+                            <!--<div class="icon">
+                                <i class="ti-quote-left"></i>
+                            </div>-->
+                            <div class="content">
+                                <p align="justify">CHARUSATs' computer department (cspit-ce) provided me with the chance to interact with other people and pick up new skills. I've gotten a lot of help from the faculties and the placement office. I appreciate the Training & Placement cell for giving me the chance to develop my abilities and for giving me a platform on which to do so. I would like to thanks my wonderful university for all the support that helps me to grow in my professional career.</p></br></br></br></br></br></br>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <img src="assets/img/team/3.jpg" alt="Thumb">
+                            </div>
+                            <div class="author">
+                                <h4>Keyur Talati   </h4>
+                                <span>Sr. Security Analyst at FireCompass</span>
+                                <span>Bengaluru, Karnataka, India</span>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="item">
+                            <!--<div class="icon">
+                                <i class="ti-quote-left"></i>
+                            </div>-->
+                            <div class="content">
+                                <p>From printing "Hello World" in Turbo C++ to competing and beating students of IITs and NIT's not once but thrice in hackathons, that's level of resources CHARUSAT provides to their students. Despite the fact that I was a complete beginner in the programming world, my professors at CHARUSAT saw potential in me and helped me advance to the point where, in my final year, I was receiving an award and a cheque for 2,00,000 INR from the deputy chief minister of Gujarat. The relationships and networks I formed at the university extended beyond the four years I spent studying undergrad, but they helped me get admitted on a full scholarship to the University of Alberta for my master's programme. I appreciate all the support, CHARUSAT.</p></br>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <img src="assets/img/team/4.jpg" alt="Thumb">
+                            </div>
+                            <div class="author">
+                                <h4>Brij Patel (16CE065)</h4>
+                                <span>Software Developer at Thomson Reuters</span>
+                                <span>North York, Ontario, Canada</span>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonials -->
+<div class="contact-info-area default-padding" id="contact">
+<div class="container">
+            <!-- Start Contact Info -->
+            <div class="contact-info text-center">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="icon">
+                                <i class="flaticon-call"></i>
+                            </div>
+                            <div class="info">
+                                <h4>Call Us</h4>
+                                <span>+91-940-815-1969</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="icon">
+                                <i class="flaticon-location"></i>
+                            </div>
+                            <div class="info">
+                                <h4>Address</h4>
+                                <span>U & P U. Patel Department of Computer Engineering, CHARUSAT Campus, Changa 
+                                </br>Taluka: Petlad, Dist: Anand</br>Gujarat (India) 388 421</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="item">
+                            <div class="icon">
+                                <i class="flaticon-email"></i>
+                            </div>
+                            <div class="info">
+                                <h4>Email Us</h4>
+                                <span>hod.ce@charusat.ac.in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <!-- End Contact Info -->
+<div class="row contact-bottom-info">
+                <!-- Start Maps & Contact Form -->
+                    <div class="col-md-12 maps">
+                        <div class="google-maps">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1493.7930778459781!2d72.81811097217066!3d22.599098128972297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e50c6991e2a29%3A0xcc1027b04ea31e7!2sThe%20U%20and%20P.U.%20Patel%20Department%20of%20Computer%20Engineering!5e0!3m2!1sen!2sin!4v1590212506539!5m2!1sen!2sin"></iframe>
+                        </div>
+                    </div>
+
+
+        <!-- Start Footer Bottom -->
+<footer class="bg-light">
+<div class="container">
+<div class="f-items default-padding">
+ <div class="row">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; Copyright 2020. All Rights Reserved. | <span><a href="https://theidioms.com">Idioms</a></span></p>
+                    </div>
+                    <div class="col-md-6 text-right link">
+                        <ul>
+                            <li>
+                                <a href="#">Terms of user</a>
+                            </li>
+                            <li>
+                                <a href="#">License</a>
+                            </li>
+                            <li>
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/equal-height.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/modernizr.custom.13711.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/loopcounter.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

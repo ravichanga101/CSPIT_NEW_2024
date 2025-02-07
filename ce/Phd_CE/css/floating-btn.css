@@ -1,0 +1,48 @@
+/*---------Floating SideNav-------------*/
+#mySidenav a.vt {
+    position: fixed;
+    left: -210px;
+    transition: 0.3s;
+    padding: 10px;
+    width: 260px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    z-index: 100;
+}
+
+#mySidenav a.vt:hover {
+  left: 0;
+}
+
+#mySidenav a.admission:hover {
+        right: 0;
+    }
+#view360 {
+  top: 50%;
+  background-color: #1E90FF;
+}
+.sidenav{
+    position: fixed;
+    top: 45%;
+    right: 20px;
+    bottom: 15px;
+    z-index: 9998;
+}
+#mySidenav a.admission {
+    position: fixed;
+    right: -50px;
+    transition: 0.3s;
+    text-decoration: none;
+    font-size: 15px;
+    width:200px;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: 25px 0px 0px 25px;
+    background-color: #1E90FF;
+}
+#application-form {
+    margin-top:50px;
+}
+/*---------END-------------*/
