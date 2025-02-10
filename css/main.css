@@ -1970,6 +1970,22 @@ section#thrust-areas {
   font-size: 1rem;
 }
 
+@media (min-width: 1024px) {
+  .stacked-cards {
+    margin-bottom: 70px; /* Increase spacing for larger screens */
+    max-width: 350px; /* Allow cards to expand more */
+  }
+
+  .stacked-card {
+    max-width: 300px; /* Increase width for larger screens */
+  }
+
+  .stacked-caption {
+    margin-top: 80px; /* Adjust spacing */
+    font-size: 1.2rem; /* Larger font for better readability */
+  }
+}
+
 @media (max-width: 768px) {
   .stacked-cards {
     margin-bottom: 50px; /* Add spacing between sections */
@@ -2615,31 +2631,6 @@ section#thrust-areas {
   color: rgba(255, 255, 255, 0.8);
   font-style: italic;
 }
-.carousel-indicators {
-  position: absolute;
-  bottom: -40px; /* Adjust vertical spacing below the slides */
-  left: 35%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  gap: 12px; /* Spacing between dots */
-  z-index: 1;
-}
-
-.carousel-indicators button {
-  width: 30px;
-  height: 10px;
-  /* border-radius: 50%; */
-  background-color: rgb(255, 255, 255); /* Default dot color */
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.carousel-indicators button.active {
-  width: 40px;
-  background-color: #2081e9; /* Highlighted dot color */
-}
-
 /* Responsive */
 @media (max-width: 992px) {
   .notable-alumni-grid {

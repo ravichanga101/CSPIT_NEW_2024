@@ -2758,6 +2758,31 @@ function createTestimonialCard(testimonial) {
 <style>
    
 
+.carousel-indicators {
+  position: absolute;
+  bottom: -40px; /* Adjust vertical spacing below the slides */
+  left: 35%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Spacing between dots */
+  z-index: 1;
+}
+
+.carousel-indicators button {
+  width: 30px;
+  height: 10px;
+  /* border-radius: 50%; */
+  background-color: rgb(255, 255, 255); /* Default dot color */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  width: 40px;
+  background-color: #2081e9; /* Highlighted dot color */
+}
+
 </style>
 
 <!-- <br/> -->
