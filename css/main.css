@@ -1970,7 +1970,7 @@ section#thrust-areas {
   font-size: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .stacked-cards {
     margin-bottom: 70px; /* Increase spacing for larger screens */
     max-width: 350px; /* Allow cards to expand more */
