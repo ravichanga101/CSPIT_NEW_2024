@@ -2674,19 +2674,26 @@ function createTestimonialCard(testimonial) {
   <!-- <br />   -->
   <!-- Notable Alumni Section -->
   <section class="notable-alumni-section">
-    <div class="notable-alumni-container ">
+    <div class="notable-alumni-container">
         <h2 class="notable-alumni-title">Notable Alumni</h2>
 
         <div id="notableAlumniCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
+            <!-- Slider Controls -->
+            <div class="carousel-indicators" id="notableAlumniIndicators">
+                <!-- Dots will be dynamically added here -->
+            </div>
+
+            <!-- Slides -->
             <div class="carousel-inner" id="notableAlumniCarouselContent">
                 <!-- Alumni data will be dynamically added here -->
             </div>
         </div>
     </div>
-  </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</section>
 
-  <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script>
     async function fetchNotableAlumniData() {
         try {
             const response = await fetch('./alumni.xlsx'); // Ensure correct path
@@ -2706,7 +2713,9 @@ function createTestimonialCard(testimonial) {
 
     function generateNotableAlumniSlides(data) {
         const carouselContent = document.getElementById('notableAlumniCarouselContent');
+        const indicators = document.getElementById('notableAlumniIndicators');
         carouselContent.innerHTML = "";
+        indicators.innerHTML = "";
 
         let slides = "";
         let alumniGroup = [];
@@ -2721,7 +2730,7 @@ function createTestimonialCard(testimonial) {
                 </div>
             `);
 
-            // Every 18 alumni, create a new slide
+            // Every 12 alumni, create a new slide
             if ((index + 1) % 12 === 0 || index === data.length - 1) {
                 slides += `
                     <div class="carousel-item ${slideIndex === 0 ? 'active' : ''}">
@@ -2729,6 +2738,10 @@ function createTestimonialCard(testimonial) {
                             ${alumniGroup.join('')}
                         </div>
                     </div>
+                `;
+                // Add indicator dot for this slide
+                indicators.innerHTML += `
+                    <button type="button" data-bs-target="#notableAlumniCarousel" data-bs-slide-to="${slideIndex}" class="${slideIndex === 0 ? 'active' : ''}" aria-current="${slideIndex === 0 ? 'true' : 'false'}" aria-label="Slide ${slideIndex + 1}"></button>
                 `;
                 alumniGroup = [];
                 slideIndex++;
@@ -2740,7 +2753,13 @@ function createTestimonialCard(testimonial) {
 
     // Call function on page load
     fetchNotableAlumniData();
-  </script>
+</script>
+
+<style>
+   
+
+</style>
+
 <!-- <br/> -->
   <section class="mou-section animate-on-scroll">
     <h2 style="color: #fff;">CSPIT MOU</h2>
