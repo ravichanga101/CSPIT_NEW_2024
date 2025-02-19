@@ -2673,30 +2673,30 @@ function createTestimonialCard(testimonial) {
 
   <!-- <br />   -->
   <!-- Notable Alumni Section -->
-  <section class="notable-alumni-section">
-    <div class="notable-alumni-container ">
+  <!-- <section class="notable-alumni-section">
+    <div class="notable-alumni-container">
         <h2 class="notable-alumni-title">Notable Alumni</h2>
 
         <div id="notableAlumniCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators" id="notableAlumniIndicators">
+            </div>
             <div class="carousel-inner" id="notableAlumniCarouselContent">
-                <!-- Alumni data will be dynamically added here -->
             </div>
         </div>
     </div>
-  </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</section>
 
-  <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<script>
     async function fetchNotableAlumniData() {
         try {
-            const response = await fetch('./alumni.xlsx'); // Ensure correct path
+            const response = await fetch('./alumni.xlsx');
             const data = await response.arrayBuffer();
 
             const workbook = XLSX.read(data, { type: 'array' });
-            const sheetName = workbook.SheetNames[0]; // Assuming first sheet
+            const sheetName = workbook.SheetNames[0]; 
             const sheet = workbook.Sheets[sheetName];
-
-            // Convert Excel to JSON
             const alumniData = XLSX.utils.sheet_to_json(sheet);
             generateNotableAlumniSlides(alumniData);
         } catch (error) {
@@ -2706,7 +2706,9 @@ function createTestimonialCard(testimonial) {
 
     function generateNotableAlumniSlides(data) {
         const carouselContent = document.getElementById('notableAlumniCarouselContent');
+        const indicators = document.getElementById('notableAlumniIndicators');
         carouselContent.innerHTML = "";
+        indicators.innerHTML = "";
 
         let slides = "";
         let alumniGroup = [];
@@ -2720,8 +2722,6 @@ function createTestimonialCard(testimonial) {
                     <p class="notable-alumni-info">${alumni.Designation}, ${alumni.Company}</p>
                 </div>
             `);
-
-            // Every 18 alumni, create a new slide
             if ((index + 1) % 12 === 0 || index === data.length - 1) {
                 slides += `
                     <div class="carousel-item ${slideIndex === 0 ? 'active' : ''}">
@@ -2730,6 +2730,9 @@ function createTestimonialCard(testimonial) {
                         </div>
                     </div>
                 `;
+                indicators.innerHTML += `
+                    <button type="button" data-bs-target="#notableAlumniCarousel" data-bs-slide-to="${slideIndex}" class="${slideIndex === 0 ? 'active' : ''}" aria-current="${slideIndex === 0 ? 'true' : 'false'}" aria-label="Slide ${slideIndex + 1}"></button>
+                `;
                 alumniGroup = [];
                 slideIndex++;
             }
@@ -2737,10 +2740,38 @@ function createTestimonialCard(testimonial) {
 
         carouselContent.innerHTML = slides;
     }
-
-    // Call function on page load
     fetchNotableAlumniData();
-  </script>
+</script> -->
+
+<style>
+   
+
+.carousel-indicators {
+  position: absolute;
+  bottom: -40px; /* Adjust vertical spacing below the slides */
+  left: 35%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* Spacing between dots */
+  z-index: 1;
+}
+
+.carousel-indicators button {
+  width: 30px;
+  height: 10px;
+  /* border-radius: 50%; */
+  background-color: rgb(255, 255, 255); /* Default dot color */
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  width: 40px;
+  background-color: #2081e9; /* Highlighted dot color */
+}
+
+</style>
 <!-- <br/> -->
   <section class="mou-section animate-on-scroll">
     <h2 style="color: #fff;">CSPIT MOU</h2>
