@@ -1970,6 +1970,22 @@ section#thrust-areas {
   font-size: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .stacked-cards {
+    margin-bottom: 70px; /* Increase spacing for larger screens */
+    max-width: 350px; /* Allow cards to expand more */
+  }
+
+  .stacked-card {
+    max-width: 300px; /* Increase width for larger screens */
+  }
+
+  .stacked-caption {
+    margin-top: 80px; /* Adjust spacing */
+    font-size: 1.2rem; /* Larger font for better readability */
+  }
+}
+
 @media (max-width: 768px) {
   .stacked-cards {
     margin-bottom: 50px; /* Add spacing between sections */
