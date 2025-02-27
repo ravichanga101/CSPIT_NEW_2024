@@ -3460,70 +3460,60 @@ function createTestimonialCard(testimonial) {
   <!-- COUNTER FOR SCALAR -->
   <script>
     function runCounterAnimation(element, targetValue) {
-      let currentValue = 0;
-      const animationDuration = 2000;
-      const incrementValue = targetValue / (animationDuration / 16);
+  let currentValue = 0;
+  const animationDuration = 3000;
+  const incrementValue = targetValue / (animationDuration / 30);
 
-      // Reveal the element with a smooth transition
-      element.style.opacity = "1";
-      element.style.transform = "translateY(0)"; // Reset the position
+  element.style.opacity = "1";
+  element.style.transform = "translateY(0)";
 
-      // Function to format the number to K, M, or B
-      function formatNumber(num) {
-        if (num >= 1e9) {
-          return (num / 1e9).toFixed(1) + "B";
-        } else if (num >= 1e6) {
-          return (num / 1e6).toFixed(1) + "M";
-          // } else if (num >= 1e3) {
-          //   return (num / 1e3).toFixed(1) + 'K';
-        } else {
-          return num.toString();
-        }
-      }
+  function formatNumber(num) {
+    if (num >= 1e9) return (num / 1e9).toFixed(1) + "B";
+    if (num >= 1e6) return (num / 1e6).toFixed(1) + "M";
+    return num.toString();
+  }
 
-      const updateValue = () => {
-        currentValue += incrementValue;
-        if (currentValue < targetValue) {
-          element.innerText = formatNumber(Math.ceil(currentValue));
-          requestAnimationFrame(updateValue);
-        } else {
-          element.innerText = formatNumber(targetValue);
-        }
-      };
-
-      updateValue();
+  const updateValue = () => {
+    currentValue += incrementValue;
+    if (currentValue < targetValue) {
+      element.innerText = formatNumber(Math.ceil(currentValue));
+      requestAnimationFrame(updateValue);
+    } else {
+      element.innerText = formatNumber(targetValue);
     }
+  };
 
-    function handleScrollTrigger(entries, scrollObserver) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const numberElements = document.querySelectorAll(".stat-number");
-          const iconElements = document.querySelectorAll(".stats-icon");
+  updateValue();
+}
 
-          // Animate number stats
-          numberElements.forEach((numberEl) => {
-            const targetValue = +numberEl.getAttribute("data-target");
-            runCounterAnimation(numberEl, targetValue);
-          });
+function handleScrollTrigger(entries, scrollObserver) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const numberElements = document.querySelectorAll(".stat-number");
+      const iconElements = document.querySelectorAll(".stats-icon");
 
-          // Fade in icons with smooth transition
-          iconElements.forEach((iconEl) => {
-            iconEl.style.opacity = "1";
-            iconEl.style.transform = "translateY(0)"; // Reset the position
-          });
-
-          scrollObserver.unobserve(entry.target); // Stop observing once animated
-        }
+      numberElements.forEach((numberEl) => {
+        const targetValue = +numberEl.getAttribute("data-target") || 0;
+        runCounterAnimation(numberEl, targetValue);
       });
+
+      iconElements.forEach((iconEl) => {
+        iconEl.style.opacity = "1";
+        iconEl.style.transform = "translateY(0)";
+      });
+
+      scrollObserver.unobserve(entry.target);
     }
+  });
+}
 
-    // Scroll observer for the stats section
-    const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
-      threshold: 0.5,
-    });
+const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
+  threshold: 0.1, // Trigger earlier on mobile
+});
 
-    const statsSection = document.getElementById("scalars");
-    scrollObserver.observe(statsSection);
+const statsSection = document.getElementById("scalars");
+if (statsSection) scrollObserver.observe(statsSection);
+
   </script>
 
   <script type="text/javascript" src="js/slick.min.js"></script>
