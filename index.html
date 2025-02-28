@@ -534,6 +534,9 @@
               <a class="nav-link" href="https://alumni.charusat.ac.in/">Alumni</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#contact-us">Contact Us </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="./about_us.html">About Us</a>
             </li>
             <li class="nav-item dropdown">
@@ -1670,11 +1673,17 @@
     <div class="courses__cont">
       <!-- Club Items -->
       <div class="courses__cont--item">
-        <div class="overlay">
+        <!-- <div class="overlay">
           <a onclick="openPopup('club1')" title="AWS Student Club">
             <img loading="lazy" src="images1/Student Club/aws.webp" alt="AWS Student Club" class="item-image">
           </a>
           <div onclick="openPopup('club1')" class="hover-text">AWS Student Club</div>
+        </div> -->
+        <div class="overlay">
+          <a href="https://acc.charusat.ac.in/" target="_blank" title="AWS Student Club">
+            <img loading="lazy" src="images1/Student Club/aws.webp" alt="AWS Student Club" class="item-image">
+          </a>
+          <a href="https://acc.charusat.ac.in/" target="_blank" class="hover-text">AWS Student Club</a>
         </div>
       </div>
       <div class="courses__cont--item">
@@ -2673,19 +2682,27 @@ function createTestimonialCard(testimonial) {
 
   <!-- <br />   -->
   <!-- Notable Alumni Section -->
+<<<<<<< HEAD
   <section class="notable-alumni-section">
+=======
+  <!-- <section class="notable-alumni-section">
+>>>>>>> 218d20a6ff501ecfdaaa0770a47cae7dd0947266
     <div class="notable-alumni-container">
         <h2 class="notable-alumni-title">Notable Alumni</h2>
 
         <div id="notableAlumniCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="3000">
+<<<<<<< HEAD
             <!-- Slider Controls -->
             <div class="carousel-indicators" id="notableAlumniIndicators">
                 <!-- Dots will be dynamically added here -->
             </div>
 
             <!-- Slides -->
+=======
+            <div class="carousel-indicators" id="notableAlumniIndicators">
+            </div>
+>>>>>>> 218d20a6ff501ecfdaaa0770a47cae7dd0947266
             <div class="carousel-inner" id="notableAlumniCarouselContent">
-                <!-- Alumni data will be dynamically added here -->
             </div>
         </div>
     </div>
@@ -2696,14 +2713,12 @@ function createTestimonialCard(testimonial) {
 <script>
     async function fetchNotableAlumniData() {
         try {
-            const response = await fetch('./alumni.xlsx'); // Ensure correct path
+            const response = await fetch('./alumni.xlsx');
             const data = await response.arrayBuffer();
 
             const workbook = XLSX.read(data, { type: 'array' });
-            const sheetName = workbook.SheetNames[0]; // Assuming first sheet
+            const sheetName = workbook.SheetNames[0]; 
             const sheet = workbook.Sheets[sheetName];
-
-            // Convert Excel to JSON
             const alumniData = XLSX.utils.sheet_to_json(sheet);
             generateNotableAlumniSlides(alumniData);
         } catch (error) {
@@ -2729,8 +2744,11 @@ function createTestimonialCard(testimonial) {
                     <p class="notable-alumni-info">${alumni.Designation}, ${alumni.Company}</p>
                 </div>
             `);
+<<<<<<< HEAD
 
             // Every 12 alumni, create a new slide
+=======
+>>>>>>> 218d20a6ff501ecfdaaa0770a47cae7dd0947266
             if ((index + 1) % 12 === 0 || index === data.length - 1) {
                 slides += `
                     <div class="carousel-item ${slideIndex === 0 ? 'active' : ''}">
@@ -2739,7 +2757,10 @@ function createTestimonialCard(testimonial) {
                         </div>
                     </div>
                 `;
+<<<<<<< HEAD
                 // Add indicator dot for this slide
+=======
+>>>>>>> 218d20a6ff501ecfdaaa0770a47cae7dd0947266
                 indicators.innerHTML += `
                     <button type="button" data-bs-target="#notableAlumniCarousel" data-bs-slide-to="${slideIndex}" class="${slideIndex === 0 ? 'active' : ''}" aria-current="${slideIndex === 0 ? 'true' : 'false'}" aria-label="Slide ${slideIndex + 1}"></button>
                 `;
@@ -2750,10 +2771,12 @@ function createTestimonialCard(testimonial) {
 
         carouselContent.innerHTML = slides;
     }
-
-    // Call function on page load
     fetchNotableAlumniData();
+<<<<<<< HEAD
 </script>
+=======
+</script> -->
+>>>>>>> 218d20a6ff501ecfdaaa0770a47cae7dd0947266
 
 <style>
    
@@ -2784,7 +2807,10 @@ function createTestimonialCard(testimonial) {
 }
 
 </style>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 218d20a6ff501ecfdaaa0770a47cae7dd0947266
 <!-- <br/> -->
   <section class="mou-section animate-on-scroll">
     <h2 style="color: #fff;">CSPIT MOU</h2>
@@ -3465,70 +3491,60 @@ function createTestimonialCard(testimonial) {
   <!-- COUNTER FOR SCALAR -->
   <script>
     function runCounterAnimation(element, targetValue) {
-      let currentValue = 0;
-      const animationDuration = 2000;
-      const incrementValue = targetValue / (animationDuration / 16);
+  let currentValue = 0;
+  const animationDuration = 3000;
+  const incrementValue = targetValue / (animationDuration / 30);
 
-      // Reveal the element with a smooth transition
-      element.style.opacity = "1";
-      element.style.transform = "translateY(0)"; // Reset the position
+  element.style.opacity = "1";
+  element.style.transform = "translateY(0)";
 
-      // Function to format the number to K, M, or B
-      function formatNumber(num) {
-        if (num >= 1e9) {
-          return (num / 1e9).toFixed(1) + "B";
-        } else if (num >= 1e6) {
-          return (num / 1e6).toFixed(1) + "M";
-          // } else if (num >= 1e3) {
-          //   return (num / 1e3).toFixed(1) + 'K';
-        } else {
-          return num.toString();
-        }
-      }
+  function formatNumber(num) {
+    if (num >= 1e9) return (num / 1e9).toFixed(1) + "B";
+    if (num >= 1e6) return (num / 1e6).toFixed(1) + "M";
+    return num.toString();
+  }
 
-      const updateValue = () => {
-        currentValue += incrementValue;
-        if (currentValue < targetValue) {
-          element.innerText = formatNumber(Math.ceil(currentValue));
-          requestAnimationFrame(updateValue);
-        } else {
-          element.innerText = formatNumber(targetValue);
-        }
-      };
-
-      updateValue();
+  const updateValue = () => {
+    currentValue += incrementValue;
+    if (currentValue < targetValue) {
+      element.innerText = formatNumber(Math.ceil(currentValue));
+      requestAnimationFrame(updateValue);
+    } else {
+      element.innerText = formatNumber(targetValue);
     }
+  };
 
-    function handleScrollTrigger(entries, scrollObserver) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const numberElements = document.querySelectorAll(".stat-number");
-          const iconElements = document.querySelectorAll(".stats-icon");
+  updateValue();
+}
 
-          // Animate number stats
-          numberElements.forEach((numberEl) => {
-            const targetValue = +numberEl.getAttribute("data-target");
-            runCounterAnimation(numberEl, targetValue);
-          });
+function handleScrollTrigger(entries, scrollObserver) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const numberElements = document.querySelectorAll(".stat-number");
+      const iconElements = document.querySelectorAll(".stats-icon");
 
-          // Fade in icons with smooth transition
-          iconElements.forEach((iconEl) => {
-            iconEl.style.opacity = "1";
-            iconEl.style.transform = "translateY(0)"; // Reset the position
-          });
-
-          scrollObserver.unobserve(entry.target); // Stop observing once animated
-        }
+      numberElements.forEach((numberEl) => {
+        const targetValue = +numberEl.getAttribute("data-target") || 0;
+        runCounterAnimation(numberEl, targetValue);
       });
+
+      iconElements.forEach((iconEl) => {
+        iconEl.style.opacity = "1";
+        iconEl.style.transform = "translateY(0)";
+      });
+
+      scrollObserver.unobserve(entry.target);
     }
+  });
+}
 
-    // Scroll observer for the stats section
-    const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
-      threshold: 0.5,
-    });
+const scrollObserver = new IntersectionObserver(handleScrollTrigger, {
+  threshold: 0.1, // Trigger earlier on mobile
+});
 
-    const statsSection = document.getElementById("scalars");
-    scrollObserver.observe(statsSection);
+const statsSection = document.getElementById("scalars");
+if (statsSection) scrollObserver.observe(statsSection);
+
   </script>
 
   <script type="text/javascript" src="js/slick.min.js"></script>
