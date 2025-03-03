@@ -497,10 +497,10 @@
                             <span>Grievance Redressal</span>
                           </a>
                         </li>
-                        <li class="subnav-unit dropdown-submenu second-sub2">
+                        <!-- <li class="subnav-unit dropdown-submenu second-sub2">
                           <a class="subnav-link text-uppercase" href="https://www.charusat.ac.in/anti-ragging"
                             target="_blank"><span>Anti-Ragging</span></a>
-                        </li>
+                        </li> -->
                         <li class="subnav-unit dropdown-submenu second-sub2">
                           <a class="subnav-link text-uppercase"
                             href="https://www.charusat.ac.in/cspit/Anti-Ragging-Squad.html"
@@ -732,7 +732,7 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="JavaScript:Void(0);" id="admission"
                   target="committees-dropdown">Committees</a>
                 <div class="dropdown-menu" id="committees-dropdown">
-                  <a class="dropdown-item" href="https://www.charusat.ac.in/anti-ragging">Anti-Ragging</a>
+                  <a class="dropdown-item" href="https://www.charusat.ac.in/cspit/Anti-Ragging-Squad.html">Anti-Ragging Squad</a>
                   <a class="dropdown-item" href="https://www.charusat.ac.in/ICC">Internal Complaint
                     Committee</a>
                   <a class="dropdown-item" href="./Resources/Anti.drug.circular.pdf">Anti-drug</a>
@@ -833,6 +833,7 @@
                   </div>
                 </th>
                 <th>Investigators</th>
+                <th style="width: 10%">Date</th>
               </tr>
             </thead>
             <tbody>
@@ -1368,25 +1369,41 @@
       }
 
       function populateTable(data) {
-        const tableBody = document.querySelector("#projectsTable tbody");
-        tableBody.innerHTML = "";
+    const tableBody = document.querySelector("#projectsTable tbody");
+    tableBody.innerHTML = "";
 
-        data.forEach((row, index) => {
-          if (index === 0) return;
+    data.forEach((row, index) => {
+        if (index === 0) return; // Skip header row
 
-          const tr = document.createElement("tr");
-          for (let i = 0; i < 5; i++) {
+        const tr = document.createElement("tr");
+
+        for (let i = 0; i < 6; i++) { // Ensure we include the Date column
             const td = document.createElement("td");
-            td.textContent = row[i] || "N/A";
-            tr.appendChild(td);
-          }
-          tableBody.appendChild(tr);
+            
+            // Convert Excel date serial number to a proper date format
+            if (i === 5 && !isNaN(row[i])) {  // Assuming the Date column is at index 5
+                td.textContent = excelSerialToDate(row[i]);
+            } else {
+                td.textContent = row[i] || "N/A";
+            }
 
-          setTimeout(() => {
+            tr.appendChild(td);
+        }
+
+        tableBody.appendChild(tr);
+
+        setTimeout(() => {
             tr.classList.add("show");
-          }, index * 100);
-        });
-      }
+        }, index * 100);
+    });
+}
+
+// Function to convert Excel date serial to readable format
+    function excelSerialToDate(serial) {
+        const excelStartDate = new Date(1900, 0, 1);
+        const convertedDate = new Date(excelStartDate.getTime() + (serial - 1) * 86400000); // 86400000 = ms in a day
+        return convertedDate.toISOString().split('T')[0]; // Returns YYYY-MM-DD format
+    }
 
       function displayTotalFunds(totalFunds) {
         const totalFundsElement = document.getElementById("totalFunds");
@@ -1452,6 +1469,6 @@
   });
 </script>
 <!-- SIDEBAR -->
-<script type="text/javascript" src="js/offcanvas.js"></script>
+<!-- <script type="text/javascript" src="js/offcanvas.js"></script> -->
   </body>
 </html>
