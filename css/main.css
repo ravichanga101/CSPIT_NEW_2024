@@ -337,7 +337,7 @@ img {
 .student-image {
   width: 100%;
   height: 100%;
-  object-fit:fill;
+  object-fit: fill;
   border-radius: 15px !important;
 }
 
@@ -380,7 +380,7 @@ img {
 .student-small-card .student-card-text {
   flex-grow: 1;
   padding: 0.5rem;
-  font-size:medium;
+  font-size: medium;
   font-weight: 500;
   background-color: #fff; /* Set background color to white */
   color: #333; /* Ensure text is dark for readability */
@@ -388,7 +388,6 @@ img {
   justify-content: center;
   align-items: flex-end;
 }
-
 
 /* Hover Effect for Project Cards */
 .student-small-card {
@@ -417,12 +416,11 @@ img {
   z-index: 1;
   transition: background 0.3s ease;
   border-radius: 5%;
-  
 }
 
 .project-hover-text {
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   text-transform: uppercase;
   font-weight: bold;
@@ -480,57 +478,60 @@ img {
 }
 /* ---------------- ABOUT US POPUP-------------- */
 
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0);
-      z-index: 1200;
-      overflow-y: auto;
-      background-size: cover;
-      color: #fff;
-      overflow-x: hidden;
-      
-    }
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 1200;
+  overflow-y: auto;
+  background-size: cover;
+  color: #fff;
+  overflow-x: hidden;
+}
 
-    .modal-content {
-      position: relative;
-      margin: 0.5% auto;
-      padding: 20px;
-      width: 90%;
-      background: linear-gradient(145deg, rgba(0, 0, 0, 0.85), rgba(40, 40, 40, 0.95));
-      /* background: linear-gradient(145deg, #003d73, #0056b3); */
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    }
+.modal-content {
+  position: relative;
+  margin: 0.5% auto;
+  padding: 20px;
+  width: 90%;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(40, 40, 40, 0.95)
+  );
+  /* background: linear-gradient(145deg, #003d73, #0056b3); */
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      color: #ffeb3b;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      color: #f57c00;
-      transform: scale(1.2);
-    }
-    .about-us-intro__cont{
-      width: 100%;
-      padding: 1.5rem;
-      /* background-color: #ffffffa7; */
-      /* background-image: url(../images1/background.jpg) no-repeat center center fixed; */
-      color: #ffffff;
-      border-radius: 40px;
-      font-weight: 300;
-      font-size: clamp(0.875rem, 0.7vw + 0.56rem, 2.1rem);
-    }
-    /* Flexbox for Vision and Mission */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #ffeb3b;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #f57c00;
+  transform: scale(1.2);
+}
+.about-us-intro__cont {
+  width: 100%;
+  padding: 1.5rem;
+  /* background-color: #ffffffa7; */
+  /* background-image: url(../images1/background.jpg) no-repeat center center fixed; */
+  color: #ffffff;
+  border-radius: 40px;
+  font-weight: 300;
+  font-size: clamp(0.875rem, 0.7vw + 0.56rem, 2.1rem);
+}
+/* Flexbox for Vision and Mission */
 .intro-module-container {
   display: flex;
   justify-content: space-between;
@@ -547,8 +548,6 @@ img {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .intro-module h2 {
   font-size: x-large;
@@ -595,7 +594,7 @@ img {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 5;
@@ -663,7 +662,7 @@ img {
 
 /* Arrow Line */
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 4px; /* Arrow line width */
   background: #ffeb3b;
@@ -672,7 +671,7 @@ img {
 
 /* Arrow Head */
 .timeline-item::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 0;
@@ -780,7 +779,7 @@ img {
 .popup-inner {
   display: flex;
   height: 100%;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 /* Popup Left (Slider) */
@@ -809,7 +808,6 @@ img {
   transition: opacity 0.5s ease;
   border: #0056b3 3px solid;
 }
-
 
 /* Relative flex grow size for popup slider */
 /* .popup-slider-wrapper {
@@ -896,7 +894,7 @@ img {
     max-width: 100%;
     max-height: 95vh; /* Slightly more height for smaller screens */
   }
-  .project-popup-title{
+  .project-popup-title {
     font-size: 1.4rem;
   }
   .popup-inner {
@@ -929,10 +927,9 @@ img {
   color: #2978ff; /* Change color on hover */
   font-weight: bold; /* Make the title bold */
 }
-.card-link img{
+.card-link img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-
 }
 .card-title {
   transition: color 0.3s, font-weight 0.5s;
@@ -979,7 +976,9 @@ img {
 .chapter-section h2,
 .announcement-section h2,
 .professional-society h2,
-.testimonials-section h2, .mou-section h2,.notable-alumni-section h2 {
+.testimonials-section h2,
+.mou-section h2,
+.notable-alumni-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 35px;
@@ -1051,7 +1050,8 @@ img {
 /* ------------------------STUDENT CHAPTER ------------------------- */
 .courses,
 .professional-society,
-.club-section,.mou-section {
+.club-section,
+.mou-section {
   padding-bottom: 4%;
   padding-top: 2%;
   background-color: var(--site-color);
@@ -1291,7 +1291,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 15px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #fff;
   padding: 10px 20px;
   white-space: normal; /* Enables text wrapping */
@@ -1308,8 +1308,6 @@ img {
   opacity: 1;
   transform: translate(-50%, -45%);
 }
-
-
 
 /* POPUP FOR STUDENTS CLUB--------------------------- */
 /* General Popup Styles */
@@ -1338,7 +1336,7 @@ img {
   position: relative;
   text-align: left;
   animation: popupAnimation 0.3s ease-in-out;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
 
 @keyframes popupAnimation {
@@ -1451,8 +1449,6 @@ img {
   background: #0078d7;
 }
 
-
-
 @media (max-width: 768px) {
   .popup-content {
     padding: 15px;
@@ -1513,7 +1509,7 @@ img {
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
   position: relative;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   text-align: center;
 
   /* Animation properties */
@@ -1673,10 +1669,6 @@ hr {
 .department-links a:hover {
   color: #0056b3;
 }
-
-
-
-
 
 /* ----------------------Student Club --------------------------- */
 /* .club-section {
@@ -2041,7 +2033,6 @@ section#thrust-areas {
 .gallery-card:hover img {
   transform: scale(1.1);
   cursor: pointer;
-
 }
 .gallery-card-caption {
   position: absolute;
@@ -2169,7 +2160,6 @@ section#thrust-areas {
 .close-button:hover {
   color: #ff4d4d;
 }
-
 
 /* ----------------------- MESSAGE-----------------------------------*/
 /* Scoped Dean and Principal Section Styles */
@@ -2505,17 +2495,26 @@ section#thrust-areas {
   padding: 15px;
 }
 
-.testimonials-section .testimonial-card .testimonial-card-info .testimonial-card-name {
+.testimonials-section
+  .testimonial-card
+  .testimonial-card-info
+  .testimonial-card-name {
   font-size: 1.6rem;
   color: #4287fe;
 }
 
-.testimonials-section .testimonial-card .testimonial-card-info .testimonial-card-designation {
+.testimonials-section
+  .testimonial-card
+  .testimonial-card-info
+  .testimonial-card-designation {
   font-size: 1em;
   color: #ff7a1c;
 }
 
-.testimonials-section .testimonial-card .testimonial-card-info .testimonial-card-paragraph {
+.testimonials-section
+  .testimonial-card
+  .testimonial-card-info
+  .testimonial-card-paragraph {
   font-size: 1rem;
   color: #333;
   text-align: justify;
@@ -2559,7 +2558,7 @@ section#thrust-areas {
 /*  ------------------ ALUMNI --------------------- */
 .notable-alumni-section {
   position: relative;
-  background: url('../images1/scalars.webp') no-repeat center center/cover;
+  background: url("../images1/scalars.webp") no-repeat center center/cover;
   color: #fff;
   text-align: center;
   padding: 50px 0;
@@ -2634,19 +2633,19 @@ section#thrust-areas {
 /* Responsive */
 @media (max-width: 992px) {
   .notable-alumni-grid {
-      grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .notable-alumni-grid {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 576px) {
   .notable-alumni-grid {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2804,7 +2803,7 @@ section#thrust-areas {
   font-weight: normal;
   flex-shrink: 0;
 }
-.announce{
+.announce {
   color: white;
 }
 .announcement-list li:hover {
@@ -2830,8 +2829,8 @@ section#thrust-areas {
     font-size: 14px;
     padding: 8px 15px;
   }
-  .announcement-list{
-    font-size:10px;
+  .announcement-list {
+    font-size: 10px;
   }
 }
 
@@ -2991,7 +2990,6 @@ ul li {
 .nav-row-up li.active {
   color: white;
   background: var(--site-color);
-  
 }
 
 .nav-row-up li.active {
@@ -3013,8 +3011,8 @@ ul li {
 
 .nav-row-down .nav-item {
   /* &:not(:last-child) { */
-    border-right: 0.5px solid var(--secondary-color-border);
-    /* border-bottom: 2px solid var(--secondary-color-border); */
+  border-right: 0.5px solid var(--secondary-color-border);
+  /* border-bottom: 2px solid var(--secondary-color-border); */
   /* } */
 }
 
@@ -3041,9 +3039,6 @@ ul li {
 
 .nav-row-down li:first-child:hover {
   border-left: 0.5px solid #92a5b0;
-}
-
-.navbar-brand {
 }
 
 .navbar-brand a {
@@ -3119,7 +3114,7 @@ address {
   }
 
   .navbar-brand a {
-    line-height: 120px;
+    /* line-height: 120px; */
     /*padding-right: 10px !important;
         padding-left: 10px !important;*/
     font-size: 15px;
@@ -4584,7 +4579,6 @@ div.error_form {
     min-height: 560px;
   }
 }
-
 
 @media (min-width: 769px) {
   #homeTopSlider .item video {
