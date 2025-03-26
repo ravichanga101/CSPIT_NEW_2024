@@ -14,13 +14,16 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
       rel="stylesheet"
     />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" /> -->
+
     <style>
       :root {
         --primary-color: #0056b3;
@@ -433,18 +436,14 @@
             mainImage: eventDetails[3] ? eventDetails[3].split(':')[0] : "img/placeholder-event.jpg",
           });
     
-          // Add gallery images for this event
-          const eventImages = eventDetails[3] ? eventDetails[3].split(':') : [];
-          eventImages.forEach((img, imgIndex) => {
-            galleryData.push({
-              url: img || "img/placeholder-gallery.jpg",
-              title: `${eventDetails[0]} - Image ${imgIndex + 1}`,
-              eventId: `E${eventIndex}`,
-            });
-          });
-    
           eventIndex++;
         }
+    
+        // Process gallery images
+        galleryData = data["Gallery"] ? data["Gallery"].split(':').map(img => ({
+          url: img,
+          title: "Gallery Image",
+        })) : [];
       }
     
       // Populate UI with data
@@ -671,17 +670,14 @@
           return;
         }
     
-        // Get up to 8 images for gallery
-        const galleryImages = galleryData.slice(0, 8);
-    
-        galleryImages.forEach((image) => {
+        galleryData.forEach((image) => {
           const galleryItem = document.createElement("div");
           galleryItem.className = "col-md-3 col-sm-6 mb-4";
           galleryItem.innerHTML = `
             <a href="${image.url}" data-lightbox="club-gallery" data-title="${image.title}">
                 <img src="${image.url}" alt="${image.title}" class="event-gallery-img w-100">
             </a>
-        `;
+          `;
           galleryContainer.appendChild(galleryItem);
         });
       }
@@ -700,6 +696,7 @@
           });
       });
     </script>
+    
     
   </body>
 </html>
