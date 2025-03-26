@@ -323,63 +323,63 @@
     <script>
       // Global variables to store club data
       let clubData = {};
-let facultyData = [];
-let coordinatorData = [];
-let eventsData = [];
-let galleryData = [];
-
-// Function to get query parameter from the URL
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
-
-// Function to read Excel file and fetch data dynamically
-async function readExcelFile() {
-  try {
-    const response = await fetch("club.xlsx"); // Load the Excel file
-    const arrayBuffer = await response.arrayBuffer();
-    const data = new Uint8Array(arrayBuffer);
-    const workbook = XLSX.read(data, { type: "array" });
-
-    // Get the first sheet
-    const firstSheetName = workbook.SheetNames[0];
-    const worksheet = workbook.Sheets[firstSheetName];
-
-    // Convert to JSON
-    const jsonData = XLSX.utils.sheet_to_json(worksheet);
-
-    // Get club ID from URL (e.g., `club.html?club=coding`)
-    const clubID = getQueryParam("club");
-
-    if (!clubID) {
-      alert("No club specified in the URL!");
-      return;
-    }
-
-    // Find the matching club by ID
-    const matchedClub = jsonData.find((row) => row["Club ID"]?.toLowerCase() === clubID.toLowerCase());
-
-    if (!matchedClub) {
-      alert("Club not found in the Excel file!");
-      return;
-    }
-
-    // Process the matched row
-    processClubData(matchedClub);
-    populateUI();
-
-    // Hide loader and show content
-    document.getElementById("loader").classList.add("hidden");
-    document.getElementById("club-container").style.display = "block";
-
-  } catch (error) {
-    console.error("Error reading Excel file:", error);
-    alert("Error loading club data. Please try again later.");
-  }
-}
-
-      // Process club data from the single row format
+      let facultyData = [];
+      let coordinatorData = [];
+      let eventsData = [];
+      let galleryData = [];
+    
+      // Function to get query parameter from the URL
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+    
+      // Function to read Excel file and fetch data dynamically
+      async function readExcelFile() {
+        try {
+          const response = await fetch("club_1.xlsx"); // Load the Excel file
+          const arrayBuffer = await response.arrayBuffer();
+          const data = new Uint8Array(arrayBuffer);
+          const workbook = XLSX.read(data, { type: "array" });
+    
+          // Get the first sheet
+          const firstSheetName = workbook.SheetNames[0];
+          const worksheet = workbook.Sheets[firstSheetName];
+    
+          // Convert to JSON
+          const jsonData = XLSX.utils.sheet_to_json(worksheet);
+    
+          // Get club ID from URL (e.g., `club.html?club=coding`)
+          const clubID = getQueryParam("club");
+    
+          if (!clubID) {
+            alert("No club specified in the URL!");
+            return;
+          }
+    
+          // Find the matching club by ID
+          const matchedClub = jsonData.find((row) => row["Club ID"]?.toLowerCase() === clubID.toLowerCase());
+    
+          if (!matchedClub) {
+            alert("Club not found in the Excel file!");
+            return;
+          }
+    
+          // Process the matched row
+          processClubData(matchedClub);
+          populateUI();
+    
+          // Hide loader and show content
+          document.getElementById("loader").classList.add("hidden");
+          document.getElementById("club-container").style.display = "block";
+    
+        } catch (error) {
+          console.error("Error reading Excel file:", error);
+          alert("Error loading club data. Please try again later.");
+        }
+      }
+    
+      // Process club data from the single cell format for events
       function processClubData(data) {
         // Basic club info
         clubData = {
@@ -387,9 +387,8 @@ async function readExcelFile() {
           name: data["Club Name"] || "Club Name",
           logo: data["Logo"] || "",
           about: data["About"] || "About the club...",
-          // Default values for stats
-          // Default value
         };
+    
         // Process faculty coordinators
         if (data["Faculty Coordinators"]) {
           const facultyList = data["Faculty Coordinators"].split(";");
@@ -404,6 +403,7 @@ async function readExcelFile() {
             };
           });
         }
+    
         // Process student coordinators
         if (data["Student Coordinators"]) {
           const coordinatorList = data["Student Coordinators"].split(";");
@@ -417,40 +417,36 @@ async function readExcelFile() {
             };
           });
         }
-        // Process events and gallery
-        if (data["Events"]) {
-          const eventsList = data["Events"].split(";");
-          eventsData = [];
-          galleryData = [];
-          eventsList.forEach((event, index) => {
-            const parts = event.trim().split(",");
-            if (parts.length >= 4) {
-              const eventName = parts[0] || "";
-              const eventDate = parts[1] || "";
-              const eventDescription = parts[2] || "";
-              const eventImages = parts[3] ? parts[3].split(":") : [];
-              // Add event
-              eventsData.push({
-                id: `E${index + 1}`,
-                name: eventName,
-                date: eventDate,
-                description: eventDescription,
-                mainImage: eventImages[0] || "img/placeholder-event.jpg",
-              });
-              // Add gallery images for this event
-              eventImages.forEach((img, imgIndex) => {
-                galleryData.push({
-                  url: img || "img/placeholder-gallery.jpg",
-                  title: `${eventName} - Image ${imgIndex + 1}`,
-                  eventId: `E${index + 1}`,
-                });
-              });
-            }
+    
+        // Extract events dynamically from single cell per event
+        eventsData = [];
+        let eventIndex = 1;
+    
+        while (data[`Event ${eventIndex}`]) {
+          const eventDetails = data[`Event ${eventIndex}`].split(';');
+          eventsData.push({
+            name: eventDetails[0] || "Unnamed Event",
+            date: eventDetails[1] || "Unknown Date",
+            description: eventDetails[2] || "No description available",
+            images: eventDetails[3] ? eventDetails[3].split(':') : ["img/placeholder-event.jpg"],
+            report: eventDetails[4] || "",
+            mainImage: eventDetails[3] ? eventDetails[3].split(':')[0] : "img/placeholder-event.jpg",
           });
-          // Update events count
-          clubData.eventsCount = eventsData.length;
+    
+          // Add gallery images for this event
+          const eventImages = eventDetails[3] ? eventDetails[3].split(':') : [];
+          eventImages.forEach((img, imgIndex) => {
+            galleryData.push({
+              url: img || "img/placeholder-gallery.jpg",
+              title: `${eventDetails[0]} - Image ${imgIndex + 1}`,
+              eventId: `E${eventIndex}`,
+            });
+          });
+    
+          eventIndex++;
         }
       }
+    
       // Populate UI with data
       function populateUI() {
         populateClubInfo();
@@ -460,16 +456,17 @@ async function readExcelFile() {
         populateGallery();
         createEventModals();
       }
+    
       // Populate club info
       function populateClubInfo() {
         // Set club logo
         const logoElement = document.getElementById("club-logo");
         logoElement.src = clubData.logo || "img/placeholder-logo.png";
         logoElement.alt = `${clubData.name} Logo`;
-
+    
         // Set club name and tagline
         document.getElementById("club-name").textContent = clubData.name;
-
+    
         // Extract first sentence as tagline if possible
         let aboutText = clubData.about;
         let tagline = aboutText;
@@ -478,40 +475,40 @@ async function readExcelFile() {
           tagline = aboutText.substring(0, firstSentenceEnd + 1);
           aboutText = aboutText.substring(firstSentenceEnd + 1).trim();
         }
-
+    
         document.getElementById("club-tagline").textContent = tagline;
         document.getElementById("club-description").textContent = aboutText;
         document.getElementById("club-lead").textContent = tagline;
-
+    
         // Set club badges
         const badgesContainer = document.getElementById("club-badges");
         badgesContainer.innerHTML = `
-        <span class="badge bg-light text-dark me-2 mb-2 p-2">
-            <i class="fas fa-calendar-alt me-1"></i> Est. 2018
-        </span>
-        <span class="badge bg-light text-dark me-2 mb-2 p-2">
-            <i class="fas fa-users me-1"></i> ${clubData.membersCount}+ Members
-        </span>
-        <span class="badge bg-light text-dark me-2 mb-2 p-2">
-            <i class="fas fa-trophy me-1"></i> ${clubData.awardsCount}+ Awards
-        </span>
-        <span class="badge bg-light text-dark me-2 mb-2 p-2">
-            <i class="fas fa-laptop-code me-1"></i> Weekly Meetings
-        </span>
-    `;
+          <span class="badge bg-light text-dark me-2 mb-2 p-2">
+              <i class="fas fa-calendar-alt me-1"></i> Est. 2018
+          </span>
+          <span class="badge bg-light text-dark me-2 mb-2 p-2">
+              <i class="fas fa-users me-1"></i> ${clubData.membersCount}+ Members
+          </span>
+          <span class="badge bg-light text-dark me-2 mb-2 p-2">
+              <i class="fas fa-trophy me-1"></i> ${clubData.awardsCount}+ Awards
+          </span>
+          <span class="badge bg-light text-dark me-2 mb-2 p-2">
+              <i class="fas fa-laptop-code me-1"></i> Weekly Meetings
+          </span>
+        `;
       }
-
+    
       // Populate faculty section
       function populateFaculty() {
         const facultyContainer = document.getElementById("faculty-container");
         facultyContainer.innerHTML = ""; // Clear existing content
-
+    
         if (facultyData.length === 0) {
           facultyContainer.innerHTML =
             '<div class="col-12 text-center"><p>No faculty advisors found.</p></div>';
           return;
         }
-
+    
         facultyData.forEach((faculty) => {
           const facultyCard = document.createElement("div");
           facultyCard.className = "col-md-4 col-sm-6 mb-4";
@@ -535,18 +532,16 @@ async function readExcelFile() {
                     </p>
                 </div>
             </div>
-        `;
+          `;
           facultyContainer.appendChild(facultyCard);
         });
       }
-
+    
       // Populate coordinators section
       function populateCoordinators() {
-        const coordinatorContainer = document.getElementById(
-          "coordinator-container"
-        );
+        const coordinatorContainer = document.getElementById("coordinator-container");
         coordinatorContainer.innerHTML = ""; // Clear existing content
-
+    
         if (coordinatorData.length === 0) {
           coordinatorContainer.innerHTML =
             '<div class="col-12 text-center"><p>No student coordinators found.</p></div>';
@@ -572,118 +567,71 @@ async function readExcelFile() {
                     </p>
                 </div>
             </div>
-        `;
+          `;
           coordinatorContainer.appendChild(coordinatorCard);
         });
       }
+    
       // Populate events section
       function populateEvents() {
         const eventsContainer = document.getElementById("events-container");
         eventsContainer.innerHTML = ""; // Clear existing content
+    
         if (eventsData.length === 0) {
-          eventsContainer.innerHTML =
-            '<div class="col-12 text-center"><p>No events found.</p></div>';
+          eventsContainer.innerHTML = '<div class="col-12 text-center"><p>No events found.</p></div>';
           return;
         }
-        // Get most recent 3 events
-        const recentEvents = eventsData.slice(0, 3);
-        recentEvents.forEach((event) => {
+    
+        eventsData.forEach((event, index) => {
           const eventCard = document.createElement("div");
           eventCard.className = "col-md-4 mb-4";
           eventCard.innerHTML = `
             <div class="event-card bg-white">
                 <div class="event-img-container">
-                    <img src="${event.mainImage}" alt="${
-            event.name
-          }" class="event-img">
+                    <img src="${event.mainImage}" alt="${event.name}" class="event-img">
                     <div class="achievement-badge">${event.date}</div>
                 </div>
                 <div class="p-4">
                     <h4 class="mb-3">${event.name}</h4>
-                    <p>${event.description.substring(0, 120)}${
-            event.description.length > 120 ? "..." : ""
-          }</p>
-                    <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#eventModal-${
-                      event.id
-                    }">
+                    <p>${event.description.substring(0, 120)}${event.description.length > 120 ? "..." : ""}</p>
+                    <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#eventModal-${index}">
                         <i class="fas fa-info-circle me-1"></i> View Details
                     </button>
                 </div>
             </div>
-        `;
+          `;
           eventsContainer.appendChild(eventCard);
         });
+    
+        createEventModals();
       }
-      // Populate gallery section
-      function populateGallery() {
-        const galleryContainer = document.getElementById("gallery-container");
-        galleryContainer.innerHTML = ""; // Clear existing content
-
-        if (galleryData.length === 0) {
-          galleryContainer.innerHTML =
-            '<div class="col-12 text-center"><p>No gallery images found.</p></div>';
-          return;
-        }
-
-        // Get up to 8 images for gallery
-        const galleryImages = galleryData.slice(0, 8);
-
-        galleryImages.forEach((image) => {
-          const galleryItem = document.createElement("div");
-          galleryItem.className = "col-md-3 col-sm-6 mb-4";
-          galleryItem.innerHTML = `
-            <a href="${image.url}" data-lightbox="club-gallery" data-title="${image.title}">
-                <img src="${image.url}" alt="${image.title}" class="event-gallery-img w-100">
-            </a>
-        `;
-          galleryContainer.appendChild(galleryItem);
-        });
-      }
-
+    
       // Create event modals
       function createEventModals() {
         const modalsContainer = document.getElementById("modals-container");
         modalsContainer.innerHTML = ""; // Clear existing content
-
-        eventsData.forEach((event) => {
-          // Get images for this event
-          const eventImages = galleryData.filter(
-            (img) => img.eventId === event.id
-          );
-
+    
+        eventsData.forEach((event, index) => {
+          const eventImages = event.images.map(img => `
+            <div class="col-md-4 col-6 mb-3">
+                <a href="${img}" data-lightbox="event-${index}" data-title="${event.name}">
+                    <img src="${img}" alt="${event.name}" class="event-gallery-img w-100">
+                </a>
+            </div>
+          `).join("");
+    
           const modal = document.createElement("div");
           modal.className = "modal fade";
-          modal.id = `eventModal-${event.id}`;
+          modal.id = `eventModal-${index}`;
           modal.setAttribute("tabindex", "-1");
-          modal.setAttribute("aria-labelledby", `eventModalLabel-${event.id}`);
+          modal.setAttribute("aria-labelledby", `eventModalLabel-${index}`);
           modal.setAttribute("aria-hidden", "true");
-
-          let imagesHTML = "";
-          if (eventImages.length > 0) {
-            imagesHTML = `
-                <div class="mt-4">
-                    <h5>Event Gallery</h5>
-                    <div class="row">
-                        ${eventImages
-                          .map(
-                            (img) => `
-                            <div class="col-md-4 col-6 mb-3">
-                                <a href="${img.url}" data-lightbox="event-${event.id}" data-title="${img.title}">
-                                    <img src="${img.url}" alt="${img.title}" class="event-gallery-img w-100">
-                                </a>
-                            </div>
-                        `
-                          )
-                          .join("")}
-                    </div>
-                </div>
-            `;
-          }
+    
           modal.innerHTML = `
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="eventModalLabel-${event.id}">${event.name}</h5>
+                        <h5 class="modal-title" id="eventModalLabel-${index}">${event.name}</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -696,22 +644,53 @@ async function readExcelFile() {
                             </div>
                             <p>${event.description}</p>
                         </div>
-                        ${imagesHTML}
+                        ${eventImages ? `<h5>Event Gallery</h5><div class="row">${eventImages}</div>` : ""}
+                        ${event.report ? `<a href="${event.report}" target="_blank" class="btn btn-primary mt-3">
+                            <i class="fas fa-file-pdf"></i> View Report
+                        </a>` : ""}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
-        `;
+          `;
+    
           modalsContainer.appendChild(modal);
         });
       }
+    
+      // Populate gallery section
+      function populateGallery() {
+        const galleryContainer = document.getElementById("gallery-container");
+        galleryContainer.innerHTML = ""; // Clear existing content
+    
+        if (galleryData.length === 0) {
+          galleryContainer.innerHTML =
+            '<div class="col-12 text-center"><p>No gallery images found.</p></div>';
+          return;
+        }
+    
+        // Get up to 8 images for gallery
+        const galleryImages = galleryData.slice(0, 8);
+    
+        galleryImages.forEach((image) => {
+          const galleryItem = document.createElement("div");
+          galleryItem.className = "col-md-3 col-sm-6 mb-4";
+          galleryItem.innerHTML = `
+            <a href="${image.url}" data-lightbox="club-gallery" data-title="${image.title}">
+                <img src="${image.url}" alt="${image.title}" class="event-gallery-img w-100">
+            </a>
+        `;
+          galleryContainer.appendChild(galleryItem);
+        });
+      }
+    
       // Initialize the page
       document.addEventListener("DOMContentLoaded", function () {
         // Load club data from Excel
         readExcelFile();
-
+    
         // Set up event listeners
         document
           .getElementById("register-btn")
@@ -721,5 +700,6 @@ async function readExcelFile() {
           });
       });
     </script>
+    
   </body>
 </html>
