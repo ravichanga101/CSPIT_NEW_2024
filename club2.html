@@ -337,7 +337,7 @@
       // Function to read Excel file and fetch data dynamically
       async function readExcelFile() {
         try {
-          const response = await fetch("club_1.xlsx"); // Load the Excel file
+          const response = await fetch("club.xlsx"); // Load the Excel file
           const arrayBuffer = await response.arrayBuffer();
           const data = new Uint8Array(arrayBuffer);
           const workbook = XLSX.read(data, { type: "array" });
