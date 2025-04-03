@@ -1150,15 +1150,44 @@
                   id,
                   value,
                   isLink = false,
-                  accordionId = null
+                  accordionId = null,
+                  isList = false
                 ) => {
                   const element = document.getElementById(id);
                   const accordionItem = accordionId
                     ? document.getElementById(accordionId)
                     : null;
 
+                //     if (value && value !== "NA" && value.trim() !== "") {
+                //   if (isList) {
+                //     const items = value.split("|").map(item => item.trim()); // Split and trim
+                //     element.innerHTML = `<ol>${items.map(item => `<li>${item}</li>`).join("")}</ol>`;
+                //     element.style.display = "block"; // Ensure visibility
+                //   } else if (isLink) {
+                //     element.href = value;
+                //     element.style.display = "inline"; // Ensure visibility for links
+                //   } else {
+                //     element.textContent = value;
+                //     element.style.display = "block"; // Ensure visibility for text
+                //   }
+
+                //   if (accordionItem) {
+                //     accordionItem.style.display = "block"; // Make accordion visible if content is valid
+                //   }
+                // } else {
+                //   element.style.display = "none"; // Hide element if value is invalid
+                //   if (accordionItem) {
+                //     accordionItem.style.display = "none"; // Hide accordion if no content
+                //   }
+                // }
+              
                   if (value && value !== "NA" && value.trim() !== "") {
-                    if (isLink) {
+                    if (isList) {
+                      const items = value.split(";").map(item => item.trim()); // Split and trim
+                      element.innerHTML = `<ol style="padding: 10px; margin: 5px;">${items.map(item => `<li>${item}</li>`).join("")}</ol>`;
+                      element.style.display = "block"; // Ensure visibility
+                    }
+                    else if (isLink) {
                       element.href = value;
                       element.style.display = "inline"; // Ensure visibility for links
                     } else {
@@ -1198,8 +1227,8 @@
                   false,
                   "headingTwo"
                 );
-                updateContent("faculty-subject", subjects, false, "headingOne");
-                updateContent("faculty-awards", awards, false, "headingFive");
+                updateContent("faculty-subject", subjects, false, "headingOne",true);
+                updateContent("faculty-awards", awards, false, "headingFive",true);
                 updateContent(
                   "faculty-research",
                   research,
@@ -1212,8 +1241,8 @@
                   false,
                   "headingFour"
                 );
-                updateContent("faculty-membership", membership, false, "headingMembership");
-                updateContent("faculty-certification", certification, false, "headingCertification");
+                updateContent("faculty-membership", membership, false, "headingMembership",true);
+                updateContent("faculty-certification", certification, false, "headingCertification",true);
                 updateContent("faculty-email", `mailto:${email}`, true);
                 updateContent("faculty-linkedin", linkedin, true);
                 updateContent("faculty-website", website, true);
