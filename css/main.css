@@ -978,7 +978,7 @@ img {
 .professional-society h2,
 .testimonials-section h2,
 .mou-section h2,
-.notable-alumni-section h2 {
+.notable-alumni-section h2, .recruiters-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 35px;
@@ -2523,6 +2523,7 @@ section#thrust-areas {
   text-align: justify;
 }
 
+
 /* RESPONSIVENESS */
 
 /* Tablet View: Show 2 cards per row */
@@ -2542,7 +2543,7 @@ section#thrust-areas {
     gap: 0px; /* Minimal spacing */
     justify-content: flex-start;
   }
-
+  
   .testimonial-card {
     flex: 0 0 100%; /* Full width for a single card */
   }
@@ -2553,11 +2554,206 @@ section#thrust-areas {
   .testimonials-slider {
     overflow: hidden; /* Ensures proper sliding */
   }
-
+  
   .testimonials-container {
     transition: transform 0.5s ease-in-out;
   }
 }
+/* -------------- MAJOR RECRUITERS----------------- */
+.recruiters-section {
+  padding: 40px 0;
+  /* background-color: #f8f9fa; */
+}
+
+.section-title h2 {
+  /* font-size: 2.5rem;
+  font-weight: 700; */
+  color: #000000;
+  /* margin-bottom: 0.5rem; */
+}
+
+/* .title-underline {
+  height: 4px;
+  width: 70px;
+  background-color: #0d6efd;
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+} */
+/* 
+.section-title p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+} */
+
+/* Placement Stats */
+.placement-stats {
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  text-align: center;
+  border-radius: 15px;
+  height: 100% !important;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem 1rem;
+  height: 100%;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* Recruiters Container */
+.recruiters-container {
+  margin-bottom: 2rem;
+}
+
+.recruiter-logo {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s ease-out, box-shadow 0.05s ease-out, background 0.05s ease-out;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+.recruiter-logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(13, 110, 253, 0.2); */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.recruiter-logo:hover::before {
+  opacity: 1;
+}
+
+.recruiter-logo:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+}
+
+.recruiter-logo img {
+  max-width: 80%;
+  max-height: 80px;
+  object-fit: fill;
+  z-index: 2;
+  position: relative;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .section-title h2 {
+      font-size: 2.2rem;
+  }
+  
+  .stat-card h3 {
+      font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .recruiters-section {
+      padding: 60px 0;
+  }
+  
+  .section-title h2 {
+      font-size: 2rem;
+  }
+  
+  .stat-card h3 {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .recruiters-section {
+      padding: 50px 0;
+  }
+  
+  .section-title h2 {
+      font-size: 1.8rem;
+  }
+  
+  .stat-card {
+      padding: 1.2rem 0.8rem;
+  }
+  
+  .stat-card h3 {
+      font-size: 1.8rem;
+  }
+  
+  .recruiter-logo {
+      height: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title h2 {
+      font-size: 1.6rem;
+  }
+  
+  .stat-card h3 {
+      font-size: 1.6rem;
+  }
+  
+  .recruiter-logo {
+      height: 90px;
+      padding: 1rem;
+  }
+  
+  .recruiter-logo img {
+      max-height: 50px;
+  }
+}
+
 /*  ------------------ ALUMNI --------------------- */
 .notable-alumni-section {
   position: relative;
