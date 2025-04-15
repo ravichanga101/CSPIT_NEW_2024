@@ -586,7 +586,9 @@
                             href="research_facilities1.html"
                             target="_blank"
                           >
-                            <span>Sophisticated Instruments</span>
+                            <span
+                              >Research Labs / Sophisticated Instruments</span
+                            >
                           </a>
                         </li>
                         <li class="subnav-unit dropdown-submenu second-sub2">
@@ -1040,16 +1042,18 @@
     <script src="./js/sidemenu.js"></script>
     <section class="lab-facilities-container">
       <div class="lab-facilities-wrapper py-4">
-        <h1 class="lab-facilities-title">Sophisticated Instruments</h1>
-        <div class="row">
-          <div class="col-md-2 department-list-column">
+        <h1 class="lab-facilities-title">
+          Research Labs / Sophisticated Instruments
+        </h1>
+        <div class="row justify-content-center">
+          <!-- <div class="col-md-2 department-list-column">
             <div
               class="accordion department-list"
               id="department-list-accordion"
             >
-              <!-- Departments will be dynamically populated -->
+              
             </div>
-          </div>
+          </div> -->
           <div class="col-md-10 instrument-cards-column">
             <div id="instrument-cards-grid" class="row g-4">
               <!-- Instruments will be dynamically populated -->
@@ -1127,94 +1131,39 @@
               });
             });
 
-            renderDepartmentList();
-            renderInstrumentCards(Object.keys(instrumentData)[0]);
+            renderAllInstruments(); // Render all instruments after loading data
           })
           .catch((error) => {
             console.error("Error loading Excel file:", error);
           });
       }
 
-      function renderDepartmentList() {
-        const departmentListContainer = document.getElementById(
-          "department-list-accordion"
-        );
-        departmentListContainer.innerHTML = Object.keys(instrumentData)
-          .map(
-            (dept, index) => `
-                <div class="accordion-item">
-                    <h2 class="instrument-accordion-header" id="department-heading-${index}">
-                        <button class="accordion-button ${
-                          index !== 0 ? "collapsed" : ""
-                        }" 
-                                type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#department-collapse-${index}"
-                                aria-expanded="${index === 0}"
-                                aria-controls="department-collapse-${index}">
-                            ${dept}
-                        </button>
-                    </h2>
-                    <div id="department-collapse-${index}" 
-                         class="accordion-collapse collapse ${
-                           index === 0 ? "show" : ""
-                         }"
-                         aria-labelledby="department-heading-${index}"
-                         data-bs-parent="#department-list-accordion">
-                        <div class="accordion-body">
-                            ${instrumentData[dept].length} Instruments
-                        </div>
-                    </div>
-                </div>
-            `
-          )
-          .join("");
-
-        departmentListContainer
-          .querySelectorAll(".accordion-button")
-          .forEach((button) => {
-            button.addEventListener("click", (e) => {
-              const department = e.target.textContent.trim();
-              renderInstrumentCards(department);
-            });
-          });
-      }
-
-      function renderInstrumentCards(department) {
+      function renderAllInstruments() {
         const instrumentCardsContainer = document.getElementById(
           "instrument-cards-grid"
         );
-        const instruments = instrumentData[department];
+        const allInstruments = Object.values(instrumentData).flat(); // Combine all instruments from all departments
 
-        instrumentCardsContainer.innerHTML = instruments
+        instrumentCardsContainer.innerHTML = allInstruments
           .map(
-            (instrument, index) => `
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card instrument-card h-100" 
-                         data-bs-toggle="modal" 
-                         data-bs-target="#instrument-details-popup" 
-                         data-instrument-name="${instrument.name}">
-                        <img src="${
-                          instrument.image
-                        }" class="card-img-top instrument-image" alt="${
-              instrument.name
-            }">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">${
-                              instrument.name
-                            }</h5>
-                            <p class="card-text">${
-                              instrument.specs[0] ||
-                              "No specifications available"
-                            }</p>
-                        </div>
-                    </div>
+            (instrument) => `
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card instrument-card h-100" 
+                     data-bs-toggle="modal" 
+                     data-bs-target="#instrument-details-popup" 
+                     data-instrument-name="${instrument.name}">
+                  <img src="${instrument.image}" class="card-img-top instrument-image" alt="${instrument.name}">
+                  <div class="card-body">
+                    <h5 class="card-title text-primary">${instrument.name}</h5>
+                    
+                  </div>
                 </div>
+              </div>
             `
           )
           .join("");
 
-        setupInstrumentPopupListeners(instruments);
+        setupInstrumentPopupListeners(allInstruments);
       }
 
       function setupInstrumentPopupListeners(instruments) {
@@ -1294,6 +1243,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         const filePath = "./research_facilities.xlsx";
         loadExcelDataFromServer(filePath);
+        renderAllInstruments(); // Render all instruments after loading data
       });
     </script>
 
