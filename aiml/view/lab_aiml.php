@@ -44,7 +44,7 @@
                   </td>
                </tr>
                <tr>
-                  <td rowspan="6">6388888</td>
+                  <td rowspan="6">638</td>
                   <td rowspan="6">Artificial Intelligence & Machine Learning Lab</td>
                   <td rowspan="6">2022</td>
                   <td  class="text-left"><b>Research & Development Server:</b><br/>
