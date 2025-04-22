@@ -140,7 +140,7 @@
       .event-img-container {
         overflow: hidden;
         position: relative;
-        height: 200px;
+        height: 300px;
       }
 
       .event-img {
@@ -271,11 +271,12 @@
               class="club-logo"
             />
           </div>
+          <!-- Badges will be populated here -->
           <div class="col-md-9">
             <h1 class="display-4 fw-bold mb-2" id="club-name">Loading...</h1>
             <p class="lead mb-3" id="club-tagline">Loading...</p>
             <div class="d-flex flex-wrap mt-3" id="club-badges">
-              <!-- Badges will be populated here -->
+              
             </div>
           </div>
         </div>
@@ -419,9 +420,9 @@
             const parts = coordinator.trim().split(",");
             return {
               name: parts[0] || "",
-              position: parts[1] || "",
-              email: parts[2] || "",
-              phone: parts[3] || "",
+              idNumber: parts[1] || "",
+              position: parts[2] || "",
+              
             };
           });
         }
@@ -437,11 +438,11 @@
             date: eventDetails[1] || "Unknown Date",
             description: eventDetails[2] || "No description available",
             images: eventDetails[3]
-              ? eventDetails[3].split(":")
+              ? eventDetails[3].split(",")
               : ["img/placeholder-event.jpg"],
             report: eventDetails[4] || "",
             mainImage: eventDetails[3]
-              ? eventDetails[3].split(":")[0]
+              ? eventDetails[3].split(",")[0]
               : "img/placeholder-event.jpg",
           });
 
@@ -491,21 +492,21 @@
         document.getElementById("club-lead").textContent = tagline;
 
         // Set club badges
-        const badgesContainer = document.getElementById("club-badges");
-        badgesContainer.innerHTML = `
-          <span class="badge bg-light text-dark me-2 mb-2 p-2">
-              <i class="fas fa-calendar-alt me-1"></i> Est. 2018
-          </span>
-          <span class="badge bg-light text-dark me-2 mb-2 p-2">
-              <i class="fas fa-users me-1"></i> ${clubData.membersCount}+ Members
-          </span>
-          <span class="badge bg-light text-dark me-2 mb-2 p-2">
-              <i class="fas fa-trophy me-1"></i> ${clubData.awardsCount}+ Awards
-          </span>
-          <span class="badge bg-light text-dark me-2 mb-2 p-2">
-              <i class="fas fa-laptop-code me-1"></i> Weekly Meetings
-          </span>
-        `;
+        // const badgesContainer = document.getElementById("club-badges");
+        // badgesContainer.innerHTML = `
+        //   <span class="badge bg-light text-dark me-2 mb-2 p-2">
+        //       <i class="fas fa-calendar-alt me-1"></i> Est. 2018
+        //   </span>
+        //   <span class="badge bg-light text-dark me-2 mb-2 p-2">
+        //       <i class="fas fa-users me-1"></i> ${clubData.membersCount}+ Members
+        //   </span>
+        //   <span class="badge bg-light text-dark me-2 mb-2 p-2">
+        //       <i class="fas fa-trophy me-1"></i> ${clubData.awardsCount}+ Awards
+        //   </span>
+        //   <span class="badge bg-light text-dark me-2 mb-2 p-2">
+        //       <i class="fas fa-laptop-code me-1"></i> Weekly Meetings
+        //   </span>
+        // `;
       }
 
       // Populate faculty section
@@ -536,10 +537,7 @@
                         <i class="fas fa-envelope text-primary me-2"></i>
                         <a href="mailto:${faculty.email}" class="text-decoration-none">${faculty.email}</a>
                     </p>
-                    <p class="mb-0">
-                        <i class="fas fa-phone text-primary me-2"></i>
-                        <a href="tel:${faculty.phone}" class="text-decoration-none">${faculty.phone}</a>
-                    </p>
+                    
                 </div>
             </div>
           `;
@@ -569,14 +567,10 @@
                     <p class="text-muted mb-0">${coordinator.position}</p>
                 </div>
                 <div class="mt-3">
-                    <p class="mb-2 small">
-                        <i class="fas fa-envelope text-primary me-2"></i>
-                        <a href="mailto:${coordinator.email}" class="text-decoration-none">${coordinator.email}</a>
-                    </p>
                     <p class="mb-0 small">
-                        <i class="fas fa-phone text-primary me-2"></i>
-                        <a href="tel:${coordinator.phone}" class="text-decoration-none">${coordinator.phone}</a>
-                    </p>
+                      <i class="fas fa-id-card text-primary me-2"></i>
+                      ${coordinator.idNumber}
+                  </p>
                 </div>
             </div>
           `;
@@ -608,9 +602,7 @@
                 </div>
                 <div class="p-4">
                     <h4 class="mb-3">${event.name}</h4>
-                    <p>${event.description.substring(0, 120)}${
-            event.description.length > 120 ? "..." : ""
-          }</p>
+
                     <button class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#eventModal-${index}">
                         <i class="fas fa-info-circle me-1"></i> View Details
                     </button>
