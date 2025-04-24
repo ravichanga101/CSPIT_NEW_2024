@@ -1066,14 +1066,14 @@
       <div class="header">
         <h2 id="page-heading">SYLLABUS</h2>
         <!-- <a href="index.html" class="back-home" onclick="goBackToHome()">← Back to Home</a> -->
-        <button
+        <!-- <button
           id="back-button"
           class="back-button"
           style="display: none"
           onclick="navigateBack()"
         >
           Go Back
-        </button>
+        </button> -->
       </div>
 
       <!-- Main content area -->
@@ -1595,9 +1595,15 @@
 
       // Function to get folder ID from URL
       function getFolderIdFromURL() {
-        return (
-          getURLParameter("folderId") || "1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2"
-        ); // Default folder if none provided
+        return getURLParameter("folderId") || "1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2"; // Default folder if none provided
+      }
+
+      // Function to update URL parameters without page reload
+      function updateURLParameters(folderId, heading) {
+        const newUrl = new URL(window.location.href);
+        newUrl.searchParams.set('folderId', folderId);
+        newUrl.searchParams.set('heading', heading);
+        window.history.pushState({}, '', newUrl);
       }
 
       async function fetchFiles(folderId) {
@@ -1655,10 +1661,6 @@
 
             fileList.appendChild(link);
           });
-
-          // Show back button if there's a folder history
-          document.getElementById("back-button").style.display =
-            folderStack.length > 0 ? "block" : "none";
         } catch (error) {
           console.error("Error fetching files:", error);
           document.getElementById("file-list").textContent =
@@ -1667,32 +1669,23 @@
       }
 
       function openFolder(folderId) {
-        folderStack.push(folderId);
+        const heading = getURLParameter("heading") || "SYLLABUS";
+        updateURLParameters(folderId, heading);
         fetchFiles(folderId);
-      }
-
-      function navigateBack() {
-        folderStack.pop();
-        const previousFolder =
-          folderStack[folderStack.length - 1] || getFolderIdFromURL(); // Return to last folder or default folder
-        fetchFiles(previousFolder);
-      }
-
-      function goBackToHome() {
-        // Redirect to home page
-        window.location.href = "index.html"; // Replace with your actual homepage URL
-
-        // Close the current tab
-        window.close();
       }
 
       // Initial setup when page loads
       window.onload = () => {
-        updatePageHeading(); // Update the heading and title based on URL
-        const folderId = getFolderIdFromURL(); // Get the folder ID from URL
-        fetchFiles(folderId); // Fetch files in the folder
-        const newUrl = window.location.origin + window.location.pathname;
-        history.replaceState({}, document.title, newUrl);
+        updatePageHeading();
+        const folderId = getFolderIdFromURL();
+        fetchFiles(folderId);
+      };
+
+      // Handle browser back/forward buttons
+      window.onpopstate = () => {
+        updatePageHeading();
+        const folderId = getFolderIdFromURL();
+        fetchFiles(folderId);
       };
     </script>
 
