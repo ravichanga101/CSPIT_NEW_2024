@@ -1997,13 +1997,9 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-    fetch("club.xlsx")
-        .then(response => response.arrayBuffer())
-        .then(data => {
-            const workbook = XLSX.read(data, { type: "array" });
-            const sheet = workbook.Sheets[workbook.SheetNames[0]];
-            const clubs = XLSX.utils.sheet_to_json(sheet);
-
+      fetch("clubs.json")
+        .then(response => response.json())
+        .then(clubs => {
             console.log("Loaded Clubs:", clubs); // Debugging
 
             const container = document.getElementById("clubs-container");
@@ -2025,8 +2021,8 @@
                 container.appendChild(clubItem);
             });
         })
-        .catch(error => console.error("Error loading Excel:", error));
-});
+        .catch(error => console.error("Error loading JSON:", error));
+    });
   </script>
   <br><!-- STUDENTS Projects -->
   <section id="students-work" class="student-work-section">
@@ -2190,13 +2186,13 @@
       project2: {
         title: "GAGANMITRA Drones - A Swarm of Drones for Advanced Surveillance ",
         images: ["images1/Projects/Ganagnmitra_Drone_1.webp", "images1/Projects/Gaganmitra_Drone_2.webp"],
-        description: "Unmanned Aerial Systems (UAS), including drones, have improved greatly over the past decade. Drones have proven their value in war zones, delivering medical supplies, and even in areas like transportation, surveillance, surveying, and mapping. Despite these advancements, creating a fully autonomous drone swarm with real-time sensing and decision-making abilities is still a challenge.Our project, GAGANMITRA Drones, focuses on building a swarm of three drones that are efficient, reliable, and well-coordinated. We use a star topology for communication between the Raspberry Pi computers on each drone. A central drone manages the system, ensuring all drones know each other’s positions and actions, such as moving or hovering. The system includes algorithms for real-time sensing. For example, if one drone crosses a boundary, others adjust to bring it back into the safe zone.To avoid a single point of failure (SPOF), any drone can take over as the leader if the central one fails. The drones can also communicate within a 2 km range using advanced telemetry. They are powered by Pixhawk flight controllers, which manage navigation and motor control. We tested these drones in the ROS1 Noetic-Gazebo environment, successfully running formations and verifying algorithms.",
+        description: "Unmanned Aerial Systems (UAS), including drones, have improved greatly over the past decade. Drones have proven their value in war zones, delivering medical supplies, and even in areas like transportation, surveillance, surveying, and mapping. Despite these advancements, creating a fully autonomous drone swarm with real-time sensing and decision-making abilities is still a challenge.Our project, GAGANMITRA Drones, focuses on building a swarm of three drones that are efficient, reliable, and well-coordinated. We use a star topology for communication between the Raspberry Pi computers on each drone. A central drone manages the system, ensuring all drones know each other's positions and actions, such as moving or hovering. The system includes algorithms for real-time sensing. For example, if one drone crosses a boundary, others adjust to bring it back into the safe zone.To avoid a single point of failure (SPOF), any drone can take over as the leader if the central one fails. The drones can also communicate within a 2 km range using advanced telemetry. They are powered by Pixhawk flight controllers, which manage navigation and motor control. We tested these drones in the ROS1 Noetic-Gazebo environment, successfully running formations and verifying algorithms.",
         contacts: ["Shashwat Mahindroo [21EC019]", "Sakshi Shah [21CS064]", "Dharmil Patel [22ME013]"],
       },
       project3: {
         title: "Hexapod Robot",
         images: ["images1/Projects/Hexapod_1.webp", "images1/Projects/Hexapod_2.webp"],
-        description: "Vita, our hexapod robot, was developed by Krishang Nigam, Harshil Jayswal, and Masum Pancholi (students of CSPIT’s Electronics and Communication Engineering Department), along with Jaimin Mehta and Zuli Dobariya. This robot was part of a competition where we were selected in the first round, and for the second round of proof of concept, we received ₹50,000 from ROBOFEST 4.0, organized by the Government of Gujarat, to help realize this project. The robot features six legs with 18 degrees of freedom, controlled by an Arduino Mega 2560 microcontroller and an 18-channel servo driver module. Powered by a 7.4V Li-Po battery (5200mAh), it incorporates ultrasonic and gyroscopic sensors alongside a camera module for precise obstacle detection, balance maintenance, and environmental awareness. The use of 3D-printed brackets ensures a lightweight yet robust structure, enhancing its adaptability for diverse terrains.",
+        description: "Vita, our hexapod robot, was developed by Krishang Nigam, Harshil Jayswal, and Masum Pancholi (students of CSPIT's Electronics and Communication Engineering Department), along with Jaimin Mehta and Zuli Dobariya. This robot was part of a competition where we were selected in the first round, and for the second round of proof of concept, we received ₹50,000 from ROBOFEST 4.0, organized by the Government of Gujarat, to help realize this project. The robot features six legs with 18 degrees of freedom, controlled by an Arduino Mega 2560 microcontroller and an 18-channel servo driver module. Powered by a 7.4V Li-Po battery (5200mAh), it incorporates ultrasonic and gyroscopic sensors alongside a camera module for precise obstacle detection, balance maintenance, and environmental awareness. The use of 3D-printed brackets ensures a lightweight yet robust structure, enhancing its adaptability for diverse terrains.",
         contacts: ["Krishang Nigam [23ec063]", "Harshil Iayswal [23ec041]", "Masum Pancholi [23ec066]", "Zuli Dobariya [22AIML009]", "Jaimin Mehta [21ME017]"],
       },
       project4: {
@@ -2208,7 +2204,7 @@
       project5: {
         title: "RickMate: Share Rides, Save More!",
         images: ["images1/Projects/rickmate-1.webp", "images1/Projects/rickmate-2.webp", "images1/Projects/rickmate-3.webp"],
-        description: "RickMate is transforming the way people travel by introducing a smart, shared ride solution that’s cost-effective, convenient, and eco-friendly. Whether you're a student, professional, or traveler, RickMate connects you with others heading in the same direction, allowing you to share the ride and split the cost.How It Works - Match Passengers: RickMate matches passengers based on their destination, travel time, and preferences.Affordable Rides: By sharing a ride, everyone pays less, making transportation more budget-friendly.Connect with Others: Passengers can chat with fellow riders and the driver to coordinate pickup and drop-off locations for a smooth journey.",
+        description: "RickMate is transforming the way people travel by introducing a smart, shared ride solution that's cost-effective, convenient, and eco-friendly. Whether you're a student, professional, or traveler, RickMate connects you with others heading in the same direction, allowing you to share the ride and split the cost.How It Works - Match Passengers: RickMate matches passengers based on their destination, travel time, and preferences.Affordable Rides: By sharing a ride, everyone pays less, making transportation more budget-friendly.Connect with Others: Passengers can chat with fellow riders and the driver to coordinate pickup and drop-off locations for a smooth journey.",
         contacts: ["Renish Mukeshbhai Suriya [D23CS096]", "Kunj Dipakbhai Patel [D23CS097]"],
       },
       project6: {
@@ -2226,7 +2222,7 @@
       project8: {
         title: "AI Enabled Smart Bin",
         images: ["images1/Projects/smart_bin-2.webp", "images1/Projects/Smart_bin-1.webp"],
-        description: "The AI-Enabled Smart Bin is an innovative solution designed to revolutionize waste management by utilizing artificial intelligence (AI) and audio classification technologies. This smart bin employs AI to analyze the sounds generated by discarded items, enabling accurate identification and sorting of various waste types. By improving recycling efficiency and reducing contamination, the system promotes sustainable waste management practices. The smart bin functions by leveraging machine learning to classify waste based on the sound of its collision, sorting it into separate internal compartments. Development begins with clearly defining the problem and collecting audio samples from different types of waste. These audio samples are pre-processed to clean and segment the data for better analysis. Machine learning models, such as Convolutional Neural Networks (CNNs) or Recurrent Neural Networks (RNNs), are trained on the extracted audio features to achieve accurate classification. Once trained, the system’s performance is rigorously evaluated. The project integrates key hardware components—microphones, a processing unit, and a sorting mechanism—with real-time software for waste classification and sorting. After deployment, the system's performance is monitored and refined to enhance efficiency. This project demonstrates the effective use of technologies like audio processing, machine learning, embedded systems, and software development to support sustainable recycling and waste management.",
+        description: "The AI-Enabled Smart Bin is an innovative solution designed to revolutionize waste management by utilizing artificial intelligence (AI) and audio classification technologies. This smart bin employs AI to analyze the sounds generated by discarded items, enabling accurate identification and sorting of various waste types. By improving recycling efficiency and reducing contamination, the system promotes sustainable waste management practices. The smart bin functions by leveraging machine learning to classify waste based on the sound of its collision, sorting it into separate internal compartments. Development begins with clearly defining the problem and collecting audio samples from different types of waste. These audio samples are pre-processed to clean and segment the data for better analysis. Machine learning models, such as Convolutional Neural Networks (CNNs) or Recurrent Neural Networks (RNNs), are trained on the extracted audio features to achieve accurate classification. Once trained, the system's performance is rigorously evaluated. The project integrates key hardware components—microphones, a processing unit, and a sorting mechanism—with real-time software for waste classification and sorting. After deployment, the system's performance is monitored and refined to enhance efficiency. This project demonstrates the effective use of technologies like audio processing, machine learning, embedded systems, and software development to support sustainable recycling and waste management.",
         contacts: ["Deep Kakadiya", "Dhwani navadia", "Dhairya Isotiya ", "Yug Thummar"],
       },
     };
@@ -2759,7 +2755,7 @@
         id: 3,
         name: 'Nilesh Ranpura',
         designation: 'Project Manager, eInfochips',
-        testimonial: 'We have been hiring students from your department as well as giving them Summer Internships in our organization. The quality of the students from Electronics and Communication Engineering of CHARUSAT University is outstanding and the one’s we have employed from campus recruitment are truly an asset to our organization.',
+        testimonial: 'We have been hiring students from your department as well as giving them Summer Internships in our organization. The quality of the students from Electronics and Communication Engineering of CHARUSAT University is outstanding and the ones we have employed from campus recruitment are truly an asset to our organization.', 
         imageSrc: 'https://www.charusat.ac.in/cspit/images/testimony/ec/testimonial-3.webp'
       },
       {
@@ -2787,7 +2783,7 @@
         id: 7,
         designation: 'Student',
         name: 'Shail Macwan',
-        testimonial: "I am truly thankful for the incredible learning environment and the many opportunities that have helped me grow. The department's focus on fields like AI, ML and Competitive programming, along with the workshops and technical events, has given me the chance to apply what I’ve learned in practical, real-world situations. These experiences have not only strengthened my skills but also allowed me to work closely with my peers and come up with creative solutions. The support and encouragement from the faculty have been instrumental in shaping both my academic journey and future career.",
+        testimonial: "I am truly thankful for the incredible learning environment and the many opportunities that have helped me grow. The department's focus on fields like AI, ML and Competitive programming, along with the workshops and technical events, has given me the chance to apply what I've learned in practical, real-world situations. These experiences have not only strengthened my skills but also allowed me to work closely with my peers and come up with creative solutions. The support and encouragement from the faculty have been instrumental in shaping both my academic journey and future career.",
         imageSrc: './images1/Shail.jpg'
       },
       {
@@ -3923,7 +3919,7 @@ if (statsSection) scrollObserver.observe(statsSection);
       $("video").get(0).play();
     }
     if (userbrowser == "Firefox") {
-      // $('.banner-para br').replaceWith(' <br> ');
+      // $('.banner-para br').replaceWith(' 'br> ');
     }
     /* IPAD */
     var deviceAgent = navigator.userAgent.toLowerCase();

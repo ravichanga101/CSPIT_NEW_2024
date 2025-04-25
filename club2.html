@@ -342,20 +342,14 @@
         return urlParams.get(param);
       }
 
-      // Function to read Excel file and fetch data dynamically
-      async function readExcelFile() {
+      // Function to fetch club data from JSON file
+      async function fetchClubData() {
         try {
-          const response = await fetch("club.xlsx"); // Load the Excel file
-          const arrayBuffer = await response.arrayBuffer();
-          const data = new Uint8Array(arrayBuffer);
-          const workbook = XLSX.read(data, { type: "array" });
-
-          // Get the first sheet
-          const firstSheetName = workbook.SheetNames[0];
-          const worksheet = workbook.Sheets[firstSheetName];
-
-          // Convert to JSON
-          const jsonData = XLSX.utils.sheet_to_json(worksheet);
+          const response = await fetch("clubs.json");
+          if (!response.ok) {
+            throw new Error('Failed to fetch club data');
+          }
+          const jsonData = await response.json();
 
           // Get club ID from URL (e.g., `club.html?club=coding`)
           const clubID = getQueryParam("club");
@@ -367,15 +361,15 @@
 
           // Find the matching club by ID
           const matchedClub = jsonData.find(
-            (row) => row["Club ID"]?.toLowerCase() === clubID.toLowerCase()
+            (club) => club["Club ID"]?.toLowerCase() === clubID.toLowerCase()
           );
 
           if (!matchedClub) {
-            alert("Club not found in the Excel file!");
+            alert("Club not found!");
             return;
           }
 
-          // Process the matched row
+          // Process the matched club data
           processClubData(matchedClub);
           populateUI();
 
@@ -383,12 +377,12 @@
           document.getElementById("loader").classList.add("hidden");
           document.getElementById("club-container").style.display = "block";
         } catch (error) {
-          console.error("Error reading Excel file:", error);
+          console.error("Error fetching club data:", error);
           alert("Error loading club data. Please try again later.");
         }
       }
 
-      // Process club data from the single cell format for events
+      // Process club data from JSON format
       function processClubData(data) {
         // Basic club info
         clubData = {
@@ -399,63 +393,40 @@
         };
 
         // Process faculty coordinators
-        if (data["Faculty Coordinators"]) {
-          const facultyList = data["Faculty Coordinators"].split(";");
-          facultyData = facultyList.map((faculty) => {
-            const parts = faculty.trim().split(",");
-            return {
-              name: parts[0] || "",
-              position: parts[1] || "",
-              email: parts[2] || "",
-              phone: parts[3] || "",
-              image: parts[4] || "img/placeholder-profile.jpg",
-            };
-          });
-        }
+        facultyData = data["Faculty Coordinators"] || [];
+        facultyData = facultyData.map(faculty => ({
+          name: faculty.Name || "",
+          position: faculty.Role || "",
+          email: faculty.Email || "",
+          phone: faculty.Phone || "",
+          image: faculty.Image || "img/placeholder-profile.jpg"
+        }));
 
         // Process student coordinators
-        if (data["Student Coordinators"]) {
-          const coordinatorList = data["Student Coordinators"].split(";");
-          coordinatorData = coordinatorList.map((coordinator) => {
-            const parts = coordinator.trim().split(",");
-            return {
-              name: parts[0] || "",
-              idNumber: parts[1] || "",
-              position: parts[2] || "",
-              
-            };
-          });
-        }
+        coordinatorData = data["Student Coordinators"] || [];
+        coordinatorData = coordinatorData.map(coordinator => ({
+          name: coordinator.Name || "",
+          idNumber: coordinator.ID || "",
+          position: coordinator.Position || ""
+        }));
 
-        // Extract events dynamically from single cell per event
-        eventsData = [];
-        let eventIndex = 1;
-
-        while (data[`Event ${eventIndex}`]) {
-          const eventDetails = data[`Event ${eventIndex}`].split(";");
-          eventsData.push({
-            name: eventDetails[0] || "Unnamed Event",
-            date: eventDetails[1] || "Unknown Date",
-            description: eventDetails[2] || "No description available",
-            images: eventDetails[3]
-              ? eventDetails[3].split(",")
-              : ["img/placeholder-event.jpg"],
-            report: eventDetails[4] || "",
-            mainImage: eventDetails[3]
-              ? eventDetails[3].split(",")[0]
-              : "img/placeholder-event.jpg",
-          });
-
-          eventIndex++;
-        }
+        // Process events
+        eventsData = data["Events"] || [];
+        eventsData = eventsData.map(event => ({
+          name: event.Name || "Unnamed Event",
+          date: event.Date || "Unknown Date",
+          description: event.Description || "No description available",
+          images: event.Images || ["img/placeholder-event.jpg"],
+          report: event.Report || "",
+          mainImage: event.Images?.[0] || "img/placeholder-event.jpg"
+        }));
 
         // Process gallery images
-        galleryData = data["Gallery"]
-          ? data["Gallery"].split(":").map((img) => ({
-              url: img,
-              title: "Gallery Image",
-            }))
-          : [];
+        galleryData = data["Gallery"] || [];
+        galleryData = galleryData.map(img => ({
+          url: img,
+          title: "Gallery Image"
+        }));
       }
 
       // Populate UI with data
@@ -712,8 +683,8 @@
 
       // Initialize the page
       document.addEventListener("DOMContentLoaded", function () {
-        // Load club data from Excel
-        readExcelFile();
+        // Load club data from JSON
+        fetchClubData();
 
         // Set up event listeners
         document
