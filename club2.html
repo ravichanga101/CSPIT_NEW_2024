@@ -437,6 +437,21 @@
         populateEvents();
         populateGallery();
         createEventModals();
+
+        // Hide section headings if no data is present
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach(title => {
+          const sectionId = title.id || title.textContent.trim();
+          if (sectionId === "student-coordinator" && coordinatorData.length === 0) {
+            title.style.display = "none";
+          } else if (title.textContent.includes("Recent Events") && eventsData.length === 0) {
+            title.style.display = "none";
+          } else if (title.textContent.includes("Events Gallery") && galleryData.length === 0) {
+            title.style.display = "none";
+          } else if (title.textContent.includes("Faculty Advisors") && facultyData.length === 0) {
+            title.style.display = "none";
+          }
+        });
       }
 
       // Populate club info
@@ -536,12 +551,9 @@
                 <div class="text-center mb-3">
                     <h5 class="mb-1">${coordinator.name}</h5>
                     <p class="text-muted mb-0">${coordinator.position}</p>
-                </div>
-                <div class="mt-3">
-                    <p class="mb-0 small">
-                      <i class="fas fa-id-card text-primary me-2"></i>
+                    <p class="mb-0 small mt-2">
                       ${coordinator.idNumber}
-                  </p>
+                    </p>
                 </div>
             </div>
           `;
@@ -552,14 +564,15 @@
       // Populate events section
       function populateEvents() {
         const eventsContainer = document.getElementById("events-container");
+        const eventsSection = eventsContainer.parentElement; // Get the parent section element
         eventsContainer.innerHTML = ""; // Clear existing content
 
         if (eventsData.length === 0) {
-          eventsContainer.innerHTML =
-            '<div class="col-12 text-center"><p>No events found.</p></div>';
+          eventsSection.style.display = "none"; // Hide the entire events section
           return;
         }
 
+        eventsSection.style.display = "block"; // Show the section if there are events
         eventsData.forEach((event, index) => {
           const eventCard = document.createElement("div");
           eventCard.className = "col-md-4 mb-4";
@@ -661,14 +674,15 @@
       // Populate gallery section
       function populateGallery() {
         const galleryContainer = document.getElementById("gallery-container");
+        const gallerySection = galleryContainer.parentElement; // Get the parent section element
         galleryContainer.innerHTML = ""; // Clear existing content
 
         if (galleryData.length === 0) {
-          galleryContainer.innerHTML =
-            '<div class="col-12 text-center"><p>No gallery images found.</p></div>';
+          gallerySection.style.display = "none"; // Hide the entire gallery section
           return;
         }
 
+        gallerySection.style.display = "block"; // Show the section if there are images
         galleryData.forEach((image) => {
           const galleryItem = document.createElement("div");
           galleryItem.className = "col-md-3 col-sm-6 mb-4";
