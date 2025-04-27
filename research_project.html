@@ -1592,92 +1592,74 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const filePath = "research-projects.xlsx";
+        const filePath = "research-projects.json"; // Path to your JSON file
         const loadingElement = document.getElementById("loading");
-
+    
         fetch(filePath)
-          .then((response) => response.arrayBuffer())
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Failed to load file: ${response.statusText}`);
+            }
+            return response.json();
+          })
           .then((data) => {
-            const workbook = XLSX.read(data, { type: "array" });
-            const sheetName = workbook.SheetNames[0];
-            const sheet = workbook.Sheets[sheetName];
-            const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-            populateTable(json);
-
+            populateTable(data);
+    
             // Calculate total funds and display them
-            const totalFunds = calculateTotalFunds(json);
+            const totalFunds = calculateTotalFunds(data);
             displayTotalFunds(totalFunds);
-
+    
             loadingElement.style.display = "none";
           })
           .catch((err) => {
-            console.error("Error fetching Excel file:", err);
+            console.error("Error fetching JSON file:", err);
             loadingElement.textContent =
               "Error loading data. Please try again later.";
           });
       });
-
+    
       function calculateTotalFunds(data) {
         let total = 0;
-
-        // Assuming "Total Sanctioned Fund (INR)" is the 4th column (index 3)
-        data.forEach((row, index) => {
-          if (index === 0) return; // Skip header row
-          const amount = parseFloat(row[3]);
+    
+        // Iterate through the array of project objects
+        data.forEach((project) => {
+          const amount = parseFloat(project.total_fund_received); // Get the fund amount
           if (!isNaN(amount)) {
-            total += amount;
+            total += amount; // Add to total if valid
           }
         });
-
+    
         return total;
       }
-
+    
       function populateTable(data) {
         const tableBody = document.querySelector("#projectsTable tbody");
-        tableBody.innerHTML = "";
-
-        data.forEach((row, index) => {
-          if (index === 0) return; // Skip header row
-
+        tableBody.innerHTML = ""; // Clear any existing content
+    
+        data.forEach((project, index) => {
           const tr = document.createElement("tr");
-
-          for (let i = 0; i < 6; i++) {
-            // Ensure we include the Date column
+    
+          // Create table cells and populate with data
+          Object.values(project).forEach((value) => {
             const td = document.createElement("td");
-
-            // Convert Excel date serial number to a proper date format
-            if (i === 5 && !isNaN(row[i])) {
-              // Assuming the Date column is at index 5
-              td.textContent = excelSerialToDate(row[i]);
-            } else {
-              td.textContent = row[i] || "N/A";
-            }
-
+            td.textContent = value || "N/A"; // Use "N/A" for empty values
             tr.appendChild(td);
-          }
-
+          });
+    
           tableBody.appendChild(tr);
-
+    
+          // Add a show class with a delay for animation effect
           setTimeout(() => {
             tr.classList.add("show");
           }, index * 100);
         });
       }
-
-      // Function to convert Excel date serial to readable format
-      function excelSerialToDate(serial) {
-        const excelStartDate = new Date(1900, 0, 1);
-        const convertedDate = new Date(
-          excelStartDate.getTime() + (serial - 1) * 86400000
-        ); // 86400000 = ms in a day
-        return convertedDate.toISOString().split("T")[0]; // Returns YYYY-MM-DD format
-      }
-
+    
       function displayTotalFunds(totalFunds) {
         const totalFundsElement = document.getElementById("totalFunds");
         totalFundsElement.textContent = `Total: INR ${totalFunds.toLocaleString()}`;
       }
-
+    
       function goBackToHome() {
         window.location.href = "index.html";
       }
