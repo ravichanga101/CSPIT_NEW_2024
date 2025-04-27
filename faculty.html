@@ -1007,69 +1007,73 @@
       </div>
     </section>
   </div>
-    <script>
-      function fetchFacultyData() {
-        const filePath = "faculty_data.xlsx";
-
-        fetch(filePath)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
+  <script>
+    function fetchFacultyData() {
+      const filePath = "faculty.json";
+  
+      fetch(filePath)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const facultyCards = document.getElementById("faculty-cards");
+          facultyCards.innerHTML = "";
+  
+          data.forEach((faculty, i) => {
+            const {
+              name,
+              title,
+              degree,
+              research_interests,
+              image_src,
+            } = faculty;
+  
+            if (
+              !name ||
+              !title ||
+              !research_interests ||
+              !image_src
+            ) {
+              console.warn(`Incomplete data for row ${i + 1}:`, faculty);
+              return;
             }
-            return response.arrayBuffer();
-          })
-          .then((data) => {
-            const workbook = XLSX.read(data, { type: "array" });
-            const sheetName = workbook.SheetNames[0];
-            const sheetData = XLSX.utils.sheet_to_json(
-              workbook.Sheets[sheetName],
-              { header: 1 }
-            );
-
-            const facultyCards = document.getElementById("faculty-cards");
-            facultyCards.innerHTML = "";
-
-            for (let i = 1; i < sheetData.length; i++) {
-              const row = sheetData[i];
-              const [name, title, degree, researchInterests, imageSrc] = row;
-
-              if (
-                !name ||
-                !title ||
-                !degree ||
-                !researchInterests ||
-                !imageSrc
-              ) {
-                console.warn(`Incomplete data for row ${i + 1}:`, row);
-                continue;
-              }
-
-              const imagePath = imageSrc.replace(/\\/g, "/");
-
-              const card = document.createElement("div");
-              card.className = "faculty-card";
-              card.innerHTML = `
-               <a href="details.html?name=${encodeURIComponent(
-                 name
-               )}" class="text-decoration-none text-dark">
-                  <div class="">
-                    <img src="${imagePath}" alt="${name}" />
-                    <h4><strong>${name}</strong></h4>
-                    <h5>${title}</h5>
-                    <p>${degree}</p>
-                    <p><strong>Research Interests:</strong><br>${researchInterests}</p>
-                  </div>
-                </a>
-              `;
-
-              facultyCards.appendChild(card);
-            }
-          })
-          .catch((error) => console.error("Error loading Excel file:", error));
-      }
-
-      window.onload = fetchFacultyData;
-    </script>
+  
+            // Handle research_interests as array or string
+            const researchInterestsText = Array.isArray(research_interests)
+              ? research_interests.join("<br>")
+              : research_interests;
+  
+            // Make sure image path uses /
+            const imagePath = image_src.replace(/\\/g, "/");
+  
+            const card = document.createElement("div");
+            card.className = "faculty-card";
+            card.innerHTML = `
+              <a href="details.html?name=${encodeURIComponent(
+                name
+              )}" class="text-decoration-none text-dark">
+                <div class="">
+                  <img src="${imagePath}" alt="${name}" />
+                  <h4><strong>${name}</strong></h4>
+                  <h5>${title}</h5>
+                  <p>${degree}</p>
+                  <p><strong>Research Interests:</strong><br>${researchInterestsText}</p>
+                </div>
+              </a>
+            `;
+  
+            facultyCards.appendChild(card);
+          });
+        })
+        .catch((error) => console.error("Error loading JSON file:", error));
+    }
+  
+    window.onload = fetchFacultyData;
+  </script>
+  
 
     <footer
       class="footer-bs text-white container-fluid pt-40 pb-0 footer_bottom_bg"

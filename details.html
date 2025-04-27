@@ -1374,211 +1374,243 @@
       document.addEventListener("DOMContentLoaded", fetchFacultyDetails);
     </script> -->
 
-    <script>
-      function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-      }
+   <script>
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
 
-      function fetchFacultyDetails() {
-        const filePath = "faculty_data.xlsx";
-        const facultyName = decodeURIComponent(getQueryParam("name"));
+  function fetchFacultyDetails() {
+    const filePath = "faculty.json";
+    const facultyName = decodeURIComponent(getQueryParam("name"));
 
-        fetch(filePath)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
+    // Map array fields to the property you want to display (for arrays of objects)
+    const arrayFieldProps = {
+      subjects: "name",
+      awards: null, // If array of strings, keep null; if array of objects, set to property name
+      memberships: null,
+      certifications: null,
+      research_interests: null,
+      teaching: null,
+      research_projects: null
+      // Add more as needed
+    };
+
+    fetch(filePath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Find the faculty object by name
+        const faculty = data.find((item) => item.name === facultyName);
+
+        if (!faculty) {
+          console.warn(`No faculty found for name: ${facultyName}`);
+          return;
+        }
+
+        // Helper function: hide element if value not present/usable
+        const updateContent = (
+          id,
+          value,
+          isLink = false,
+          accordionId = null,
+          isList = false,
+          arrayProp = null // property to show if array of objects
+        ) => {
+          const element = document.getElementById(id);
+          const accordionItem = accordionId
+            ? document.getElementById(accordionId)
+            : null;
+
+          // Check for missing, "NA", empty, or empty array/object
+          let notPresent = false;
+          if (
+            value === undefined ||
+            value === null ||
+            (typeof value === "string" && (value.trim() === "" || value.trim().toUpperCase() === "NA")) ||
+            (Array.isArray(value) && value.length === 0)
+          ) {
+            notPresent = true;
+          }
+
+          if (notPresent) {
+            element.style.display = "none";
+            if (accordionItem) {
+              accordionItem.style.display = "none";
             }
-            return response.arrayBuffer();
-          })
-          .then((data) => {
-            const workbook = XLSX.read(data, { type: "array" });
-            const sheetName = workbook.SheetNames[0];
-            const sheetData = XLSX.utils.sheet_to_json(
-              workbook.Sheets[sheetName],
-              { header: 1 }
-            );
+            return;
+          }
 
-            for (let i = 1; i < sheetData.length; i++) {
-              const row = sheetData[i];
-              const [
-                name,
-                title,
-                degree,
-                researchInterests,
-                imageSrc,
-                subjects,
-                research,
-                teaching,
-                email,
-                linkedin,
-                website,
-                scholar,
-                vidwan,
-                awards,
-                membership, // 🆕 Added Membership
-                certification, // 🆕 Added Certification
-              ] = row;
+          // Prepare display value
+          let displayValue = value;
+          if (Array.isArray(value)) {
+            if (isList) {
+              // If array of objects and prop specified
+              if (arrayProp && typeof value[0] === "object") {
+                displayValue =
+                  `<ol style="padding: 10px; margin: 5px;">` +
+                  value
+                    .map(
+                      (item) =>
+                        `<li>${item[arrayProp] !== undefined ? item[arrayProp] : JSON.stringify(item)}</li>`
+                    )
+                    .join("") +
+                  `</ol>`;
+              } else {
+                // Array of strings
+                displayValue =
+                  `<ol style="padding: 10px; margin: 5px;">` +
+                  value.map((item) => `<li>${item}</li>`).join("") +
+                  `</ol>`;
+              }
+            } else {
+              // Default join
+              displayValue = value
+                .map((item) =>
+                  typeof item === "object" && arrayProp
+                    ? item[arrayProp]
+                    : item
+                )
+                .join("<br>");
+            }
+          }
 
-              if (name === facultyName) {
-                // Helper function to update content or hide the element
-                const updateContent = (
-                  id,
-                  value,
-                  isLink = false,
-                  accordionId = null,
-                  isList = false
-                ) => {
-                  const element = document.getElementById(id);
-                  const accordionItem = accordionId
-                    ? document.getElementById(accordionId)
-                    : null;
+          // Show/hide and fill content
+          if (
+            displayValue &&
+            displayValue !== "NA" &&
+            displayValue.toString().trim() !== ""
+          ) {
+            if (isList && Array.isArray(value)) {
+              element.innerHTML = displayValue;
+              element.style.display = "block";
+            } else if (isLink) {
+              element.href = value;
+              element.style.display = "inline";
+            } else {
+              element.innerHTML = displayValue;
+              element.style.display = "block";
+            }
 
-                  //     if (value && value !== "NA" && value.trim() !== "") {
-                  //   if (isList) {
-                  //     const items = value.split("|").map(item => item.trim()); // Split and trim
-                  //     element.innerHTML = `<ol>${items.map(item => `<li>${item}</li>`).join("")}</ol>`;
-                  //     element.style.display = "block"; // Ensure visibility
-                  //   } else if (isLink) {
-                  //     element.href = value;
-                  //     element.style.display = "inline"; // Ensure visibility for links
-                  //   } else {
-                  //     element.textContent = value;
-                  //     element.style.display = "block"; // Ensure visibility for text
-                  //   }
-
-                  //   if (accordionItem) {
-                  //     accordionItem.style.display = "block"; // Make accordion visible if content is valid
-                  //   }
-                  // } else {
-                  //   element.style.display = "none"; // Hide element if value is invalid
-                  //   if (accordionItem) {
-                  //     accordionItem.style.display = "none"; // Hide accordion if no content
-                  //   }
-                  // }
-
-                  if (value && value !== "NA" && value.trim() !== "") {
-                    if (isList) {
-                      const items = value.split(";").map((item) => item.trim()); // Split and trim
-                      element.innerHTML = `<ol style="padding: 10px; margin: 5px;">${items
-                        .map((item) => `<li>${item}</li>`)
-                        .join("")}</ol>`;
-                      element.style.display = "block"; // Ensure visibility
-                    } else if (isLink) {
-                      element.href = value;
-                      element.style.display = "inline"; // Ensure visibility for links
-                    } else {
-                      element.textContent = value;
-                      element.style.display = "block"; // Ensure visibility for text
-                    }
-
-                    // Show the accordion item if content is valid
-                    if (accordionItem) {
-                      accordionItem.style.display = "block"; // Make the accordion visible
-                      // If value starts with http or https, make it a link
-                      if (
-                        value.startsWith("http") ||
-                        value.startsWith("https")
-                      ) {
-                        element.innerHTML = `<a href="${value}" target="_blank">Click here for details &nbsp; &rarr;</a>`;
-                        element.style.display = "block"; // Ensure visibility for links
-                      }
-                    }
-                  } else {
-                    element.style.display = "none"; // Hide element if value is invalid
-                    // Hide the whole accordion item if content is invalid
-                    if (accordionItem) {
-                      accordionItem.style.display = "none";
-                    }
-                  }
-                };
-
-                // Handle image separately
-                const imageElement = document.getElementById("faculty-image");
-                if (imageSrc && imageSrc !== "NA" && imageSrc.trim() !== "") {
-                  imageElement.src = imageSrc;
-                  imageElement.style.display = "block";
-                } else {
-                  imageElement.style.display = "none";
-                }
-
-                // Update the profile with the selected faculty's details
-                updateContent("faculty-name", name);
-                updateContent("faculty-title", title);
-                updateContent("faculty-degree", degree);
-                updateContent(
-                  "faculty-research-interests",
-                  researchInterests,
-                  false,
-                  "headingTwo"
-                );
-                updateContent(
-                  "faculty-subject",
-                  subjects,
-                  false,
-                  "headingOne",
-                  false
-                );
-                updateContent(
-                  "faculty-awards",
-                  awards,
-                  false,
-                  "headingFive",
-                  false
-                );
-                updateContent(
-                  "faculty-research",
-                  research,
-                  false,
-                  "headingThree",
-                  false
-                );
-                updateContent(
-                  "faculty-teaching",
-                  teaching,
-                  false,
-                  "headingFour",
-                  false
-                );
-                updateContent(
-                  "faculty-membership",
-                  membership,
-                  false,
-                  "headingMembership",
-                  false
-                );
-                updateContent(
-                  "faculty-certification",
-                  certification,
-                  false,
-                  "headingCertification",
-                  false
-                );
-                updateContent("faculty-email", `mailto:${email}`, true);
-                updateContent("faculty-linkedin", linkedin, true);
-                updateContent("faculty-website", website, true);
-                updateContent("faculty-scholar", scholar, true);
-                updateContent("faculty-vidwan", vidwan, true);
-
-                break; // Exit the loop once the faculty is found
+            if (accordionItem) {
+              accordionItem.style.display = "block";
+              if (
+                typeof value === "string" &&
+                (value.startsWith("http") || value.startsWith("https"))
+              ) {
+                element.innerHTML = `<a href="${value}" target="_blank">Click here for details &nbsp; &rarr;</a>`;
+                element.style.display = "block";
               }
             }
-          })
-          .catch((error) => console.error("Error loading Excel data:", error));
-      }
+          } else {
+            element.style.display = "none";
+            if (accordionItem) {
+              accordionItem.style.display = "none";
+            }
+          }
+        };
 
-      document.addEventListener("DOMContentLoaded", fetchFacultyDetails);
+        // Handle image separately
+        const imageElement = document.getElementById("faculty-image");
+        if (
+          faculty.image_src &&
+          faculty.image_src.trim() !== "" &&
+          faculty.image_src.trim().toUpperCase() !== "NA"
+        ) {
+          imageElement.src = faculty.image_src.replace(/\\/g, "/");
+          imageElement.style.display = "block";
+        } else {
+          imageElement.style.display = "none";
+        }
 
-      // ------------------- TOOLTIP ------------------
-      document.addEventListener("DOMContentLoaded", function () {
-        const tooltipTriggerList = [].slice.call(
-          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        // Update the profile with the selected faculty's details
+        updateContent("faculty-name", faculty.name);
+        updateContent("faculty-title", faculty.title);
+        updateContent("faculty-degree", faculty.degree);
+
+        // Array fields as numbered lists (ol)
+        updateContent(
+          "faculty-research-interests",
+          faculty.research_interests,
+          false,
+          "headingTwo",
+          true,
+          arrayFieldProps.research_interests
         );
-        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-      });
-    </script>
+        updateContent(
+          "faculty-subject",
+          faculty.subjects,
+          false,
+          "headingOne",
+          true,
+          arrayFieldProps.subjects
+        );
+        updateContent(
+          "faculty-awards",
+          faculty.awards,
+          false,
+          "headingFive",
+          true,
+          arrayFieldProps.awards
+        );
+        updateContent(
+          "faculty-research",
+          faculty.research_projects,
+          false,
+          "headingThree",
+          true,
+          arrayFieldProps.research_projects
+        );
+        updateContent(
+          "faculty-teaching",
+          faculty.teaching,
+          false,
+          "headingFour",
+          true,
+          arrayFieldProps.teaching
+        );
+        updateContent(
+          "faculty-membership",
+          faculty.memberships,
+          false,
+          "headingMembership",
+          true,
+          arrayFieldProps.memberships
+        );
+        updateContent(
+          "faculty-certification",
+          faculty.certifications,
+          false,
+          "headingCertification",
+          true,
+          arrayFieldProps.certifications
+        );
+        updateContent("faculty-email", `mailto:${faculty.email}`, true);
+        updateContent("faculty-linkedin", faculty.linkedin, true);
+        updateContent("faculty-website", faculty.website, true);
+        updateContent("faculty-scholar", faculty.scholar, true);
+        updateContent("faculty-vidwan", faculty.vidwan, true);
+      })
+      .catch((error) => console.error("Error loading JSON data:", error));
+  }
+
+  document.addEventListener("DOMContentLoaded", fetchFacultyDetails);
+
+  // ------------------- TOOLTIP ------------------
+  document.addEventListener("DOMContentLoaded", function () {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+
 
     <footer
       class="footer-bs text-white container-fluid pt-40 pb-0 footer_bottom_bg"
