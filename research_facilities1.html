@@ -1090,34 +1090,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let instrumentData = {};
-
-      function loadExcelDataFromServer(filePath) {
+    
+      function loadDataFromJSON(filePath) {
         fetch(filePath)
           .then((response) => {
             if (!response.ok) {
               throw new Error(`Failed to load file: ${response.statusText}`);
             }
-            return response.arrayBuffer();
+            return response.json();
           })
-          .then((data) => {
-            const workbook = XLSX.read(data, { type: "array" });
-            const sheetName = workbook.SheetNames[0];
-            const sheet = workbook.Sheets[sheetName];
-            const json = XLSX.utils.sheet_to_json(sheet);
-
+          .then((json) => {
+            // Group instruments by department
             json.forEach((row) => {
-              const department = row["Department"];
-              const name = row["Name"];
-              const specs = row["Spec"] ? row["Spec"].split(";") : [];
-              const useCases = row["UseCases"]
-                ? row["UseCases"].split(";")
-                : [];
-              const image = row["Img"];
-
+              const department = row.department;
+              const name = row.name;
+              const specs = Array.isArray(row.spec) ? row.spec : [row.spec];
+              const useCases = Array.isArray(row.use_cases) ? row.use_cases : [row.use_cases];
+              const image = row.img.replace(/\\/g, "/");
+    
               if (!instrumentData[department]) {
                 instrumentData[department] = [];
               }
-
+    
               instrumentData[department].push({
                 name,
                 specs,
@@ -1125,20 +1119,18 @@
                 image,
               });
             });
-
+    
             renderAllInstruments(); // Render all instruments after loading data
           })
           .catch((error) => {
-            console.error("Error loading Excel file:", error);
+            console.error("Error loading JSON file:", error);
           });
       }
-
+    
       function renderAllInstruments() {
-        const instrumentCardsContainer = document.getElementById(
-          "instrument-cards-grid"
-        );
+        const instrumentCardsContainer = document.getElementById("instrument-cards-grid");
         const allInstruments = Object.values(instrumentData).flat(); // Combine all instruments from all departments
-
+    
         instrumentCardsContainer.innerHTML = allInstruments
           .map(
             (instrument) => `
@@ -1150,95 +1142,83 @@
                   <img src="${instrument.image}" class="card-img-top instrument-image" alt="${instrument.name}">
                   <div class="card-body">
                     <h5 class="card-title text-primary">${instrument.name}</h5>
-                    
                   </div>
                 </div>
               </div>
             `
           )
           .join("");
-
+    
         setupInstrumentPopupListeners(allInstruments);
       }
-
+    
       function setupInstrumentPopupListeners(instruments) {
-        const instrumentPopup = document.getElementById(
-          "instrument-details-popup"
-        );
+        const instrumentPopup = document.getElementById("instrument-details-popup");
         const instrumentCards = document.querySelectorAll(".instrument-card");
-
+    
         instrumentCards.forEach((card) => {
           card.addEventListener("click", (e) => {
-            const instrumentName = e.currentTarget.getAttribute(
-              "data-instrument-name"
-            );
-            const instrument = instruments.find(
-              (i) => i.name === instrumentName
-            );
-
-            instrumentPopup.querySelector(
-              ".instrument-popup-title"
-            ).textContent = instrument.name;
-            instrumentPopup.querySelector("#instrument-popup-image").src =
-              instrument.image;
-
-            const popupContent = instrumentPopup.querySelector(
-              "#instrument-popup-content"
-            );
+            const instrumentName = e.currentTarget.getAttribute("data-instrument-name");
+            const instrument = instruments.find((i) => i.name === instrumentName);
+    
+            instrumentPopup.querySelector(".instrument-popup-title").textContent = instrument.name;
+            instrumentPopup.querySelector("#instrument-popup-image").src = instrument.image;
+    
+            const popupContent = instrumentPopup.querySelector("#instrument-popup-content");
             popupContent.innerHTML = "";
-
-            if (instrument.specs && instrument.specs.length > 0) {
+    
+            if (instrument.specs && instrument.specs.length > 0 && instrument.specs[0] !== "") {
               const specsSection = document.createElement("div");
               specsSection.classList.add("modal-details-section");
               specsSection.innerHTML = `
-                            <h6>Specifications</h6>
-                            <ul class="list-group">
-                                ${instrument.specs
-                                  .map(
-                                    (spec) =>
-                                      `<li class="list-group-item"><i class="fas fa-cogs me-2 text-success"></i>${spec}</li>`
-                                  )
-                                  .join("")}
-                            </ul>
-                        `;
+                <h6>Specifications</h6>
+                <ul class="list-group">
+                  ${instrument.specs
+                    .map(
+                      (spec) =>
+                        `<li class="list-group-item"><i class="fas fa-cogs me-2 text-success"></i>${spec}</li>`
+                    )
+                    .join("")}
+                </ul>
+              `;
               popupContent.appendChild(specsSection);
             }
-
-            if (instrument.useCases && instrument.useCases.length > 0) {
+    
+            if (instrument.useCases && instrument.useCases.length > 0 && instrument.useCases[0] !== "") {
               const useCasesSection = document.createElement("div");
               useCasesSection.classList.add("modal-details-section");
               useCasesSection.innerHTML = `
-                            <h6>Use Cases</h6>
-                            <ul class="list-group">
-                                ${instrument.useCases
-                                  .map(
-                                    (useCase) =>
-                                      `<li class="list-group-item"><i class="fas fa-check-circle me-2 text-info"></i>${useCase}</li>`
-                                  )
-                                  .join("")}
-                            </ul>
-                        `;
+                <h6>Use Cases</h6>
+                <ul class="list-group">
+                  ${instrument.useCases
+                    .map(
+                      (useCase) =>
+                        `<li class="list-group-item"><i class="fas fa-check-circle me-2 text-info"></i>${useCase}</li>`
+                    )
+                    .join("")}
+                </ul>
+              `;
               popupContent.appendChild(useCasesSection);
             }
-
+    
             if (
-              (!instrument.specs || instrument.specs.length === 0) &&
-              (!instrument.useCases || instrument.useCases.length === 0)
+              (!instrument.specs || instrument.specs.length === 0 || instrument.specs[0] === "") &&
+              (!instrument.useCases || instrument.useCases.length === 0 || instrument.useCases[0] === "")
             ) {
               popupContent.innerHTML = `
-                            <div class="alert alert-warning">
-                                No additional details available for this instrument.
-                            </div>
-                        `;
+                <div class="alert alert-warning">
+                  No additional details available for this instrument.
+                </div>
+              `;
             }
           });
         });
       }
-
+    
       document.addEventListener("DOMContentLoaded", () => {
-        const filePath = "./research_facilities.xlsx";
-        loadExcelDataFromServer(filePath);
-        renderAllInstruments(); // Render all instruments after loading data
+        const filePath = "./research_facilities.json";
+        loadDataFromJSON(filePath);
+        // No need to call renderAllInstruments() here, it's called after loading data
       });
     </script>
 
