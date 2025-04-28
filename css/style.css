@@ -1164,7 +1164,7 @@ ul.pagination li.page-item a.page-link:hover {
 
 .top-link {
   color: #fdfdfd !important;
-  background-color:var(--site-color);
+  background-color: #0056b3;
   
   font-weight:bold !important;
   letter-spacing: 1px !important;
