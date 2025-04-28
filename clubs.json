@@ -526,8 +526,26 @@
         "ID": ""
       }
     ],
-    "Gallery": [],
-    "Events": []
+    "Gallery": [
+      "images1/Student Club/House_of_Innovation/Event1/4.webp",
+      "images1/Student Club/House_of_Innovation/Event1/6.webp"
+    ],
+    "Events": [
+      {
+        "Name": "Expert Session on “Time Management",
+        "Date": "20 September 2024",
+        "Description": "On September 20, 2024, the House of Innovation, affiliated with the Mechanical Engineering Department of CSPIT-CHARUSAT, organized an expert session on time management led by Mr. Mann Solanki from the JCI Chapter, Nadiad. Held in the seminar hall of the EE/EC building, the session was attended by 69 enthusiastic students from CSPIT and DEPSTAR. Mr. Solanki emphasized the importance of effective time management for students balancing academics and personal life, offering practical tips, theoretical insights, and an engaging activity where students plotted their daily routines to identify areas for improvement. His interactive approach helped participants understand the value of time, and students left the session with actionable strategies to enhance their productivity and personal growth. The session received highly positive feedback and was considered a highly beneficial and impactful learning experience for the students.",
+        "Images": [
+          "images1/Student Club/House_of_Innovation/Event1/6.webp",
+          "images1/Student Club/House_of_Innovation/Event1/1.webp",
+          "images1/Student Club/House_of_Innovation/Event1/2.webp",
+          "images1/Student Club/House_of_Innovation/Event1/3.webp",
+          "images1/Student Club/House_of_Innovation/Event1/4.webp",
+          "images1/Student Club/House_of_Innovation/Event1/5.webp"
+        ],
+        "Report": "images1/Student Club/House_of_Innovation/Event1/report.pdf"
+      }
+    ]
   },
   {
     "Club ID": "ChipX",
@@ -627,11 +645,11 @@
     "Student Coordinators": [
       {
         "Name": "Nilay Shah",
-        "ID": ""
+        "ID": "22IT081"
       },
       {
         "Name": "Nishit Patel",
-        "ID": ""
+        "ID": "22IT103"
       }
     ],
     "Gallery": [
@@ -819,31 +837,25 @@
     "Logo": "images1/Student Club/Debate_Club.webp",
     "About": "The Debate Club at the M. S. Patel Department of Civil Engineering is a dynamic platform for fostering critical thinking, effective communication, and collaborative learning among students. Our club aims to ignite intellectual curiosity and promote the art of structured argumentation, which is an essential skill for future engineers. Through regular sessions, members engage in thought-provoking debates on a variety of topics, ranging from current affairs and societal issues to technical advancements in civil engineering. These debates encourage students to explore diverse perspectives, hone their research skills, and present their ideas persuasively. The club provides a supportive and inclusive environment where participants can build confidence in public speaking and develop teamwork and leadership abilities. Experienced faculty mentors and guest speakers often guide sessions, offering valuable insights and feedback to enhance the learning experience. In addition to in-house activities, the Debate Club actively participates in intercollegiate competitions, showcasing the talent and preparedness of our students on larger platforms. These events not only bring recognition to the department but also foster camaraderie and a spirit of healthy competition among peers. The Debate Club is more than just a forum for discussion; it’s a community that nurtures analytical minds and empowers students to become articulate professionals ready to tackle the challenges of the modern world.",
     "Faculty Coordinators": [
-      {
-        "Name": "Prof. Kanchal Dave",
-        "Role": "faculty coordinator",
-        "Email": "",
-        "Phone": "9973054924",
-        "Image": "CSPIT_Faculty/Civil/KANCHAL.webp"
-      },
+      
       {
         "Name": "Prof. Mehul Katakiya",
         "Role": "faculty coordinator",
-        "Email": "",
+        "Email": "mehulkatakiya.cv@charusat.ac.in",
         "Phone": "8000669363",
         "Image": "CSPIT_Faculty/Civil/MEHULKUMAR.webp"
       },
       {
         "Name": "Prof. Vipul Vyas",
         "Role": "faculty coordinator",
-        "Email": "",
+        "Email": "vipulvyas.cv@charusat.ac.in",
         "Phone": "9727767541",
         "Image": "CSPIT_Faculty/Civil/VIPUL.webp"
       },
       {
         "Name": "Prof. Jay Bhavsar",
         "Role": "faculty coordinator",
-        "Email": "",
+        "Email": "jaybhavsar.cv@charusat.ac.in",
         "Phone": "9898583301",
         "Image": "CSPIT_Faculty/Civil/JAY.webp"
       }
@@ -851,7 +863,19 @@
     "Student Coordinators": [
       {
         "Name": "Harsh Desai",
-        "ID": ""
+        "ID": "23CL002"
+      },
+      {
+        "Name": "Prachiben Patel",
+        "ID": "23CL009"
+      },
+      {
+        "Name": "Dubal Dhyey Pritesh",
+        "ID": "24CL008"
+      },
+      {
+        "Name": "Aayush Vinay Shah",
+        "ID": "24CL039"
       }
     ],
     "Gallery": [],
@@ -1150,7 +1174,6 @@
         "Report": ""
       }
     ]
-    
   },
   {
     "Club ID": "EyeCoders",
@@ -1223,7 +1246,6 @@
           "images1/Student Club/EyeCoders/Hunt2/6.webp",
           "images1/Student Club/EyeCoders/Hunt2/7.webp",
           "images1/Student Club/EyeCoders/Hunt2/9.webp"
-
         ],
         "Report": "images1/Student Club/EyeCoders/Hunt2/report.pdf"
       }
@@ -1359,13 +1381,11 @@
           "images1/Student Club/Innovators/AI_Frontiers/3.webp",
           "images1/Student Club/Innovators/AI_Frontiers/4.webp",
           "images1/Student Club/Innovators/AI_Frontiers/5.webp"
-          
         ],
         "Report": "images1/Student Club/Innovators/AI_Frontiers/report.pdf"
       }
     ]
   },
-
   {
     "Club ID": "Math for AI",
     "Club Name": "Math for AI Club",
@@ -1441,7 +1461,6 @@
       }
     ]
   },
-
   {
     "Club ID": "Robotics Club",
     "Club Name": "Robotics Club",
@@ -1453,7 +1472,7 @@
         "Role": "faculty coordinator",
         "Email": "upeshpatel.ec@charusat.ac.in",
         "Phone": "9913759877",
-        "Image": "CSPIT_Faculty/Electronics/UPESH.webp"  
+        "Image": "CSPIT_Faculty/Electronics/UPESH.webp"
       },
       {
         "Name": "Dr. Miral Desai",
@@ -1490,16 +1509,15 @@
         "Date": "27 June - 29 June 2024",
         "Description": "The workshop started with the Introduction to Robotics. On the First Day participants get hands-on session of Sensor Interfacing with Tinkercad. On the second day participants get hands-on session of Actuator Interfacing with Tinkercad and Third day 3D Design of Robotics components were discussed.",
         "Images": [
-          "images1/Student Club/Robotics/Workshop/poster.webp", 
-            "images1/Student Club/Robotics/Workshop/1.webp",
-            "images1/Student Club/Robotics/Workshop/2.webp",
-            "images1/Student Club/Robotics/Workshop/3.webp"
+          "images1/Student Club/Robotics/Workshop/poster.webp",
+          "images1/Student Club/Robotics/Workshop/1.webp",
+          "images1/Student Club/Robotics/Workshop/2.webp",
+          "images1/Student Club/Robotics/Workshop/3.webp"
         ],
         "Report": "images1/Student Club/Robotics/Workshop/report.pdf"
       }
     ]
   },
-
   {
     "Club ID": "SpiriTech Club",
     "Club Name": "SpiriTech Club",
@@ -1542,11 +1560,9 @@
           "images1/Student Club/SpiriTech/Event1/2.webp",
           "images1/Student Club/SpiriTech/Event1/3.webp",
           "images1/Student Club/SpiriTech/Event1/4.webp"
-          
         ],
         "Report": "images1/Student Club/SpiriTech/Event1/report.pdf"
       }
     ]
   }
-
 ]
