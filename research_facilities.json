@@ -1,34 +1,68 @@
 [
     {
-        "department": "Mechanical",
+        "department": "Mechanical Engineering",
         "name": "Electric resistance melting furnace",
         "spec": [
-            "Specifications"
+            "Specifications of Equipment:",
+            "Temperature range: Ambient to 1000°C",
+            "Charge capacity: 18 Kg.",
+            "Inside furnace dimension: 450 X 450 X 450 mm",
+            "Heating of aluminium: 65 minutes (First Heat)",
+            "45 minutes (subsequent heat)",
+            "Power consumption: 1.15 KW/h",
+            "Heating element: Nichrome",
+            "Controller: Selec-TC344"
         ],
         "use_cases": [
-            "Use Cases"
+            "To melt the nonferrous metals or alloys such as aluminum, magnesium in the presence of protective environment of inert gases."
         ],
         "img": "images1/facilities/Mech/mech1.webp"
     },
     {
-        "department": "Mechanical",
+        "department": "Mechanical Engineering",
         "name": "Inverted metallurgical microscope",
         "spec": [
-            "Specifications"
+            "Make: Zeiss Model: Axio Vert.A1 MAT",
+            "Specifications of Equipment:",
+            "Illumination Type: Bright Field, Dark Field",
+            "Magnification Range: 50X to 1000X",
+            "Objective: 5X, 10X, 20X, 50X",
+            "Eyepiece: 10x/23",
+            "Stage Size: 208 mm X 283 mm",
+            "Travel Area: 40 mm X 40 mm",
+            "Sample Load: Maximum 3 kg"
         ],
         "use_cases": [
-            "Use Cases"
+            "Hi-resolution Camera for Seamlessly Capturing Images",
+            "Comprehensive image analysis software for material science and metallography application",
+            "Grain size estimation.",
+            "Phase measurements.",
+            "Nodularity, Graphite flake measurements, Coating thickness measurement.",
+            "Decarburization depth, Porosity, Dendritic arm spacing, Micro Hardness, Carbide Banding/distribution."
         ],
         "img": "images1/facilities/Mech/mech2.webp"
     },
     {
-        "department": "Mechanical",
+        "department": "Mechanical Engineering",
         "name": "Thermal Imaging Camera (AICTE funded project under RPS)",
         "spec": [
-            "Specifications"
+            "Fluke Mode: TIX560 9Hz",
+            "Detector resolution: 320 x 240 (76,800 pixels)",
+            "Minimum focus distance: 15 cm (approx. 6 in)",
+            "Laser distance meter: Yes, calculates distance to the target for precisely focused images and displays distance on screen",
+            "Touchscreen display (capacitive): 14.4 cm (5.7 in) diagonal landscape color VGA (640 x 480) LCD with backlight",
+            "Fluke Connect™ app compatible: Yes (where available)",
+            "IR-Fusion® technology: Yes",
+            "Built-in digital camera (visible light): 5 megapixel industrial performance",
+            "Digital zoom: 2x, 4x, 8x",
+            "Software: SmartView® software, Fluke Connect™ (where available), and SmartView® Mobile App - full analysis and reporting software",
+            "Temperature measurement range (not calibrated below -10 °C): -20 °C to +1200 °C (-4 °F to +2192 °F)",
+            "Accuracy: ± 2 °C or 2 % (at 25 °C nominal, whichever is greater)"
         ],
         "use_cases": [
-            "Use Cases"
+            "To detect radiation with easy maneuver over, under, and around objects with the 240° rotating screen and still view at a comfortable angle.",
+            "Condition monitoring of electrical and mechanical systems, such as with the location of thermal leaks or the higher temperatures in overheated regions.",
+            "To record the thermal profile of mold surface during solidification in metal casting."
         ],
         "img": "images1/facilities/Mech/thermalCamera.webp"
     },
@@ -80,10 +114,15 @@
         "department": "Mechanical",
         "name": "DCRF Magnetron Sputtering",
         "spec": [
-            "Specifications"
+            "Target Material: 50 mm Diameter × 6.5 mm Thick",
+            "Vacuum Pressure: 10^-2 to 10^-9 Pa",
+            "Mass flow controller (MFC): 0-100 SCCM",
+            "RF Power: 0 to 300W",
+            "DC Power: 0 to 1000W",
+            "Temperature range for Substrate: 0 to 800°C"
         ],
         "use_cases": [
-            "Use Cases"
+            "Magnetron sputtering is a widely used physical vapor deposition (PVD) technique for developing thin films and coatings. It is popular in both research and industry because it offers excellent control over film thickness, uniformity, and composition."
         ],
         "img": "images1/facilities/Mech/DCRF.webp"
     },
@@ -91,43 +130,37 @@
         "department": "Mechanical",
         "name": "Automatic Goniometer",
         "spec": [
-            "Specifications"
+            "Contact angle measuring range: 0° to 180°"
         ],
         "use_cases": [
-            "Use Cases"
+            "An automated goniometer is a precision instrument used to measure the contact angle between a surface and a liquid droplet. It measures the wettability properties of the surface."
         ],
         "img": "images1/facilities/Mech/goniometer.webp"
     },
     {
         "department": "Mechanical",
         "name": "Ultrasonic Probe Sonicator",
-        "spec": [
-            "Specifications"
-        ],
+        "spec": [],
         "use_cases": [
-            "Use Cases"
+            "An Ultrasonic Probe Sonicator is a lab device that uses high-frequency sound waves transmitted through a probe (horn) to create intense ultrasonic energy in liquids. This energy generates microscopic bubbles that collapse violently—a process called acoustic cavitation—which breaks particles apart, mixes substances, and promotes chemical reactions."
         ],
         "img": "images1/facilities/Mech/probe.webp"
     },
     {
         "department": "Mechanical",
         "name": "Auto CAST",
-        "spec": [
-            "Specifications"
-        ],
+        "spec": [],
         "use_cases": [
-            "Use Cases"
+            "AutoCAST is a specialized casting simulation software used to design, simulate, and optimize metal casting processes. It helps researchers and foundry engineers predict and prevent casting defects before the physical casting is made."
         ],
         "img": "images1/facilities/Mech/CAST.webp"
     },
     {
         "department": "Mechanical",
         "name": "COMSOL",
-        "spec": [
-            "Specifications"
-        ],
+        "spec": [],
         "use_cases": [
-            "Use Cases"
+            "COMSOL Multiphysics is a powerful simulation software used for modeling and solving real-world engineering and physics-based problems. Its strength lies in multiphysics coupling—allowing simulation of multiple physical phenomena that interact with each other in one environment."
         ],
         "img": "images1/facilities/Mech/cosmol.webp"
     },
@@ -135,10 +168,21 @@
         "department": "Mechanical",
         "name": "CNC Vertical Machining Center",
         "spec": [
-            "Specifications"
+            "3-Axis Vertical Machining Centre with SINUMERIK 802 D SL Controller",
+            "Dimension (LxWxH): 1725x2250x2600 mm; Weight: 3300 Kg",
+            "Table Size: 600x300 mm; Max Load on Table: 200Kg",
+            "X-axis Travel: 400 mm, Y-axis Travel: 300 mm, Z-axis Travel: 400 mm",
+            "Dist. From Spindle face to table top: 200–550 mm",
+            "Spindle Speed: 0–10000 rpm; Front Bearing Bore: 9.27/7 Kw: BT40 Taper",
+            "Rapid Traverse (XYZ): 40 m/min; Cutting Feed: 10 m/min",
+            "No. of Tools: 12; Max. Tool Dia: 80 mm; Tool Wt.: 7 Kg; Tool Length: 200 mm",
+            "Positioning Accuracy: 0.01 mm; Repeatability: ± 0.005 mm",
+            "Spindle Drive: AC; Axis Drive: AC Servo",
+            "Guideways: LM",
+            "Coolant: Auto/Manual; Centralized Lubrication"
         ],
         "use_cases": [
-            "Use Cases"
+            "The CNC Vertical Machining Center (VMC) is used for a wide range of milling, drilling, tapping, and boring operations."
         ],
         "img": "images1/facilities/Mech/cnc.webp"
     },
@@ -146,10 +190,23 @@
         "department": "Mechanical",
         "name": "Joemars Electrical Discharge Machining setup",
         "spec": [
-            "Specifications"
+            "A.Z 50 R +D 320 with Automatic fire extinguisher",
+            "Work Table Size: 600 × 300 mm",
+            "X, Y Axis Travel: 300 × 200 mm",
+            "Maximum Electrode Weight: 60 Kg",
+            "Maximum Work Piece Weight: 550 Kg",
+            "Work Tank (W × D × H): 830 × 500 × 300 mm",
+            "Outside Dimension: 580 × 500 × 1720 mm",
+            "Maximum Machining Current: 50A",
+            "Total Power Input: 4.5A",
+            "Maximum Metal Removal Rate: 390 mm³/min",
+            "Best Surface Roughness: 0.25 μm Ra",
+            "Dielectric tank Capacity: 240 Litres",
+            "Pump: 0.5 HP",
+            "Filter: Paper Filter"
         ],
         "use_cases": [
-            "Use Cases"
+            "The Joemars Electrical Discharge Machining (EDM) setup is used for precision machining of hard-to-machine materials, especially super alloys such as titanium, Inconel, carbides, hardened steel, and tool steels."
         ],
         "img": "images1/facilities/Mech/joemars.webp"
     },
@@ -157,32 +214,33 @@
         "department": "Mechanical",
         "name": "Kistler 9272 Piezoelectric Dynamometer",
         "spec": [
-            "Specifications"
+            "Equipment Name: QUARTZ 4 COMPONENT DYNAMOMETER",
+            "Make/Model: KISTLER 9272",
+            "The natural frequency of the dynamometer is about 3 kHz",
+            "Threshold is smaller than 0.01 N",
+            "Measuring range: Fx, Fy = ±5 KN, Fz = -5 to 20 KN, Mz = ±200 N.m"
         ],
         "use_cases": [
-            "Use Cases"
+            "The Kistler 9272 is a piezoelectric dynamometer, specifically used for measuring cutting forces in milling, drilling, and turning operations. It is widely used in machining research."
         ],
         "img": "images1/facilities/Mech/kistler.webp"
     },
     {
         "department": "Mechanical",
         "name": "Data Logging System from National Instruments equipped with LabVIEW software",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/Mech/dataLog.webp"
     },
     {
         "department": "Mechanical",
         "name": "Universal Testing Machine",
         "spec": [
-            "Specifications"
+            "Force Measurement: Load Cell Capacity- 50 KN & 50 N",
+            "Extension Measurement: Resolution 0.001 mm"
         ],
         "use_cases": [
-            "Use Cases"
+            "The universal testing machine provides testing facilities like tensile testing, compression testing, and flexural testing for metals, non-metals, and composites. It also provides the tensile testing facility for natural and synthetic fibers. It has an inbuilt software facility to plot the graphs for various experimental results."
         ],
         "img": "images1/facilities/Mech/UniversalTesting.webp"
     },
@@ -190,10 +248,18 @@
         "department": "Mechanical",
         "name": "3D Printer",
         "spec": [
-            "Specifications"
+            "Model: DAMboy 200",
+            "Print Technology: Fused Deposition Modeling",
+            "Build size Specification: 200mm x 200mm x 200mm",
+            "Printing Materials: PLA, PETG, ABS, TPU, NYLON",
+            "Nozzle Temperature: Up to 250°C",
+            "Hot Bed Temperature: Up to 100°C",
+            "Layer Thickness: 0.1–0.4 mm",
+            "Print Speed: 30–40mm/s (Recommended)",
+            "Resolution: 0.1 mm (100 micron)"
         ],
         "use_cases": [
-            "Use Cases"
+            "This printer is used to make 3D prototypes or parts for various applications or student projects."
         ],
         "img": "images1/facilities/Mech/dataLog.webp"
     },
@@ -201,10 +267,16 @@
         "department": "Mechanical",
         "name": "Wear & Friction Monitor",
         "spec": [
-            "Specifications"
+            "Wear Disc Diameter: 165 mm, Thickness: 8 mm, Material: En 31 hardened to 60HRc ground to 1.6Ra surface roughness",
+            "Ball Diameter: 10 mm",
+            "Disc Speed: Min: 200 rpm; Max: 2000 rpm",
+            "Normal Load: Min 5N; Max: 200N",
+            "Frictional force: Max 200 N; resolution of 1N",
+            "Wear: 0 to 2000 micron",
+            "Temperature: Ambient to 200°C, pin heating"
         ],
         "use_cases": [
-            "Use Cases"
+            "Wear and friction setup measures wear and friction for metals, non-metals, and composites. It has an inbuilt software facility to plot the graphs for various experimental results."
         ],
         "img": "images1/facilities/Mech/Wear.webp"
     },
@@ -212,10 +284,15 @@
         "department": "Mechanical",
         "name": "Surface Texture Machine",
         "spec": [
-            "Specifications"
+            "Measuring Range: X Axis-100mm, Z Axis-800 µm/0.01 µm",
+            "Measuring speed: 0.1mm/s up to 2.0 mm/s",
+            "Standard stylus: angle 60°, Radius 2µm",
+            "Measuring Force: 0.75 mN",
+            "Measuring Method: X-axis-Linear scale, Z axis-Differential Indu.",
+            "Straightness: 0.15 µm/100 mm"
         ],
         "use_cases": [
-            "Use Cases"
+            "The Surftest SV-2100 is a high-precision and high-performance surface roughness tester with a dedicated control unit, achieving user-friendly display and simple operation. The Surftest SV-2100 surface tester provides highly accurate analysis of surface roughness and fine contours."
         ],
         "img": "images1/facilities/Mech/surface.webp"
     },
@@ -223,10 +300,20 @@
         "department": "Mechanical",
         "name": "3D Microscope",
         "spec": [
-            "Specifications"
+            "Make: Mitutoyo",
+            "Model: QS-L2010ZB",
+            "Feed Mechanism: Manual",
+            "Observation unit: Zoom: 0.75X-5.25X (8X in 7 steps)",
+            "Range (x*y*z): (200*100*150)",
+            "Resolution: 0.1µm",
+            "Image Detecting unit: 1/2-inch colour CMOS camera 3 mega-pixels",
+            "Digital Zoom: 1x-2x-4x",
+            "Measuring XY: (2.5+20L/1000)µm",
+            "Accuracy Z: (5+40L/1000)µm",
+            "Power Consumption: 160w at max"
         ],
         "use_cases": [
-            "Use Cases"
+            "Vision measuring machine 'Quick Scope' (3D Microscope; MITUTOYO/ QS-L2010ZB) for surface observation and to measure dimensions."
         ],
         "img": "images1/facilities/Mech/3dMicro.webp"
     },
@@ -234,10 +321,15 @@
         "department": "Mechanical",
         "name": "3D Laser Scanner",
         "spec": [
-            "Specifications"
+            "Minimum table size: Diameter 200mm",
+            "Minimum scanning Area: Plane and rotary scanning, width: 200 mm, Height: 300mm",
+            "Minimum scanning Pitch: Plane scanning: Width direction 0.2 to 300 mm, Height direction 0.2 to 300 mm; Rotary scanning: Circumference 0.2 to 3.6 degrees, Height direction 0.2 to 300 mm",
+            "Minimum operating speed: Table rotation speed: 10 rpm; Head rotation speed: 4.5rpm; Maximum head movement speed: 50 mm/sec",
+            "Sensor: Non Contact laser sensor",
+            "Scanning Method: Spot-Beam triangulation"
         ],
         "use_cases": [
-            "Use Cases"
+            "The LPX-60 is ideal for reverse engineering and for designing smaller items for the production of clay prototypes. This can generate CAD models from existing parts or partial models."
         ],
         "img": "images1/facilities/Mech/3DLaser.webp"
     },
@@ -245,32 +337,41 @@
         "department": "Mechanical",
         "name": "KD2 Prob Thermal Analyser",
         "spec": [
-            "Specifications"
+            "Operating Environment: Controller: 0 to 50°C; Sensors: -50 to +150°C",
+            "Power: 4 AA cells",
+            "Battery Life: At least 500 readings in constant use or 3 years with no use (battery drain in sleep mode < 50 uA)",
+            "Case Size: 15.5 cm x 9.5 cm x 3.5 cm",
+            "Display: 3 cm x 6 cm, 128 x 64-pixel graphics LCD",
+            "Keypad: 6 key, sealed membrane",
+            "Data Storage: 4095 measurements in flash memory (both raw and processed data are stored for download)",
+            "Interface: 9-pin serial",
+            "Read Modes: Manual and Auto Read"
         ],
         "use_cases": [
-            "Use Cases"
+            "To measure the thermal properties of liquid, semisolid, and solid materials."
         ],
         "img": "images1/facilities/Mech/KD2.webp"
     },
     {
         "department": "Mechanical",
         "name": "Wind Tunnel",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/Mech/Wind.webp"
     },
     {
         "department": "Civil",
         "name": "Universal Testing Machine",
         "spec": [
-            "Specifications"
+            "Capacity: 600 KN",
+            "Tensile test range: 10 mm dia to 25 mm dia",
+            "Power: 230 Volts",
+            "Display: Digital and software",
+            "Operation: Computerised with software and manual"
         ],
         "use_cases": [
-            "Use Cases"
+            "Measures the material's resistance to pulling forces, determining properties like tensile strength and elongation.",
+            "Assesses the material's behavior under crushing loads, identifying compressive strength."
         ],
         "img": "images1/facilities/CL/cl1.webp"
     },
@@ -278,10 +379,13 @@
         "department": "Civil",
         "name": "Fatigue Testing Machine",
         "spec": [
-            "Specifications"
+            "Complete with AC drive for speed control",
+            "Software for S and N Curve",
+            "GE Fanuc PLC based system",
+            "Online graphic display on computer screen"
         ],
         "use_cases": [
-            "Use Cases"
+            "To simulate cyclic loading conditions to determine how materials behave under repeated stress over time."
         ],
         "img": "images1/facilities/CL/cl2.webp"
     },
@@ -289,10 +393,13 @@
         "department": "Civil",
         "name": "Torsion Testing Machine",
         "spec": [
-            "Specifications"
+            "Torsional speed of 0.1/0.2 RPM",
+            "Torque Compensated motors",
+            "Variable speed drive (optional)",
+            "Capacity 100 KGN"
         ],
         "use_cases": [
-            "Use Cases"
+            "Measures the material's response to torque, determining properties like shear modulus and torsional strength."
         ],
         "img": "images1/facilities/CL/cl3.webp"
     },
@@ -332,78 +439,50 @@
     {
         "department": "Civil",
         "name": "Bending Stress in Beam - STR 5",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl6.webp"
     },
     {
         "department": "Civil",
         "name": "Pin Jointed Frameworks - STR 8",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl7.webp"
     },
     {
         "department": "Civil",
         "name": "Continuous and Indeterminate Beams - STR 13",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl8.webp"
     },
     {
         "department": "Civil",
         "name": "Plastic Bending of Portals - STR 16",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl9.webp"
     },
     {
         "department": "Civil",
         "name": "Redundant Truss - STR 17",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl10.webp"
     },
     {
         "department": "Civil",
         "name": "Bending Moments in a Portal Frame - STR 20",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl11.webp"
     },
     {
         "department": "Civil",
         "name": "Beam Apparatus - SM 1004",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl12.webp"
     },
     {
@@ -429,23 +508,15 @@
     {
         "department": "Civil",
         "name": "Horizontal Shake Table with Cylindrical Cam",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl14.webp"
     },
     {
         "department": "Civil",
         "name": "Shake Table Instrumentation",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl15.webp"
     },
     {
@@ -475,55 +546,43 @@
     {
         "department": "Civil",
         "name": "HP-Z workstation",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl17.webp"
     },
     {
         "department": "Civil",
         "name": "Compression Testing Machine",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl18.webp"
     },
     {
         "department": "Civil",
         "name": "Torsion of Circular Section - STR 6",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl19.webp"
     },
     {
         "department": "Civil",
         "name": "Frame Deflections and Reactions - STR 18",
-        "spec": [
-            "Specifications"
-        ],
-        "use_cases": [
-            "Use Cases"
-        ],
+        "spec": [],
+        "use_cases": [],
         "img": "images1/facilities/CL/cl20.webp"
     },
     {
         "department": "Civil",
         "name": "Triaxial Testing System",
         "spec": [
-            "Specifications"
+            "Load frame of 50 kN capacity",
+            "Triaxial cell for 38 mm and/or 50 mm diameter sample with other accessories",
+            "Dual cylinder air-water type cell pressure/back pressure application system",
+            "Automatic volume change gauge device",
+            "Data acquisition system"
         ],
         "use_cases": [
-            "Use Cases"
+            "To find shear strength of soil"
         ],
         "img": "images1/facilities/CL/cl21.webp"
     },
@@ -531,10 +590,12 @@
         "department": "Civil",
         "name": "Direct Shear Test",
         "spec": [
-            "Specifications"
+            "Direct Shear Test Instrument",
+            "Motorized direct shear test equipment",
+            "Data acquisition system"
         ],
         "use_cases": [
-            "Use Cases"
+            "To find shear strength of soil"
         ],
         "img": "images1/facilities/CL/cl22.webp"
     },
@@ -542,10 +603,10 @@
         "department": "Civil",
         "name": "Static Cone Penetrometer",
         "spec": [
-            "Specifications"
+            "Static cone penetrometer with manual operation"
         ],
         "use_cases": [
-            "Use Cases"
+            "To find cone penetration resistance"
         ],
         "img": "images1/facilities/CL/cl23.webp"
     },

@@ -1,0 +1,90 @@
+[
+    {
+        "department": "CSE",
+        "name": "NVIDIA JETSON NANO 2GB DEVELOPER KIT",
+        "spec": [
+            "128-core NVIDIA Maxwell GPU",
+            "Quad-core ARM A57 @ 1.43 GHz CPU",
+            "2 GB 64-bit LPDDR4 25.6 GB/s Memory",
+            "microSD Storage Support",
+            "4Kp30 | 4x 1080p30 | 9x 720p30 Video Encoding & Decoding",
+            "4Kp60 | 2x 4Kp30 | 8x 1080p30 | 18x 720p30 (H.264/H.265)",
+            "Gigabit Ethernet & 802.11ac wireless Connectivity",
+            "1x MIPI CSI-2 Camera connector",
+            "HDMI connectivity Support",
+            "1x USB 3.0 Type A, 2x USB 2.0 Type A, 1x USB 2.0 Support",
+            "Total Quantity 20 Nos."
+        ],
+        "use_cases": [
+            "Support innovation and domain-specific problem-solving using Jetson Nano for agriculture, healthcare, surveillance, and smart cities.",
+            "Encourage impactful project development with edge-based face recognition systems, autonomous vehicles, and smart home solutions.",
+            "Enable hands-on learning through real-time AI applications like image classification, object detection, and OpenCV-based tasks on edge devices.",
+            "Foster creative thinking by integrating AI with IoT, robotics, and gesture or speech-based interaction for real-world smart applications."
+        ],
+        "img": "images1/facilities/AIML/View.webp"
+    },
+    {
+        "department": "CSE",
+        "name": "Jetson Xavier NX Module",
+        "spec": [
+            "384-core NVIDIA Volta GPU with 48 Tensor Cores",
+            "6-core NVIDIA Carmel ARMv8.2 64-bit CPU (6MB L2 + 4MB L3)",
+            "8 GB 128-bit LPDDR4x Memory",
+            "16 GB eMMC 5.1 Storage",
+            "Up to 6 cameras (24 via virtual channels) Support",
+            "2x 4K60 | 4x 4K30 | 10x 1080p60 | 22x 1080p30 Video Encoding & Decoding",
+            "2 multi-mode DP 1.4/eDP 1.4/HDMI 2.0 Display Support",
+            "2x NVDLA DL Accelerator",
+            "2x PVA Vision Accelerator",
+            "Total Quantity 03 Nos."
+        ],
+        "use_cases": [
+            "Run high-resolution object detection and semantic segmentation tasks for advanced computer vision learning.",
+            "Explore multi-modal AI research like video + audio analysis, real-time anomaly detection, or federated learning at the edge.",
+            "Develop complex AI-powered systems such as multi-camera smart surveillance, real-time language translation, or drone-based analytics.",
+            "Build scalable edge-AI solutions with robotics, 3D vision, or industrial automation integrating LIDAR, sensors, and real-time inference."
+        ],
+        "img": "images1/facilities/AIML/View.webp"
+    },
+    {
+        "department": "CSE",
+        "name": "High-Performance Deep Learning Server Cluster",
+        "spec": [
+            "2 x Intel Xeon 16 Core CPU",
+            "Mother Board has a dual socket for a 2x16 Core CPU",
+            "2 x 64GB DDR4 ECC RAM (Total 128 GB)",
+            "1 x 2TB SATA Enterprise HDDs",
+            "1 x 240 GB SATA SSD",
+            "NVIDIA RTX A5000 Graphics Card",
+            "Unix Operating System / Windows Operating System",
+            "NV Link for A5000 Graphics Card",
+            "Total Quantity 03 Nos."
+        ],
+        "use_cases": [
+            "Facilitate deep learning model training labs using large datasets and high-performance GPU compute.",
+            "Support complex research in domains like medical image analysis, large-scale NLP models, and 3D data processing.",
+            "Enable ambitious projects such as video-based emotion recognition, GANs, or multi-modal AI with fast model iteration.",
+            "Accelerate cross-domain innovation involving federated learning, simulation-based AI, digital twins, or synthetic data generation."
+        ],
+        "img": "images1/facilities/AIML/View.webp"
+    },
+    {
+        "department": "CSE",
+        "name": "Jetson TX2 NX Module",
+        "spec": [
+            "1.33 TFLOPs AI Performance",
+            "NVIDIA Pascal Architecture GPU with 256 CUDA cores",
+            "Dual-core NVIDIA Denver 2 64-bit CPU and quad-core ARM A57 Complex CPU",
+            "4GB 128-bit LPDDR4 Memory 1600 MHz - 51.2 GB/s",
+            "16GB eMMC 5.1 Flash Storage",
+            "Total Quantity 01 No."
+        ],
+        "use_cases": [
+            "Run intermediate computer vision labs like lane detection, barcode scanning, or image segmentation with real-time performance.",
+            "Develop edge AI solutions for smart parking, mask detection, or signboard translation with moderate compute demands.",
+            "Create smart IoT systems like AI-enabled fire/smoke detectors, smart classroom monitoring, or voice-controlled devices.",
+            "Prototype energy-efficient edge solutions for wearable devices, remote field monitoring, or intelligent transport systems."
+        ],
+        "img": "images1/facilities/AIML/View.webp"
+    }
+]
