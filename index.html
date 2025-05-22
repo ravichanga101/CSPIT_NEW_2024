@@ -4020,5 +4020,176 @@ if (statsSection) scrollObserver.observe(statsSection);
       $(".card:first-child .card-header .row").addClass("collapsed");
     });
   </script>
+  <!-- Add this just before </body> in your index.html -->
+<div id="admission-popup-overlay" style="display:none;">
+  <div id="admission-popup-modal">
+    <button id="admission-popup-close" aria-label="Close">&times;</button>
+    <div class="admission-popup-content text-center">
+      <h2 style="font-weight:900; font-size:2rem; letter-spacing:1px; color:#0c4da2;">B.Tech. MQ/NRI</h2>
+      <h3>Admission Schedule</h3>
+      <div class="admission-popup-table-wrapper">
+        <table class="admission-popup-table">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Date &amp; Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Commencement of Registration</td>
+              <td>01-04-2025 (10 am)</td>
+            </tr>
+            <tr>
+              <td>Last date of Registration for Admission and payment</td>
+              <td>30-05-2025 (4.30 pm)</td>
+            </tr>
+            <tr>
+              <td>Declaration of Provisional Merit List</td>
+              <td>07-06-2025</td>
+            </tr>
+            <tr>
+              <td>Declaration of Final Merit List</td>
+              <td>10-06-2025</td>
+            </tr>
+            <tr>
+              <td>MQ/NRI Admission Allotment Process</td>
+              <td>14-06-2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #admission-popup-modal {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 98vw;
+    width: 540px; /* Increased width */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    position: relative;
+    animation: popupScaleIn 0.3s;
+  }
+  #admission-popup-close {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    transform: translate(-50%, -50%);
+    background: #ffd84d;
+    border: none;
+    font-size: 2rem;
+    color: #222;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    z-index: 2;
+  }
+  #admission-popup-close:hover {
+    background: #ffd84d;
+    color: #000;
+  }
+  .admission-popup-table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+  .admission-popup-table {
+    width: 100%;
+    min-width: 420px; /* Make table wider */
+    border-collapse: collapse;
+    font-size: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .admission-popup-table th,
+  .admission-popup-table td {
+    padding: 0.9em 1.2em;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  .admission-popup-table th {
+    background: #2081e9;
+    color: #fff;
+    font-weight: 600;
+  }
+  .admission-popup-table tr:last-child td {
+    border-bottom: none;
+  }
+  @media (max-width: 600px) {
+    #admission-popup-modal {
+      width: 99vw;
+      padding: 1rem 0.2rem 1.5rem 0.2rem;
+    }
+    .admission-popup-table {
+      min-width: 320px;
+      font-size: 0.95em;
+    }
+    #admission-popup-close {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<!-- Add this style to ensure the popup overlay is visible and centered -->
+<style>
+  #admission-popup-overlay {
+    position: fixed;
+    z-index: 99999;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+  }
+</style>
+<!-- END POPUP -->
+<script>
+  // Ensure all handlers are attached after DOM is fully loaded
+  window.addEventListener('DOMContentLoaded', function() {
+    // Show popup
+    document.getElementById('admission-popup-overlay').style.display = 'flex';
+
+    // Attach close button event
+    var closeBtn = document.getElementById('admission-popup-close');
+    if (closeBtn) {
+      closeBtn.onclick = function(e) {
+        e.stopPropagation();
+        document.getElementById('admission-popup-overlay').style.display = 'none';
+      };
+    }
+
+    // Attach overlay click event (outside modal)
+    var overlay = document.getElementById('admission-popup-overlay');
+    if (overlay) {
+      overlay.onclick = function(e) {
+        if (e.target === overlay) overlay.style.display = 'none';
+      };
+    }
+
+    // Attach ESC key event
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape" || e.key === "Esc") {
+        document.getElementById('admission-popup-overlay').style.display = 'none';
+      }
+    });
+  });
+</script>
 </body>
 </html>
