@@ -1426,31 +1426,7 @@
       "-"
     ]
   },
-  {
-    "name": "Mr. Jivanadhar Joshi",
-    "title": "ASSISTANT PROFESSOR",
-    "degree": "M. Tech.",
-    "research_interests": [
-      "Embedded system and Micro controller programming, Power Electronics, Signal Processing, Numerical relaying, Microgrid converter control, Dspace real time simulator, Matlab Modelling"
-    ],
-    "image_src": "CSPIT_Faculty/Electrical/JIVANADHAR.webp",
-    "subjects": [
-      "Power Electronics, Microcontroller applications, advanced microcontrollers, Electrical vehicle and renewable, Digital Signal Processing, Digital Electronics, Embedded system, Power system Protection"
-    ],
-    "research_projects": [],
-    "teaching": [
-      "STATCOM/ 'Voltage control in Electrical Power Grid/ GUJCOST"
-    ],
-    "email": "jivanadharjoshi.ee@charusat.ac.in",
-    "linkedin": "https://www.linkedin.com/in/jiva-dhar-joshi-a76a12ab/",
-    "website": "",
-    "scholar": "https://scholar.google.com/citations?user=CgbzrYMAAAAJ&hl=en",
-    "vidwan": "",
-    "awards": [],
-    "memberships": [],
-    "certifications": []
-  },
-  {
+   {
     "name": "Dr. Kamlesh Chauhan",
     "title": "ASSOCIATE PROFESSOR",
     "degree": "Ph. D.",
