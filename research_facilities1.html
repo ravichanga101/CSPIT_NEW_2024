@@ -343,7 +343,7 @@
                 </a>
               </div>
             </div>
-  
+
             <div class="navbar col-10 px-0 nav-bg">
               <button
                 class="navbar-toggler my-2"
@@ -361,7 +361,10 @@
                   class="quick-links navbar-nav nav-sub justify-content-end mx-auto nav-row-up"
                 >
                   <li class>
-                    <a class="nav-link py-0 px-4 top-link" href="index.html#placement">
+                    <a
+                      class="nav-link py-0 px-4 top-link"
+                      href="index.html#placement"
+                    >
                       Placement
                     </a>
                   </li>
@@ -441,7 +444,7 @@
                             ><span>Postgraduate Programs (M. Tech) </span></a
                           >
                         </li>
-  
+
                         <li class="subnav-unit dropdown-submenu">
                           <a
                             class="subnav-link text-uppercase"
@@ -482,7 +485,7 @@
                             ><span>WOMEN DEVELOPMENT CELL</span></a
                           >
                         </li>
-  
+
                         <li class="subnav-unit dropdown-submenu">
                           <a
                             class="text-uppercase subnav-link"
@@ -491,7 +494,7 @@
                             ><span>Startup and Innovation Centre</span></a
                           >
                         </li>
-  
+
                         <li class="subnav-unit dropdown-submenu">
                           <a
                             class="text-uppercase subnav-link"
@@ -500,7 +503,7 @@
                             ><span>Equal Opportunity Cell</span></a
                           >
                         </li>
-  
+
                         <li class="subnav-unit dropdown-submenu">
                           <a
                             class="text-uppercase subnav-link"
@@ -572,7 +575,7 @@
                       </ul>
                     </div>
                   </li>
-  
+
                   <li class="nav-item subnav">
                     <a class="nav-link py-0 subnavbtn" href>Research</a>
                     <div class="subnav-content">
@@ -583,7 +586,10 @@
                             href="research_facilities1.html"
                             target="_blank"
                           >
-                            <span>Research Facilities / Sophisticated Instruments</span>
+                            <span
+                              >Research Facilities / Sophisticated
+                              Instruments</span
+                            >
                           </a>
                         </li>
                         <li class="subnav-unit dropdown-submenu second-sub2">
@@ -597,7 +603,7 @@
                       </ul>
                     </div>
                   </li>
-  
+
                   <li class="nav-item subnav">
                     <a class="nav-link py-0 subnavbtn" href>Student Corner</a>
                     <div class="subnav-content">
@@ -695,7 +701,7 @@
                             <span>Support Policy</span>
                           </a>
                         </li>
-  
+
                         <!-- <li class="subnav-unit dropdown-submenu">
                           <a
                             class="subnav-link text-uppercase"
@@ -804,7 +810,7 @@
                   >Scholarships</a
                 >
               </li>
-  
+
               <li class="nav-item">
                 <a class="nav-link" href="./faculty.html" target="_blank"
                   >Faculty & staff</a
@@ -948,7 +954,7 @@
                   >
                 </div>
               </li>
-  
+
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -964,7 +970,7 @@
                     target="_blank"
                     >Code of Conduct</a
                   >
-  
+
                   <!-- <a class="dropdown-item" href="drive.html?folderId=1LgF2k8N_GeRCs-O50PvXUiywW-Bk8Lyw&heading=STUDENT%20HANDBOOK" target="_blank">Student Handbook</a> -->
                   <a
                     class="dropdown-item"
@@ -972,14 +978,14 @@
                     target="_blank"
                     >Student Handbook</a
                   >
-  
+
                   <a
                     class="dropdown-item"
                     href="drive.html?folderId=1CrY0oeDZrnVZRuBwtTIp3MVIs9EoXCl2&heading=SYLLABUS"
                     target="_blank"
                     >Syllabus</a
                   >
-  
+
                   <a
                     class="dropdown-item"
                     href="https://charusat.edu.in:912/OthPaymentApp/"
@@ -998,21 +1004,21 @@
                     target="_blank"
                     >View Result</a
                   >
-  
+
                   <a
                     class="dropdown-item"
                     href="https://icreate.charusat.ac.in/"
                     target="_blank"
                     >I-create</a
                   >
-  
+
                   <a
                     class="dropdown-item"
                     href="drive.html?folderId=1U1hIPybwqdsF9Nn_K6QKom0Kg5yAWCaW&heading=QUESTION%20PAPERS"
                     target="_blank"
                     >Question Papers</a
                   >
-  
+
                   <a
                     class="dropdown-item"
                     href="drive.html?folderId=1EWfAd0mJ3MIVNA7Ct3XnHfS6aKpG2NeJ&heading=ACADEMIC%20CALENDER"
@@ -1090,7 +1096,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let instrumentData = {};
-    
+
       function loadDataFromJSON(filePath) {
         fetch(filePath)
           .then((response) => {
@@ -1105,13 +1111,15 @@
               const department = row.department;
               const name = row.name;
               const specs = Array.isArray(row.spec) ? row.spec : [row.spec];
-              const useCases = Array.isArray(row.use_cases) ? row.use_cases : [row.use_cases];
+              const useCases = Array.isArray(row.use_cases)
+                ? row.use_cases
+                : [row.use_cases];
               const image = row.img.replace(/\\/g, "/");
-    
+
               if (!instrumentData[department]) {
                 instrumentData[department] = [];
               }
-    
+
               instrumentData[department].push({
                 name,
                 specs,
@@ -1119,102 +1127,122 @@
                 image,
               });
             });
-    
+
             renderAllInstruments(); // Render all instruments after loading data
           })
           .catch((error) => {
             console.error("Error loading JSON file:", error);
           });
       }
-    
+
       function renderAllInstruments() {
-        const instrumentCardsContainer = document.getElementById("instrument-cards-grid");
+        const instrumentCardsContainer = document.getElementById(
+          "instrument-cards-grid"
+        );
         const allInstruments = Object.values(instrumentData).flat(); // Combine all instruments from all departments
-    
+
         instrumentCardsContainer.innerHTML = allInstruments
           .map(
             (instrument) => `
-              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card instrument-card h-100" 
-                     data-bs-toggle="modal" 
-                     data-bs-target="#instrument-details-popup" 
-                     data-instrument-name="${instrument.name}">
-                  <img src="${instrument.image}" class="card-img-top instrument-image" alt="${instrument.name}">
-                  <div class="card-body">
-                    <h5 class="card-title text-primary">${instrument.name}</h5>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <div class="card instrument-card h-100" style="cursor: default;"
+                       data-bs-toggle="-modal"
+                       data-bs-target="#-instrument-details-popup"
+                       data-instrument-name="-${instrument.name}">
+                    <img src="${instrument.image}" class="card-img-top instrument-image" alt="${instrument.name}">
+                    <div class="card-body">
+                      <h5 class="card-title text-primary">${instrument.name}</h5>
+                    </div>
                   </div>
                 </div>
-              </div>
-            `
+              `
           )
           .join("");
-    
+
         setupInstrumentPopupListeners(allInstruments);
       }
-    
+
       function setupInstrumentPopupListeners(instruments) {
-        const instrumentPopup = document.getElementById("instrument-details-popup");
+        const instrumentPopup = document.getElementById(
+          "instrument-details-popup"
+        );
         const instrumentCards = document.querySelectorAll(".instrument-card");
-    
+
         instrumentCards.forEach((card) => {
-          card.addEventListener("click", (e) => {
-            const instrumentName = e.currentTarget.getAttribute("data-instrument-name");
-            const instrument = instruments.find((i) => i.name === instrumentName);
-    
-            instrumentPopup.querySelector(".instrument-popup-title").textContent = instrument.name;
-            instrumentPopup.querySelector("#instrument-popup-image").src = instrument.image;
-    
-            const popupContent = instrumentPopup.querySelector("#instrument-popup-content");
-            popupContent.innerHTML = "";
-    
-            if (instrument.specs && instrument.specs.length > 0 && instrument.specs[0] !== "") {
-              const specsSection = document.createElement("div");
-              specsSection.classList.add("modal-details-section");
-              specsSection.innerHTML = `
-                <h6>Specifications</h6>
-                <ul class="list-group">
-                  ${instrument.specs
-                    .map(
-                      (spec) =>
-                        `<li class="list-group-item"><i class="fas fa-cogs me-2 text-success"></i>${spec}</li>`
-                    )
-                    .join("")}
-                </ul>
-              `;
-              popupContent.appendChild(specsSection);
-            }
-    
-            if (instrument.useCases && instrument.useCases.length > 0 && instrument.useCases[0] !== "") {
-              const useCasesSection = document.createElement("div");
-              useCasesSection.classList.add("modal-details-section");
-              useCasesSection.innerHTML = `
-                <h6>Use Cases</h6>
-                <ul class="list-group">
-                  ${instrument.useCases
-                    .map(
-                      (useCase) =>
-                        `<li class="list-group-item"><i class="fas fa-check-circle me-2 text-info"></i>${useCase}</li>`
-                    )
-                    .join("")}
-                </ul>
-              `;
-              popupContent.appendChild(useCasesSection);
-            }
-    
-            if (
-              (!instrument.specs || instrument.specs.length === 0 || instrument.specs[0] === "") &&
-              (!instrument.useCases || instrument.useCases.length === 0 || instrument.useCases[0] === "")
-            ) {
-              popupContent.innerHTML = `
-                <div class="alert alert-warning">
-                  No additional details available for this instrument.
-                </div>
-              `;
-            }
-          });
+          // card.addEventListener("click", (e) => {
+          //   const instrumentName = e.currentTarget.getAttribute(
+          //     "data-instrument-name"
+          //   );
+          //   const instrument = instruments.find(
+          //     (i) => i.name === instrumentName
+          //   );
+          //   instrumentPopup.querySelector(
+          //     ".instrument-popup-title"
+          //   ).textContent = instrument.name;
+          //   instrumentPopup.querySelector("#instrument-popup-image").src =
+          //     instrument.image;
+          //   const popupContent = instrumentPopup.querySelector(
+          //     "#instrument-popup-content"
+          //   );
+          //   popupContent.innerHTML = "";
+          //   if (
+          //     instrument.specs &&
+          //     instrument.specs.length > 0 &&
+          //     instrument.specs[0] !== ""
+          //   ) {
+          //     const specsSection = document.createElement("div");
+          //     specsSection.classList.add("modal-details-section");
+          //     specsSection.innerHTML = `
+          //         <h6>Specifications</h6>
+          //         <ul class="list-group">
+          //           ${instrument.specs
+          //             .map(
+          //               (spec) =>
+          //                 `<li class="list-group-item"><i class="fas fa-cogs me-2 text-success"></i>${spec}</li>`
+          //             )
+          //             .join("")}
+          //         </ul>
+          //       `;
+          //     popupContent.appendChild(specsSection);
+          //   }
+          //   if (
+          //     instrument.useCases &&
+          //     instrument.useCases.length > 0 &&
+          //     instrument.useCases[0] !== ""
+          //   ) {
+          //     const useCasesSection = document.createElement("div");
+          //     useCasesSection.classList.add("modal-details-section");
+          //     useCasesSection.innerHTML = `
+          //         <h6>Use Cases</h6>
+          //         <ul class="list-group">
+          //           ${instrument.useCases
+          //             .map(
+          //               (useCase) =>
+          //                 `<li class="list-group-item"><i class="fas fa-check-circle me-2 text-info"></i>${useCase}</li>`
+          //             )
+          //             .join("")}
+          //         </ul>
+          //       `;
+          //     popupContent.appendChild(useCasesSection);
+          //   }
+          //   if (
+          //     (!instrument.specs ||
+          //       instrument.specs.length === 0 ||
+          //       instrument.specs[0] === "") &&
+          //     (!instrument.useCases ||
+          //       instrument.useCases.length === 0 ||
+          //       instrument.useCases[0] === "")
+          //   ) {
+          //     popupContent.innerHTML = `
+          //         <div class="alert alert-warning">
+          //           No additional details available for this instrument.
+          //         </div>
+          //       `;
+          //   }
+          // });
         });
       }
-    
+
       document.addEventListener("DOMContentLoaded", () => {
         const filePath = "./research_facilities.json";
         loadDataFromJSON(filePath);
